@@ -1,57 +1,269 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-    <!--
-        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
-        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
-    -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <link rel="stylesheet" type="text/css" href="../jquery.mobile.rtl/css/themes/default/rtl.jquery.mobile-1.4.0.css" />
-        <title>Stars</title>
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <title>jquery_mobile_demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- jquery_mobile_demo references -->
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/themes/default/rtl.jquery.mobile-1.4.0.css" rel="stylesheet" />
+    <link href="css/themes/mytheme/jquery.mobile.icons.min.css" rel="stylesheet" />
+    <link href="css/themes/mytheme/mytheme.min.css" rel="stylesheet" />
+</head>
 <body>
+    <script src="scripts/jquery-2.1.1.min.js"></script>
+    <script src="js/rtl.jquery.mobile-1.4.0.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="cordova.js"></script>
+    <script src="scripts/index.js"></script>
 
-    <!-- Start of first page -->
-    <div data-role="page" id="foo">
-
+    
+    <div data-role="page" class="a" id="page1" data-theme="a">
         <div data-role="header">
-            <h1>Foo</h1>
-        </div><!-- /header -->
+            <h1>www.EhsanAvr.Com</h1>
 
-        <div role="main" class="ui-content">
-            <p>I'm first in the source order so I'm shown as the page.</p>
-            <p>View internal page called <a href="#bar">bar</a></p>
-        </div><!-- /content -->
+        </div>
+        <div data-role="main" class="ui-content a">
+           
+            <a href="#pagelogin" data-inline="true" data-role="button">pagelogin</a>
+            <a href="#pagesms" data-inline="true" data-role="button">pagesms</a>
+            <a href="#page2" data-inline="true" data-role="button">page2</a>
+            <a href="#page3" data-inline="true" data-role="button">page3</a>
+            <a href="#page4" data-inline="true" data-role="button">page4</a>
 
+
+        </div>
+    </div>
+    
+    
+    
+
+    <!-- Page_login -->
+    <div data-role="page" id="pagelogin" style="background: #5a1973;">
+        <div data-role="header">تست jQuery Mobile</div>
+        <div data-role="main" class="ui-content p0">
+
+            <div class="topelement_p1">
+                <div class="fill_img">
+                    <div class="fill_img_inner"></div>
+                </div>
+
+                <img class="img-responsive" src="images/top-1.png" alt="">
+
+                <div class="logo">
+                    <img src="images/logo.png" class="rounded mx-auto d-block" alt="logo">
+                    <div class="logo_caption">
+                        باشگاه ورز شی ستـــارگان
+                    </div>
+                </div>
+                <div class="circle_p1 row-around">
+                    <div class="circle_p1_child_right">
+
+                    </div>
+                    <div class="circle_p1_child_center">
+
+                    </div>
+                    <div class="circle_p1_child_left">
+
+                    </div>
+                </div>
+
+                <img class="img-fluid" src="images/bot-1.png" alt="">
+            </div>
+            <div class="info">
+                <form>
+                    <label class="info_caption">
+                        جهت عضویت شماره تماس خود را وارد نمایید
+                    </label>
+                    <input class="input_num_p1" type="tel" placeholder="09 - - - - - - - - -"/><br>
+                    <a href="#page2" class="ui-btn ui-corner-all submit_p1">عضویت</a>
+                </form>
+            </div>
+
+        </div>
+        <div data-role="footer">www.EhsanAvr.Com</div>
+    </div>
+    
+    <!-- pagesms -->
+    <div data-role="page" class="a" id="pagesms" data-theme="a">
+        <div data-role="main" class="ui-content B p0">
+           
+
+            <div class="place_main">
+                <div class=" main_tilte">
+                    باشگاه ورزشی ستارگان
+                </div>
+            
+            <div class="style_top p0">
+          		<img src="images/top-2.png" class="img-responsive" alt="logo">
+            </div>
+            
+            
+        <div class="main_info">
+            <div class="main_info_title">
+                کد فعال سازی
+            </div>
+            <div class="main_info_description">
+                منتظر باشید تا کد فعال سازی ارسال شود
+            </div>
+            <form>
+                <input class="etx_verify" type="number" data-clear-btn="false" name="etx_verify" pattern="[0-9]*" id="number-3" value="0000"/><br>
+            <div class="send_again">
+                  کد ارسال نشد ؟
+            </div>
+            <div class="timer_sms">
+                00:00:00
+            </div>
+                <a href="#page2" class="ui-btn ui-corner-all submit_sms">فعال سازی</a>
+            </form>
+        </div>
+            
+            <div class="style_buttom">
+          		<img src="images/bot-2.png" class="img-responsive" alt="logo">
+            </div>
+
+        </div>
+
+        </div>
+    </div>
+
+    <!-- Page_main -->
+    <div data-role="page" id="page2">
+        <div data-role="header">تست jQuery Mobile</div>
+        <div data-role="main" class="ui-content">
+            <div class="carousel"></div>
+
+            <div class="main_btn">
+
+                <img src="images/top-2.png" alt="">
+                <div class="main_btn_inner ui-grid-b">
+                    <div class="ui-block-a"><a href="#" class="ui-shadow ui-btn ui-corner-all">ارتباط با ما</a></div>
+                    <div class="ui-block-b"><a href="#" class="ui-shadow ui-btn ui-corner-all">ارتباط با ما</a></div>
+                    <div class="ui-block-c"><a href="#" class="ui-shadow ui-btn ui-corner-all">ارتباط با ما</a></div>
+                </div>
+                <div class="main_btn_inner ui-grid-b">
+                    <div class="ui-block-a"><a href="#" class="ui-shadow ui-btn ui-corner-all">ارتباط با ما</a></div>
+                    <div class="ui-block-b"><a href="#" class="ui-shadow ui-btn ui-corner-all">ارتباط با ما</a></div>
+                    <div class="ui-block-c"><a href="#" class="ui-shadow ui-btn ui-corner-all">معرفی</a></div>
+                </div>
+                <img src="images/bot-2.png" alt="">
+
+            </div>
+
+            <div class="news_page_main">
+                <div class="news_page_main_header">
+                    اخبار باشگاه
+                </div>
+                <ul data-inset="true" class="news_page_main_ul">
+                    <li>
+                        <i></i>
+                        باشگاه ورزشی ستارگان فردا تعطیل است
+                        <a href="#">بیشتر ...</a>
+                    </li>
+                    <li>
+                        <i></i>
+                        باشگاه ورزشی ستارگان فردا تعطیل است
+                        <a href="#">بیشتر ...</a>
+                    </li>
+                    <li>
+                        <i></i>
+                        باشگاه ورزشی ستارگان فردا تعطیل است
+                        <a href="#">بیشتر ...</a>
+                    </li>
+                    <li>
+                        <i></i>
+                        باشگاه ورزشی ستارگان فردا تعطیل است
+                        <a href="#">بیشتر ...</a>
+                    </li>
+                    <li>
+                        <i></i>
+                        باشگاه ورزشی ستارگان فردا تعطیل است
+                        <a href="#">بیشتر ...</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div data-role="footer">www.EhsanAvr.Com</div>
+    </div>
+
+    <!-- page3 -->
+    <div data-role="page" id="page3">
+        <div data-role="header" class="header">
+            
+            
+                <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar">Add</a>
+                <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2">Up</a>
+          
+            <h6>باشگاه ورزشی ستارگان</h6>
+            <a href="#panel1" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar">No text</a>
+
+        </div>
+        <div data-role="main" class="ui-content B p0">
+           
+
+            <div class="place_main">
+                <div class=" main_tilte" data-icon="arrow-r">
+موقعیت باشگاه ورزشی ستارگان
+                </div>
+            
+            <div class="style_top p0">
+          		<img src="images/top-2.png" class="img-responsive" alt="logo">
+            </div>
+            
+            
+        <div class="main_info_3">
+            
+                <div class="main_btn_inner ui-grid-a">
+                    <div class="ui-block-a">
+                        
+                        <a href="#" class="ui-shadow ui-btn ui-mini ui-corner-all ">شعبه ۱</a></div>
+                    
+                    
+                    <div class="ui-block-b">
+                        <div class="btn_loc"></div>
+                        
+                        <a href="#" class="ui-shadow ui-btn ui-corner-all ">شعبه ۲</a></div>
+                </div>
+            
+        </div>
+            
+            <div class="style_buttom">
+          		<img src="images/bot-2.png" class="img-responsive" alt="logo">
+            </div>
+                
+                
+            
+            <div class="page_description3">
+          		<p>مجموعه تخصصی ستارگان با وسعت ۲۰۰۰ مترمربع، دارای پارکینگ اختصاصی و امکانات منحصر به فرد، از ساعت ۷ صبح الی ۲۱:۳۰ پذیرای بانوان عزیز می باشد</p>
+            </div>
+                
+            <div data-role="panel" id="panel1" data-position="right" data-display="overlay">
+                <h1>Test</h1>
+            </div>
+                            
+
+        </div>
+
+        </div>
+        <div data-role="footer">www.EhsanAvr.Com</div>
+    </div>
+
+    <!-- page4 -->
+    <div data-role="page" id="page4">
+        <div data-role="header">تست jQuery Mobile</div>
+        <div data-role="main" class="ui-content">
+            <p>
+                صفحه 4
+            </p>
+
+        </div>
         <div data-role="footer">
-            <h4>Page Footer</h4>
-        </div><!-- /footer -->
-    </div><!-- /page -->
-    <!-- Start of second page -->
-    <div data-role="page" id="bar">
+            <a href="#" class="ui-btn-left ui-btn ui-mini ui-corner-all ui-btn-icon-left ui-icon-delete">Cancel</a>
+            <h1>My Application</h1>
+            <button class="ui-btn-right ui-btn ui-btn-inline ui-corner-all ui-btn-icon-right ui-icon-check">Save</button>
+        </div>
+    </div>
 
-        <div data-role="header">
-            <h1>Bar</h1>
-        </div><!-- /header -->
-
-        <div role="main" class="ui-content">
-            <p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>
-            <p><a href="#foo">Back to foo</a></p>
-        </div><!-- /content -->
-
-        <div data-role="footer">
-            <h4>Page Footer</h4>
-        </div><!-- /footer -->
-    </div><!-- /page -->
-        <script type="text/javascript" src="cordova.js"></script>
-        <!-- The 'async' attribute is needed for RequireJS to work in a Windows app -->
-        <script type="text/javascript" data-main="scripts/startup" src="lib/require.2.1.8.js" async></script>
-        <script type="text/javascript" src="../jquery.mobile.rtl/js/rtl.jquery.mobile-1.4.0.js"></script>
-    </body>
+</body>
 </html>
