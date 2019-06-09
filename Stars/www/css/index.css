@@ -228,17 +228,19 @@ div{
 }
 
 /*--------------- Page_main ----------------------------*/
-.main_btn img {
+.page2_main_btn img {
     width: 100%;
     height: auto;
     display: block;
 }
-.main_btn_inner{
+.page2_main_btn_inner{
+    width: auto;
     background: #461858;
-    padding: 5%;
+    padding: 3% 5%;
 }
-.main_btn a{
-    padding: 35% 0;
+.page2_main_btn a{
+    padding: 33% 0;
+    font-size: 100%;
     border: 5px solid #e9d800!important;
     border-radius: 50%!important;
     background: #3a1548 !important;
@@ -362,3 +364,4 @@ div{
 .ui-nosvg .ui-icon-myicon:after {
 	background-image: url("iconimg.png");
 }
+/*--------------- Page_4 ----------------------------*/
