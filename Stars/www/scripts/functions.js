@@ -1,14 +1,10 @@
 // Jquery EVENTS
-
-$( document ).on( "pageinit", "#page2", function() {
-    $( document ).on( "swipeleft", "#page2", function( e ) {
-        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
-            if ( e.type === "swipeleft"  ) {
-                $( "#panel1" ).panel( "open" );
-            }
-        }
-    });
+$( document ).on( "swipeleft", function( e ) {
+    if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+        $(".panel1").panel( "open" );
+    }
 });
+
 
 
 
