@@ -101,7 +101,7 @@ div{
     width: 80%;
     display: block;
     margin: 0 auto;
-    padding-bottom: 5%;
+    padding-bottom: 15%;
 }
 .info form div{
     border: none!important;
@@ -219,8 +219,7 @@ div{
     background-color: #5a1973!important;
     border: 1px solid #ffff00!important;
     border-radius: 20px !important;
-    padding: 2% 5% !important;
-    text-align: left!important;
+    text-align: center!important;
     direction: ltr;
     font-weight: bold;
     color: #fff !important;
@@ -228,7 +227,7 @@ div{
     margin: 0 auto!important;
 }
 
-/*--------------- Page_main ----------------------------*/
+/*--------------- news_page ----------------------------*/
 .page2_main_btn img {
     width: 100%;
     height: auto;
@@ -275,7 +274,7 @@ div{
 }
 
 
-/*--------------- Page_3 ----------------------------*/
+/*--------------- mogheiat ----------------------------*/
 .header {
     background: #461858!important;
     color: #fff!important;
@@ -365,15 +364,15 @@ div{
 .ui-nosvg .ui-icon-myicon:after {
 	background-image: url("iconimg.png");
 }
-/*--------------- Page_4 ----------------------------*/
-.page4_main_info{
+/*--------------- contact_us ----------------------------*/
+.contact_us_main_info{
     background: #461858 !important;
     padding: 15% 0;
 }
-.page4_main_info form{
+.contact_us_main_info form{
     padding: 0 10%;
 }
-.field-contain div, .page4_textarea textarea{
+.field-contain div, .contact_us_textarea textarea{
     color: #d2bada !important;
     text-align: right!important;
     direction: rtl!important;
@@ -381,20 +380,20 @@ div{
     border: none;
     background: #591b6e !important;
 }
-.field-contain div:last-child, .page4_textarea textarea {
+.field-contain div:last-child, .contact_us_textarea textarea {
     border: 1px solid #73537d5c!important;
     text-shadow: none!important;
 }
-.page4_textarea textarea{
+.contact_us_textarea textarea{
     height: auto !important;
     resize: none!important;
     padding: 3%;
     box-shadow: none!important;
 }
-.page4_textarea textarea::placeholder{
+.contact_us_textarea textarea::placeholder{
     color: #d2bada !important;
 }
-.page4_main_info a{
+.contact_us_main_info a{
     width: 25%;
     margin: 0!important;
     float: left;
@@ -406,26 +405,26 @@ div{
     padding: 2% 7% !important;
     box-shadow: none!important;
 }
-/*--------------- Page_5 ----------------------------*/
-.page5_main_info{
+/*--------------- about ----------------------------*/
+.about_main_info{
     background: #461858 !important;
     padding: 15% 5%;
     text-shadow: none!important;
     color: #fff;
 }
-.page5_textheader{
+.about_textheader{
     width: 100%;
     font-size: 100%;
     padding: 1%;
 }
-.page5_text{
+.about_text{
     width: auto;
     height: 150px;
     background: #4c195e;
     padding: 5%;
     margin: 4% 0 !important;
 }
-.page5_main_info a{
+.about_main_info a{
     background: #61426e!important;
     width: 25%;
     margin: 0!important;
@@ -438,20 +437,20 @@ div{
     box-shadow: none!important;
     color: #fcf0fe!important;
 }
-/*--------------- Page_6 ----------------------------*/
-.page6_nobg{
+/*--------------- moarefi ----------------------------*/
+.moarefi_nobg{
     width: 100%;
     height: 55%;
     position: absolute;
     z-index: 1;
     background: #430d58 !important;
 }
-.page6_main_info{
+.moarefi_main_info{
     padding: 15% 5%;
     text-shadow: none!important;
     color: #fff;
 }
-.page6_tilte {
+.moarefi_tilte {
     position: relative;
     z-index: 5;
     width: 70%;
@@ -462,10 +461,10 @@ div{
     font-size: 120%;
     color: #fff;
 }
-.page6_img{
+.moarefi_img{
     width: 100%;
 }
-.page6_img img{
+.moarefi_img img{
     position: relative;
     z-index: 5;
     display: block;
@@ -473,13 +472,13 @@ div{
     width: 100%;
     height: auto;
 }
-.page6_imgfullsize{
+.moarefi_imgfullsize{
     width: 100%;
 }
-.page6_imgundersize div{
+.moarefi_imgundersize div{
     padding: 1%;
 }
-.page6_p{
+.moarefi_p{
     padding: 2%;
     font-size: 80%;
     color: #fff;

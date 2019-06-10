@@ -27,11 +27,11 @@
            
             <a href="#pagelogin" data-inline="true" data-role="button">pagelogin</a>
             <a href="#pagesms" data-inline="true" data-role="button">pagesms</a>
-            <a href="#page2" data-inline="true" data-role="button">page2</a>
-            <a href="#page3" data-inline="true" data-role="button">page3</a>
-            <a href="#page4" data-inline="true" data-role="button">page4</a>
-            <a href="#page5" data-inline="true" data-role="button">page5</a>
-            <a href="#page6" data-inline="true" data-role="button">page6</a>
+            <a href="#news_page" data-inline="true" data-role="button">news_page</a>
+            <a href="#mogheiat" data-inline="true" data-role="button">mogheiat</a>
+            <a href="#contact_us" data-inline="true" data-role="button">contact_us</a>
+            <a href="#about" data-inline="true" data-role="button">about</a>
+            <a href="#moarefi" data-inline="true" data-role="button">moarefi</a>
 
 
         </div>
@@ -42,7 +42,6 @@
 
     <!-- Page_login -->
     <div data-role="page" id="pagelogin" style="background: #5a1973;">
-        <div data-role="header">تست jQuery Mobile</div>
         <div data-role="main" class="ui-content p0">
 
             <div class="topelement_p1">
@@ -78,12 +77,11 @@
                         جهت عضویت شماره تماس خود را وارد نمایید
                     </label>
                     <input class="input_num_p1" type="tel" maxlength="11" placeholder="09 - - - - - - - - -"/><br>
-                    <a href="#page2" class="ui-btn ui-corner-all submit_p1">عضویت</a>
+                    <a href="#pagesms" class="ui-btn ui-corner-all submit_p1">عضویت</a>
                 </form>
             </div>
 
         </div>
-        <div data-role="footer">www.EhsanAvr.Com</div>
     </div>
     
     <!-- pagesms -->
@@ -109,7 +107,7 @@
                 منتظر باشید تا کد فعال سازی ارسال شود
             </div>
             <form>
-                <input class="etx_verify" maxlength="4" type="number" data-clear-btn="false" name="etx_verify" pattern="[0-9]*" id="number-3" value="0000"/><br>
+                <input class="etx_verify" maxlength="4" type="tel" data-clear-btn="false" name="etx_verify" pattern="[0-9]*" id="number-3" placeholder="- - - -" /><br>
             <div class="send_again">
                   کد ارسال نشد ؟
             </div>
@@ -127,11 +125,22 @@
         </div>
 
         </div>
+        <div data-role="footer">www.EhsanAvr.Com</div>
+
     </div>
 
-    <!-- Page_main -->
-    <div data-role="page" id="page2">
-        <div data-role="header">تست jQuery Mobile</div>
+    <!-- news_page -->
+    <div data-role="page" id="news_page">
+        <div data-role="header" class="header">
+
+
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar">Add</a>
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2">Up</a>
+
+            <h6>باشگاه ورزشی ستارگان</h6>
+            <a href="#panel1" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar">No text</a>
+
+        </div>
         <div data-role="main" class="ui-content B p0">
             <div class="carousel"></div>
 
@@ -189,8 +198,8 @@
         <div data-role="footer">www.EhsanAvr.Com</div>
     </div>
 
-    <!-- page3 -->
-    <div data-role="page" id="page3">
+    <!-- mogheiat -->
+    <div data-role="page" id="mogheiat">
         <div data-role="header" class="header">
             
             
@@ -251,9 +260,18 @@
         <div data-role="footer">www.EhsanAvr.Com</div>
     </div>
 
-    <!-- page4 -->
-    <div data-role="page" id="page4">
-        <div data-role="header"></div>
+    <!-- contact_us -->
+    <div data-role="page" id="contact_us">
+        <div data-role="header" class="header">
+
+
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar">Add</a>
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2">Up</a>
+
+            <h6>باشگاه ورزشی ستارگان</h6>
+            <a href="#panel1" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar">No text</a>
+
+        </div>
         <div data-role="main" class="ui-content B p0">
 
 
@@ -267,13 +285,13 @@
                 </div>
 
 
-                <div class="page4_main_info">
+                <div class="contact_us_main_info">
 
                     <form>
                         <div class="field-contain">
 
-                            <label for="page4_dropdown"></label>
-                            <select name="page4_dropdown" id="page4_dropdown" data-iconpos="left" class="ui-mini">
+                            <label for="contact_us_dropdown"></label>
+                            <select name="contact_us_dropdown" id="contact_us_dropdown" data-iconpos="left" class="ui-mini">
                                 <optgroup label="">
                                     <option value="1">اپراتور1</option>
                                     <option value="2">اپراتور2</option>
@@ -284,11 +302,11 @@
 
                         </div>
 
-                            <div class="page4_textarea">
+                            <div class="contact_us_textarea">
                                 <label for="textarea"></label>
                                 <textarea cols="40" rows="8" name="textarea" id="textarea" placeholder="متن ارسالــی"></textarea>
                             </div>
-                        <a href="#" class="ui-btn ui-corner-all page4_submit">ارسال</a>
+                        <a href="#" class="ui-btn ui-corner-all contact_us_submit">ارسال</a>
                     </form>
 
                 </div>
@@ -304,9 +322,18 @@
         </div>
     </div>
 
-    <!-- page5 -->
-    <div data-role="page" id="page5">
-        <div data-role="header"></div>
+    <!-- about -->
+    <div data-role="page" id="about">
+        <div data-role="header" class="header">
+
+
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar">Add</a>
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2">Up</a>
+
+            <h6>باشگاه ورزشی ستارگان</h6>
+            <a href="#panel1" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar">No text</a>
+
+        </div>
         <div data-role="main" class="ui-content B p0">
 
 
@@ -320,12 +347,12 @@
                 </div>
 
 
-                <div class="page5_main_info">
-                    <div class="page5_textheader">
+                <div class="about_main_info">
+                    <div class="about_textheader">
                         <i></i>
                         <p>عنوان خبـــر</p>
                     </div>
-                    <div class="page5_text">
+                    <div class="about_text">
                         متن خبر
                     </div>
                         <a href="#page1" class="ui-btn ui-corner-all">بازگشت</a>
@@ -343,22 +370,31 @@
         </div>
     </div>
 
-    <!-- page6 -->
-    <div data-role="page" id="page6">
-        <div data-role="header"></div>
+    <!-- moarefi -->
+    <div data-role="page" id="moarefi">
+        <div data-role="header" class="header">
+
+
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar">Add</a>
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2">Up</a>
+
+            <h6>باشگاه ورزشی ستارگان</h6>
+            <a href="#panel1" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar">No text</a>
+
+        </div>
         <div data-role="main" class="ui-content B p0">
 
 
             <div class="place_main">
-                <div class="page6_nobg B">                </div>
-                <div class=" page6_tilte">
+                <div class="moarefi_nobg B">                </div>
+                <div class="moarefi_tilte">
                     معرفی باشگاه
                 </div>
 
-                <div class="page6_main_info">
-                    <div class="page6_img">
-                        <img class="page6_imgfullsize" src="images/image.png" alt="">
-                        <div class="page6_imgundersize ui-grid-c">
+                <div class="moarefi_main_info">
+                    <div class="moarefi_img">
+                        <img class="moarefi_imgfullsize" src="images/image.png" alt="">
+                        <div class="moarefi_imgundersize ui-grid-c">
                             <div class="ui-block-a">                            <img src="images/image.png" alt="">
                             </div>
                             <div class="ui-block-b">                            <img src="images/image.png" alt="">
@@ -370,7 +406,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="page6_p">
+                <div class="moarefi_p">
                      <p>
                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
                      </p>
