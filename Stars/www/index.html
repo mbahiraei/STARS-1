@@ -11,11 +11,6 @@
     <link href="css/themes/mytheme/mytheme.min.css" rel="stylesheet" />
 </head>
 <body>
-    <script src="scripts/jquery-2.1.1.min.js"></script>
-    <script src="js/rtl.jquery.mobile-1.4.0.js"></script>
-    <script src="js/functions.js"></script>
-    <script src="cordova.js"></script>
-    <script src="scripts/index.js"></script>
 
     
     <div data-role="page" class="a" id="page1" data-theme="a">
@@ -40,7 +35,6 @@
 
     <!-- Page_login -->
     <div data-role="page" id="pagelogin" style="background: #5a1973;">
-        <div data-role="header">تست jQuery Mobile</div>
         <div data-role="main" class="ui-content p0">
 
             <div class="topelement_p1">
@@ -75,13 +69,12 @@
                     <label class="info_caption">
                         جهت عضویت شماره تماس خود را وارد نمایید
                     </label>
-                    <input class="input_num_p1" type="tel" placeholder="09 - - - - - - - - -"/><br>
-                    <a href="#page2" class="ui-btn ui-corner-all submit_p1">عضویت</a>
+                    <input class="input_num_p1" type="tel" placeholder="09 - - - - - - - - -" id="login_btnt_submit"/><br>
+                    <a class="ui-btn ui-corner-all submit_p1" id="login_btn_submit">عضویت</a>
                 </form>
             </div>
 
         </div>
-        <div data-role="footer">www.EhsanAvr.Com</div>
     </div>
     
     <!-- pagesms -->
@@ -107,20 +100,22 @@
                 منتظر باشید تا کد فعال سازی ارسال شود
             </div>
             <form>
-                <input class="etx_verify" type="number" data-clear-btn="false" name="etx_verify" pattern="[0-9]*" id="number-3" value="0000"/><br>
-            <div class="send_again">
+                <input class="etx_verify" type="tel" data-clear-btn="false" name="etx_verify" pattern="[0-9]*" id="sms_etx_verify" placeholder="0000"/><br>
+            <div class="send_again" id="sms_btn_again">
                   کد ارسال نشد ؟
             </div>
             <div class="timer_sms">
                 00:00:00
             </div>
-                <a href="#page2" class="ui-btn ui-corner-all submit_sms">فعال سازی</a>
+                <a class="ui-btn ui-corner-all submit_sms" id="sms_btn_submit">فعال سازی</a>
             </form>
         </div>
             
             <div class="style_buttom">
           		<img src="images/bot-2.png" class="img-responsive" alt="logo">
             </div>
+                
+                
 
         </div>
 
@@ -129,7 +124,13 @@
 
     <!-- Page_main -->
     <div data-role="page" id="page2">
-        <div data-role="header">تست jQuery Mobile</div>
+        <div data-role="header"  class="header">
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar">Add</a>
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2">Up</a>
+        
+            <h6>باشگاه ورزشی ستارگان</h6>
+            <a href="#panel1" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar">No text</a>
+        </div>
         <div data-role="main" class="ui-content B p0">
             <div class="carousel"></div>
 
@@ -184,6 +185,9 @@
             </div>
 
         </div>
+            <div data-role="panel" id="panel1" data-position="right" data-display="overlay">
+                <h1>Test</h1>
+            </div>
         <div data-role="footer">www.EhsanAvr.Com</div>
     </div>
 
@@ -327,5 +331,10 @@
         </div>
     </div>
 
+    <script src="scripts/jquery-2.1.1.min.js"></script>
+    <script src="js/rtl.jquery.mobile-1.4.0.js"></script>
+    <script src="cordova.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/functions.js"></script>
 </body>
 </html>
