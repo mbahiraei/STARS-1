@@ -484,3 +484,10 @@ div{
     color: #fff;
     text-shadow: none;
 }
+/*--------------- chooseclasspage ----------------------------*/
+.chooseclasspageـsection{
+    width: 100%;
+    height: auto;
+    border-top: 1px solid #5f3c57;
+    border-bottom: 1px solid #5f3c57;
+}
