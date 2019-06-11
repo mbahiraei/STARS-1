@@ -5,6 +5,10 @@ $( document ).on( "swipeleft", function( e ) {
     }
 });
 
+$('.location_btn').on("tap", function (Event){
+    $.mobile.changePage('#locatinpage');
+});
+
 
 
 
