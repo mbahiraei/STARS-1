@@ -485,9 +485,69 @@ div{
     text-shadow: none;
 }
 /*--------------- chooseclasspage ----------------------------*/
+.chooseclasspage_main_info{
+    padding: 5% 0;
+    background: #461858;
+}
 .chooseclasspageـsection{
     width: 100%;
     height: auto;
     border-top: 1px solid #5f3c57;
     border-bottom: 1px solid #5f3c57;
+    font-size: 90%;
+    font-weight: bold;
+}
+.chooseclasspageـgride div{
+    text-shadow: none!important;
+    color: #fff;
+    padding: 2% 5% !important;
+}
+.chooseclasspage_2, .chooseclasspage_4 {
+    text-align: left;
+}
+/*--------------- signuppage ----------------------------*/
+.signuppage_main_info{
+    padding: 5%;
+    background: #461858;
+}
+.signuppage_main_info input, textarea {
+    width: 100% !important;
+    height: auto!important;
+    resize: none!important;
+    background: #3a1548 !important;
+    color: #fff !important;
+    text-shadow: none !important;
+    border-radius: 20px!important;
+    padding: 1% 5%!important;
+    border: none!important;
+    box-shadow: none!important;
+}
+.signuppage_main_info input::placeholder {
+    color: #6a4e75!important;
+    font-size: 80%!important;
+}
+.signuppage_main_info textarea::placeholder {
+    color: #6a4e75!important;
+    font-size: 80%!important;
+}
+.signuppage_fild div{
+    background: transparent!important;
+}
+.signuppage_input_num::placeholder {
+    text-align: right!important;
+}
+.signuppage_input_num:focus {
+    text-align: left!important;
+}
+.signuppage_fild div:last-child{
+    border: none!important;
+    background: #3a1548 !important;
+    border-radius: 20px!important;
+}
+.signuppage_input_submit div:last-child {
+    background: #5a1973;
+    border: 1px solid #7a5188;
+}
+.signuppage_input_submit input::placeholder {
+    color: #ccaf2f!important;
 }
