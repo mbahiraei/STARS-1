@@ -68,10 +68,7 @@ $('#location_btn_B1').on("tap", function (Event){
 $('#location_btn_B2').on("tap", function (Event){
     $.mobile.changePage('#locationB2');
 });
-
 // Page_LocationB1
-
-
 // Page_LocationB2
 
 
@@ -84,7 +81,13 @@ $('#location_btn_B2').on("tap", function (Event){
 // Page_SignUp
 
 
-// Page_Sms
+// Page_Sans
+$('#sans_btn_B1').on("tap", function (Event){
+    $.mobile.changePage('#chooseworkoutpage');
+});
+$('#sans_btn_B2').on("tap", function (Event){
+    $.mobile.changePage('#chooseworkoutpage');
+});
 
 
 // Page_ChooseWorkout
