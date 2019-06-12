@@ -12,6 +12,13 @@ div{
     display: block;
     margin: 0 auto!important;
 }
+
+
+
+
+
+
+
 /*--------------- Page_login ----------------------------*/
 .info {
     margin: 0;
@@ -129,23 +136,14 @@ div{
 
 }
 
-/*--------------- Page_1 ----------------------------*/
-.main_tlt {
-    width: 80%;
-    border-bottom: 1px solid #e3bc9b;
-    margin: 10px auto;
-    padding: 15px;
-    text-align: center;
-    font-size: 28px;
-}
 
-.place_main {
-    position: relative;
-    height: auto;
-    width: auto;
-    background: url("../images/bacground-no repeat.png") no-repeat;
-    background-size: 100% 100%;
-}
+
+
+
+
+
+
+
 
 /*--------------- Page SMS ----------------------------*/
 
@@ -163,7 +161,6 @@ div{
     font-size: 120%;
     color: #fff;
 }
-
 .send_again, .timer_sms {
     text-align: right!important;
     float: right;
@@ -213,7 +210,6 @@ div{
     border: none!important;
     background: #00000000 !important;
 }
-
 .etx_verify{
     width: 25%!important;
     background-color: #5a1973!important;
@@ -227,54 +223,17 @@ div{
     margin: 0 auto!important;
 }
 
-/*--------------- news_page ----------------------------*/
-.page2_main_btn img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-.page2_main_btn_inner{
-    width: auto;
-    background: #461858;
-    padding: 3% 5%;
-}
-.page2_main_btn a{
-    padding: 33% 0;
-    font-size: 100%;
-    border: 5px solid #e9d800!important;
-    border-radius: 50%!important;
-    background: #3a1548 !important;
-    color: white!important;
-    font-weight: normal!important;
-}
-.news_page_main_header{
-    text-align: right;
-    border: none;
-    border-bottom: 1px solid #b5a2b8;
-    color: #572e63;
-    padding: 3%;
-    font-weight: bold;
-}
-.news_page_main_ul{
-    margin: 0!important;
-    list-style: none;
-    padding: 0!important;
-}
-.news_page_main_ul li {
-    border: none!important;
-    margin: 2% 0!important;
-    padding: 3%!important;
-    background: #f3f1f2!important;
-    font-size: 80%!important;
-}
-.news_page_main_ul a {
-    float: left;
-    color: #b6b250!important;
-    text-decoration: none;
-}
 
 
-/*--------------- mogheiat ----------------------------*/
+
+
+
+
+
+
+
+
+/*--------------- Page_Location ----------------------*/
 .header {
     background: #461858!important;
     color: #fff!important;
@@ -333,6 +292,115 @@ div{
 
 
 
+
+
+
+
+
+/*--------------- Page_LocationB1 ----------------------*/
+
+.locationB1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+.locationB1 {
+    height: auto!important;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    text-align: right; 
+}
+.locationB1_txt_tittle {
+    padding: 25px 5px;
+    color: #9a8137;
+    
+}
+.locationB1_txt {
+    height: auto!important;
+    width: 90%;
+    height: auto;
+    padding: 10px 25px;
+    margin: 0 auto;
+    text-align: right;  
+}
+.locationB_btn {
+    height: auto!important;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    text-align: left; 
+}
+.locationB_btn a {
+    width: 25%;
+    background-color: #ffff00!important;
+    border:none!important;
+    font-size: 90%!important;
+    border-radius: 20px !important;
+    padding: 2% 7% !important;
+    box-shadow: none!important;
+    color: #000!important;
+    margin: 0 auto 0 0!important;
+}
+
+
+
+
+
+
+/*--------------- Page_Main ----------------------------*/
+.page2_main_btn img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.page2_main_btn_inner{
+    width: auto;
+    background: #461858;
+    padding: 3% 5%;
+}
+.page2_main_btn a{
+    padding: 33% 0;
+    font-size: 100%;
+    border: 5px solid #e9d800!important;
+    border-radius: 50%!important;
+    background: #3a1548 !important;
+    color: white!important;
+    font-weight: normal!important;
+}
+.news_page_main_header{
+    text-align: right;
+    border: none;
+    border-bottom: 1px solid #b5a2b8;
+    color: #572e63;
+    padding: 3%;
+    font-weight: bold;
+}
+.news_page_main_ul{
+    margin: 0!important;
+    list-style: none;
+    padding: 0!important;
+}
+.news_page_main_ul li {
+    border: none!important;
+    margin: 2% 0!important;
+    padding: 3%!important;
+    background: #f3f1f2!important;
+    font-size: 80%!important;
+}
+.news_page_main_ul a {
+    float: left;
+    color: #b6b250!important;
+    text-decoration: none;
+}
+
+
+
+
+
+
 /* style_top */
 .style_top {
     margin-top: 40px;
@@ -364,7 +432,16 @@ div{
 .ui-nosvg .ui-icon-myicon:after {
 	background-image: url("iconimg.png");
 }
-/*--------------- contact_us ----------------------------*/
+
+
+
+
+
+
+
+
+
+/*--------------- Page_Contact ----------------------------*/
 .contact_us_main_info{
     background: #461858 !important;
     padding: 15% 0;
@@ -405,7 +482,15 @@ div{
     padding: 2% 7% !important;
     box-shadow: none!important;
 }
-/*--------------- about ----------------------------*/
+
+
+
+
+
+
+
+
+/*--------------- Page_News ----------------------------*/
 .about_main_info{
     background: #461858 !important;
     padding: 15% 5%;
@@ -437,7 +522,18 @@ div{
     box-shadow: none!important;
     color: #fcf0fe!important;
 }
-/*--------------- moarefi ----------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+/*--------------- Page_Introduction ----------------------------*/
 .moarefi_nobg{
     width: 100%;
     height: 55%;
@@ -484,6 +580,14 @@ div{
     color: #fff;
     text-shadow: none;
 }
+
+
+
+
+
+
+
+
 /*--------------- chooseclasspage ----------------------------*/
 .chooseclasspage_main_info{
     padding: 5% 0;
@@ -505,7 +609,16 @@ div{
 .chooseclasspage_2, .chooseclasspage_4 {
     text-align: left;
 }
-/*--------------- signuppage ----------------------------*/
+
+
+
+
+
+
+
+
+
+/*--------------- Page_SignUp ----------------------------*/
 .signuppage_main_info{
     padding: 5%;
     background: #461858;
@@ -548,6 +661,27 @@ div{
     background: #5a1973;
     border: 1px solid #7a5188;
 }
-.signuppage_input_submit input::placeholder {
+.signuppage_input_submit a {
     color: #ccaf2f!important;
+    border: 1px solid #724c7f!important;
+    border-radius: 30px!important;
+    background: #5a1a73!important;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    text-shadow: none!important;
+    font-size: 80%;
+}
+
+
+
+
+
+
+/* Swipe works with mouse as well but often causes text selection. */
+#loginpage,#smspage *,#chooselocatinpage *,#locationB1 *,#locationB2 *,#mainppage *,#sanspage *,#choosesanspage *,#chooseclasspage *,#workoutpage *,#cotactpage *,#newspage *,#introductionpage *,#signuppage *,#newspagesuggestionpage * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
