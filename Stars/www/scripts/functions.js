@@ -83,10 +83,10 @@ $('#location_btn_B2').on("tap", function (Event){
 
 // Page_Sans
 $('#sans_btn_B1').on("tap", function (Event){
-    $.mobile.changePage('#chooseworkoutpage');
+    $.mobile.changePage('#choosesanspage');
 });
 $('#sans_btn_B2').on("tap", function (Event){
-    $.mobile.changePage('#chooseworkoutpage');
+    $.mobile.changePage('#choosesanspage');
 });
 
 
