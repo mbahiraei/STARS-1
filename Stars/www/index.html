@@ -11,11 +11,6 @@
     <link href="css/themes/mytheme/mytheme.min.css" rel="stylesheet" />
 </head>
 <body>
-    <script src="scripts/jquery-2.1.1.min.js"></script>
-    <script src="js/rtl.jquery.mobile-1.4.0.js"></script>
-    <script src="js/functions.js"></script>
-    <script src="cordova.js"></script>
-    <script src="scripts/index.js"></script>
 
     
     <div data-role="page" class="a" id="page1" data-theme="a">
@@ -25,11 +20,20 @@
         </div>
         <div data-role="main" class="ui-content a">
            
-            <a href="#pagelogin" data-inline="true" data-role="button">pagelogin</a>
-            <a href="#pagesms" data-inline="true" data-role="button">pagesms</a>
-            <a href="#page2" data-inline="true" data-role="button">page2</a>
-            <a href="#page3" data-inline="true" data-role="button">page3</a>
-            <a href="#page4" data-inline="true" data-role="button">page4</a>
+            <a href="#loginpage" data-inline="true" data-role="button">loginpage</a>
+            <a href="#smspage" data-inline="true" data-role="button">smspage</a>
+            <a href="#mainppage" data-inline="true" data-role="button">mainppage</a>
+            <a href="#chooselocatinpage" data-inline="true" data-role="button" >chooselocatinpage</a>
+            <a href="#cotactpage" data-inline="true" data-role="button">cotactpage</a>
+            <a href="#newspage" data-inline="true" data-role="button">newspage</a>
+            <a href="#introductionpage" data-inline="true" data-role="button">introductionpage</a>
+            <a href="#signuppage" data-inline="true" data-role="button">signuppage</a>
+            <a href="#sanspage" data-inline="true" data-role="button">sanspage</a>
+            <a href="#suggestionpage" data-inline="true" data-role="button">suggestionpage</a>
+            <a href="#choosesanspage" data-inline="true" data-role="button">choosesanspage</a>
+            <a href="#workoutpage" data-inline="true" data-role="button">workoutpage</a>
+            <a href="#chooseclasspage" data-inline="true" data-role="button">chooseclasspage</a>
+            <a href="#demo-page" data-inline="true" data-role="button">demo-page</a>
 
 
         </div>
@@ -39,8 +43,7 @@
     
 
     <!-- Page_login -->
-    <div data-role="page" id="pagelogin" style="background: #5a1973;">
-        <div data-role="header">تست jQuery Mobile</div>
+    <div data-role="page" id="loginpage" style="background: #5a1973;">
         <div data-role="main" class="ui-content p0">
 
             <div class="topelement_p1">
@@ -75,17 +78,19 @@
                     <label class="info_caption">
                         جهت عضویت شماره تماس خود را وارد نمایید
                     </label>
-                    <input class="input_num_p1" type="tel" placeholder="09 - - - - - - - - -"/><br>
-                    <a href="#page2" class="ui-btn ui-corner-all submit_p1">عضویت</a>
+                    <input class="input_num_p1" maxlength="11" type="tel" placeholder="09 - - - - - - - - -" id="login_btnt_submit"/><br>
+                    <a class="ui-btn ui-corner-all submit_p1" id="login_btn_submit">عضویت</a>
                 </form>
             </div>
 
         </div>
-        <div data-role="footer">www.EhsanAvr.Com</div>
     </div>
     
-    <!-- pagesms -->
-    <div data-role="page" class="a" id="pagesms" data-theme="a">
+    
+    
+    
+    <!-- Page_Sms -->
+    <div data-role="page" class="a" id="smspage" data-theme="a">
         <div data-role="main" class="ui-content B p0">
            
 
@@ -107,97 +112,43 @@
                 منتظر باشید تا کد فعال سازی ارسال شود
             </div>
             <form>
-                <input class="etx_verify" type="number" data-clear-btn="false" name="etx_verify" pattern="[0-9]*" id="number-3" value="0000"/><br>
-            <div class="send_again">
+                <input class="etx_verify" type="tel" maxlength="4" data-clear-btn="false" name="etx_verify" pattern="[0-9]*" id="sms_etx_verify" placeholder="- - - -"/><br>
+            <div class="send_again" id="sms_btn_again">
                   کد ارسال نشد ؟
             </div>
             <div class="timer_sms">
                 00:00:00
             </div>
-                <a href="#page2" class="ui-btn ui-corner-all submit_sms">فعال سازی</a>
+                <a class="ui-btn ui-corner-all submit_sms" id="sms_btn_submit">فعال سازی</a>
             </form>
         </div>
             
             <div class="style_buttom">
           		<img src="images/bot-2.png" class="img-responsive" alt="logo">
             </div>
+                
+                
 
         </div>
-
-        </div>
-    </div>
-
-    <!-- Page_main -->
-    <div data-role="page" id="page2">
-        <div data-role="header">تست jQuery Mobile</div>
-        <div data-role="main" class="ui-content">
-            <div class="carousel"></div>
-
-            <div class="main_btn">
-
-                <img src="images/top-2.png" alt="">
-                <div class="main_btn_inner ui-grid-b">
-                    <div class="ui-block-a"><a href="#" class="ui-shadow ui-btn ui-corner-all">ارتباط با ما</a></div>
-                    <div class="ui-block-b"><a href="#" class="ui-shadow ui-btn ui-corner-all">ارتباط با ما</a></div>
-                    <div class="ui-block-c"><a href="#" class="ui-shadow ui-btn ui-corner-all">ارتباط با ما</a></div>
-                </div>
-                <div class="main_btn_inner ui-grid-b">
-                    <div class="ui-block-a"><a href="#" class="ui-shadow ui-btn ui-corner-all">ارتباط با ما</a></div>
-                    <div class="ui-block-b"><a href="#" class="ui-shadow ui-btn ui-corner-all">ارتباط با ما</a></div>
-                    <div class="ui-block-c"><a href="#" class="ui-shadow ui-btn ui-corner-all">معرفی</a></div>
-                </div>
-                <img src="images/bot-2.png" alt="">
-
-            </div>
-
-            <div class="news_page_main">
-                <div class="news_page_main_header">
-                    اخبار باشگاه
-                </div>
-                <ul data-inset="true" class="news_page_main_ul">
-                    <li>
-                        <i></i>
-                        باشگاه ورزشی ستارگان فردا تعطیل است
-                        <a href="#">بیشتر ...</a>
-                    </li>
-                    <li>
-                        <i></i>
-                        باشگاه ورزشی ستارگان فردا تعطیل است
-                        <a href="#">بیشتر ...</a>
-                    </li>
-                    <li>
-                        <i></i>
-                        باشگاه ورزشی ستارگان فردا تعطیل است
-                        <a href="#">بیشتر ...</a>
-                    </li>
-                    <li>
-                        <i></i>
-                        باشگاه ورزشی ستارگان فردا تعطیل است
-                        <a href="#">بیشتر ...</a>
-                    </li>
-                    <li>
-                        <i></i>
-                        باشگاه ورزشی ستارگان فردا تعطیل است
-                        <a href="#">بیشتر ...</a>
-                    </li>
-                </ul>
-            </div>
 
         </div>
         <div data-role="footer">www.EhsanAvr.Com</div>
+
     </div>
+    
+    
+    
+    
+    
 
-    <!-- page3 -->
-    <div data-role="page" id="page3">
-        <div data-role="header" class="header">
-            
-            
-                <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar">Add</a>
-                <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2">Up</a>
-          
+    <!-- Page_Location -->
+    <div data-role="page" id="chooselocatinpage">
+        <div data-role="header"  class="header">
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">LogOut</a>
+            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+        
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#panel1" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar">No text</a>
-
+            <a href="#location_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="ui-content B p0">
            
@@ -217,13 +168,13 @@
                 <div class="main_btn_inner ui-grid-a">
                     <div class="ui-block-a">
                         
-                        <a href="#" class="ui-shadow ui-btn ui-mini ui-corner-all ">شعبه ۱</a></div>
+                        <a href="#" class="ui-shadow ui-btn ui-mini ui-corner-all " id="location_btn_B1">شعبه ۱</a></div>
                     
                     
                     <div class="ui-block-b">
                         <div class="btn_loc"></div>
                         
-                        <a href="#" class="ui-shadow ui-btn ui-corner-all ">شعبه ۲</a></div>
+                        <a href="#" class="ui-shadow ui-btn ui-corner-all " id="location_btn_B2">شعبه ۲</a></div>
                 </div>
             
         </div>
@@ -236,34 +187,881 @@
             
             <div class="page_description3">
           		<p>مجموعه تخصصی ستارگان با وسعت ۲۰۰۰ مترمربع، دارای پارکینگ اختصاصی و امکانات منحصر به فرد، از ساعت ۷ صبح الی ۲۱:۳۰ پذیرای بانوان عزیز می باشد</p>
+            </div>         
+
+        </div>
+
+        </div>
+        <div data-role="panel" id="location_panel" data-display="overlay" data-position="right" data-position-fixed="true" >
+                <p>Right push panel.</p>
+                <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+            </div><!-- /panel -->
+        <div data-role="footer">www.EhsanAvr.Com</div>
+    </div>
+    <!-- Page_LocationB1 -->
+    <div data-role="page" id="locationB1">
+        <div data-role="header"  class="header">
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">LogOut</a>
+            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+        
+            <h6>باشگاه ورزشی ستارگان</h6>
+            <a href="#locationB1_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+        </div>
+        <div data-role="main" class="ui-content B p0">
+           
+
+            <div class="place_main">
+                <div class=" main_tilte" data-icon="arrow-r">
+موقعیت شعبه ۱
+                </div>
+            
+            <div class="style_top p0">
+          		<img src="images/top-2.png" class="img-responsive" alt="logo">
+            </div>
+            
+            
+        <div class="main_info_3">
+            
+                <div class="locationB1">
+          		    <img src="images/Screen%20Shot%202019-06-12%20at%2011.35.25.png" class="img-responsive" alt="logo">
+                </div>
+                <div class="locationB1 ">
+          		    <div class="locationB1_txt_tittle">آدرس :</div>
+          		    <div class="locationB1_txt">همدان - اعتمادیه</div>
+                </div>
+                <div class="locationB1 ">
+          		    <div class="locationB1_txt_tittle">شماره های تماس :</div>
+          		    <div class="locationB1_txt">۰۸۱۰۰۰۰۰۰۰۰۰۰</div>
+          		    <div class="locationB1_txt">۰۸۱۰۰۰۰۰۰۰۰۰۰</div>
+          		    <div class="locationB1_txt">۰۸۱۰۰۰۰۰۰۰۰۰۰</div>
+                </div>
+            <div class="locationB_btn">
+                <a href="#locationB2" class="ui-btn ui-corner-all " id="locationB1_btn">شعبه ۲</a>
+            </div>
+            
+        </div>
+            
+            <div class="style_buttom">
+          		<img src="images/bot-2.png" class="img-responsive" alt="logo">
             </div>
                 
-            <div data-role="panel" id="panel1" data-position="right" data-display="overlay">
-                <h1>Test</h1>
+                
+            
+            <div class="page_description3">
+          		<p>مجموعه تخصصی ستارگان با وسعت ۲۰۰۰ مترمربع، دارای پارکینگ اختصاصی و امکانات منحصر به فرد، از ساعت ۷ صبح الی ۲۱:۳۰ پذیرای بانوان عزیز می باشد</p>
+            </div>         
+
+        </div>
+
+        </div>
+        <div data-role="panel" id="locationB1_panel" data-display="overlay" data-position="right" data-position-fixed="true" >
+                <p>Right push panel.</p>
+                <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+            </div><!-- /panel -->
+        <div data-role="footer">www.EhsanAvr.Com</div>
+    </div>
+    <!-- Page_LocationB2 -->
+    <div data-role="page" id="locationB2">
+        <div data-role="header"  class="header">
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">LogOut</a>
+            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+        
+            <h6>باشگاه ورزشی ستارگان</h6>
+            <a href="#locationB2_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+        </div>
+        <div data-role="main" class="ui-content B p0">
+           
+
+            <div class="place_main">
+                <div class=" main_tilte" data-icon="arrow-r">
+موقعیت شعبه ۲ 
+                </div>
+            
+            <div class="style_top p0">
+          		<img src="images/top-2.png" class="img-responsive" alt="logo">
             </div>
-                            
+            
+            
+        <div class="main_info_3">
+            
+                <div class="locationB1">
+          		    <img src="images/Screen%20Shot%202019-06-12%20at%2011.35.25.png" class="img-responsive" alt="logo">
+                </div>
+                <div class="locationB1 ">
+          		    <div class="locationB1_txt_tittle">آدرس :</div>
+          		    <div class="locationB1_txt">همدان - اعتمادیه</div>
+                </div>
+                <div class="locationB1 ">
+          		    <div class="locationB1_txt_tittle">شماره های تماس :</div>
+          		    <div class="locationB1_txt">۰۸۱۰۰۰۰۰۰۰۰۰۰</div>
+          		    <div class="locationB1_txt">۰۸۱۰۰۰۰۰۰۰۰۰۰</div>
+          		    <div class="locationB1_txt">۰۸۱۰۰۰۰۰۰۰۰۰۰</div>
+                </div>
+            <div class="locationB_btn">
+                <a href="#locationB2" class="ui-btn ui-corner-all " id="locationB2_btn">شعبه ۱</a>
+            </div>
+            
+        </div>
+            
+            <div class="style_buttom">
+          		<img src="images/bot-2.png" class="img-responsive" alt="logo">
+            </div>
+                
+                
+            
+            <div class="page_description3">
+          		<p>مجموعه تخصصی ستارگان با وسعت ۲۰۰۰ مترمربع، دارای پارکینگ اختصاصی و امکانات منحصر به فرد، از ساعت ۷ صبح الی ۲۱:۳۰ پذیرای بانوان عزیز می باشد</p>
+            </div>         
 
         </div>
 
         </div>
+        <div data-role="panel" id="locationB2_panel" data-display="overlay" data-position="right" data-position-fixed="true" >
+                <p>Right push panel.</p>
+                <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+            </div><!-- /panel -->
+        <div data-role="footer">www.EhsanAvr.Com</div>
+    </div>
+    
+    
+    
+    
+    
+
+    <!-- Page_Main -->
+    <div data-role="page" id="mainppage">
+        <div data-role="header"  class="header">
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">LogOut</a>
+            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+        
+            <h6>باشگاه ورزشی ستارگان</h6>
+            <a href="#mainppage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+        </div>
+        <div data-role="main" class="ui-content B p0">
+            <div class="carousel"></div>
+
+            <div class="page2_main_btn">
+
+                <img src="images/top-2.png" class="B p0" alt="">
+                <div class="page2_main_btn_inner ui-grid-b">
+                    <div class="ui-block-a"><a href="#" class="ui-shadow ui-btn ui-corner-all" id="main_btn_sans">سانس ها</a></div>
+                    <div class="ui-block-b"><a href="#" class="ui-shadow ui-btn ui-corner-all" id="main_btn_signup">ثبت نام</a></div>
+                    <div class="ui-block-c"><a href="#" class="ui-shadow ui-btn ui-corner-all" id="main_btn_sugestion">پیشنهادات</a></div>
+                </div>
+                <div class="page2_main_btn_inner ui-grid-b">
+                    <div class="ui-block-a"><a href="#" class="ui-shadow ui-btn ui-corner-all" id="main_btn_news">اخبار</a></div>
+                    <div class="ui-block-b"><a href="#" class="ui-shadow ui-btn ui-corner-all" id="main_btn_aboutus">درباره ما</a></div>
+                    <div class="ui-block-c"><a href="#" class="ui-shadow ui-btn ui-corner-all" id="main_btn_introduction">معرفی</a></div>
+                </div>
+                <img src="images/bot-2.png" class="B p0" alt="">
+
+            </div>
+
+            <div class="news_page_main">
+                <div class="news_page_main_header">
+                    اخبار باشگاه
+                </div>
+                <ul data-inset="true" class="news_page_main_ul">
+                    <li>
+                        <i></i>
+                        باشگاه ورزشی ستارگان فردا تعطیل است
+                        <a href="#page1">بیشتر ...</a>
+                    </li>
+                    <li>
+                        <i></i>
+                        باشگاه ورزشی ستارگان فردا تعطیل است
+                        <a href="#page1">بیشتر ...</a>
+                    </li>
+                    <li>
+                        <i></i>
+                        باشگاه ورزشی ستارگان فردا تعطیل است
+                        <a href="#page1">بیشتر ...</a>
+                    </li>
+                    <li>
+                        <i></i>
+                        باشگاه ورزشی ستارگان فردا تعطیل است
+                        <a href="#page1">بیشتر ...</a>
+                    </li>
+                    <li>
+                        <i></i>
+                        باشگاه ورزشی ستارگان فردا تعطیل است
+                        <a href="#page1">بیشتر ...</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div data-role="panel" id="mainppage_panel" data-display="overlay" data-position="right" data-position-fixed="true" >
+                <p>Right push panel.</p>
+                <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+            </div><!-- /panel -->
+        <div data-role="footer">www.EhsanAvr.Com</div>
+    </div>
+    
+    <!-- Page_Sans -->
+    <div data-role="page" id="sanspage">
+        <div data-role="header"  class="header">
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">LogOut</a>
+            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+
+            <h6>باشگاه ورزشی ستارگان</h6>
+            <a href="#sanspage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+        </div>
+        <div data-role="main" class="ui-content B p0">
+
+
+            <div class="place_main">
+                <div class=" main_tilte" data-icon="arrow-r">
+                    سانس های باشگاه ورزشی ستارگان
+                </div>
+
+                <div class="style_top p0">
+                    <img src="images/top-2.png" class="img-responsive" alt="logo">
+                </div>
+
+
+                <div class="main_info_3">
+
+                    <div class="main_btn_inner ui-grid-a">
+                        <div class="ui-block-a">
+
+                            <a class="ui-shadow ui-btn ui-mini ui-corner-all " id="sans_btn_B1">شعبه ۱</a></div>
+
+
+                        <div class="ui-block-b">
+                            <div class="btn_loc"></div>
+
+                            <a class="ui-shadow ui-btn ui-corner-all " id="sans_btn_B2">شعبه ۲</a></div>
+                    </div>
+
+                </div>
+
+                <div class="style_buttom">
+                    <img src="images/bot-2.png" class="img-responsive" alt="logo">
+                </div>
+
+
+
+                <div class="page_description3">
+                    <p>مجموعه تخصصی ستارگان با وسعت ۲۰۰۰ مترمربع، دارای پارکینگ اختصاصی و امکانات منحصر به فرد، از ساعت ۷ صبح الی ۲۱:۳۰ پذیرای بانوان عزیز می باشد</p>
+                </div>
+
+            </div>
+
+        </div>
+        <div data-role="panel" id="sanspage_panel" data-display="overlay" data-position="right" data-position-fixed="true" >
+                <p>Right push panel.</p>
+                <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+            </div><!-- /panel -->
         <div data-role="footer">www.EhsanAvr.Com</div>
     </div>
 
-    <!-- page4 -->
-    <div data-role="page" id="page4">
-        <div data-role="header">تست jQuery Mobile</div>
-        <div data-role="main" class="ui-content">
-            <p>
-                صفحه 4
-            </p>
+    <!-- Page_ChooseSans -->
+    <div data-role="page" id="choosesanspage">
+        <div data-role="header"  class="header">
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">LogOut</a>
+            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+        
+            <h6>باشگاه ورزشی ستارگان</h6>
+            <a href="#choosesanspage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+        </div>
+        <div data-role="main" class="ui-content B p0">
+
+
+            <div class="place_main">
+                <div class=" main_tilte">
+                    هوازی
+                </div>
+
+                <div class="style_top p0">
+                    <img src="images/top-2.png" class="img-responsive" alt="logo">
+                </div>
+
+
+                <div class="chooseclasspage_main_info">
+                    <div class="chooseclasspageـsection">
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_1 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
+                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
+                        </div>
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
+                            <div class="chooseclasspage_4 ui-block-b" style="color: #dccf29"><span>پریسا جوانمردی</span></div>
+                        </div>
+                    </div>
+                    <div class="chooseclasspageـsection">
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_1 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
+                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
+                        </div>
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
+                            <div class="chooseclasspage_4 ui-block-b" style="color: #dccf29"><span>پریسا جوانمردی</span></div>
+                        </div>
+                    </div>
+                    <div class="chooseclasspageـsection">
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_1 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
+                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
+                        </div>
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
+                            <div class="chooseclasspage_4 ui-block-b" style="color: #dccf29"><span>پریسا جوانمردی</span></div>
+                        </div>
+                    </div>
+                    <div class="chooseclasspageـsection">
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_1 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
+                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
+                        </div>
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
+                            <div class="chooseclasspage_4 ui-block-b" style="color: #dccf29"><span>پریسا جوانمردی</span></div>
+                        </div>
+                    </div>
+                    <div class="chooseclasspageـsection">
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_1 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
+                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
+                        </div>
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
+                            <div class="chooseclasspage_4 ui-block-b" style="color: #dccf29"><span>پریسا جوانمردی</span></div>
+                        </div>
+                    </div>
+                    <div class="chooseclasspageـsection">
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_1 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
+                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
+                        </div>
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
+                            <div class="chooseclasspage_4 ui-block-b" style="color: #dccf29"><span>پریسا جوانمردی</span></div>
+                        </div>
+                    </div>
+                    <div class="chooseclasspageـsection">
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_1 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
+                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
+                        </div>
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
+                            <div class="chooseclasspage_4 ui-block-b" style="color: #dccf29"><span>پریسا جوانمردی</span></div>
+                        </div>
+                    </div>
+                    <div class="chooseclasspageـsection">
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_1 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
+                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
+                        </div>
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
+                            <div class="chooseclasspage_4 ui-block-b" style="color: #dccf29"><span>پریسا جوانمردی</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style_buttom">
+                    <img src="images/bot-2.png" class="img-responsive" alt="logo">
+                </div>
+            </div>
 
         </div>
+        <div data-role="panel" id="choosesanspage_panel" data-display="overlay" data-position="right" data-position-fixed="true" >
+                <p>Right push panel.</p>
+                <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+            </div><!-- /panel -->
         <div data-role="footer">
-            <a href="#" class="ui-btn-left ui-btn ui-mini ui-corner-all ui-btn-icon-left ui-icon-delete">Cancel</a>
-            <h1>My Application</h1>
-            <button class="ui-btn-right ui-btn ui-btn-inline ui-corner-all ui-btn-icon-right ui-icon-check">Save</button>
         </div>
     </div>
 
+    <!-- Page_ChooseClass -->
+    <div data-role="page" id="chooseclasspage">
+        <div data-role="header"  class="header">
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">LogOut</a>
+            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+        
+            <h6>باشگاه ورزشی ستارگان</h6>
+            <a href="#chooseclasspage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+        </div>
+        <div data-role="main" class="ui-content B p0">
+
+
+            <div class="place_main">
+                <div class=" main_tilte">
+                    هوازی
+                </div>
+
+                <div class="style_top p0">
+                    <img src="images/top-2.png" class="img-responsive" alt="logo">
+                </div>
+
+
+                <div class="chooseclasspage_main_info">
+                    <div class="chooseclasspageـsection">
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_1 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
+                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
+                        </div>
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
+                            <div class="chooseclasspage_4 ui-block-b" style="color: #dccf29"><span>پریسا جوانمردی</span></div>
+                        </div>
+                    </div>
+                    <div class="chooseclasspageـsection">
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_1 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
+                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
+                        </div>
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
+                            <div class="chooseclasspage_4 ui-block-b" style="color: #dccf29"><span>پریسا جوانمردی</span></div>
+                        </div>
+                    </div>
+                    <div class="chooseclasspageـsection">
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_1 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
+                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
+                        </div>
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
+                            <div class="chooseclasspage_4 ui-block-b" style="color: #dccf29"><span>پریسا جوانمردی</span></div>
+                        </div>
+                    </div>
+                    <div class="chooseclasspageـsection">
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_1 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
+                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
+                        </div>
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
+                            <div class="chooseclasspage_4 ui-block-b" style="color: #dccf29"><span>پریسا جوانمردی</span></div>
+                        </div>
+                    </div>
+                    <div class="chooseclasspageـsection">
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_1 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
+                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
+                        </div>
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
+                            <div class="chooseclasspage_4 ui-block-b" style="color: #dccf29"><span>پریسا جوانمردی</span></div>
+                        </div>
+                    </div>
+                    <div class="chooseclasspageـsection">
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_1 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
+                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
+                        </div>
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
+                            <div class="chooseclasspage_4 ui-block-b" style="color: #dccf29"><span>پریسا جوانمردی</span></div>
+                        </div>
+                    </div>
+                    <div class="chooseclasspageـsection">
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_1 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
+                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
+                        </div>
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
+                            <div class="chooseclasspage_4 ui-block-b" style="color: #dccf29"><span>پریسا جوانمردی</span></div>
+                        </div>
+                    </div>
+                    <div class="chooseclasspageـsection">
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_1 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
+                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
+                        </div>
+                        <div class="chooseclasspageـgride ui-grid-a">
+                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
+                            <div class="chooseclasspage_4 ui-block-b" style="color: #dccf29"><span>پریسا جوانمردی</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style_buttom">
+                    <img src="images/bot-2.png" class="img-responsive" alt="logo">
+                </div>
+            </div>
+
+        </div>
+        <div data-role="panel" id="chooseclasspage_panel" data-display="overlay" data-position="right" data-position-fixed="true" >
+                <p>Right push panel.</p>
+                <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+            </div><!-- /panel -->
+        <div data-role="footer">
+        </div>
+    </div>
+
+    <!-- Page_WorkOut -->
+    <div data-role="page" id="workoutpage">
+        <div data-role="header"  class="header">
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">LogOut</a>
+            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+        
+            <h6>باشگاه ورزشی ستارگان</h6>
+            <a href="#workoutpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+        </div>
+        <div data-role="main" class="ui-content B p0">
+
+
+            <div class="place_main">
+                <div class="moarefi_nobg B">                </div>
+                <div class="moarefi_tilte">
+                    معرفی باشگاه
+                </div>
+
+                <div class="moarefi_main_info">
+                    <div class="moarefi_img">
+                        <img class="moarefi_imgfullsize" src="images/image.png" alt="">
+                        <div class="moarefi_imgundersize ui-grid-c">
+                            <div class="ui-block-a">                            <img src="images/image.png" alt="">
+                            </div>
+                            <div class="ui-block-b">                            <img src="images/image.png" alt="">
+                            </div>
+                            <div class="ui-block-c">                            <img src="images/image.png" alt="">
+                            </div>
+                            <div class="ui-block-d">                            <img src="images/image.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="moarefi_p">
+                     <p>
+                         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                     </p>
+                </div>
+            </div>
+
+        </div>
+        <div data-role="panel" id="workoutpage_panel" data-display="overlay" data-position="right" data-position-fixed="true" >
+                <p>Right push panel.</p>
+                <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+            </div><!-- /panel -->
+        <div data-role="footer">
+        </div>
+    </div>
+    
+
+    
+    
+    <!-- Page_Contact -->
+    <div data-role="page" id="cotactpage">
+        <div data-role="header"  class="header">
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">LogOut</a>
+            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+        
+            <h6>باشگاه ورزشی ستارگان</h6>
+            <a href="#cotactpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+        </div>
+        <div data-role="main" class="ui-content B p0">
+
+
+            <div class="place_main">
+                <div class=" main_tilte">
+                   ارتباط با ما
+                </div>
+
+                <div class="style_top p0">
+                    <img src="images/top-2.png" class="img-responsive" alt="logo">
+                </div>
+
+
+                <div class="contact_us_main_info">
+
+                    <form>
+                        <div class="field-contain">
+
+                            <label for="contact_us_dropdown"></label>
+                            <select name="contact_us_dropdown" id="contact_us_dropdown" data-iconpos="left" class="ui-mini">
+                                <optgroup label="">
+                                    <option value="1">اپراتور1</option>
+                                    <option value="2">اپراتور2</option>
+                                    <option value="3">اپراتور3</option>
+                                    <option value="4">اپراتور4</option>
+                                </optgroup>
+                            </select>
+
+                        </div>
+
+                            <div class="contact_us_textarea">
+                                <label for="textarea"></label>
+                                <textarea cols="40" rows="8" name="textarea" id="textarea" placeholder="متن ارسالــی"></textarea>
+                            </div>
+                        <a href="#" class="ui-btn ui-corner-all contact_us_submit">ارسال</a>
+                    </form>
+
+                </div>
+
+                <div class="style_buttom">
+                    <img src="images/bot-2.png" class="img-responsive" alt="logo">
+                </div>
+
+            </div>
+
+        </div>
+        <div data-role="panel" id="cotactpage_panel" data-display="overlay" data-position="right" data-position-fixed="true" >
+                <p>Right push panel.</p>
+                <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+            </div><!-- /panel -->
+        <div data-role="footer">
+        </div>
+    </div>
+    
+    
+    
+
+    <!-- Page_News -->
+    <div data-role="page" id="newspage">
+        <div data-role="header"  class="header">
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">LogOut</a>
+            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+        
+            <h6>باشگاه ورزشی ستارگان</h6>
+            <a href="#newspage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+        </div>
+        <div data-role="main" class="ui-content B p0">
+
+
+            <div class="place_main">
+                <div class=" main_tilte">
+                    درباره ما
+                </div>
+
+                <div class="style_top p0">
+                    <img src="images/top-2.png" class="img-responsive" alt="logo">
+                </div>
+
+
+                <div class="about_main_info">
+                    <div class="about_textheader">
+                        <i></i>
+                        <p>عنوان خبـــر</p>
+                    </div>
+                    <div class="about_text">
+                        متن خبر
+                    </div>
+                        <a href="#page1" class="ui-btn ui-corner-all">بازگشت</a>
+
+                </div>
+
+                <div class="style_buttom">
+                    <img src="images/bot-2.png" class="img-responsive" alt="logo">
+                </div>
+
+            </div>
+        </div>
+        <div data-role="panel" id="newspage_panel" data-display="overlay" data-position="right" data-position-fixed="true" >
+                <p>Right push panel.</p>
+                <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+            </div><!-- /panel -->
+        <div data-role="footer">
+        </div>
+    </div>
+
+    
+    
+    
+    <!-- Page_Introduction -->
+    <div data-role="page" id="introductionpage">
+        <div data-role="header"  class="header">
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">LogOut</a>
+            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+        
+            <h6>باشگاه ورزشی ستارگان</h6>
+            <a href="#introductionpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+        </div>
+        <div data-role="main" class="ui-content B p0">
+
+
+            <div class="place_main">
+                <div class="moarefi_nobg B">                </div>
+                <div class="moarefi_tilte">
+                    معرفی باشگاه
+                </div>
+
+                <div class="moarefi_main_info">
+                    <div class="moarefi_img">
+                        <img class="moarefi_imgfullsize" src="images/image.png" alt="">
+                        <div class="moarefi_imgundersize ui-grid-c">
+                            <div class="ui-block-a">                            <img src="images/image.png" alt="">
+                            </div>
+                            <div class="ui-block-b">                            <img src="images/image.png" alt="">
+                            </div>
+                            <div class="ui-block-c">                            <img src="images/image.png" alt="">
+                            </div>
+                            <div class="ui-block-d">                            <img src="images/image.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="moarefi_p">
+                     <p>
+                         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                     </p>
+                </div>
+            </div>
+
+        </div>
+        <div data-role="panel" id="introductionpage_panel" data-display="overlay" data-position="right" data-position-fixed="true" >
+                <p>Right push panel.</p>
+                <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+            </div><!-- /panel -->
+        <div data-role="footer">
+        </div>
+    </div>
+
+    
+    
+    
+    <!-- Page_SignUp -->
+    <div data-role="page"  id="signuppage">
+        <div data-role="header"  class="header">
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">LogOut</a>
+            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+        
+            <h6>باشگاه ورزشی ستارگان</h6>
+            <a href="#signuppage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+        </div>
+        <div data-role="main" class="ui-content B p0">
+
+
+            <div class="place_main">
+                <div class=" main_tilte">
+                    ثبت نام غیر حضوری
+                </div>
+
+                <div class="style_top p0">
+                    <img src="images/top-2.png" class="img-responsive" alt="logo">
+                </div>
+
+
+                <div class="signuppage_main_info">
+
+                    <form>
+                        <div class="signuppage_fild field-contain">
+                            <input class="signuppage_input" type="text" placeholder="نام و نام خانوادگی" />
+                            <input class="signuppage_input_num" maxlength="11" type="tel" placeholder="کد ملی" />
+                            <input class="signuppage_input_num" maxlength="20" type="tel" placeholder="شماره تماس" />
+                            <textarea cols="40" rows="8" name="signup_textarea" placeholder="آدرس"></textarea>
+                            <div class="signup_dgroup" style="border: none!important;">
+                            <select name="signup_dropdown" id="signup_dropdown" data-iconpos="left" class="ui-mini">
+                                <optgroup label="">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </optgroup>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="signuppage_input_submit">
+                            <a href="#" class="ui-btn ui-corner-all " id="locationB2_btn">ثبت نام و دریافت کد کاربری</a>     
+
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="style_buttom">
+                    <img src="images/bot-2.png" class="img-responsive" alt="logo">
+                </div>
+
+            </div>
+
+        </div>
+        <div data-role="panel" id="signuppage_panel" data-display="overlay" data-position="right" data-position-fixed="true" >
+                <p>Right push panel.</p>
+                <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+            </div><!-- /panel -->
+        <div data-role="footer">
+        </div>
+    </div>
+    
+    
+    
+    
+    <!-- Page_Suggestion -->
+    <div data-role="page" id="suggestionpage">
+        <div data-role="header"  class="header">
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">LogOut</a>
+            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+        
+            <h6>باشگاه ورزشی ستارگان</h6>
+            <a href="#suggestionpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+        </div>
+        <div data-role="main" class="ui-content B p0">
+
+
+            <div class="place_main">
+                <div class=" main_tilte">
+                    پیشنهادات
+                </div>
+
+                <div class="style_top p0">
+                    <img src="images/top-2.png" class="img-responsive" alt="logo">
+                </div>
+
+
+                <div class="signuppage_main_info">
+
+                    <form>
+                        <div class="signuppage_fild field-contain">
+                            <input class="signuppage_input" type="text" placeholder="نام و نام خانوادگی" />
+                            <input class="signuppage_input_num" maxlength="11" type="tel" placeholder="کد ملی" />
+                            <input class="signuppage_input_num" maxlength="20" type="tel" placeholder="شماره تماس" />
+                            <textarea cols="40" rows="8" name="signup_textarea" placeholder="آدرس"></textarea>
+                            <div class="signup_dgroup" style="border: none!important;">
+                            <select name="signup_dropdown" id="signup_dropdown" data-iconpos="left" class="ui-mini">
+                                <optgroup label="">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </optgroup>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="signuppage_input_submit">
+
+                            <input type="submit"  placeholder="ثبت نام و دریافت کد کاربری">
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="style_buttom">
+                    <img src="images/bot-2.png" class="img-responsive" alt="logo">
+                </div>
+
+            </div>
+
+        </div>
+            <div data-role="panel" id="suggestionpage_panel" data-display="overlay"data-position="right" data-position-fixed="true" >
+                <p>Right push panel.</p>
+                <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+            </div><!-- /panel -->
+        <div data-role="footer">
+        </div>
+    </div>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="scripts/jquery-2.1.1.min.js"></script>
+    <script src="js/rtl.jquery.mobile-1.4.0.js"></script>
+    <script src="cordova.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/functions.js"></script>
 </body>
 </html>

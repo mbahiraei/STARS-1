@@ -1,4 +1,5 @@
 ﻿body {
+    text-shadow: none!important;
 }
 div{
     box-shadow: none!important;
@@ -11,6 +12,13 @@ div{
     display: block;
     margin: 0 auto!important;
 }
+
+
+
+
+
+
+
 /*--------------- Page_login ----------------------------*/
 .info {
     margin: 0;
@@ -100,7 +108,7 @@ div{
     width: 80%;
     display: block;
     margin: 0 auto;
-    padding-bottom: 5%;
+    padding-bottom: 15%;
 }
 .info form div{
     border: none!important;
@@ -128,23 +136,14 @@ div{
 
 }
 
-/*--------------- Page_1 ----------------------------*/
-.main_tlt {
-    width: 80%;
-    border-bottom: 1px solid #e3bc9b;
-    margin: 10px auto;
-    padding: 15px;
-    text-align: center;
-    font-size: 28px;
-}
 
-.place_main {
-    position: relative;
-    height: auto;
-    width: auto;
-    background: url("../images/bacground-no repeat.png") no-repeat;
-    background-size: 100% 100%;
-}
+
+
+
+
+
+
+
 
 /*--------------- Page SMS ----------------------------*/
 
@@ -162,7 +161,6 @@ div{
     font-size: 120%;
     color: #fff;
 }
-
 .send_again, .timer_sms {
     text-align: right!important;
     float: right;
@@ -212,14 +210,12 @@ div{
     border: none!important;
     background: #00000000 !important;
 }
-
 .etx_verify{
     width: 25%!important;
     background-color: #5a1973!important;
     border: 1px solid #ffff00!important;
     border-radius: 20px !important;
-    padding: 2% 5% !important;
-    text-align: left!important;
+    text-align: center!important;
     direction: ltr;
     font-weight: bold;
     color: #fff !important;
@@ -227,52 +223,17 @@ div{
     margin: 0 auto!important;
 }
 
-/*--------------- Page_main ----------------------------*/
-.main_btn img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-.main_btn_inner{
-    background: #461858;
-    padding: 5%;
-}
-.main_btn a{
-    padding: 35% 0;
-    border: 5px solid #e9d800!important;
-    border-radius: 50%!important;
-    background: #3a1548 !important;
-    color: white!important;
-    font-weight: normal!important;
-}
-.news_page_main_header{
-    text-align: right;
-    border: none;
-    border-bottom: 1px solid #b5a2b8;
-    color: #572e63;
-    padding: 3%;
-    font-weight: bold;
-}
-.news_page_main_ul{
-    margin: 0!important;
-    list-style: none;
-    padding: 0!important;
-}
-.news_page_main_ul li {
-    border: none!important;
-    margin: 2% 0!important;
-    padding: 3%!important;
-    background: #f3f1f2!important;
-    font-size: 80%!important;
-}
-.news_page_main_ul a {
-    float: left;
-    color: #b6b250!important;
-    text-decoration: none;
-}
 
 
-/*--------------- Page_3 ----------------------------*/
+
+
+
+
+
+
+
+
+/*--------------- Page_Location ----------------------*/
 .header {
     background: #461858!important;
     color: #fff!important;
@@ -331,6 +292,115 @@ div{
 
 
 
+
+
+
+
+
+/*--------------- Page_LocationB1 ----------------------*/
+
+.locationB1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+.locationB1 {
+    height: auto!important;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    text-align: right; 
+}
+.locationB1_txt_tittle {
+    padding: 25px 5px;
+    color: #9a8137;
+    
+}
+.locationB1_txt {
+    height: auto!important;
+    width: 90%;
+    height: auto;
+    padding: 10px 25px;
+    margin: 0 auto;
+    text-align: right;  
+}
+.locationB_btn {
+    height: auto!important;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    text-align: left; 
+}
+.locationB_btn a {
+    width: 25%;
+    background-color: #ffff00!important;
+    border:none!important;
+    font-size: 90%!important;
+    border-radius: 20px !important;
+    padding: 2% 7% !important;
+    box-shadow: none!important;
+    color: #000!important;
+    margin: 0 auto 0 0!important;
+}
+
+
+
+
+
+
+/*--------------- Page_Main ----------------------------*/
+.page2_main_btn img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.page2_main_btn_inner{
+    width: auto;
+    background: #461858;
+    padding: 3% 5%;
+}
+.page2_main_btn a{
+    padding: 33% 0;
+    font-size: 100%;
+    border: 5px solid #e9d800!important;
+    border-radius: 50%!important;
+    background: #3a1548 !important;
+    color: white!important;
+    font-weight: normal!important;
+}
+.news_page_main_header{
+    text-align: right;
+    border: none;
+    border-bottom: 1px solid #b5a2b8;
+    color: #572e63;
+    padding: 3%;
+    font-weight: bold;
+}
+.news_page_main_ul{
+    margin: 0!important;
+    list-style: none;
+    padding: 0!important;
+}
+.news_page_main_ul li {
+    border: none!important;
+    margin: 2% 0!important;
+    padding: 3%!important;
+    background: #f3f1f2!important;
+    font-size: 80%!important;
+}
+.news_page_main_ul a {
+    float: left;
+    color: #b6b250!important;
+    text-decoration: none;
+}
+
+
+
+
+
+
 /* style_top */
 .style_top {
     margin-top: 40px;
@@ -361,4 +431,257 @@ div{
 /* Fallback */
 .ui-nosvg .ui-icon-myicon:after {
 	background-image: url("iconimg.png");
+}
+
+
+
+
+
+
+
+
+
+/*--------------- Page_Contact ----------------------------*/
+.contact_us_main_info{
+    background: #461858 !important;
+    padding: 15% 0;
+}
+.contact_us_main_info form{
+    padding: 0 10%;
+}
+.field-contain div, .contact_us_textarea textarea{
+    color: #d2bada !important;
+    text-align: right!important;
+    direction: rtl!important;
+    border-radius: 5px;
+    border: none;
+    background: #591b6e !important;
+}
+.field-contain div:last-child, .contact_us_textarea textarea {
+    border: 1px solid #73537d5c!important;
+    text-shadow: none!important;
+}
+.contact_us_textarea textarea{
+    height: auto !important;
+    resize: none!important;
+    padding: 3%;
+    box-shadow: none!important;
+}
+.contact_us_textarea textarea::placeholder{
+    color: #d2bada !important;
+}
+.contact_us_main_info a{
+    width: 25%;
+    margin: 0!important;
+    float: left;
+    display: block!important;
+    background-color: #ffff00!important;
+    border:none!important;
+    font-size: 90%!important;
+    border-radius: 20px !important;
+    padding: 2% 7% !important;
+    box-shadow: none!important;
+}
+
+
+
+
+
+
+
+
+/*--------------- Page_News ----------------------------*/
+.about_main_info{
+    background: #461858 !important;
+    padding: 15% 5%;
+    text-shadow: none!important;
+    color: #fff;
+}
+.about_textheader{
+    width: 100%;
+    font-size: 100%;
+    padding: 1%;
+}
+.about_text{
+    width: auto;
+    height: 150px;
+    background: #4c195e;
+    padding: 5%;
+    margin: 4% 0 !important;
+}
+.about_main_info a{
+    background: #61426e!important;
+    width: 25%;
+    margin: 0!important;
+    float: left;
+    display: block!important;
+    border:none!important;
+    font-size: 80%!important;
+    border-radius: 20px !important;
+    padding: 2% 7% !important;
+    box-shadow: none!important;
+    color: #fcf0fe!important;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*--------------- Page_Introduction ----------------------------*/
+.moarefi_nobg{
+    width: 100%;
+    height: 55%;
+    position: absolute;
+    z-index: 1;
+    background: #430d58 !important;
+}
+.moarefi_main_info{
+    padding: 15% 5%;
+    text-shadow: none!important;
+    color: #fff;
+}
+.moarefi_tilte {
+    position: relative;
+    z-index: 5;
+    width: 70%;
+    border-bottom: 1px solid #e3bc9b;
+    margin: 10px auto;
+    padding: 35px 0 30px 0;
+    text-align: center;
+    font-size: 120%;
+    color: #fff;
+}
+.moarefi_img{
+    width: 100%;
+}
+.moarefi_img img{
+    position: relative;
+    z-index: 5;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}
+.moarefi_imgfullsize{
+    width: 100%;
+}
+.moarefi_imgundersize div{
+    padding: 1%;
+}
+.moarefi_p{
+    padding: 2%;
+    font-size: 80%;
+    color: #fff;
+    text-shadow: none;
+}
+
+
+
+
+
+
+
+
+/*--------------- chooseclasspage ----------------------------*/
+.chooseclasspage_main_info{
+    padding: 5% 0;
+    background: #461858;
+}
+.chooseclasspageـsection{
+    width: 100%;
+    height: auto;
+    border-top: 1px solid #5f3c57;
+    border-bottom: 1px solid #5f3c57;
+    font-size: 90%;
+    font-weight: bold;
+}
+.chooseclasspageـgride div{
+    text-shadow: none!important;
+    color: #fff;
+    padding: 2% 5% !important;
+}
+.chooseclasspage_2, .chooseclasspage_4 {
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+
+/*--------------- Page_SignUp ----------------------------*/
+.signuppage_main_info{
+    padding: 5%;
+    background: #461858;
+}
+.signuppage_main_info input, textarea {
+    width: 100% !important;
+    height: auto!important;
+    resize: none!important;
+    background: #3a1548 !important;
+    color: #fff !important;
+    text-shadow: none !important;
+    border-radius: 20px!important;
+    padding: 1% 5%!important;
+    border: none!important;
+    box-shadow: none!important;
+}
+.signuppage_main_info input::placeholder {
+    color: #6a4e75!important;
+    font-size: 80%!important;
+}
+.signuppage_main_info textarea::placeholder {
+    color: #6a4e75!important;
+    font-size: 80%!important;
+}
+.signuppage_fild div{
+    background: transparent!important;
+}
+.signuppage_input_num::placeholder {
+    text-align: right!important;
+}
+.signuppage_input_num:focus {
+    text-align: left!important;
+}
+.signuppage_fild div:last-child{
+    border: none!important;
+    background: #3a1548 !important;
+    border-radius: 20px!important;
+}
+.signuppage_input_submit div:last-child {
+    background: #5a1973;
+    border: 1px solid #7a5188;
+}
+.signuppage_input_submit a {
+    color: #ccaf2f!important;
+    border: 1px solid #724c7f!important;
+    border-radius: 30px!important;
+    background: #5a1a73!important;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    text-shadow: none!important;
+    font-size: 80%;
+}
+
+
+
+
+
+
+/* Swipe works with mouse as well but often causes text selection. */
+#loginpage,#smspage *,#chooselocatinpage *,#locationB1 *,#locationB2 *,#mainppage *,#sanspage *,#choosesanspage *,#chooseclasspage *,#workoutpage *,#cotactpage *,#newspage *,#introductionpage *,#signuppage *,#newspagesuggestionpage * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
