@@ -146,6 +146,17 @@ $('.location_btn').on("tap", function (Event){
 
 
 
+
+
+
+
+// Snack Bar
+function hello() {
+  var snack = new Snackbar();
+  snack.message('Hello World');
+}
+
+
 // Page_login 
 $('#login_btn_submit').on("tap", function (Event){
     var etx_txt = $("#login_btnt_submit").val();
@@ -172,6 +183,23 @@ $('#sms_btn_submit').on("tap", function (Event){
 });
 
 
+// Page_Location
+$('#location_btn_B1').on("tap", function (Event){
+    $.mobile.changePage('#locationB1');
+});
+$('#location_btn_B2').on("tap", function (Event){
+    $.mobile.changePage('#locationB2');
+});
+// Page_LocationB1
+$('#locationB1_btn').on("tap", function (Event){
+    $.mobile.changePage('#locationB2');
+});
+// Page_LocationB2
+$('#locationB2_btn').on("tap", function (Event){
+    $.mobile.changePage('#locationB1');
+});
+
+
 // Page_Main
 $('#main_btn_sans').on("tap", function (Event){
     $.mobile.changePage('#sanspage');
@@ -193,31 +221,6 @@ $('#main_btn_introduction').on("tap", function (Event){
 });
 
 
-// Page_Location
-$('#location_btn_B1').on("tap", function (Event){
-    $.mobile.changePage('#locationB1');
-});
-$('#location_btn_B2').on("tap", function (Event){
-    $.mobile.changePage('#locationB2');
-});
-// Page_LocationB1
-$('#locationB1_btn').on("tap", function (Event){
-    $.mobile.changePage('#locationB2');
-});
-// Page_LocationB2
-$('#locationB2_btn').on("tap", function (Event){
-    $.mobile.changePage('#locationB1');
-});
-
-
-// Page_Contact
-
-
-// Page_Introduction
-
-
-// Page_SignUp
-
 
 // Page_Sans
 $('#sans_btn_B1').on("tap", function (Event){
@@ -228,14 +231,30 @@ $('#sans_btn_B2').on("tap", function (Event){
 });
 
 
-// Page_ChooseWorkout
-
-
 // Page_ChooseSans
+$('#').delegate("li","tap", function (event) {
+    var selected = $(this);
+    selected.attr("data-ir");
+});
+
+
+// Page_ChooseClass
 
 
 // Page_WorkOut
 
 
-// Page_ChooseClass
+// Page_Contact
+
+
+// Page_News
+
+
+// Page_Introduction
+
+
+// Page_SignUp
+
+
+// Page_Suggestion
 
