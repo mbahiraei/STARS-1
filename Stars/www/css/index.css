@@ -731,3 +731,44 @@ div{
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
 }
+/*--------------- Page_workout ----------------------------*/
+.Page_workout_main{
+    border: none!important;
+    width: 100%!important;
+}
+.workout_circle{
+    margin: -40% 0;
+}
+.workout_grid div:last-child{
+    line-height: 3;
+    text-align: center;
+    border-color: #451956;
+    background: #502461;
+    font-size: 100%;
+    text-shadow: none;
+    color: #fff;
+}
+.workout_grid_tittle{
+    color: #dfce1e !important;
+    border-radius: 20px 20px 0 0!important;
+}
+.workout_grid_bottom{
+    border-radius: 0 0 20px 20px!important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
