@@ -9,6 +9,12 @@
     <link href="css/themes/default/rtl.jquery.mobile-1.4.0.css" rel="stylesheet" />
     <link href="css/themes/mytheme/jquery.mobile.icons.min.css" rel="stylesheet" />
     <link href="css/themes/mytheme/mytheme.min.css" rel="stylesheet" />
+    
+    
+    <!-- Start WOWSlider.com HEAD section -->
+    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+    <script type="text/javascript" src="engine1/jquery.js"></script>
+    <!-- End WOWSlider.com HEAD section -->
 </head>
 <body>
 
@@ -33,7 +39,7 @@
             <a href="#choosesanspage" data-inline="true" data-role="button">choosesanspage</a>
             <a href="#workoutpage" data-inline="true" data-role="button">workoutpage</a>
             <a href="#chooseclasspage" data-inline="true" data-role="button">chooseclasspage</a>
-            <a href="#demo-page" data-inline="true" data-role="button">demo-page</a>
+            <a href="#demo_swiper" data-inline="true" data-role="button">demo_swiper</a>
 
 
         </div>
@@ -338,7 +344,25 @@
             <a href="#mainppage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="ui-content B p0">
-            <div class="carousel"></div>
+            <!-- Start WOWSlider.com BODY section -->
+            <div id="wowslider-container1">
+                <div class="ws_images"><ul>
+                        <li><img src="images/carousel%20.png"/></li>
+                        <li><img src="images/slider.png" id="wows1_1"/></li>
+                        <li><img src="images/slider0.png"/></li>
+                        <li><img src="images/slider2.png" id="wows1_3"/></li>
+                    </ul>
+                </div>
+                <div class="ws_bullets">
+                        <div>
+                        <a href="#" title="6777341-5332-b__154785147"><span>1</span></a>
+                        <a href="#" title="876122772_preview_Map-V5"><span>2</span></a>
+                        <a href="#" title="Dark"><span>3</span></a>
+                        <a href="#" title="Diana_0"><span>4</span></a>
+                    </div>
+                </div>
+            </div>	
+            <!-- End WOWSlider.com BODY section -->
 
             <div class="page2_main_btn">
 
@@ -739,6 +763,8 @@
                         <div class="ui-block-b"><div class=" ui-bar ui-bar-a " >Block B</div></div>
                     </div>
 
+                        
+                    
 
                 </div>
 
@@ -1075,6 +1101,68 @@
     
     
     
+    <!-- demo_swiper -->
+    <div data-role="page" id="demo_swiper">
+        <div data-role="header"  class="header">
+            <a href="#" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">LogOut</a>
+            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-myicon ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+        
+            <h6>باشگاه ورزشی ستارگان</h6>
+            <a href="#suggestionpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+        </div>
+        <div data-role="main" class="ui-content B p0">
+
+
+            <div class="place_main">
+                <div class=" main_tilte">
+                    پیشنهادات
+                </div>
+
+                <div class="style_top p0">
+                    <img src="images/top-2.png" class="img-responsive" alt="logo">
+                </div>
+
+
+                <div class="signuppage_main_info">
+                    <!-- Start WOWSlider.com BODY section -->
+                    <div id="wowslider-container1">
+                    <div class="ws_images"><ul>
+                            <li><img src="images/slider0.png"/></li>
+                            <li><img src="images/slider.png"/></li>
+                            <li><img src="images/slider0.png"/></li>
+                            <li><a href="http://wowslider.net"><img src="images/slider2.png"/></a></li>
+                        </ul></div>
+                        <div class="ws_bullets"><div>
+                            <a href="#" title="ev-logo-1-736x730"><span>1</span></a>
+                            <a href="#" title="ev-logo-736x730"><span>2</span></a>
+                            <a href="#" title="evanescence-lost-whispers-768x768"><span>3</span></a>
+                            <a href="#" title="Evanescence-Wallpaper-1080p"><span>4</span></a>
+                        </div></div>
+                    <div class="ws_shadow"></div>
+                    </div>	
+                    <!-- End WOWSlider.com BODY section -->
+
+                </div>
+
+                <div class="style_buttom">
+                    <img src="images/bot-2.png" class="img-responsive" alt="logo">
+                </div>
+
+            </div>
+
+        </div>
+        
+        
+            <div id="snackbar">Some text some message..</div>
+        
+        
+            <div data-role="panel" id="demo_panel" data-display="overlay"data-position="right" data-position-fixed="true" >
+                <p>Right push panel.</p>
+                <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+            </div><!-- /panel -->
+        <div data-role="footer">
+        </div>
+    </div>
     
     
     
@@ -1086,5 +1174,8 @@
     <script src="scripts/index.js"></script>
     <script src="scripts/functions.js"></script>
     <script src="js/snackbar.min.js"></script>
+    <script type="text/javascript" src="engine1/wowslider.js"></script>
+    <script type="text/javascript" src="engine1/script.js"></script>
+    
 </body>
 </html>
