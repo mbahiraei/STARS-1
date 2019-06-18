@@ -9,8 +9,12 @@
     <link href="css/themes/default/rtl.jquery.mobile-1.4.0.css" rel="stylesheet" />
     <link href="css/themes/mytheme/jquery.mobile.icons.min.css" rel="stylesheet" />
     <link href="css/themes/mytheme/mytheme.min.css" rel="stylesheet" />
-    
-    
+
+    <!---slick --->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+
     <!-- Start WOWSlider.com HEAD section -->
     <link rel="stylesheet" type="text/css" href="engine1/style.css" />
     <script type="text/javascript" src="engine1/jquery.js"></script>
@@ -727,52 +731,56 @@
             <h6>باشگاه ورزشی ستارگان</h6>
             <a href="#workoutpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
-        <div data-role="main" class="ui-content B p0">
+        <div data-role="main" class="Page_workout_main ui-content B place_main p0">
 
 
-            <div class="Page_workout_main place_main">
-                <div class="Page_workout_main main_tilte">
-                </div>
-
-                <div class="style_top p0">
+                <div class="workoutpage_style_top style_top p0">
                     <img src="images/top-2.png" class="img-responsive" alt="logo">
                 </div>
-
-
-                <div class="about_main_info">
-
+                <div class="workout_main_info">
                     <div class="workout_circle circle_p1 row-around">
-                        <div class="circle_p1_child_left">
-
+                        <div class="circle_p1_child_left B">
                         </div>
                     </div>
-                    <div class="main_tilte">
+                    <div class="workout_main_tittle main_tilte B">
                         مربی : سارا احمدی
                     </div>
-
-                    <div class="workout_grid ui-grid-a workout_grid_tittle">
-                        <div class="ui-block-a"><div class=" ui-bar ui-bar-a " >Block A</div></div>
-                        <div class="ui-block-b"><div class=" ui-bar ui-bar-a " >Block B</div></div>
+                    <div class="workout_grid_block B">
+                        <div class="workout_grid workout_grid_tittle ui-grid-a ">
+                            <div class="ui-block-a"><div class=" ui-bar ui-bar-a workout_tittle p0" >Block A</div></div>
+                            <div class="ui-block-b"><div class=" ui-bar ui-bar-a workout_tittle p0" >Block B</div></div>
+                        </div>
+                        <div class="workout_grid ui-grid-a">
+                            <div class="ui-block-a"><div class=" ui-bar ui-bar-a p0" >Block A</div></div>
+                            <div class="ui-block-b"><div class=" ui-bar ui-bar-a p0" >Block B</div></div>
+                        </div>
+                        <div class="workout_grid ui-grid-a ">
+                            <div class="ui-block-a"><div class=" ui-bar ui-bar-a p0" >Block A</div></div>
+                            <div class="ui-block-b"><div class=" ui-bar ui-bar-a p0" >Block B</div></div>
+                        </div>
+                        <div class="workout_grid ui-grid-a workout_grid_bottom">
+                            <div class="ui-block-a"><div class=" ui-bar ui-bar-a p0" >Block A</div></div>
+                            <div class="ui-block-b"><div class=" ui-bar ui-bar-a p0" >Block B</div></div>
+                        </div>
                     </div>
-                    <div class="workout_grid ui-grid-a">
-                        <div class="ui-block-a"><div class=" ui-bar ui-bar-a " >Block A</div></div>
-                        <div class="ui-block-b"><div class=" ui-bar ui-bar-a " >Block B</div></div>
+                    <div class="workout_explain B">
+                        <div class="workout_tittle">
+                            توضیحات :
+                        </div>
+                        <p>
+                            باشگاه بذنسازی ستارگان
+                            <br>
+                            زیر نظر مربیان مجرب
+                            <br>
+                            شعار مجموعه : مراقب بدن خود باشید چون تنها جایی است ه در آن زندگی میکنید
+                            <br>
+                        </p>
                     </div>
-                    <div class="workout_grid ui-grid-a workout_grid_bottom">
-                        <div class="ui-block-a"><div class=" ui-bar ui-bar-a " >Block A</div></div>
-                        <div class="ui-block-b"><div class=" ui-bar ui-bar-a " >Block B</div></div>
-                    </div>
-
-                        
-                    
-
+                    <a href="#" class="workout_btn contact_us_main_info_a ui-btn ui-corner-all">ثبت نـــام در این دوره</a>
                 </div>
-
                 <div class="style_buttom">
                     <img src="images/bot-2.png" class="img-responsive" alt="logo">
                 </div>
-
-            </div>
         </div>
         <div data-role="panel" id="workoutpage_panel" data-display="overlay" data-position="right" data-position-fixed="true" >
                 <p>Right push panel.</p>
@@ -783,8 +791,6 @@
     </div>
     
 
-    
-    
     <!-- Page_Contact -->
     <div data-role="page" id="cotactpage">
         <div data-role="header"  class="header">
@@ -828,7 +834,7 @@
                                 <label for="textarea"></label>
                                 <textarea cols="40" rows="8" name="textarea" id="textarea" placeholder="متن ارسالــی"></textarea>
                             </div>
-                        <a href="#" class="ui-btn ui-corner-all contact_us_submit">ارسال</a>
+                        <a href="#" class="contact_us_main_info_a ui-btn ui-corner-all contact_us_submit">ارسال</a>
                     </form>
 
                 </div>
@@ -1170,12 +1176,21 @@
     
     <script src="scripts/jquery-2.1.1.min.js"></script>
     <script src="js/rtl.jquery.mobile-1.4.0.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
     <script src="cordova.js"></script>
     <script src="scripts/index.js"></script>
     <script src="scripts/functions.js"></script>
     <script src="js/snackbar.min.js"></script>
     <script type="text/javascript" src="engine1/wowslider.js"></script>
     <script type="text/javascript" src="engine1/script.js"></script>
-    
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.simple_slick').slick({
+                setting-name: setting-value
+        });
+        });
+    </script>
+
 </body>
 </html>
