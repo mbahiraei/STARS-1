@@ -1,4 +1,4 @@
-﻿body {
+﻿* {
     text-shadow: none!important;
 }
 div{
@@ -8,7 +8,6 @@ div{
     padding: 0 !important;
 }
 .B {
-    padding: 0!important;
     display: block;
     margin: 0 auto!important;
 }
@@ -153,7 +152,7 @@ div{
     margin: -10px 0 0 0!important;
 }
 .main_tilte {
-    width: 70%;
+    width: 80%;
     border-bottom: 1px solid #e3bc9b;
     margin: 10px auto;
     padding: 35px 0 30px 0;
@@ -470,7 +469,7 @@ div{
 .contact_us_textarea textarea::placeholder{
     color: #d2bada !important;
 }
-.contact_us_main_info a{
+.contact_us_main_info_a{
     width: 25%;
     margin: 0!important;
     float: left;
@@ -732,12 +731,21 @@ div{
     to {bottom: 0; opacity: 0;}
 }
 /*--------------- Page_workout ----------------------------*/
-.Page_workout_main{
-    border: none!important;
-    width: 100%!important;
+.workoutpage_style_top{
+    margin-top: 35%;
+}
+.workout_main_info{
+    background: #461858 !important;
+    padding-bottom: 8%;
 }
 .workout_circle{
-    margin: -40% 0;
+    margin-top: -30%;
+}
+.workout_main_tittle{
+    margin-bottom: 5% !important;
+}
+.workout_grid_block{
+    width: 90%;
 }
 .workout_grid div:last-child{
     line-height: 3;
@@ -749,16 +757,27 @@ div{
     color: #fff;
 }
 .workout_grid_tittle{
-    color: #dfce1e !important;
     border-radius: 20px 20px 0 0!important;
 }
 .workout_grid_bottom{
     border-radius: 0 0 20px 20px!important;
 }
-
-
-
-
+.workout_tittle {
+    color: #dfce1e !important;
+}
+.workout_explain{
+    width: 85%;
+    padding: 5% 0;
+}
+.workout_explain p{
+    color: #fff;
+    line-height: 2;
+}
+.workout_btn{
+    width: 70%;
+    float: none;
+    margin: 0 auto!important;
+}
 
 
 
