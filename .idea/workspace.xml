@@ -14,84 +14,48 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6492424">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Stars/www/index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="442">
-                  <caret line="1193" lean-forward="true" selection-start-line="1193" selection-end-line="1193" />
-                  <folding>
-                    <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#4;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#5;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#6;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#7;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#8;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#9;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#2;n#div#10;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#11;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#12;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#13;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#14;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#0;n#div#14;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#2;n#div#0;n#div#1;n#div#14;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#15;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#16;n#body#0;n#html#0;n#!!top" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Stars/www/css/index.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="377">
-                  <caret line="780" selection-start-line="780" selection-end-line="780" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Stars/www/index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="815" column="36" selection-start-line="815" selection-start-column="36" selection-end-line="815" selection-end-column="36" />
-                  <folding>
-                    <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#4;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#5;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#6;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#7;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#8;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#9;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#2;n#div#10;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#12;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#13;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#14;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#0;n#div#14;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#2;n#div#0;n#div#1;n#div#14;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#15;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#16;n#body#0;n#html#0;n#!!top" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Stars/www/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-476">
+              <caret line="1154" selection-start-line="1154" selection-end-line="1154" />
+              <folding>
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#4;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#5;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#6;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#7;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#8;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#9;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#2;n#div#10;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#11;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#12;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#13;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#14;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#div#14;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#2;n#div#0;n#div#1;n#div#14;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#15;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Stars/www/js/jquery-2.2.0.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -127,14 +91,17 @@
         <option value="$USER_HOME$/Desktop/yasdl/index.html" />
         <option value="$USER_HOME$/Desktop/yasdl/style_mine.css" />
         <option value="$PROJECT_DIR$/Stars/www/css/index.css" />
+        <option value="$USER_HOME$/Desktop/test/BootsTrap-Test/slick/jquery-3.1.1.min.js" />
+        <option value="$USER_HOME$/Desktop/test/BootsTrap-Test/slick/index.html" />
         <option value="$PROJECT_DIR$/Stars/www/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="546" />
-    <option name="width" value="697" />
-    <option name="height" value="735" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -186,11 +153,12 @@
       <workItem from="1560752611640" duration="209000" />
       <workItem from="1560757522756" duration="3076000" />
       <workItem from="1560768737455" duration="5670000" />
+      <workItem from="1560862293117" duration="2066000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48918000" />
+    <option name="totallyTimeSpent" value="54010000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -379,10 +347,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Desktop/test/BootsTrap-Test/slick/jquery.min.js" />
+    <entry file="file://$USER_HOME$/Desktop/test/BootsTrap-Test/slick/jquery-3.1.1.min.js" />
+    <entry file="file://$USER_HOME$/Desktop/test/BootsTrap-Test/slick/slick/slick.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/test/BootsTrap-Test/slick/slick/slick-theme.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/test/BootsTrap-Test/slick/slick/slick.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/test/BootsTrap-Test/slick/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="50" />
+          <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="50" />
+          <caret line="63" column="16" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="50" />
+          <caret line="66" column="16" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="50" />
+          <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="50" />
+          <caret line="72" column="16" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="50" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Stars/www/js/jquery-2.2.0.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Stars/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="1193" lean-forward="true" selection-start-line="1193" selection-end-line="1193" />
+        <state relative-caret-position="-476">
+          <caret line="1154" selection-start-line="1154" selection-end-line="1154" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
@@ -402,7 +411,6 @@
             <element signature="n#div#0;n#div#14;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#2;n#div#0;n#div#1;n#div#14;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#15;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#16;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
