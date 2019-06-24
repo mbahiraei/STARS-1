@@ -587,18 +587,26 @@ div{
 
 
 
-/*--------------- chooseclasspage ----------------------------*/
+/*--------------- choose class page ----------------------------*/
+
 .chooseclasspage_main_info{
+    margin: 0;
     padding: 5% 0;
     background: #461858;
 }
-.chooseclasspageـsection{
+.chooseclasspage_main_info li{
     width: 100%;
     height: auto;
     border-top: 1px solid #5f3c57;
-    border-bottom: 1px solid #5f3c57;
     font-size: 90%;
     font-weight: bold;
+    line-height: 0;
+}
+.chooseclasspage_main_info li:last-child{
+    border-bottom: 1px solid #5f3c57;
+}
+.chooseclasspageـgride{
+    line-height: 2;
 }
 .chooseclasspageـgride div{
     text-shadow: none!important;
