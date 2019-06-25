@@ -2,6 +2,9 @@
     text-shadow: none!important;
     color: #fff!important;
 }
+a{
+    text-decoration: none!important;
+}
 div{
     box-shadow: none!important;
 }
@@ -31,7 +34,7 @@ img{
     background-color: #ffff00!important;
     color: #5a1973!important;
     border: none!important;
-    font-size: 18px!important;
+    font-size: 16px!important;
     border-radius: 20px !important;
     box-shadow: none!important;
 }
@@ -160,31 +163,33 @@ img{
 .main_info form{
     width: 80%;
 }
-.sms_main_info form label{
-    font-size: 15px;
-    line-height: 3;
-}
-.etx_verify{
-    width: 45%!important;
-    direction: ltr;
-    font-weight: bold;
-    word-spacing: 10px;
-}
 .sms_grid{
     font-size: 15px;
     line-height: 5;
 }
 .sms_main_info form button{
-    width: 35%;
+    width: 50%;
 }
-
-
-
-
-
-
-
-
+.sms_main_info .sms_inputs {
+    display: table;
+}
+.sms_main_info #form input {
+    line-height: 2;
+    font-size: 20px;
+    border-bottom: solid 2px #ccc;
+    width: 50%;
+    transition: all .2s ease-in-out;
+    border-radius: 0!important;
+}
+.sms_main_info #form input:focus {
+    border-bottom: solid 2px #ccc;
+}
+.sms_main_info #form input::selection {
+     background: transparent;
+ }
+.sms_main_info #form div {
+    display: inline-block;
+}
 
 
 
@@ -237,7 +242,6 @@ img{
 .btn_loc {
     float: right;
     width: 59%;
-    width: 3px;
     background: #4f1d64;
     padding-top: 63%;
     margin-top: 35px;
@@ -264,7 +268,6 @@ img{
 .locationB1 {
     height: auto!important;
     width: 90%;
-    height: auto;
     margin: 0 auto;
     text-align: right; 
 }
@@ -276,7 +279,6 @@ img{
 .locationB1_txt {
     height: auto!important;
     width: 90%;
-    height: auto;
     padding: 10px 25px;
     margin: 0 auto;
     text-align: right;  
@@ -284,7 +286,6 @@ img{
 .locationB_btn {
     height: auto!important;
     width: 90%;
-    height: auto;
     margin: 0 auto;
     text-align: left; 
 }
@@ -640,7 +641,6 @@ img{
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    -o-user-select: none;
     user-select: none;
 }
 
@@ -912,7 +912,6 @@ img{
   height: 100%;
   width: 100%;
   transition: -webkit-transform 1s 0.6666666667s;
-  transition: transform 1s 0.6666666667s;
   transition: transform 1s 0.6666666667s, -webkit-transform 1s 0.6666666667s;
 }
 .fnc-slider .m--blend-dark .fnc-slide__inner {
@@ -969,7 +968,6 @@ img{
 .fnc-slide.m--active-slide {
   z-index: 1;
   transition: -webkit-transform 1s 0.6666666667s ease-in-out;
-  transition: transform 1s 0.6666666667s ease-in-out;
   transition: transform 1s 0.6666666667s ease-in-out, -webkit-transform 1s 0.6666666667s ease-in-out;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
@@ -992,7 +990,6 @@ img{
 }
 .m--active-slide .fnc-slide__inner {
   transition: -webkit-transform 1s 0.6666666667s ease-in-out;
-  transition: transform 1s 0.6666666667s ease-in-out;
   transition: transform 1s 0.6666666667s ease-in-out, -webkit-transform 1s 0.6666666667s ease-in-out;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
@@ -1511,7 +1508,6 @@ body {
   border-radius: 50%;
   background: #fff;
   transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
@@ -1527,7 +1523,6 @@ body {
   width: 19.2857142857px;
   height: 36px;
   transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
@@ -1582,7 +1577,6 @@ body {
   margin-left: -20.5714285714px;
   margin-top: -20.5714285714px;
   transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
@@ -1602,7 +1596,6 @@ body {
   border-radius: 2.5714285714px;
   background: #fff;
   transition: -webkit-transform 0.25s 0.25s;
-  transition: transform 0.25s 0.25s;
   transition: transform 0.25s 0.25s, -webkit-transform 0.25s 0.25s;
 }
 .colorful-switch__checkbox:checked ~ .colorful-switch__label .colorful-switch__off:before, .colorful-switch__checkbox:checked ~ .colorful-switch__label .colorful-switch__off:after {

@@ -102,31 +102,34 @@
             <img src="images/top-2.png" class="img-responsive" alt="">
             <div class="c_bg sms_main_info">
                 <div class="main_info_title c_text_align">
-                    کــد فعــال ســـازی
+                    کـــد فعــال ســـازی
                 </div>
                 <form method="" action="" class="B">
-                    <label class="c_text_align" for="sms_etx_verify">منتظر باشید تا کد فعال سازی ارسال شود</label>
-                    <input class="etx_verify c_text_align B" type="tel" maxlength="4" data-clear-btn="false" name="etx_verify" pattern="[0-9]*" id="sms_etx_verify" placeholder="ـــ ـــ ـــ ـــ"/>
-
-
-                    <div class="sms_grid c_text_align ui-grid-a">
-                        <div class="send_again ui-block-a" id="sms_btn_again">کد ارسال نشد ؟</div>
-                        <div class="timer_sms ui-block-b"> 00:00:00</div>
+                    <div id="wrapper">
+                        <h5 class="c_text_align">منتظر باشید تا کـــد فعال سازی ارسال شود</h5>
+                        <div class="sms_inputs B" id="form">
+                            <input class=" etx_verify c_text_align B" type="tel" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                            <input class=" etx_verify c_text_align B" type="tel" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                            <input class=" etx_verify c_text_align B" type="tel" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                            <input class=" etx_verify c_text_align B" type="tel" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                        </div>
+                        <button id="sms_btn_submit" type="button" class="c_btn btn btn-primary btn-embossed">فعــال سازی</button>
+                        <div class="sms_grid c_text_align ui-grid-a">
+                            <div class=" ui-block-a" >
+                                <a href="#" id="sms_btn_again">ارسال کـــد جدید</a>
+                            </div>
+                            <div class=" ui-block-b">
+                                <a href="#loginpage" >ویرایش شمــاره</a>
+                            </div>
+                        </div>
                     </div>
-                    <button type="button" class="c_btn">فعــال سازی</button>
                 </form>
             </div>
-            
             <div class="style_buttom">
-          		<img src="images/bot-2.png" class="img-responsive" alt="logo">
+                <img src="images/bot-2.png" class="img-responsive" alt="logo">
             </div>
-                
-                
-
-
         </div>
         <div data-role="footer"></div>
-
     </div>
     
     
@@ -1188,15 +1191,9 @@
             <a href="#programrequestpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="ui-content B p0">
-
-
             <div class="place_main">
-                <div class=" main_tilte">
+                <div class=" c_tittle">
                     درخواست برنامه
-                </div>
-
-                <div class="style_top p0">
-                    <img src="images/top-2.png" class="img-responsive" alt="logo">
                 </div>
 
 
