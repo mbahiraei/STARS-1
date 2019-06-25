@@ -1,26 +1,66 @@
 ﻿* {
     text-shadow: none!important;
+    color: #fff!important;
 }
 div{
     box-shadow: none!important;
 }
+form div{
+    border: none!important;
+    background: transparent !important;
+}
+img{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
 .p0{
     padding: 0 !important;
 }
-.B {
+.B{
     display: block;
     margin: 0 auto!important;
 }
-
-
-
-
-
+.c_bg{
+    background: #461858;
+}
+.c_btn{
+    display: block!important;
+    margin: 10% auto!important;
+    line-height: 1 !important;
+    background-color: #ffff00!important;
+    color: #5a1973!important;
+    border: none!important;
+    font-size: 18px!important;
+    border-radius: 20px !important;
+    box-shadow: none!important;
+}
+.c_tittle{
+    border-bottom: 1px solid #e3bc9b;
+    margin: 5% auto 10%;
+    text-align: center;
+    line-height:4;
+    font-size: 120%;
+    width: 80%;
+}
+.c_bg_main{
+    background: url("../images/bacground-no repeat.png") no-repeat;
+    background-size: 100% 100%;
+    margin: -10px 0 0 0!important;
+}
+.c_text_align{
+    text-align: center!important;
+}
 
 
 /*--------------- Page_login ----------------------------*/
-.info {
-    margin: 0;
+.topelement_p1{
+    position: relative;
+}
+.topelement_p1 img{
+    width: 100%;
+    position: relative;
+    z-index: 1;
 }
 .fill_img{
     width: 100%;
@@ -29,10 +69,6 @@ div{
     z-index: 0;
     background-image: url("../images/image.png");
     background-size: cover;
-    -ms-background-size: cover;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
     background-blend-mode: saturation;
 }
 .fill_img_inner{
@@ -41,26 +77,15 @@ div{
     height: 100%;
     position: absolute;
 }
-.topelement_p1{
-    position: relative;
-}
-.topelement_p1 img{
-    width: 100%;
-    position: relative;
-    z-index: 1;
-    display: block;
-}
 .logo img{
     width: 35%;
-    display: block;
-    margin: 0 auto;
 }
-.logo_caption{
+.logo div{
     position: relative;
-    font-size: 100%;
+    font-size: 19px;
+    font-weight: bold;
     padding: 10% 0;
     text-align: center;
-        color: #fff;
 }
 .circle_p1{
     justify-content: space-around;
@@ -85,141 +110,72 @@ div{
 .circle_p1_child_center{
     width: 20%;
     padding-top: 20%;
-    background: url("../images/image.png");
+    background: url("../images/image.png") no-repeat;
     margin: 5% 0;
 }
 .circle_p1_child_left{
     width: 25%;
     padding-top: 25%;
-    background: url("../images/image.png");
+    background: url("../images/image.png") no-repeat;
     margin: -5% -5% 0 5%;
 }
 .info{
     background: #5a1973;
 }
-.info_caption{
-        font-size: 80%!important;
-        text-align: center!important;
-        color: #fff!important;
-    padding: 5% 0!important;
-}
 .info form{
     width: 80%;
-    display: block;
-    margin: 0 auto;
     padding-bottom: 15%;
 }
-.info form div{
-    border: none!important;
-    background: #00000000 !important;
+.info form label{
+    font-size: 16px !important;
+    text-align: center!important;
+    margin-bottom: 5%;
 }
-.input_num_p1{
+.info form input{
     background-color: #5a1973!important;
-    border: 1px solid #ffff00!important;
-    border-radius: 20px !important;
-    padding: 2% 5% !important;
+    border: 1px solid #925581 !important;
+    padding: 3% 10% !important;
     text-align: left!important;
     direction: ltr;
+    font-size: 16px;
     font-weight: bold;
-    color: #fff !important;
-    text-shadow: none!important;
+    border-radius: 20px!important;
+}
+.input_num_p1::placeholder{
+    direction: ltr!important;
+    font-weight: bold;
+    color: #c49bd5;
 }
 .submit_p1{
-    width: 25%;
-    display: block!important;
-    margin: 0 auto!important;
-        background-color: #ffff00!important;
-    border:none!important;
-    border-radius: 20px !important;
-    padding: 2% 5% !important;
-
+    width: 40%;
 }
-
-
-
-
-
-
-
-
-
-
 /*--------------- Page SMS ----------------------------*/
-
-.place_main {
-    background: url("../images/bacground-no repeat.png") no-repeat;
-    background-size: 100% 100%;
-    margin: -10px 0 0 0!important;
+.sms_main_info{
+    padding: 10% 0;
 }
-.main_tilte {
-    width: 80%;
-    border-bottom: 1px solid #e3bc9b;
-    margin: 10px auto;
-    padding: 35px 0 30px 0;
-    text-align: center;
-    font-size: 120%;
-    color: #fff;
-}
-.send_again, .timer_sms {
-    text-align: right!important;
-    float: right;
-    width: 50%;
-    font-size: 90%;
-    color: #fff;
-    padding: 5% 0;
-    margin-bottom: 30px!important;
-    margin-top: 30px!important;
-}
-.timer_sms {
-    text-align: left!important;
-    float: left;
-}
-.submit_sms {
-    width: 25%;
-    display: block!important;
-    margin: 0 auto!important;
-    background-color: #ffff00!important;
-    border:none!important;
-    font-size: 90%!important;
-    border-radius: 20px !important;
-    padding: 2% 7% !important;
-    margin-top: 20px!important;
-    margin-bottom: 65px!important;
-}
-.main_info{
-    background: #461858;
-}
-.main_info, .main_info_description{
-    font-size: 90%;
-    text-align: center;
-    color: #fff;
-    padding: 5% 0;
-    padding-top: 45px!important;
-}
-.main_info_description {
-    padding-top: 35px!important;
+.main_info_title{
+    font-size: 18px;
+    line-height: 5;
 }
 .main_info form{
     width: 80%;
-    display: block;
-    margin: 0 auto;
-    padding-bottom: 5%;
 }
-.main_info form div{
-    border: none!important;
-    background: #00000000 !important;
+.sms_main_info form label{
+    font-size: 15px;
+    line-height: 3;
 }
 .etx_verify{
-    width: 25%!important;
-    background-color: #5a1973!important;
-    border: 1px solid #ffff00!important;
-    border-radius: 20px !important;
-    text-align: center!important;
+    width: 45%!important;
     direction: ltr;
     font-weight: bold;
-    color: #fff !important;
-    text-shadow: none!important;
-    margin: 0 auto!important;
+    word-spacing: 10px;
+}
+.sms_grid{
+    font-size: 15px;
+    line-height: 5;
+}
+.sms_main_info form button{
+    width: 35%;
 }
 
 
@@ -400,13 +356,8 @@ div{
 
 
 
-/* style_top */
 .style_top {
     margin-top: 40px;
-}
-.style_top img {
-    display: block;
-    width: 100%;
 }
 
 
@@ -790,17 +741,22 @@ div{
 
 
 /*--------------- Page_Program_Request ----------------*/
+.program_request_page_group form{
+    padding: 3% 0;
+}
+.program_request_page_group form textarea{
+    padding: 3% 0;
+}
+.program_request_page_group form label{
+    font-size: 14px;
+    color: #fff;
+    padding: 1% 2%!important;
+}
+.program_request_page_yellow_label{
+    color: #ffff00 !important;
+}
 .programrequestpage_btn {
-    width: 85%;
-    margin: 15px auto!important;
-    float: left;
-    display: block!important;
-    background-color: #ffff00!important;
-    border:none!important;
-    font-size: 90%!important;
-    border-radius: 20px !important;
-    padding: 2% 7% !important;
-    box-shadow: none!important;
+    width: 90%;
 }
 
 
@@ -813,9 +769,11 @@ div{
     float: left;
     display: inline-block!important;
 }
+.programpart1page_fild input {
+    height: 40px!important;
+}
 .programpart1page_fild input, textarea {
     width: 100% !important;
-    height: 40px!important;
     resize: none!important;
     background: #3a1548 !important;
     color: #fff !important;
@@ -825,7 +783,7 @@ div{
     border: none!important;
     box-shadow: none!important;
 }
-programpart1page_fild div {
+.programpart1page_fild div {
     width: 70%!important;
     float: left;
     display: inline-block!important;
