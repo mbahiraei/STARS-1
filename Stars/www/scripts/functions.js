@@ -363,13 +363,6 @@ var $demoCont = document.querySelector(".demo-cont");
   });
 });
 
-document.querySelector(".demo-cont__credits-close").addEventListener("click", function() {
-  $demoCont.classList.remove("credits-active");
-});
-
-document.querySelector(".js-activate-global-blending").addEventListener("click", function() {
-  document.querySelector(".example-slider").classList.toggle("m--global-blending-active");
-});
 
 
 
