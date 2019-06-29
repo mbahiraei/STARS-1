@@ -443,9 +443,9 @@ $('#login_btn_submit').on("tap", function (Event){
 
 
 // Page_Sms
-$('#sms_btn_again').on("tap", function (Event){
-   
-});
+
+
+
 
 $('#sms_btn_submit').on("tap", function (Event){
     var etx_txt = $("#sms_etx_verify").val();

@@ -22,24 +22,24 @@
         </div>
         <div data-role="main" class="ui-content a">
            
-            <a class="c_btn" href="#loginpage" data-inline="true" data-role="button">loginpage</a>
-            <a class="c_btn" href="#smspage" data-inline="true" data-role="button">smspage</a>
-            <a class="c_btn" href="#mainppage" data-inline="true" data-role="button">mainppage</a>
-            <a class="c_btn" href="#chooselocatinpage" data-inline="true" data-role="button" >chooselocatinpage</a>
-            <a class="c_btn" href="#contactpage" data-inline="true" data-role="button">contactpage</a>
-            <a class="c_btn" href="#newspage" data-inline="true" data-role="button">newspage</a>
-            <a class="c_btn" href="#introductionpage" data-inline="true" data-role="button">introductionpage</a>
-            <a class="c_btn" href="#signuppage" data-inline="true" data-role="button">signuppage</a>
-            <a class="c_btn" href="#sanspage" data-inline="true" data-role="button">sanspage</a>
-            <a class="c_btn" href="#suggestionpage" data-inline="true" data-role="button">suggestionpage</a>
-            <a class="c_btn" href="#choosesanspage" data-inline="true" data-role="button">choosesanspage</a>
-            <a class="c_btn" href="#workoutpage" data-inline="true" data-role="button">workoutpage</a>
-            <a class="c_btn" href="#chooseclasspage" data-inline="true" data-role="button">chooseclasspage</a>
-            <a class="c_btn" href="#programrequestpage" data-inline="true" data-role="button">programrequestpage</a>
-            <a class="c_btn" href="#programpart1page" data-inline="true" data-role="button">programpart1page</a>
-            <a class="c_btn" href="#programpart2page" data-inline="true" data-role="button">programpart2page</a>
-            <a class="c_btn" href="#programpart3page" data-inline="true" data-role="button">programpart3page</a>
-            <a class="c_btn" href="#demo_swiper" data-inline="true" data-role="button">demo_swiper</a>
+            <a class="ui-mini c_btn" href="#loginpage" data-inline="true" data-role="button">loginpage</a>
+            <a class="ui-mini c_btn" href="#smspage" data-inline="true" data-role="button">smspage</a>
+            <a class="ui-mini c_btn" href="#mainppage" data-inline="true" data-role="button">mainppage</a>
+            <a class="ui-mini c_btn" href="#chooselocatinpage" data-inline="true" data-role="button" >chooselocatinpage</a>
+            <a class="ui-mini c_btn" href="#contactpage" data-inline="true" data-role="button">contactpage</a>
+            <a class="ui-mini c_btn" href="#newspage" data-inline="true" data-role="button">newspage</a>
+            <a class="ui-mini c_btn" href="#introductionpage" data-inline="true" data-role="button">introductionpage</a>
+            <a class="ui-mini c_btn" href="#signuppage" data-inline="true" data-role="button">signuppage</a>
+            <a class="ui-mini c_btn" href="#sanspage" data-inline="true" data-role="button">sanspage</a>
+            <a class="ui-mini c_btn" href="#suggestionpage" data-inline="true" data-role="button">suggestionpage</a>
+            <a class="ui-mini c_btn" href="#choosesanspage" data-inline="true" data-role="button">choosesanspage</a>
+            <a class="ui-mini c_btn" href="#workoutpage" data-inline="true" data-role="button">workoutpage</a>
+            <a class="ui-mini c_btn" href="#chooseclasspage" data-inline="true" data-role="button">chooseclasspage</a>
+            <a class="ui-mini c_btn" href="#programrequestpage" data-inline="true" data-role="button">programrequestpage</a>
+            <a class="ui-mini c_btn" href="#programpart1page" data-inline="true" data-role="button">programpart1page</a>
+            <a class="ui-mini c_btn" href="#programpart2page" data-inline="true" data-role="button">programpart2page</a>
+            <a class="ui-mini c_btn" href="#programpart3page" data-inline="true" data-role="button">programpart3page</a>
+            <a class="ui-mini c_btn" href="#demo_swiper" data-inline="true" data-role="button">demo_swiper</a>
 
 
         </div>
@@ -102,31 +102,34 @@
             <img src="images/top-2.png" class="img-responsive" alt="">
             <div class="c_bg sms_main_info">
                 <div class="main_info_title c_text_align">
-                    کــد فعــال ســـازی
+                    کـــد فعــال ســـازی
                 </div>
                 <form method="" action="" class="B">
-                    <label class="c_text_align" for="sms_etx_verify">منتظر باشید تا کد فعال سازی ارسال شود</label>
-                    <input class="etx_verify c_text_align B" type="tel" maxlength="4" data-clear-btn="false" name="etx_verify" pattern="[0-9]*" id="sms_etx_verify" placeholder="ـــ ـــ ـــ ـــ"/>
-
-
-                    <div class="sms_grid c_text_align ui-grid-a">
-                        <div class="send_again ui-block-a" id="sms_btn_again">کد ارسال نشد ؟</div>
-                        <div class="timer_sms ui-block-b"> 00:00:00</div>
+                    <div id="wrapper">
+                        <h5 class="c_text_align">منتظر باشید تا کـــد فعال سازی ارسال شود</h5>
+                        <div class="sms_inputs B" id="form">
+                            <input class=" etx_verify c_text_align B" type="tel" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                            <input class=" etx_verify c_text_align B" type="tel" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                            <input class=" etx_verify c_text_align B" type="tel" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                            <input class=" etx_verify c_text_align B" type="tel" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                        </div>
+                        <button id="sms_btn_submit" type="button" class="c_btn btn btn-primary btn-embossed">فعــال سازی</button>
+                        <div class="sms_grid c_text_align ui-grid-a">
+                            <div class=" ui-block-a" >
+                                <a href="#" id="sms_btn_again">ارسال کـــد جدید</a>
+                            </div>
+                            <div class=" ui-block-b">
+                                <a href="#loginpage" >ویرایش شمــاره</a>
+                            </div>
+                        </div>
                     </div>
-                    <button type="button" class="c_btn">فعــال سازی</button>
                 </form>
             </div>
-            
             <div class="style_buttom">
-          		<img src="images/bot-2.png" class="img-responsive" alt="logo">
+                <img src="images/bot-2.png" class="img-responsive" alt="logo">
             </div>
-                
-                
-
-
         </div>
         <div data-role="footer"></div>
-
     </div>
     
     
@@ -1188,21 +1191,11 @@
             <a href="#programrequestpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="ui-content B p0">
-
-
-            <div class="place_main">
-                <div class=" main_tilte">
+            <div class="program_request c_bg_2">
+                <div class="c_tittle_2 c_tittle B">
                     درخواست برنامه
                 </div>
-
-                <div class="style_top p0">
-                    <img src="images/top-2.png" class="img-responsive" alt="logo">
-                </div>
-
-
-                <div class="program_request_page_group signuppage_main_info">
-
-                    <form method="post" action="">
+                    <form class="c_textarea" method="post" action="">
                             <label for="programrequestpageinput_bimary" >آیا سابقه بیماری، جراحی و مصرف دارو دارید ؟</label>
                             <textarea id="programrequestpageinput_bimary" class="signuppage_input" cols="40" rows="4" ></textarea>
                             <label for="programrequestpage_input_asib" >آیا سابقه مشکل حرکتی، آسیب یا درد مفصل دارید ؟</label>
@@ -1212,11 +1205,9 @@
                             <label for="programrequestpage_input_regim" >آیا در کنار ورزش از رژیم خاصی نیز استفاده می کنید ؟</label>
                             <textarea id="programrequestpage_input_regim" cols="40" rows="4" name="signup_textarea"></textarea>
                             <label class="program_request_page_yellow_label" for="programrequestpage_input_desceription" >توضیحات بیشتر</label>
-                            <textarea id="programrequestpage_input_desceription" cols="40" rows="4" name="signup_textarea" ></textarea>
-                        <button type="submit" class="c_btn programrequestpage_btn">ادامه درخواست برنامه</button>
+                            <textarea class="textarea_h" id="programrequestpage_input_desceription" cols="40" rows="4" name="signup_textarea"></textarea>
+                        <button type="submit" class="c_btn programrequestpage_btn">ادامــه درخواست برنـــامه</button>
                     </form>
-
-                </div>
 
                 <div class="style_buttom">
                     <img src="images/bot-2.png" class="img-responsive" alt="logo">
@@ -1237,6 +1228,8 @@
         <div data-role="footer">
         </div>
     </div>
+
+
     <!-- Page_Program_Request_P1 -->
     <div data-role="page" id="programpart1page">
         <div data-role="header"  class="header">
@@ -1249,51 +1242,62 @@
         <div data-role="main" class="ui-content B p0">
 
 
-            <div class="place_main">
-                <div class=" main_tilte">
+            <div class="program_request_p1 c_bg_2">
+                <div class="c_tittle_2 c_tittle B">
                     درخواست برنامه
                 </div>
-
-                <div class="style_top p0">
-                    <img src="images/top-2.png" class="img-responsive" alt="logo">
-                </div>
-
-
-                <div class="programpart1page_main_info">
-
-                    <form class="programpart1page_fild field-contain">
-                        <div class="labels">
-                            <label for="programpart1page_input_name" >نام :</label>
-                            <label for="programpart1page_input_name" > نام خانوادگی :</label>
-                            <label for="programpart1page_input_name" >نام مربی :</label>
-                            <label for="programpart1page_input_name" >تعداد جلسات :</label>
-                            <label for="programpart1page_input_name" >شعبه :</label>
-                            <label for="programpart1page_input_name" >تاریخ درخواست :</label>
-                            <label for="programpart1page_input_name" >InBody Score :</label>
-                            <label for="programpart1page_input_name" >سطح برنامه :</label>
-                            <label for="programpart1page_input_name" >سابقه ورزشی :</label></div>
-                        <div class="inputs">
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                        </div>
-                        <div class="programpart1page_input_submit">
-                            <input type="submit"  placeholder="ثبت نام و دریافت کد کاربری">
-                        </div>
+                    <form class=" " action="" method="">
+                        <ul class="B p0">
+                            <li class="ui-grid-a B p0">
+                                <label class="ui-block-a" for="programpart1page_input_fullname" >نام و نام خانوادگی :</label>
+                                <input class="c_bg ui-block-b" type="text" id="programpart1page_input_fullname"  cols="40" rows="4" />
+                            </li>
+                            <li class="ui-grid-a B p0">
+                                <label class="ui-block-a" for="programpart1page_input_coach" >نام مربی :</label>
+                                <input class="ui-block-b" type="text" id="programpart1page_input_coach"  cols="40" rows="4" />
+                            </li>
+                            <li class="ui-grid-a B p0">
+                                <label class="ui-block-a" for="programpart1page_input_meetings" >تعداد جلسات :</label>
+                                <input class="c_bg ui-block-b" type="text" id="programpart1page_input_meetings"  cols="40" rows="4" />
+                            </li>
+                            <li class="ui-grid-a B p0">
+                                <label class="ui-block-a" for="programpart1page_input_Branch" >شعبه :</label>
+                                <input class="ui-block-b" type="text" id="programpart1page_input_Branch"  cols="40" rows="4" />
+                            </li>
+                            <li class="ui-grid-a B p0">
+                                <label class="ui-block-a" for="programpart1page_input_request" >تاریخ درخواست :</label>
+                                <input class="c_bg ui-block-b" type="text" id="programpart1page_input_request"  cols="40" rows="4" />
+                            </li>
+                            <li class="ui-grid-a B p0">
+                                <label class="ui-block-a" for="programpart1page_input_Score" >InBScore :</label>
+                                <input class="ui-block-b" type="text" id="programpart1page_input_Score"  cols="40" rows="4" />
+                            </li>
+                            <li class="ui-grid-a B p0">
+                                <label class="ui-block-a" for="programpart1page_input_level" >سطح برنامه :</label>
+                                <input class="c_bg ui-block-b" type="text" id="programpart1page_input_level"  cols="40" rows="4" />
+                            </li>
+                            <li class="ui-grid-a B p0">
+                                <label class="ui-block-a" for="programpart1page_input_history" >سابقه ورزشی :</label>
+                                <input class="ui-block-b" type="text" id="programpart1page_input_history"  cols="40" rows="4" />
+                            </li>
+                            <li class="ui-grid-a B p0">
+                                <label class="ui-block-a" for="programpart1page_input_height" >قد :</label>
+                                <input class="c_bg ui-block-b" type="text" id="programpart1page_input_height"  cols="40" rows="4" />
+                            </li>
+                            <li class="ui-grid-a B p0">
+                                <label class="ui-block-a" for="programpart1page_input_weight" >وزن :</label>
+                                <input class="ui-block-b" type="text" id="programpart1page_input_weight"  cols="40" rows="4" />
+                            </li>
+                            <li class="ui-grid-a B p0">
+                                <label class="ui-block-a" for="programpart1page_input_age" >سن :</label>
+                                <input class="c_bg ui-block-b" type="text" id="programpart1page_input_age"  cols="40" rows="4" />
+                            </li>
+                        </ul>
+                        <button class="c_btn" id="" type="button" >ادامه درخواست برنامه</button>
                     </form>
-
-                </div>
-
                 <div class="style_buttom">
                     <img src="images/bot-2.png" class="img-responsive" alt="logo">
                 </div>
-
             </div>
 
         </div>
@@ -1309,6 +1313,8 @@
         <div data-role="footer">
         </div>
     </div>
+
+
     <!-- Page_Program_Request_P2 -->
     <div data-role="page" id="programpart2page">
         <div data-role="header"  class="header">
@@ -1320,32 +1326,90 @@
         </div>
         <div data-role="main" class="ui-content B p0">
 
-
-            <div class="place_main">
-                <div class=" main_tilte">
+            <div class="program_request_p2 c_bg_2">
+                <div class="c_tittle_2 c_tittle B">
                     درخواست برنامه
                 </div>
-
-                <div class="style_top p0">
-                    <img src="images/top-2.png" class="img-responsive" alt="logo">
+                <form class=" " action="" method="">
+                    <ul class="B p0">
+                        <li class="ui-grid-a B p0">
+                            <label class="ui-block-a" for="programpart1page_input_shaneh" >سرشانه :</label>
+                            <input class="c_bg ui-block-b" type="text" id="programpart1page_input_shaneh"  cols="40" rows="4" />
+                        </li>
+                        <li class="ui-grid-a B p0">
+                            <label class="ui-block-a" for="programpart1page_input_sineh" >سینه :</label>
+                            <input class="ui-block-b" type="text" id="programpart1page_input_sineh"  cols="40" rows="4" />
+                        </li>
+                        <li class="ui-grid-a B p0">
+                            <label class="ui-block-a" for="programpart1page_input_kamar" >کمر :</label>
+                            <input class="ui-block-b" type="text" id="programpart1page_input_kamar"  cols="40" rows="4" />
+                        </li>
+                        <li class="ui-grid-a B p0">
+                            <label class="ui-block-a" for="programpart1page_input_shekam" >شکم :</label>
+                            <input class="ui-block-b" type="text" id="programpart1page_input_shekam"  cols="40" rows="4" />
+                        </li>
+                        <li class="ui-grid-a B p0">
+                            <label class="ui-block-a" for="programpart1page_input_basan" >باسن :</label>
+                            <input class="ui-block-b" type="text" id="programpart1page_input_basan"  cols="40" rows="4" />
+                        </li>
+                        <li class="ui-grid-a B p0">
+                            <label class="ui-block-a" for="programpart1page_input_ran" >ران :</label>
+                            <input class="ui-block-b" type="text" id="programpart1page_input_ran"  cols="40" rows="4" />
+                        </li>
+                        <li class="ui-grid-a B p0">
+                            <label class="ui-block-a" for="programpart1page_input_sagh" >ساق :</label>
+                            <input class="ui-block-b" type="text" id="programpart1page_input_sagh"  cols="40" rows="4" />
+                        </li>
+                        <li class="ui-grid-a B p0">
+                            <label class="ui-block-a" for="programpart1page_input_bazoo" >بازو :</label>
+                            <input class="ui-block-b" type="text" id="programpart1page_input_bazoo"  cols="40" rows="4" />
+                        </li>
+                        <li class="ui-grid-a B p0">
+                            <label class="ui-block-a" for="programpart1page_input_pahlooran" >پهلوران :</label>
+                            <input class="ui-block-b" type="text" id="programpart1page_input_pahlooran"  cols="40" rows="4" />
+                        </li>
+                        <li class="ui-grid-a B p0">
+                            <ul>
+                                <li class="ui-block-a B p0">
+                                    <label class="" for="programpart1page_input_coach" >ساق :</label>
+                                    <input class="" type="text" id="programpart1page_input_coach"  cols="40" rows="4" />
+                                </li>
+                                <li class="ui-block-b B p0">
+                                    <label class="" for="programpart1page_input_coach" >ساق :</label>
+                                    <input class="" type="text" id="programpart1page_input_coach"  cols="40" rows="4" />
+                                </li>
+                                <li class="ui-block-a B p0">
+                                    <label class="" for="programpart1page_input_coach" >ساق :</label>
+                                    <input class="" type="text" id="programpart1page_input_coach"  cols="40" rows="4" />
+                                </li>
+                                <li class="ui-block-b B p0">
+                                    <label class="" for="programpart1page_input_coach" >ساق :</label>
+                                    <input class="" type="text" id="programpart1page_input_coach"  cols="40" rows="4" />
+                                </li>
+                            </ul>
+                                <input type="checkbox" name="checkbox-mini-0" id="checkbox-mini-0" data-mini="true">
+                                <label for="checkbox-mini-0">لوردوز گردنی</label>
+                            <label class="ui-block-a" for="programpart1page_input_coach" >ساق :</label>
+                            <input class="ui-block-b" type="checkbox" id="programpart1page_input_coach"  cols="40" rows="4" />
+                        </li>
+                        <li class="ui-grid-a B p0">
+                            <label class="ui-block-a" for="programpart1page_input_coach" >ساق :</label>
+                            <input class="ui-block-b" type="text" id="programpart1page_input_coach"  cols="40" rows="4" />
+                        </li>
+                        <li class="ui-grid-a B p0">
+                            <label class="ui-block-a" for="programpart1page_input_coach" >ساق :</label>
+                            <input class="ui-block-b" type="text" id="programpart1page_input_coach"  cols="40" rows="4" />
+                        </li>
+                    </ul>
+                    <button class="c_btn" id="" type="button" >ادامه درخواست برنامه</button>
+                </form>
+                <div class="style_buttom">
+                    <img src="images/bot-2.png" class="img-responsive" alt="logo">
                 </div>
+            </div>
 
 
-                <div class="signuppage_main_info">
-
-
-                    <form class="programpart1page_fild field-contain">
-                        <div class="labels">
-                            <label for="programpart1page_input_name" >سرشانه :</label>
-                            <label for="programpart1page_input_name" > سینه :</label>
-                            <label for="programpart1page_input_name" >کمر :</label>
-                            <label for="programpart1page_input_name" >شکم :</label>
-                            <label for="programpart1page_input_name" >باسن :</label>
-                            <label for="programpart1page_input_name" >ران :</label>
-                            <label for="programpart1page_input_name" >ساق :</label>
-                            <label for="programpart1page_input_name" >بازو :</label>
-                            <label for="programpart1page_input_name" >پهلوران :</label>
-                            <label for="programpart1page_input_name" >لوردوز گردنی :</label>
+                            <label for="programpart1page_input_name" > :</label>
                             <label for="programpart1page_input_name" > کیفوز پشتی :</label>
                             <label for="programpart1page_input_name" >لوردوز کمری :</label>
                             <label for="programpart1page_input_name" >پای ضربدری :</label>
@@ -1354,40 +1418,6 @@
                             <label for="programpart1page_input_name" >چرخش زانو :</label>
                             <label for="programpart1page_input_name" >اسکولیوز :</label>
                             <label for="programpart1page_input_name" >کتف بالدار :</label>
-                        </div>
-                        <div class="inputs">
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                            <input id="programpart1page_input_name"  cols="40" rows="4" />
-                        </div>
-                        
-                        <div class="programpart1page_input_submit">
-                            <input type="submit"  placeholder="ثبت نام و دریافت کد کاربری">
-                        </div>
-                    </form>
-
-                </div>
-
-                <div class="style_buttom">
-                    <img src="images/bot-2.png" class="img-responsive" alt="logo">
-                </div>
-
-            </div>
 
         </div>
         
