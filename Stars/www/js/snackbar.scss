@@ -3,7 +3,8 @@
   position: fixed;
   z-index: 999;
   bottom: 0px;
-	display: block;
+  display: block;
+  text-align: center!important;
 
   .snackbar {
   	opacity: 0;
@@ -14,6 +15,7 @@
   	text-align: center;
   	font-size: 17px;
   	padding: 16px;
+    text-align: center;
   }
 
   .snackbar-close {
@@ -28,6 +30,8 @@
   .snackbar-text {
   	width: 85%;
   	display: inline-block;
+    margin: 0 auto;
+    text-align: center;
   }
 
   .success {
