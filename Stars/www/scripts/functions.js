@@ -437,12 +437,15 @@ $('#login_btn_submit').on("tap", function (Event){
 
 
 $('#sms_btn_submit').on("tap", function (Event){
-    var etx_txt = $("#sms_etx_verify").val();
+    var etx_txt_1 = $("#etx_verify_1").val();
+    var etx_txt_2 = $("#etx_verify_2").val();
+    var etx_txt_3 = $("#etx_verify_3").val();
+    var etx_txt_4 = $("#etx_verify_4").val();
 
-    if (( etx_verify_1.length == 1 ) && 
-        ( etx_verify_2.length == 1 ) && 
-        ( etx_verify_3.length == 1 ) && 
-        ( etx_verify_4.length == 1 ) ) {
+    if (( etx_txt_1.length == 1 ) && 
+        ( etx_txt_2.length == 1 ) && 
+        ( etx_txt_3.length == 1 ) && 
+        ( etx_txt_4.length == 1 ) ) {
 
     $.mobile.changePage('#mainppage');
     }else {
