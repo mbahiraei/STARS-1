@@ -371,17 +371,6 @@ var $demoCont = document.querySelector(".demo-cont");
 
 
 
-$(document).ready(function(){
-  $('.l-theme').slick({
-  infinite: true,
-  slidesToShow: 3,
-  slidesToScroll: 3
-  });
-});
-
-
-
-
 
 
 
@@ -449,7 +438,7 @@ $('#sms_btn_submit').on("tap", function (Event){
     if (( etx_verify_1.length == 1 ) && 
         ( etx_verify_2.length == 1 ) && 
         ( etx_verify_3.length == 1 ) && 
-        ( etx_verify_4.length == 1 ) && ) {
+        ( etx_verify_4.length == 1 ) ) {
     $.mobile.changePage('#mainppage');
     }else {
         snack.error("کد نامعتبر است");
