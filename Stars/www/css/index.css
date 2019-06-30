@@ -32,14 +32,20 @@ img{
     background: #461858 !important;
 }
 .c_bg_2{
-    background: #5e1e73 !important;
+    background: #5b1b72 !important;
+}
+.c_bga_1{
+    background: #4f1665 !important;
+}
+.c_bga_2{
+    background: #43085a !important;
 }
 .c_btn{
     display: block!important;
     margin: 10% auto!important;
     line-height: 1 !important;
     background-color: #ffff00!important;
-    color: #5a1973!important;
+    color: #5a1973 !important;
     border: none!important;
     font-size: 16px!important;
     border-radius: 20px !important;
@@ -324,14 +330,9 @@ img{
 
 
 /*--------------- Page_Main ----------------------------*/
-.page2_main_btn img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+.page_main .btn-group
+
 .page2_main_btn_inner{
-    width: auto;
-    background: #461858;
     padding: 3% 5%;
 }
 .page2_main_btn a{
@@ -786,7 +787,7 @@ img{
     width: 35% !important;
     line-height: 3.1;
 }
-.program_request_p1 form ul li input, .program_request_p2 form ul li input{
+.program_request_p1 form ul li input {
     float: left;
     width: 60% !important;
     background: #4f1665;
@@ -803,6 +804,7 @@ img{
 }
 .program_request_p2 form ul li input{
     width: 70%!important;
+    float: left;
 }
 
 .program_request_p2 form fieldset div div{
@@ -821,6 +823,9 @@ img{
 .program_request_p2 form fieldset div div input{
     z-index: -1;
 }
+/*--------------- Page_Program_Request_P3 ----------------*/
+
+
 
 
 
