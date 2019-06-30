@@ -78,6 +78,12 @@ img{
     border: none!important;
 }
 
+/*--------------- Page_up ----------------------------*/
+.page_up a{
+    float: right;
+    width: 40%;
+}
+
 /*--------------- Page_login ----------------------------*/
 .topelement_p1{
     position: relative;
@@ -107,10 +113,9 @@ img{
 }
 .logo div{
     position: relative;
-    font-size: 19px;
-    font-weight: bold;
+    font-size: 19px!important;
+    font-weight: bolder;
     padding: 10% 0;
-    text-align: center;
 }
 .circle_p1{
     justify-content: space-around;
@@ -160,7 +165,6 @@ img{
     background-color: #5a1973!important;
     border: 1px solid #925581 !important;
     padding: 3% 10% !important;
-    text-align: left!important;
     direction: ltr;
     font-size: 16px;
     font-weight: bold;
@@ -169,7 +173,7 @@ img{
 .input_num_p1::placeholder{
     direction: ltr!important;
     font-weight: bold;
-    color: #c49bd5;
+    color: #c49bd5!important;
 }
 .submit_p1{
     width: 40%;
@@ -236,7 +240,6 @@ img{
 }
 .main_info_3, .page_description3{
     font-size: 100%;
-    text-align: center;
     color: #fff;
 }
 .page_description3 {
@@ -295,7 +298,7 @@ img{
     height: auto!important;
     width: 90%;
     margin: 0 auto;
-    text-align: right; 
+    text-align: right;
 }
 .locationB1_txt_tittle {
     padding: 25px 5px;
@@ -333,6 +336,9 @@ img{
 
 
 /*--------------- Page_Main ----------------------------*/
+.slider_main{
+    padding: 23px 3%!important;
+}
 .page2_main_btn img {
     width: 100%;
     height: auto;
@@ -341,15 +347,14 @@ img{
 .page2_main_btn_inner{
     width: auto;
     background: #461858;
-    padding: 3% 5%;
+    padding: 0 5%;
 }
 .page2_main_btn a{
     padding: 33% 0;
-    font-size: 100%;
+    font-size: 20px !important;
     border: 5px solid #e9d800!important;
     border-radius: 50%!important;
     background: #3a1548 !important;
-    color: white!important;
     font-weight: normal!important;
 }
 .news_page_main_header{
@@ -529,7 +534,6 @@ img{
     border-bottom: 1px solid #e3bc9b;
     margin: 10px auto;
     padding: 35px 0 30px 0;
-    text-align: center;
     font-size: 120%;
 }
 .moarefi_img{
@@ -675,7 +679,7 @@ img{
     margin-left: -125px; 
     background-color: #333; 
     text-align: center;
-    border-radius: 2px; 
+    border-radius: 2px;
     padding: 16px; 
     position: fixed; 
     z-index: 1; 
@@ -728,7 +732,6 @@ img{
 }
 .workout_grid div:last-child{
     line-height: 3;
-    text-align: center;
     border-color: #451956;
     background: #502461;
     font-size: 100%;
@@ -1327,6 +1330,8 @@ body {
 }
 
 .example-slider {
+    height: 200px !important;
+    border-radius: 8px !important;
   z-index: 2;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
