@@ -80,8 +80,8 @@ $( document ).on( "pageinit", "#workoutpage", function() {
     });
 });
 // Page_Contact 
-$( document ).on( "pageinit", "#contactpage", function() {
-    $( document ).on( "swipeleft swiperight", "#contactpage", function( e ) {
+$( document ).on( "pageinit", "#cotactpage", function() {
+    $( document ).on( "swipeleft swiperight", "#cotactpage", function( e ) {
         if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
             if ( e.type === "swipeleft"  ) {
                 $( "#cotactpage_panel" ).panel( "open" );
@@ -423,25 +423,30 @@ function hello() {
 // Page_login 
 $('#login_btn_submit').on("tap", function (Event){
     var etx_txt = $("#login_btnt_submit").val();
-    var snack = new Snackbar();
     if (( etx_txt.length == 11 ) && ( etx_txt.startsWith("09"))) {
-        $.mobile.changePage('#smspage');
-    }else {    
-        snack.error("شماره همراه نامعتبر است");
+    $.mobile.changePage('#smspage');
+    }else {
+        
     }
 });
 
 
 // Page_Sms
+
+
+
+
 $('#sms_btn_submit').on("tap", function (Event){
     var etx_txt = $("#sms_etx_verify").val();
+
     if (( etx_verify_1.length == 1 ) && 
         ( etx_verify_2.length == 1 ) && 
         ( etx_verify_3.length == 1 ) && 
         ( etx_verify_4.length == 1 ) ) {
+
     $.mobile.changePage('#mainppage');
     }else {
-        snack.error("کد نامعتبر است");
+        
     }
 });
 
@@ -477,7 +482,7 @@ $('#main_btn_news').on("tap", function (Event){
     $.mobile.changePage('#newspage');
 });
 $('#main_btn_aboutus').on("tap", function (Event){
-    $.mobile.changePage('#contactpage');
+    $.mobile.changePage('#cotactpage');
 });
 $('#main_btn_introduction').on("tap", function (Event){
     $.mobile.changePage('#introductionpage');
