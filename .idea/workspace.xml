@@ -14,14 +14,14 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.56439394">
+    <splitter split-orientation="horizontal" split-proportion="0.65378785">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Stars/www/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="1381" column="67" lean-forward="true" selection-start-line="1381" selection-start-column="67" selection-end-line="1381" selection-end-column="68" />
+                <state relative-caret-position="358">
+                  <caret line="1402" column="28" lean-forward="true" selection-start-line="1402" selection-start-column="28" selection-end-line="1402" selection-end-column="28" />
                   <folding>
                     <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -63,7 +63,8 @@
                     <element signature="n#style#0;n#div#1;n#div#1;n#li#7;n#ul#0;n#div#0;n#div#1;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#2;n#div#0;n#div#1;n#div#14;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#2;n#div#0;n#div#1;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#form#0;n#div#1;n#div#0;n#div#1;n#div#17;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#div#16;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#div#17;n#body#0;n#html#0;n#!!top" />
                   </folding>
                 </state>
               </provider>
@@ -72,8 +73,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Stars/www/css/index.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+                <state relative-caret-position="323">
+                  <caret line="40" column="40" lean-forward="true" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
                 </state>
               </provider>
             </entry>
@@ -85,8 +86,29 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Stars/www/css/index.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-59">
-                  <caret line="783" column="21" lean-forward="true" selection-start-line="783" selection-start-column="21" selection-end-line="783" selection-end-column="21" />
+                <state relative-caret-position="391">
+                  <caret line="818" column="23" selection-start-line="818" selection-start-column="23" selection-end-line="818" selection-end-column="23" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Stars/jquery.mobile.rtl/css/themes/default/rtl.jquery.mobile-1.4.0.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="397">
+                  <caret line="1067" column="32" selection-start-line="1067" selection-start-column="32" selection-end-line="1067" selection-end-column="32" />
+                  <folding>
+                    <element signature="e#18758#19802#2" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Stars/www/css/themes/mytheme/mytheme.min.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="391">
+                  <caret line="68" column="29" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="29" />
                 </state>
               </provider>
             </entry>
@@ -94,8 +116,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Stars/www/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="18802">
-                  <caret line="1577" selection-start-line="1577" selection-end-line="1577" />
+                <state relative-caret-position="19805">
+                  <caret line="1579" selection-start-line="1579" selection-end-line="1579" />
                   <folding>
                     <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -185,6 +207,7 @@
         <option value="$USER_HOME$/Desktop/test/BootsTrap-Test/slick/jquery-3.1.1.min.js" />
         <option value="$USER_HOME$/Desktop/test/BootsTrap-Test/slick/index.html" />
         <option value="$PROJECT_DIR$/Stars/www/scripts/functions.js" />
+        <option value="$PROJECT_DIR$/Stars/jquery.mobile.rtl/css/themes/default/rtl.jquery.mobile-1.4.0.css" />
         <option value="$PROJECT_DIR$/Stars/www/css/index.css" />
         <option value="$PROJECT_DIR$/Stars/www/index.html" />
       </list>
@@ -255,11 +278,12 @@
       <workItem from="1561537170374" duration="109000" />
       <workItem from="1561538095119" duration="1853000" />
       <workItem from="1561550017400" duration="6046000" />
+      <workItem from="1561814929417" duration="6292000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96567000" />
+    <option name="totallyTimeSpent" value="102859000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -492,17 +516,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Stars/jquery.mobile.rtl/css/themes/default/rtl.jquery.mobile-1.4.0.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="1067" column="32" selection-start-line="1067" selection-start-column="32" selection-end-line="1067" selection-end-column="32" />
+          <folding>
+            <element signature="e#18758#19802#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Stars/www/css/themes/mytheme/mytheme.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="68" column="29" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Stars/www/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+        <state relative-caret-position="323">
+          <caret line="40" column="40" lean-forward="true" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Stars/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="1381" column="67" lean-forward="true" selection-start-line="1381" selection-start-column="67" selection-end-line="1381" selection-end-column="68" />
+        <state relative-caret-position="358">
+          <caret line="1402" column="28" lean-forward="true" selection-start-line="1402" selection-start-column="28" selection-end-line="1402" selection-end-column="28" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -544,7 +585,8 @@
             <element signature="n#style#0;n#div#1;n#div#1;n#li#7;n#ul#0;n#div#0;n#div#1;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#2;n#div#0;n#div#1;n#div#14;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#2;n#div#0;n#div#1;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#form#0;n#div#1;n#div#0;n#div#1;n#div#17;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#16;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#17;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
