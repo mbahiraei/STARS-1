@@ -6,6 +6,9 @@
 a{
     text-decoration: none!important;
 }
+::before{
+  display: none;
+}
 div{
     box-shadow: none!important;
 }
@@ -802,7 +805,22 @@ img{
     width: 70%!important;
 }
 
-
+.program_request_p2 form fieldset div div{
+    width:50%!important;
+    float: right;
+}
+.program_request_p2 form fieldset div div label{
+    border: none!important;
+    background: none !important;
+    line-height: 2;
+    padding-right: 0 !important;
+}
+.program_request_p2 form fieldset div div .f_b{
+    padding-right: 10px !important;
+}
+.program_request_p2 form fieldset div div input{
+    z-index: -1;
+}
 
 
 
