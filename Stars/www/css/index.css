@@ -179,15 +179,18 @@ img{
     padding: 10% 0;
 }
 .main_info_title{
-    font-size: 18px;
+    font-size: 18px!important;
     line-height: 5;
 }
 .main_info form{
     width: 80%;
 }
 .sms_grid{
-    font-size: 15px;
+    font-size: 15px !important;
     line-height: 5;
+}
+.sms_grid .sms_grid_yell a{
+    color: #e7d803 !important;
 }
 .sms_main_info form button{
     width: 50%;
@@ -197,9 +200,10 @@ img{
 }
 .sms_main_info #form input {
     line-height: 2;
-    font-size: 20px;
     border-bottom: solid 2px #ccc;
     width: 50%;
+    font-weight: bold;
+    font-size: 20px !important;
     transition: all .2s ease-in-out;
     border-radius: 0!important;
 }
@@ -352,8 +356,9 @@ img{
     text-align: right;
     border: none;
     border-bottom: 1px solid #b5a2b8;
-    color: #572e63;
+    color: #572e63 !important;
     padding: 3%;
+    font-size: 18px !important;
     font-weight: bold;
 }
 .news_page_main_ul{
@@ -365,8 +370,8 @@ img{
     border: none!important;
     margin: 2% 0!important;
     padding: 3%!important;
+    color: #313030 !important;
     background: #f3f1f2!important;
-    font-size: 80%!important;
 }
 .news_page_main_ul a {
     float: left;
@@ -468,7 +473,6 @@ img{
     background: #461858 !important;
     padding: 15% 5%;
     text-shadow: none!important;
-    color: #fff;
 }
 .about_textheader{
     width: 100%;
@@ -517,7 +521,6 @@ img{
 .moarefi_main_info{
     padding: 15% 5%;
     text-shadow: none!important;
-    color: #fff;
 }
 .moarefi_tilte {
     position: relative;
@@ -528,7 +531,6 @@ img{
     padding: 35px 0 30px 0;
     text-align: center;
     font-size: 120%;
-    color: #fff;
 }
 .moarefi_img{
     width: 100%;
@@ -550,7 +552,6 @@ img{
 .moarefi_p{
     padding: 2%;
     font-size: 80%;
-    color: #fff;
     text-shadow: none;
 }
 
@@ -584,7 +585,6 @@ img{
 }
 .chooseclasspageـgride div{
     text-shadow: none!important;
-    color: #fff;
     padding: 2% 5% !important;
 }
 .chooseclasspage_2, .chooseclasspage_4 {
@@ -609,7 +609,6 @@ img{
     height: auto!important;
     resize: none!important;
     background: #3a1548 !important;
-    color: #fff !important;
     text-shadow: none !important;
     border-radius: 20px!important;
     padding: 1% 5%!important;
@@ -675,8 +674,7 @@ img{
     min-width: 250px; 
     margin-left: -125px; 
     background-color: #333; 
-    color: #fff; 
-    text-align: center; 
+    text-align: center;
     border-radius: 2px; 
     padding: 16px; 
     position: fixed; 
@@ -735,7 +733,6 @@ img{
     background: #502461;
     font-size: 100%;
     text-shadow: none;
-    color: #fff;
 }
 .workout_grid_tittle{
     border-radius: 20px 20px 0 0!important;
@@ -751,7 +748,6 @@ img{
     padding: 5% 0;
 }
 .workout_explain p{
-    color: #fff;
     line-height: 2;
 }
 .workout_btn{
@@ -1028,7 +1024,6 @@ img{
   position: relative;
   padding-right: 20px;
   font-size: 20px;
-  color: #fff;
   word-spacing: 10px;
 }
 .fnc-slide__heading-line:nth-child(2) {
@@ -1079,7 +1074,7 @@ img{
   padding: 5px 15px;
   font-size: 20px;
   line-height: 1;
-  color: transparent;
+  color: transparent !important;
   border: none;
   text-transform: uppercase;
   background: transparent;
@@ -1103,7 +1098,6 @@ img{
   -webkit-transform-origin: 50% 0;
           transform-origin: 50% 0;
   line-height: 30px;
-  color: #fff;
 }
 .fnc-slide__action-btn span:before {
   content: "";
@@ -1187,7 +1181,6 @@ img{
   width: 100px!important;
   height: 50px!important;
   font-size: 14px!important;
-  color: #fff!important;
   text-transform: uppercase!important;
   background: transparent!important;
   border: none!important;
@@ -1327,7 +1320,6 @@ body {
   display: block;
   margin-bottom: 10px;
   font-size: 12px;
-  color: #fff;
 }
 .demo-cont__credits-blend {
   font-size: 30px;
