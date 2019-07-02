@@ -1,5 +1,5 @@
 // Jquery EVENTS
-// Page_Location 
+// Page_Location Panel
 $( document ).on( "pageinit", "#chooselocatinpage", function() {
     $( document ).on( "swipeleft swiperight", "#chooselocatinpage", function( e ) {
         if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
@@ -9,7 +9,7 @@ $( document ).on( "pageinit", "#chooselocatinpage", function() {
         }
     });
 });
-// Page_LocationB1
+// Page_LocationB1 Panel
 $( document ).on( "pageinit", "#locationB1", function() {
     $( document ).on( "swipeleft swiperight", "#locationB1", function( e ) {
         if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
@@ -19,7 +19,7 @@ $( document ).on( "pageinit", "#locationB1", function() {
         }
     });
 });
-// Page_LocationB2
+// Page_LocationB2 Panel
 $( document ).on( "pageinit", "#locationB2", function() {
     $( document ).on( "swipeleft swiperight", "#locationB2", function( e ) {
         if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
@@ -29,17 +29,17 @@ $( document ).on( "pageinit", "#locationB2", function() {
         }
     });
 });
-// Page_Main
-$( document ).on( "pageinit", "#mainppage", function() {
-    $( document ).on( "swipeleft swiperight", "#mainppage", function( e ) {
+// Page_Main Panel
+$( document ).on( "pageinit", "#mainpage", function() {
+    $( document ).on( "swipeleft swiperight", "#mainpage", function( e ) {
         if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
             if ( e.type === "swipeleft"  ) {
-                $( "#mainppage_panel" ).panel( "open" );
+                $( "#mainpage_panel" ).panel( "open" );
             } 
         }
     });
 });
-// Page_Sans 
+// Page_Sans Panel 
 $( document ).on( "pageinit", "#sanspage", function() {
     $( document ).on( "swipeleft swiperight", "#sanspage", function( e ) {
         if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
@@ -49,7 +49,7 @@ $( document ).on( "pageinit", "#sanspage", function() {
         }
     });
 });
-// Page_ChooseSans 
+// Page_ChooseSans Panel 
 $( document ).on( "pageinit", "#choosesanspage", function() {
     $( document ).on( "swipeleft swiperight", "#choosesanspage", function( e ) {
         if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
@@ -59,7 +59,7 @@ $( document ).on( "pageinit", "#choosesanspage", function() {
         }
     });
 });
-// Page_ChooseClass 
+// Page_ChooseClass Panel 
 $( document ).on( "pageinit", "#chooseclasspage", function() {
     $( document ).on( "swipeleft swiperight", "#chooseclasspage", function( e ) {
         if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
@@ -69,7 +69,7 @@ $( document ).on( "pageinit", "#chooseclasspage", function() {
         }
     });
 });
-// Page_WorkOut 
+// Page_WorkOut Panel 
 $( document ).on( "pageinit", "#workoutpage", function() {
     $( document ).on( "swipeleft swiperight", "#workoutpage", function( e ) {
         if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
@@ -79,7 +79,7 @@ $( document ).on( "pageinit", "#workoutpage", function() {
         }
     });
 });
-// Page_Contact 
+// Page_Contact Panel 
 $( document ).on( "pageinit", "#cotactpage", function() {
     $( document ).on( "swipeleft swiperight", "#cotactpage", function( e ) {
         if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
@@ -89,7 +89,7 @@ $( document ).on( "pageinit", "#cotactpage", function() {
         }
     });
 });
-// Page_News 
+// Page_News  Panel
 $( document ).on( "pageinit", "#newspage", function() {
     $( document ).on( "swipeleft swiperight", "#newspage", function( e ) {
         if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
@@ -99,7 +99,7 @@ $( document ).on( "pageinit", "#newspage", function() {
         }
     });
 });
-// Page_Introduction 
+// Page_Introduction Panel 
 $( document ).on( "pageinit", "#introductionpage", function() {
     $( document ).on( "swipeleft swiperight", "#introductionpage", function( e ) {
         if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
@@ -109,7 +109,7 @@ $( document ).on( "pageinit", "#introductionpage", function() {
         }
     });
 });
-// Page_SignUp 
+// Page_SignUp Panel 
 $( document ).on( "pageinit", "#signuppage", function() {
     $( document ).on( "swipeleft swiperight", "#signuppage", function( e ) {
         if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
@@ -119,7 +119,7 @@ $( document ).on( "pageinit", "#signuppage", function() {
         }
     });
 });
-// Page_Suggestion 
+// Page_Suggestion Panel 
 $( document ).on( "pageinit", "#suggestionpage", function() {
     $( document ).on( "swipeleft swiperight", "#suggestionpage", function( e ) {
         if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
@@ -129,7 +129,47 @@ $( document ).on( "pageinit", "#suggestionpage", function() {
         }
     });
 });
-// Page_Suggestion 
+// Page_Program_Request Panel 
+$( document ).on( "pageinit", "#programrequestpage", function() {
+    $( document ).on( "swipeleft swiperight", "#programrequestpage", function( e ) {
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swipeleft"  ) {
+                $( "#programrequestpage_panel" ).panel( "open" );
+            } 
+        }
+    });
+});
+// Page_Program_Request_P1 Panel 
+$( document ).on( "pageinit", "#programpart1page", function() {
+    $( document ).on( "swipeleft swiperight", "#programpart1page", function( e ) {
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swipeleft"  ) {
+                $( "#programpart1page_panel" ).panel( "open" );
+            } 
+        }
+    });
+});
+// Page_Program_Request_P2 Panel 
+$( document ).on( "pageinit", "#programpart2page", function() {
+    $( document ).on( "swipeleft swiperight", "#programpart2page", function( e ) {
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swipeleft"  ) {
+                $( "#programpart2page_panel" ).panel( "open" );
+            } 
+        }
+    });
+});
+// Page_Program_Request_P3 Panel 
+$( document ).on( "pageinit", "#programpart3page", function() {
+    $( document ).on( "swipeleft swiperight", "#programpart3page", function( e ) {
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swipeleft"  ) {
+                $( "#programpart3page_panel" ).panel( "open" );
+            } 
+        }
+    });
+});
+// demo_swiper Panel 
 $( document ).on( "pageinit", "#demo_swiper", function() {
     $( document ).on( "swipeleft swiperight", "#demo_swiper", function( e ) {
         if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
@@ -143,48 +183,6 @@ $( document ).on( "pageinit", "#demo_swiper", function() {
 
 
 
-// fetch('https://api.unsplash.com/photos/random/?count=5&client_id=52d8369eb3e2576a5f5b6423865e074e9c7045761bff1ac5664ff3e0bdb57a1d') 
-//   .then(response => response.json())
-//   .then(data => {
-//     data.forEaach(function(image, i) {
-//       document.querySelector("#slide-" + (i+1)).innerHTML = `
-//         <img src="${image.urls.regular}" alt="">
-//         <p class="author-info">
-//           <a href="${image.links.html}?utm_source=slider-thing&utm_medium=referral&utm_campaign=api-credit">Photo by ${image.user.name}</a> on <a href="https://unsplash.com/">Unsplash</a>
-//         </p>
-//       `;
-//     });
-//   });
-
-
-
-
-
-
-//$(document).ready(function () {
-//    //initialize swiper when document ready
-//    var mySwiper = new Swiper ('.swiper-container', {
-//      // Optional parameters
-//      direction: 'horizontal',
-//      loop: true,
-//
-//    // If we need pagination
-//    pagination: {
-//      el: '.swiper-pagination',
-//    },
-//
-//    // Navigation arrows
-//    navigation: {
-//      nextEl: '.swiper-button-next',
-//      prevEl: '.swiper-button-prev',
-//    },
-//
-//    // And if we need scrollbar
-//    scrollbar: {
-//      el: '.swiper-scrollbar',
-//    },
-//  })
-//  });
 
 (function() {
 
@@ -345,14 +343,7 @@ $( document ).on( "pageinit", "#demo_swiper", function() {
   window.fncSlider = fncSlider;
 }());
 
-/* not part of the slider scripts */
 
-/* Slider initialization
-options:
-autoSliding - boolean
-autoSlidingDelay - delay in ms. If audoSliding is on and no value provided, default value is 5000
-blockASafterClick - boolean. If user clicked any sliding control, autosliding won't start again
-*/
 fncSlider(".example-slider", {autoSlidingDelay: 4000});
 
 var $demoCont = document.querySelector(".demo-cont");
@@ -447,7 +438,7 @@ $('#sms_btn_submit').on("tap", function (Event){
         ( etx_txt_3.length == 1 ) && 
         ( etx_txt_4.length == 1 ) ) {
 
-    $.mobile.changePage('#mainppage');
+    $.mobile.changePage('#mainpage');
     }else {
         
     }

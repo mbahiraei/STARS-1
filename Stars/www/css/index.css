@@ -662,7 +662,7 @@ img{
 
 
 /* Swipe works with mouse as well but often causes text selection. */
-#loginpage,#smspage *,#chooselocatinpage *,#locationB1 *,#locationB2 *,#mainppage *,#sanspage *,#choosesanspage *,#chooseclasspage *,#workoutpage *,#cotactpage *,#newspage *,#introductionpage *,#signuppage *,#newspagesuggestionpage * {
+#loginpage *,#smspage *,#chooselocatinpage *,#locationB1 *,#locationB2 *,#mainpage *,#sanspage *,#choosesanspage *,#chooseclasspage *,#workoutpage *,#contactpage *,#newspage *,#introductionpage *,#signuppage *,#suggestionpage *,#programrequestpage *,#programpart1page *,#programpart2page *,#programpart3page * {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -806,9 +806,13 @@ img{
     width: 25%!important;
 }
 .program_request_p2 form ul li input{
-    width: 70%!important;
+    width: 50%!important;
+    float: right;
 }
-
+.programpart2page_CM{
+    width: 15%!important;
+    float: left!important;
+}
 .program_request_p2 form fieldset div div{
     width:50%!important;
     float: right;
@@ -827,6 +831,7 @@ img{
 }
 
 
+/*--------------- Page_Program_Request_P3 ----------------*/
 
 
 
