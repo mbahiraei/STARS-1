@@ -1,12 +1,15 @@
-﻿@font-face {
-    font-family: Iransans;
-    src: url('fonts/ira.ttf') format:('truetype');
+﻿@font-face{
+    font-family: "irsans";
+    src: url(../fonts/irsans.eot);
+    src: url(../fonts/irsans.eot?#iefix) format("embedded-opentype"), url(../fonts/irsans.woff) format("woff"), url(../fonts/irsans.ttf) format("truetype"),    	url(../fonts/irsans.svg#BYekan) format("svg");
+    font-weight: normal;
+    font-style: normal;
 }
 * {
     text-shadow: none!important;
     color: #fff!important;
     font-size: 14px!important;
-  font-family: Iransans!important;
+    font-family: "irsans",Tahoma,Geneva,sans-serif !important;
 }
 a{
     text-decoration: none!important;
@@ -351,19 +354,16 @@ img{
 }
 .page2_main_btn a{
     padding: 33% 0;
-    font-size: 20px !important;
+    font-size: 16px !important;
     border: 5px solid #e9d800!important;
     border-radius: 50%!important;
     background: #3a1548 !important;
-    font-weight: normal!important;
 }
 .news_page_main_header{
-    text-align: right;
-    border: none;
     border-bottom: 1px solid #b5a2b8;
     color: #572e63 !important;
     padding: 3%;
-    font-size: 18px !important;
+    font-size: 16px !important;
     font-weight: bold;
 }
 .news_page_main_ul{
