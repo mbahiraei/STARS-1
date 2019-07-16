@@ -9,7 +9,7 @@
     text-shadow: none!important;
     box-shadow: none!important;
     color: #fff!important;
-    font-size: 14px!important;
+    font-size: 12px!important;
     font-family: "irsans",Tahoma,Geneva,sans-serif !important;
 }
 a{
@@ -83,6 +83,11 @@ img{
     border-radius: 15px!important;
     padding: 2% 5%!important;
     border: none!important;
+}
+.ui-title {
+    display: block;
+    margin: 0px 45px!important;
+    text-align: right!important;
 }
 
 
@@ -609,7 +614,7 @@ img{
 /*--------------- Page_AllNews ---------------------------*/
 .allnewspage_li_name {
     display: block;
-    font-size: 13px;
+    font-size: 11px;
     float: right;
     width: 100%;
 
@@ -620,7 +625,7 @@ img{
 }
 .allnewspage_li_date {
     display: block;
-    font-size: 11px!important;
+    font-size: 10px!important;
     float: right;
     color: #dccf29!important;
     padding: 0 0!important;
@@ -730,6 +735,17 @@ img{
 .gallery-thumbs .swiper-slide-thumb-active {
     opacity: 1;
 }
+.swiper-slide p {
+    bottom: 0;
+    right: 0;
+    width: 95%;
+    float: right;
+    position: absolute;
+    color: #e9d800!important;
+    padding: 10px;
+    margin: 0!important;
+    background-image: linear-gradient(to right, rgba(46,18,58,0.2), rgba(46,18,58,1));
+}
 
 
 
@@ -770,6 +786,9 @@ img{
 }
 .chooseclasspage_3 {
     text-align: right;
+}
+.chooseclasspage_4 span {
+    color: #dccf29!important;
 }
 
 
@@ -876,7 +895,6 @@ img{
 
 
 
-
 /*--------------- Page_workout ------------------------*/
 .workoutpage_style_top{
     margin-top: 125px!important;
@@ -957,7 +975,7 @@ img{
    height: unset !important;
 }
 .program_request form label{
-    font-size: 14px;
+    font-size: 12px;
     padding: 1% 2%!important;
 }
 .program_request_page_yellow_label{
@@ -1052,7 +1070,7 @@ img{
     margin: 5% auto 10%;
     text-align: right;
     line-height:4;
-    font-size: 14px!important;
+    font-size: 12px!important;
     width: 100%;
 }
 .p3_price {
@@ -1179,11 +1197,9 @@ img{
 }
 .head_panel span {
     text-align: center;
-    font-size: 16px!important;
+    font-size: 14px!important;
     color: #461857!important;
     display: block;
-}
-.body_panel {
 }
 .panel_ul {
     list-style: none;

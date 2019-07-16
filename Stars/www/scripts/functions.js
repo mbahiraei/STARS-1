@@ -152,9 +152,31 @@ function snack_error(text) {
 
 
 
+function Timer_show(){
+    interval = setInterval(function() {
+        var timer = $('#sms_timer').html();
+        timer = timer.split(':');
+        var minutes = parseInt(timer[0], 10);
+        var seconds = parseInt(timer[1], 10);
+        seconds -= 1;
+        if (minutes < 0) return clearInterval(interval);
+        if (minutes < 10 && minutes.length != 2) minutes = '0' + minutes;
+        if (seconds < 0 && minutes != 0) {
+            minutes -= 1;
+            seconds = 59;
+        }
+        else if (seconds < 10 && length.seconds != 2) seconds = '0' + seconds;
+        $('#sms_timer').html(minutes + ':' + seconds);
+
+        if (minutes == 0 && seconds == 0){
+            $('#sms_btn_again').prop('disabled', false);
+            clearInterval(interval);
+        }
+    }, 1000);
+}
 // Page_login 
 $('#login_btn_submit').on("tap", function (Event){
-    var etx_txt = $("#login_etx_submit").val();
+    var etx_txt = $("#login_etx_submit").val().trim();
     if (( etx_txt.length == 11 ) && ( etx_txt.startsWith("09"))) {
         $.mobile.changePage('#smspage');
         $('#sms_timer').html("00:05");
@@ -175,7 +197,7 @@ $('#login_btn_submit').on("tap", function (Event){
 
 // Page_Sms
 $('#sms_btn_submit').on("tap", function (Event){
-    var etx_txt_1 = $("#sms_etx_submit").val();
+    var etx_txt_1 = $("#sms_etx_submit").val().trim();
 
     if (etx_txt_1.length == 4 ) {
         $.mobile.changePage('#mainpage');
@@ -199,29 +221,6 @@ $('#sms_btn_again').on("tap", function (Event){
 });
 
 
-function Timer_show(){
-    clearInterval(interval);
-    interval = setInterval(function() {
-        var timer = $('#sms_timer').html();
-        timer = timer.split(':');
-        var minutes = parseInt(timer[0], 10);
-        var seconds = parseInt(timer[1], 10);
-        seconds -= 1;
-        if (minutes < 0) return clearInterval(interval);
-        if (minutes < 10 && minutes.length != 2) minutes = '0' + minutes;
-        if (seconds < 0 && minutes != 0) {
-            minutes -= 1;
-            seconds = 59;
-        }
-        else if (seconds < 10 && length.seconds != 2) seconds = '0' + seconds;
-        $('#sms_timer').html(minutes + ':' + seconds);
-
-        if (minutes == 0 && seconds == 0){
-            $('#sms_btn_again').prop('disabled', false);
-            clearInterval(interval);
-        }
-    }, 1000);
-}
 
 
 
@@ -297,17 +296,41 @@ $('#mainpage_list').delegate("li","tap", function (event) {
 
 
 
+function swiper_main () {
+    var swiper = new Swiper('.swiper_main', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-main-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-main-button-next',
+        prevEl: '.swiper-main-button-prev',
+      },
+    });
+    }
 
 $( document ).on( "pageinit", "#mainpage", function($) {
     setTimeout(function() {
-	swiper("updateSliderSize", true);
+	swiper_main("updateSliderSize", true);
     }, 300);
 });
 
-$('#mainpage_list').delegate("li","tap", function (event) {
-    var selected = $(this);
-    selected.attr("data-id");
-    $.mobile.changePage('#newspage');
+function mainpage_list(){
+    $( "#mainpage_list li" ).on( "tap", function( event ) {
+        var selected = $(this);
+        selected.attr("data-id");
+        $.mobile.changePage('#newspage');
+    });
+}
+$( document ).on( "pageinit", "#mainpage", function($) {
+    mainpage_list();
 });
 
 
@@ -337,12 +360,16 @@ $('#sans_btn_B2').on("tap", function (Event){
 
 
 
-
+function choosesanspage_list(){
+    $("#choosesanspage_list").on("click", "li", function() {
+        var selected = $(this);
+        var id= selected.attr("data-id");
+        $.mobile.changePage('#chooseclasspage');
+    });
+}
 // Page_ChooseSans
-$('#choosesanspage_list').delegate("li","tap", function (event) {
-    var selected = $(this);
-    selected.attr("data-id");
-    $.mobile.changePage('#chooseclasspage');
+$( document ).on( "pageinit", "#choosesanspage", function($) {
+    choosesanspage_list();
 });
 
 
@@ -351,14 +378,18 @@ $('#choosesanspage_list').delegate("li","tap", function (event) {
 
 
 
+        
 
-
-
+function chooseclasspage_list(){
+    $("#chooseclasspage_list").on("click", "li", function() {
+        var selected = $(this);
+        selected.attr("data-id");
+        $.mobile.changePage('#workoutpage');
+    });
+}
 // Page_ChooseClass
-$('#chooseclasspage_list').delegate("li","tap", function (event) {
-    var selected = $(this);
-    selected.attr("data-id");
-    $.mobile.changePage('#workoutpage');
+$( document ).on( "pageinit", "#chooseclasspage", function($) {
+    chooseclasspage_list();
 });
 
 
@@ -369,11 +400,8 @@ $('#chooseclasspage_list').delegate("li","tap", function (event) {
 
 
 
-
-
-// Page_WorkOut   
 function swiper () {
-    var swiper = new Swiper('.swiper-container', {
+    var swiper = new Swiper('.swiper_workout', {
       slidesPerView: 1,
       spaceBetween: 30,
       loop: true,
@@ -382,15 +410,16 @@ function swiper () {
         disableOnInteraction: false,
       },
       pagination: {
-        el: '.swiper-pagination',
+        el: '.swiper-workout-pagination',
         clickable: true,
       },
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-workout-button-next',
+        prevEl: '.swiper-workout-button-prev',
       },
     });
     }
+// Page_WorkOut   
 $( document ).on( "pageinit", "#workoutpage", function($) {
     setTimeout(function() {
 	swiper("updateSliderSize", true);
@@ -408,7 +437,7 @@ $( document ).on( "pageinit", "#workoutpage", function($) {
 
 // Page_Contact
 $('#cotactpage_btn').on("tap", function (Event){
-    var contact_etx = $("#cotactpage_textarea").val();
+    var contact_etx = $("#cotactpage_textarea").val().trim();
 
     if (contact_etx.length != 0 ) {
         
@@ -476,21 +505,20 @@ function galleryThumb () {
       slidesPerView: 3,
       loop: true,
       freeMode: true,
-      loopedSlides: 3, //looped slides should be the same
+      loopedSlides: 10, //looped slides should be the same
       watchSlidesVisibility: true,
-      watchSlidesProgress: true,
     });
     var galleryTop = new Swiper('.gallery-top', {
       spaceBetween: 10,
       loop:true,
       autoplay: {
         delay: 2500,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
       },
-      loopedSlides: 3, //looped slides should be the same
+      loopedSlides: 10, //looped slides should be the same
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-introduction-button-next',
+        prevEl: '.swiper-introduction-button-prev',
       },
       thumbs: {
         swiper: galleryThumbs,
@@ -516,10 +544,10 @@ $( document ).on( "pageinit", "#introductionpage", function($) {
 
 // Page_SignUp
 $('#signuppage_btn').on("tap", function (Event){
-    var fullname = $("#singup_input_fullname").val();
-    var socialcode = $("#singup_input_social_code").val();
-    var phonenumber = $("#singup_input_number").val();
-    var address = $("#singup_txtarea_address").val();
+    var fullname = $("#singup_input_fullname").val().trim();
+    var socialcode = $("#singup_input_social_code").val().trim();
+    var phonenumber = $("#singup_input_number").val().trim();
+    var address = $("#singup_txtarea_address").val().trim();
 
     if (fullname.length != 0 ) {
         if (socialcode.length != 0 ) {
@@ -562,11 +590,11 @@ $('#signuppage_btn').on("tap", function (Event){
 
 // Page_Program_Request
 $('#programrequestpage_btn').on("tap", function (Event){
-    var bimary = $("#programrequestpageinput_bimary").val();
-    var asib = $("#programrequestpage_input_asib").val();
-    var sabeghe = $("#programrequestpage_input_sabeghe").val();
-    var regime = $("#programrequestpage_input_regime").val();
-    var desceription = $("#programrequestpage_input_desceription").val();
+    var bimary = $("#programrequestpageinput_bimary").val().trim();
+    var asib = $("#programrequestpage_input_asib").val().trim();
+    var sabeghe = $("#programrequestpage_input_sabeghe").val().trim();
+    var regime = $("#programrequestpage_input_regime").val().trim();
+    var desceription = $("#programrequestpage_input_desceription").val().trim();
 
     if (bimary.length != 0 ) {
         if (asib.length != 0 ) {
@@ -602,17 +630,17 @@ $('#programrequestpage_btn').on("tap", function (Event){
 
 // Page_Program_Request_P1
 $('#programpart1page_btn').on("tap", function (Event){
-    var fullname = $("#programpart1page_input_fullname").val();
-    var coach = $("#programpart1page_input_coach").val();
-    var meetings = $("#programpart1page_input_meetings").val();
-    var Branch = $("#programpart1page_input_Branch").val();
-    var date = $("#programpart1page_input_date_request").val();
-    var Score = $("#programpart1page_input_Score").val();
-    var level = $("#programpart1page_input_level").val();
-    var history = $("#programpart1page_input_history").val();
-    var height = $("#programpart1page_input_height").val();
-    var weight = $("#programpart1page_input_weight").val();
-    var age = $("#programpart1page_input_age").val();
+    var fullname = $("#programpart1page_input_fullname").val().trim();
+    var coach = $("#programpart1page_input_coach").val().trim();
+    var meetings = $("#programpart1page_input_meetings").val().trim();
+    var Branch = $("#programpart1page_input_Branch").val().trim();
+    var date = $("#programpart1page_input_date_request").val().trim();
+    var Score = $("#programpart1page_input_Score").val().trim();
+    var level = $("#programpart1page_input_level").val().trim();
+    var history = $("#programpart1page_input_history").val().trim();
+    var height = $("#programpart1page_input_height").val().trim();
+    var weight = $("#programpart1page_input_weight").val().trim();
+    var age = $("#programpart1page_input_age").val().trim();
 
     if (fullname.length != 0 ) {
         if (coach.length != 0 ) {
@@ -672,15 +700,15 @@ $('#programpart1page_btn').on("tap", function (Event){
 
 // Page_Program_Request_P2
 $('#programpart2page_btn').on("tap", function (Event){
-    var shaneh = $("#programpart1page_input_shaneh").val();
-    var sineh = $("#programpart1page_input_sineh").val();
-    var kamar = $("#programpart1page_input_kamar").val();
-    var shekam = $("#programpart1page_input_shekam").val();
-    var basan = $("#programpart1page_input_basan").val();
-    var ran = $("#programpart1page_input_ran").val();
-    var sagh = $("#programpart1page_input_sagh").val();
-    var bazoo = $("#programpart1page_input_bazoo").val();
-    var pahlooran = $("#programpart1page_input_pahlooran").val();
+    var shaneh = $("#programpart1page_input_shaneh").val().trim();
+    var sineh = $("#programpart1page_input_sineh").val().trim();
+    var kamar = $("#programpart1page_input_kamar").val().trim();
+    var shekam = $("#programpart1page_input_shekam").val().trim();
+    var basan = $("#programpart1page_input_basan").val().trim();
+    var ran = $("#programpart1page_input_ran").val().trim();
+    var sagh = $("#programpart1page_input_sagh").val().trim();
+    var bazoo = $("#programpart1page_input_bazoo").val().trim();
+    var pahlooran = $("#programpart1page_input_pahlooran").val().trim();
 
     if (shaneh.length != 0 ) {
         if (sineh.length != 0 ) {
@@ -693,31 +721,31 @@ $('#programpart2page_btn').on("tap", function (Event){
                                 if (pahlooran.length != 0 ) { 
                                     $.mobile.changePage ('#programpart3page');
                                 }else {
-                                    snack_error('سایز سرشانه نمی تواند خالی باشد');
+                                    snack_error('سایز پهلوران نمی تواند خالی باشد');
                                 }
                                 }else {
-                                    snack_error('سایز سینه نمی تواند خالی باشد');
+                                    snack_error('سایز بازو نمی تواند خالی باشد');
                                 }
                             }else {
-                                snack_error('سایز کمر نمی تواند خالی باشد');
+                                snack_error('سایز ساق نمی تواند خالی باشد');
                             }
                         }else {
-                            snack_error('سایز شکم نمی تواند خالی باشد');
+                            snack_error('سایز ران نمی تواند خالی باشد');
                         }
                     }else {
-                        snack_error('سایز باسن نمی تواند خالی باشد'); 
+                        snack_error('سایز باسن نمی تواند خالی باشد');
                     }
                     }else {
-                        snack_error('سایز ران نمی تواند خالی باشد');
+                        snack_error('سایز شکم نمی تواند خالی باشد');
                     }
                 }else {
-                    snack_error('سایز ساق نمی تواند خالی باشد');
+                    snack_error('سایز کمر نمی تواند خالی باشد');
                 }
             }else {
-                snack_error('سایز بازو نمی تواند خالی باشد');
+                snack_error('سایز سینه نمی تواند خالی باشد'); 
             }
         }else {
-            snack_error('سایز پهلوران نمی تواند خالی باشد');
+            snack_error('سایز سرشانه نمی تواند خالی باشد');
         }
 });
 
