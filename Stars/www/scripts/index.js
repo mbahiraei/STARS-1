@@ -16,6 +16,9 @@ var jquery_mobile_demo;
             // Handle the Cordova pause and resume events
             document.addEventListener('pause', onPause, false);
             document.addEventListener('resume', onResume, false);
+            document.addEventListener('orientation', orientation, false);
+            document.addEventListener('online', ononline, false);
+            document.addEventListener('offline', onoffline, false);
             // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
         }
 
@@ -25,6 +28,24 @@ var jquery_mobile_demo;
 
         function onResume() {
             // TODO: This application has been reactivated. Restore application state here.
+        }
+
+        function ononline() {
+            var snack = new Snackbar();
+            snack.success("ارتباط برقرار شد");
+            // TODO: This application has been reactivated. Restore application state here.
+        }
+
+        function onoffline() {
+            var snack = new Snackbar();
+            snack.error("ارتباط برقرار نشد");
+            // TODO: This application has been reactivated. Restore application state here.
+        }
+        
+        
+        function orientation() {
+            screen.orientation.lock('landscape');
+            // TODO: This application has been suspended. Save application state here.
         }
     })(jquery_mobile_demo.Application || (jquery_mobile_demo.Application = {}));
     var Application = jquery_mobile_demo.Application;

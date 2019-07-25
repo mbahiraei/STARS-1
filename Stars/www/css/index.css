@@ -758,6 +758,7 @@ img{
     margin: 0!important;
     padding: 5% 0!important;
     background: #461858!important;
+    border-radius: 0!important;
 }
 .chooseclasspage_main_info li{
     width: 100%;
@@ -767,6 +768,8 @@ img{
     font-size: 90%!important;
     font-weight: bold;
     line-height: 0;
+    border-right: none!important;
+    border-left: none!important;
 }
 .chooseclasspage_main_info li:last-child{
     border-bottom: 1px solid #5f3c57;

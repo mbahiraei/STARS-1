@@ -345,10 +345,10 @@ $( document ).on( "pageinit", "#mainpage", function($) {
 
 
 // Page_Sans
-$('#sans_btn_B1').on("tap", function (Event){
+$('#sans_btn_B1').on("tap", function (){
     $.mobile.changePage('#choosesanspage');
 });
-$('#sans_btn_B2').on("tap", function (Event){
+$('#sans_btn_B2').on("tap", function (){
     $.mobile.changePage('#choosesanspage');
 });
 
@@ -360,16 +360,14 @@ $('#sans_btn_B2').on("tap", function (Event){
 
 
 
-function choosesanspage_list(){
+
+//// Page_ChooseSans
+$( document ).delegate("#choosesanspage", "pageinit", function() {
     $("#choosesanspage_list").on("click", "li", function() {
         var selected = $(this);
         var id= selected.attr("data-id");
         $.mobile.changePage('#chooseclasspage');
     });
-}
-// Page_ChooseSans
-$( document ).on( "pageinit", "#choosesanspage", function($) {
-    choosesanspage_list();
 });
 
 
@@ -380,16 +378,14 @@ $( document ).on( "pageinit", "#choosesanspage", function($) {
 
         
 
-function chooseclasspage_list(){
+
+// Page_ChooseClass
+$( document ).delegate("#chooseclasspage", "pageinit", function() {
     $("#chooseclasspage_list").on("click", "li", function() {
         var selected = $(this);
-        selected.attr("data-id");
+        var id= selected.attr("data-id");
         $.mobile.changePage('#workoutpage');
     });
-}
-// Page_ChooseClass
-$( document ).on( "pageinit", "#chooseclasspage", function($) {
-    chooseclasspage_list();
 });
 
 
@@ -472,6 +468,7 @@ $('#allnewspage_list').delegate("li","tap", function (event) {
     selected.attr("data-id");
     $.mobile.changePage('#newspage');
 });
+
 
 
 
@@ -1295,10 +1292,7 @@ $('#programpart3page_btn').on("tap", function (Event){
                     if (ransagh_ck_1 + ransagh_ck_2 + ransagh_ck_3 + ransagh_ck_4 + ransagh_ck_5 + ransagh_ck_6 + ransagh_ck_7 + ransagh_ck_8 + ransagh_ck_9 + ransagh_ck_10 > 0 ) {
                         if (pahloran_ck_1 + pahloran_ck_2 + pahloran_ck_3 + pahloran_ck_4 > 0 ) {
                             if (ketfi_ck_1 + ketfi_ck_2 + ketfi_ck_3 + ketfi_ck_4 + ketfi_ck_5 > 0 ) {
-                                
-                                
-                               alert("N") 
-                                
+                                var ref = cordova.InAppBrowser.open('http://apache.org', '_system', 'location=yes');
                         }else {
             snack_error(' بخش عضلات کتفی نمی تواند خالی باشد');
                         }
@@ -1399,6 +1393,27 @@ $('.panel_li_request').on("tap", function (Event){
 });
 $('.panel_li_contact').on("tap", function (Event){
     $.mobile.changePage('#contactpage');
+});
+$('.panel_li_sharess').on("tap", function (Event){// this is the complete list of currently supported params you can pass to the plugin (all optional)
+var options = {
+  message: 'share this', // not supported on some apps (Facebook, Instagram)
+  subject: 'the subject', // fi. for email
+  files: ['', ''], // an array of filenames either locally or remotely
+  url: 'https://www.website.com/foo/#bar?a=b',
+  chooserTitle: 'Pick an app' // Android only, you can override the default share sheet title,
+//  appPackageName: 'com.apple.social.facebook' // Android only, you can provide id of the App you want to share with
+};
+ 
+var onSuccess = function(result) {
+  console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
+  console.log("Shared to app: " + result.app); // On Android result.app since plugin version 5.4.0 this is no longer empty. On iOS it's empty when sharing is cancelled (result.completed=false)
+};
+ 
+var onError = function(msg) {
+  console.log("Sharing failed with message: " + msg);
+};
+ 
+window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
 });
 $('.panel_li_rules').on("tap", function (Event){
     $.mobile.changePage('#rulespage');
