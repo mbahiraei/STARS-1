@@ -5,7 +5,6 @@
     <author email="dev@cordova.apache.org" href="http://cordova.io">Your name here</author>
     <vs:template-name>BlankTS</vs:template-name>
     <vs:toolsetVersion>6.3.1</vs:toolsetVersion>
-    <engine name="android" spec="5.2.1" />
     <engine name="windows" spec="4.4.2" />
     <content src="index.html" />
     <access origin="*" />

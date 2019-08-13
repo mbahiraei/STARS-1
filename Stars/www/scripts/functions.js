@@ -1,4 +1,10 @@
 // Jquery EVENTS
+$('video').on('play', function (e) {
+    swiper.autoplay.stop();
+});
+$('video').on('stop pause ended', function (e) {
+    swiper.autoplay.start();
+});
 
 
 
@@ -303,7 +309,7 @@ function swiper_main () {
       loop: true,
       autoplay: {
         delay: 2500,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
       },
       pagination: {
         el: '.swiper-main-pagination',
@@ -363,11 +369,12 @@ $('#sans_btn_B2').on("tap", function (){
 
 //// Page_ChooseSans
 $( document ).delegate("#choosesanspage", "pageinit", function() {
-    $("#choosesanspage_list").on("click", "li", function() {
+    
+  setTimeout(function(){ $("#choosesanspage_list").on("click", "li", function() {
         var selected = $(this);
         var id= selected.attr("data-id");
         $.mobile.changePage('#chooseclasspage');
-    });
+    }); }, 1000);
 });
 
 
@@ -401,10 +408,6 @@ function swiper () {
       slidesPerView: 1,
       spaceBetween: 30,
       loop: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
       pagination: {
         el: '.swiper-workout-pagination',
         clickable: true,
@@ -468,7 +471,6 @@ $('#allnewspage_list').delegate("li","tap", function (event) {
     selected.attr("data-id");
     $.mobile.changePage('#newspage');
 });
-
 
 
 

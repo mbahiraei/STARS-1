@@ -80,7 +80,9 @@
                     <label class="c_text_align_r" for="login_btn_submit" >
                         جهت عضویـــت شماره تماس خود را وارد نماییــد
                     </label>
-                    <input maxlength="11" type="tel" placeholder="0 9 — — — — — — — — —" id="login_etx_submit"/><br>
+                    <input maxlength="11" type="tel" placeholder="0 9 — — — — — — — — —" id="login_etx_submit" name="phone"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    required/><br>
                     <a class="c_btn ui-btn ui-corner-all submit_p1" id="login_btn_submit">عضویت</a>
                 </form>
             </div>
@@ -103,7 +105,9 @@
                     <div id="wrapper">
                         <h5 class="c_text_align">منتظر باشید تا کـــد فعال سازی ارسال شود</h5>
                         <div class="sms_inputs B" id="form">
-                    <input class=" etx_verify c_text_align B" maxlength="4" type="tel" placeholder="— — — —" id="sms_etx_submit"/>
+                    <input class=" etx_verify c_text_align B" maxlength="4" type="tel" name="phone"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    required placeholder="— — — —" id="sms_etx_submit"/>
                         </div>
                         <div class="sms_grid c_text_align ui-grid-a">
                             <div class=" ui-block-a" >
@@ -313,7 +317,7 @@
                 </div>
                 <div class="locationB1 ">
           		    <div class="locationB1_txt_tittle">آدرس :</div>
-          		    <div class="locationB1_txt">هبلوار بعثت/جنب مجتمع آوینی/کوچه زرگران مجموعه ورزشی آبشار </div>
+          		    <div class="locationB1_txt">بلوار بعثت/جنب مجتمع آوینی/کوچه زرگران مجموعه ورزشی آبشار </div>
                 </div>
                 <div class="locationB1 ">
           		    <div class="locationB1_txt_tittle">شماره های تماس :</div>
@@ -859,6 +863,11 @@
                             <div class="swiper-slide"><img src="images/carousel.png" ></div>
                             <div class="swiper-slide"><img src="images/slider.png"></div>
                             <div class="swiper-slide"><img src="images/slider0.png"></div>
+                            <video width="100%" height="250" controls>
+                                <source src="images/%20a.mp4" type="video/mp4">
+                                <source src="movie.ogg" type="video/ogg">
+                                Your browser does not support the video tag.
+                            </video>
                             <div class="swiper-slide"><img src="images/slider2.png"></div>
                             <div class="swiper-slide"><img src="images/image.png"></div>
                         </div>
