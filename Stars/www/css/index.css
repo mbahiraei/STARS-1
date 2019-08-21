@@ -1,7 +1,8 @@
-﻿@font-face{
+﻿@font-face {
     font-family: "irsans";
+    src: url(../fonts/irsans.ttf) format("truetype");
     src: url(../fonts/irsans.eot);
-    src: url(../fonts/irsans.eot?#iefix) format("embedded-opentype"), url(../fonts/irsans.woff) format("woff"), url(../fonts/irsans.ttf) format("truetype"),    	url(../fonts/irsans.svg#BYekan) format("svg");
+    src: url(../fonts/irsans.eot?#iefix) format("embedded-opentype"), url(../fonts/irsans.woff) format("woff"), url(../fonts/irsans.svg#BYekan) format("svg");
     font-weight: normal;
     font-style: normal;
 }
@@ -10,7 +11,7 @@
     box-shadow: none!important;
     color: #fff!important;
     font-size: 12px!important;
-    font-family: "irsans",Tahoma,Geneva,sans-serif !important;
+    font-family: irsans,Tahoma,Geneva,sans-serif !important;
 }
 a{
     text-decoration: none!important;
@@ -88,6 +89,12 @@ img{
     display: block;
     margin: 0px 45px!important;
     text-align: right!important;
+}
+button {
+    outline: none!important;
+}
+button:focus {
+    outline: none!important;
 }
 
 
@@ -230,11 +237,11 @@ img{
 
 /*--------------- Page SMS ----------------------------*/
 .sms_main_info{
-    padding: 10% 0;
+    padding: 1% 0;
 }
 .main_info_title{
-    font-size: 18px!important;
-    line-height: 5;
+    font-size: 20px!important;
+    line-height: 3;
 }
 .main_info form{
     width: 80%;
@@ -242,7 +249,7 @@ img{
 .sms_grid{
     font-size: 15px !important;
     line-height: 5;
-    padding: 50px 0!important;
+    padding: 20px 0!important;
 }
 .sms_grid .sms_grid_yell span{
     color: #e7d803 !important;
@@ -258,7 +265,7 @@ img{
     line-height: 2;
     border-bottom: solid 2px #ccc;
     width: 50%;
-    margin: 0 auto!important;
+    margin: 30px auto!important;
     font-weight: bold;
     font-size: 20px !important;
     transition: all .2s ease-in-out;
@@ -281,6 +288,7 @@ img{
     text-shadow: none!important;
     box-shadow: none!important;
     padding: 20px 0 0 0!important;
+    margin: 0!important;
 }
 .goto_login {
     width: 100%!important;
@@ -305,6 +313,7 @@ img{
     background: #461858!important;
     color: #fff!important;
     border-bottom: 1px solid #c4a440!important;
+    border-top: none!important;
 }
 .btn_toolbar, .btn_toolbar2 {
     background: #461858!important; 
@@ -435,7 +444,7 @@ img{
     padding: 0 5%;
 }
 .page2_main_btn a{
-    padding: 36% 0;
+    padding: 33% 0;
     font-size: 13px !important;
     border: 5px solid #e9d800!important;
     border-radius: 50%!important;
@@ -510,7 +519,7 @@ img{
 .contact_us_textarea {
     padding: 0 0 25px 0;
 }
-.contact_us_textarea textarea{
+.contact_us_textarea textarea, .field-contain input {
     color: #d2bada !important;
     text-align: right!important;
     direction: rtl!important;
@@ -518,17 +527,17 @@ img{
     border: none;
     background: #591b6e !important;
 }
-.field-contain div:last-child, .contact_us_textarea textarea {
+.field-contain div:last-child, .contact_us_textarea textarea , .field-contain input {
     border: 1px solid #73537d5c!important;
     text-shadow: none!important;
 }
-.contact_us_textarea textarea{
+.contact_us_textarea textarea, .field-contain input {
     height: auto !important;
     resize: none!important;
     padding: 3%;
     box-shadow: none!important;
 }
-.contact_us_textarea textarea::placeholder{
+.contact_us_textarea textarea::placeholder, .field-contain input::placeholder {
     color: #d2bada !important;
 }
 .contact_us_main_info_a{
@@ -541,7 +550,7 @@ img{
     border:none!important;
     font-size: 90%!important;
     border-radius: 20px !important;
-    padding: 2% 7% !important;
+    padding: 3% 7% !important;
     box-shadow: none!important;
 }
 
@@ -782,13 +791,17 @@ img{
 }
 .chooseclasspageـgride div{
     text-shadow: none!important;
-    padding: 2% 5% !important;
+    padding: 2% 2% !important;
 }
 .chooseclasspage_2, .chooseclasspage_4 {
     text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .chooseclasspage_3 {
     text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .chooseclasspage_4 span {
     color: #dccf29!important;
@@ -1032,11 +1045,11 @@ img{
     width: 25%!important;
 }
 .program_request_p2 form ul li input{
-    width: 50%!important;
+    width: 45%!important;
     float: right;
 }
 .programpart2page_CM{
-    width: 15%!important;
+    width: 20%!important;
     float: left!important;
     padding: 5px;
 }
@@ -1113,7 +1126,9 @@ img{
 .program_request_p2 form fieldset div div {
     background: #461858!important;
 }
-
+.r3 {
+    padding: 0!important;
+}
 
 
 
@@ -1157,7 +1172,7 @@ img{
     background-size: 100% 100%;
     position: relative;
     height: 100px;
-    margin: -60px 0 0 0!important;
+    margin: -85px 0 0 0!important;
     border-radius: 0 0 15px 15px;
 }
 .good_txt p {
@@ -1169,6 +1184,95 @@ img{
     color: #461858!important;
 }
 
+
+
+
+
+
+
+
+
+
+/*--------------- Profile ----------------*/ 
+.profile_form label{
+    margin: 30px 0 10px 0!important;
+}
+.profile_form button{
+    margin: 15% 0!important;
+}
+
+
+
+
+
+
+
+
+
+
+/*--------------- success ----------------*/ 
+.success_img {
+    width: 30%;
+    display: block;
+    margin: 35px auto!important;
+}
+.success_title {
+    float: right;
+    width: 100%;
+    text-align: center!important;
+    font-size: 16px!important;
+    color: #14fc13!important;
+}
+.success_dec {
+    float: right;
+    text-align: center!important;
+    font-size: 14px!important;
+    color: #fff!important;
+    margin: 45px 0 10px 0!important;
+    padding: 0 40px;
+}
+.success_dec2 {
+    float: right;
+    display: block;
+    width: 100%;
+    text-align: center!important;
+    font-size: 14px!important;
+    color: #fff!important;
+    margin: 25px 0 10px 0!important;
+}
+.success_dec3 {
+    float: right;
+    display: block;
+    width: 100%;
+    text-align: center!important;
+    font-size: 14px!important;
+    color: #fff!important;
+    margin: 0 0 65px 0!important;
+}
+.success_btn {
+    width: 80%!important;
+    font-size: 12px!important;
+    margin: 0 auto 100px auto!important;
+}
+
+
+
+
+
+
+
+
+
+
+/*--------------- error ----------------*/
+.success_title_err {
+    float: right;
+    width: 100%;
+    text-align: center!important;
+    font-size: 16px!important;
+    color: #fd0205!important;
+    margin: 25px 0 65px 0!important;
+}
 
 
 

@@ -1,11 +1,4 @@
 // Jquery EVENTS
-$('video').on('play', function (e) {
-    swiper.autoplay.stop();
-});
-$('video').on('stop pause ended', function (e) {
-    swiper.autoplay.start();
-});
-
 
 
 
@@ -99,6 +92,14 @@ $( document ).on( "pageinit", "#programpart2page", function() {
 $( document ).on( "pageinit", "#programpart3page", function() {
     swip_panel("#programpart3page");
 });
+// Page_Program_Request_success Panel 
+$( document ).on( "pageinit", "#programsuccesspage", function() {
+    swip_panel("#programsuccesspage");
+});
+// Page_Program_Request_error Panel 
+$( document ).on( "pageinit", "#programerrorpage", function() {
+    swip_panel("#programerrorpage");
+});
 // Page_GoodToKnow Panel 
 $( document ).on( "pageinit", "#goodtoknowpage", function() {
     swip_panel("#goodtoknowpage");
@@ -110,10 +111,6 @@ $( document ).on( "pageinit", "#profilepage", function() {
 // Page_Rules Panel 
 $( document ).on( "pageinit", "#rulespage", function() {
     swip_panel("#rulespage");
-});
-// demo_swiper Panel 
-$( document ).on( "pageinit", "#demo_swiper", function() {
-    swip_panel("#demo_swiper");
 });
 
 
@@ -127,6 +124,7 @@ $( document ).on( "pageinit", "#demo_swiper", function() {
 
 // Location BTN
 $('.location_btn').on("tap", function (Event){
+    $('video').trigger('pause');
     $.mobile.changePage('#chooselocatinpage');
 });
 
@@ -188,7 +186,7 @@ $('#login_btn_submit').on("tap", function (Event){
         $('#sms_timer').html("00:05");
         Timer_show();
     }else {
-        
+        snack_error('شماره تماس اشتباه است');
     }
 });
 
@@ -290,13 +288,8 @@ $('#main_btn_articles').on("tap", function (Event){
 $('#main_btn_introduction').on("tap", function (Event){
     $.mobile.changePage('#introductionpage');
 });
-
-
-
-
-$('#mainpage_list').delegate("li","tap", function (event) {
-    var selected = $(this);
-    selected.attr("data-id");
+$('#main_logout_btn').on("tap", function (Event){
+    navigator.app.exitApp();
 });
 
 
@@ -367,9 +360,8 @@ $('#sans_btn_B2').on("tap", function (){
 
 
 
-//// Page_ChooseSans
+// Page_ChooseSans
 $( document ).delegate("#choosesanspage", "pageinit", function() {
-    
   setTimeout(function(){ $("#choosesanspage_list").on("click", "li", function() {
         var selected = $(this);
         var id= selected.attr("data-id");
@@ -423,6 +415,11 @@ $( document ).on( "pageinit", "#workoutpage", function($) {
     setTimeout(function() {
 	swiper("updateSliderSize", true);
     }, 300);
+});
+
+$('#workout_btn').on("tap", function (Event){
+    $('video').trigger('pause');
+    $.mobile.changePage('#signuppage');
 });
 
 
@@ -1332,7 +1329,50 @@ $('#programpart3page_btn').on("tap", function (Event){
 
 
 
+// Page_Success
+$('.success_btn').on("tap", function (Event){
+    $('video').trigger('pause');
+    $.mobile.changePage('#mainpage');
+});
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+// Page_Error
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
 // Page_GoodToKnow
+$( document ).delegate("#goodtoknowpage", "pageinit", function() {
+  setTimeout(function(){ $("#goodtoknowpage_list").on("click", "li", function() {
+        var selected = $(this);
+        var id= selected.attr("data-id");
+        $.mobile.changePage('#newspage');
+    }); }, 1000);
+});
     
     
     
@@ -1340,70 +1380,45 @@ $('#programpart3page_btn').on("tap", function (Event){
     
     
     
-
-
-
-
-
-
-
-
-// demo_swiper
-    
- 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
 
 
 
 
 // Panel
 $('.panel_li_home').on("tap", function (Event){
+    $('video').trigger('pause');
     $.mobile.changePage('#mainpage');
 });
 $('.panel_li_profile').on("tap", function (Event){
+    $('video').trigger('pause');
     $.mobile.changePage('#profilepage');
 });
 $('.panel_li_good').on("tap", function (Event){
+    $('video').trigger('pause');
     $.mobile.changePage('#goodtoknowpage');
 });
 $('.panel_li_singup').on("tap", function (Event){
+    $('video').trigger('pause');
     $.mobile.changePage('#signuppage');
 });
 $('.panel_li_request').on("tap", function (Event){
+    $('video').trigger('pause');
     $.mobile.changePage('#programrequestpage');
 });
 $('.panel_li_contact').on("tap", function (Event){
+    $('video').trigger('pause');
     $.mobile.changePage('#contactpage');
 });
-$('.panel_li_sharess').on("tap", function (Event){// this is the complete list of currently supported params you can pass to the plugin (all optional)
-var options = {
-  message: 'share this', // not supported on some apps (Facebook, Instagram)
-  subject: 'the subject', // fi. for email
-  files: ['', ''], // an array of filenames either locally or remotely
-  url: 'https://www.website.com/foo/#bar?a=b',
-  chooserTitle: 'Pick an app' // Android only, you can override the default share sheet title,
-//  appPackageName: 'com.apple.social.facebook' // Android only, you can provide id of the App you want to share with
+$('.panel_li_sharess').on("tap", function (Event){
+    $('video').trigger('pause');
+    // this is the complete list of currently supported params you can pass to the plugin (all optional)
+    var options = {
+    message: 'share this', // not supported on some apps (Facebook, Instagram)
+    subject: 'the subject', // fi. for email
+    files: ['', ''], // an array of filenames either locally or remotely
+    url: 'https://dw.uptodown.com/dwn/4g8cngy0x9rLHHq16KZY9-mdXX098kYpkJV7Ag7C-DUKCTkKDTYwB6phXhmrMbCYhanP36dr6FXWxI98pQS4t9kEV_eycsegFHjgyo4CGv85B-zAFFUwFyl7g1EKF4xt/L_ySn9ptVUT0zgvbl5fphzRFTKPUKF3bdsgXpPAyomhSHNoLTvRNtDinvczHneKSC-DMu0WRf168J_3eEn7edLH6j64voyGrJB7C_drOvQapOKEF82n4ktncuse10SUp/cj7BBy6Ux7Fo8GJNRVs83w==/',
+    chooserTitle: 'Pick an app' // Android only, you can override the default share sheet title,
+        //  appPackageName: 'com.apple.social.facebook' // Android only, you can provide id of the App you want to share with
 };
  
 var onSuccess = function(result) {
@@ -1418,8 +1433,9 @@ var onError = function(msg) {
 window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
 });
 $('.panel_li_rules').on("tap", function (Event){
+    $('video').trigger('pause');
     $.mobile.changePage('#rulespage');
 });
 $('.panel_li_logout').on("tap", function (Event){
-    $.mobile.changePage('#rulespage');
+    navigator.app.exitApp();
 });

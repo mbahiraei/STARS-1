@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "cordova-android": "^7.1.0",
+    "cordova-android": "^8.0.0",
     "cordova-ios": "^5.0.1",
     "cordova-plugin-inappbrowser": "^3.1.0",
     "cordova-plugin-network-information": "^2.0.2",
@@ -22,12 +22,11 @@
       "cordova-plugin-whitelist": {},
       "cordova-plugin-screen-orientation": {},
       "cordova-plugin-inappbrowser": {},
+      "cordova-plugin-network-information": {},
       "cordova-plugin-x-socialsharing": {
-        "ANDROID_SUPPORT_V4_VERSION": "24.1.1+",
         "PHOTO_LIBRARY_ADD_USAGE_DESCRIPTION": "This app requires photo library access to function properly.",
         "PHOTO_LIBRARY_USAGE_DESCRIPTION": "This app requires photo library access to function properly."
-      },
-      "cordova-plugin-network-information": {}
+      }
     }
   },
   "devDependencies": {

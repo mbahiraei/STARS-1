@@ -17,6 +17,7 @@ var jquery_mobile_demo;
             document.addEventListener('pause', onPause, false);
             document.addEventListener('resume', onResume, false);
             document.addEventListener('orientation', orientation, false);
+            document.addEventListener("backbutton", onBackKeyDown, false);
             document.addEventListener('online', ononline, false);
             document.addEventListener('offline', onoffline, false);
             // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
@@ -41,6 +42,21 @@ var jquery_mobile_demo;
             snack.error("ارتباط برقرار نشد");
             // TODO: This application has been reactivated. Restore application state here.
         }
+              
+        function onBackKeyPress() {
+            
+            $('video').trigger('pause');
+            /* If the current page is the login page, disable the button completely (aka do nothing) */
+            if($.mobile.activePage.is('#mainpage')){
+                e.preventDefault();
+                alert('Back Button is Pressed!');
+            }
+
+            /* Else, execute log off code */
+            else {
+                    return false;
+                }
+            }
         
         
         function orientation() {
