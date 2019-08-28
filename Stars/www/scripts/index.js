@@ -13,13 +13,16 @@ var jquery_mobile_demo;
         Application.initialize = initialize;
 
         function onDeviceReady() {
+            
+            navigator.splashscreen.show();
             // Handle the Cordova pause and resume events
             document.addEventListener('pause', onPause, false);
             document.addEventListener('resume', onResume, false);
             document.addEventListener('orientation', orientation, false);
-            document.addEventListener("backbutton", onBackKeyDown, false);
+            document.addEventListener("backbutton", onBackKeyPress, false);
             document.addEventListener('online', ononline, false);
             document.addEventListener('offline', onoffline, false);
+            document.addEventListener('splash', SplashTimeOut, false);
             // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
         }
 
@@ -47,22 +50,28 @@ var jquery_mobile_demo;
             
             $('video').trigger('pause');
             /* If the current page is the login page, disable the button completely (aka do nothing) */
-            if($.mobile.activePage.is('#mainpage')){
+            if( ($.mobile.activePage.is('#mainpage')) || ($.mobile.activePage.is('#loginpage')) || ($.mobile.activePage.is('#smspage')) ){
+                
                 e.preventDefault();
-                alert('Back Button is Pressed!');
+                return false;
             }
 
-            /* Else, execute log off code */
-            else {
-                    return false;
-                }
             }
         
         
         function orientation() {
-            screen.orientation.lock('landscape');
+            screen.orientation.lock('portrait');
             // TODO: This application has been suspended. Save application state here.
         }
+
+        function SplashTimeOut() {
+            setTimeout(function() {
+                navigator.splashscreen.hide();
+            }, 2000);
+        }
+        
+        
+        
     })(jquery_mobile_demo.Application || (jquery_mobile_demo.Application = {}));
     var Application = jquery_mobile_demo.Application;
 

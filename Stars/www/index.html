@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>jquery_mobile_demo</title>
+    <title>باشگاه ورزشی ستارگان</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- jquery_mobile_demo references -->
     <link href="css/index.css" rel="stylesheet" />
@@ -15,11 +15,14 @@
 
 </head>
 <body>
+<!--
 
     
     <div data-role="page" id="page1">
         <div data-role="main" class="page_up ui-content a p0 B">
            
+            <a class=" c_btn" href="#splashpage" data-inline="true" data-role="button">splashpage</a>
+            <a class=" c_btn" href="#splashpage" data-inline="true" data-role="button">splashpage</a>
             <a class=" c_btn" href="#loginpage" data-inline="true" data-role="button">loginpage</a>
             <a class=" c_btn" href="#smspage" data-inline="true" data-role="button">smspage</a>
             <a class=" c_btn" href="#mainpage" data-inline="true" data-role="button">mainpage</a>
@@ -47,6 +50,16 @@
         </div>
     </div>
     
+    
+-->
+    <!-- Page_Splash -->
+    <div data-role="page" class="a" id="splashpage" data-theme="a">
+        <div class="splash_logo">
+            <img src="images/Arm%2002.svg">
+        </div>
+    </div>
+    
+
 
     <!-- Page_login -->
     <div data-role="page" id="loginpage">
@@ -80,7 +93,7 @@
                     <input maxlength="11" type="tel" placeholder="0 9 — — — — — — — — —" id="login_etx_submit" name="phone"
                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                     required/><br>
-                    <a class="c_btn ui-btn ui-corner-all submit_p1" id="login_btn_submit">عضویت</a>
+                    <a type="button" class="c_btn ui-btn ui-corner-all submit_p1" id="login_btn_submit">عضویت</a>
                 </form>
             </div>
         </div>
@@ -129,11 +142,11 @@
     <!-- Page_Location -->
     <div data-role="page" id="chooselocatinpage">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#chooselocatinpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#chooselocatinpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="c_bg_main ui-content B p0">
            
@@ -153,13 +166,13 @@
                 <div class="main_btn_inner ui-grid-a">
                     <div class="ui-block-a">
                         
-                        <a href="#" class="ui-shadow ui-btn ui-mini ui-corner-all " id="location_btn_B1">شعبه ۱</a></div>
+                        <a type="button" href="#" class="ui-shadow ui-btn ui-mini ui-corner-all " id="location_btn_B1">شعبه ۱</a></div>
                     
                     
                     <div class="ui-block-b">
                         <div class="btn_loc"></div>
                         
-                        <a href="#" class="ui-shadow ui-btn ui-corner-all " id="location_btn_B2">شعبه ۲</a></div>
+                        <a type="button" href="#" class="ui-shadow ui-btn ui-corner-all " id="location_btn_B2">شعبه ۲</a></div>
                 </div>
             
         </div>
@@ -188,15 +201,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -207,11 +220,11 @@
     <!-- Page_LocationB1 -->
     <div data-role="page" id="locationB1">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#locationB1_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#locationB1_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="c_bg_main ui-content B p0">
            
@@ -240,7 +253,7 @@
           		    <div class="locationB1_txt">08138220868</div>
                 </div>
             <div class="locationB_btn">
-                <a href="#" class="ui-btn ui-corner-all " id="locationB1_btn">شعبه ۲</a>
+                <a type="button" href="#" class="ui-btn ui-corner-all " id="locationB1_btn">شعبه ۲</a>
             </div>
             
         </div>
@@ -269,15 +282,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -288,11 +301,11 @@
     <!-- Page_LocationB2 -->
     <div data-role="page" id="locationB2">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#locationB2_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#locationB2_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="c_bg_main ui-content B p0">
            
@@ -321,7 +334,7 @@
           		    <div class="locationB1_txt">08138386866</div>
                 </div>
             <div class="locationB_btn">
-                <a href="#" class="ui-btn ui-corner-all " id="locationB2_btn">شعبه ۱</a>
+                <a type="button" href="#" class="ui-btn ui-corner-all " id="locationB2_btn">شعبه ۱</a>
             </div>
         </div>
             
@@ -349,15 +362,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -368,11 +381,11 @@
     <!-- Page_Main -->
     <div data-role="page" id="mainpage">
         <div data-role="header"  class="header">
-            <a href="#" id="main_logout_btn" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">LogOut</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" id="main_logout_btn" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-power ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">LogOut</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#mainpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#mainpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class=" ui-content B p0">
                 <!--SLIDER-->
@@ -399,14 +412,14 @@
 
                 <img src="images/top-2.png" class="B p0" alt="">
                 <div class="page2_main_btn_inner ui-grid-b">
-                    <div class="ui-block-a"><a href="#" class="ui-shadow ui-btn ui-corner-all" id="main_btn_sans">سانس ها</a></div>
-                    <div class="ui-block-b"><a href="#" class="ui-shadow ui-btn ui-corner-all" id="main_btn_signup">ثبت نام</a></div>
-                    <div class="ui-block-c"><a href="#" class="ui-shadow ui-btn ui-corner-all" id="main_btn_sugestion">پیشنهادات</a></div>
+                    <div class="ui-block-a"><a type="button" href="#" class="ui-shadow ui-btn ui-corner-all" id="main_btn_sans">سانس ها</a></div>
+                    <div class="ui-block-b"><a type="button" href="#" class="ui-shadow ui-btn ui-corner-all" id="main_btn_signup">ثبت نام</a></div>
+                    <div class="ui-block-c"><a type="button" href="#" class="ui-shadow ui-btn ui-corner-all" id="main_btn_sugestion">پیشنهادات</a></div>
                 </div>
                 <div class="page2_main_btn_inner ui-grid-b">
-                    <div class="ui-block-a"><a href="#" class="ui-shadow ui-btn ui-corner-all" id="main_btn_news">اخبار</a></div>
-                    <div class="ui-block-b"><a href="#" class="ui-shadow ui-btn ui-corner-all" id="main_btn_articles">مقالات</a></div>
-                    <div class="ui-block-c"><a href="#" class="ui-shadow ui-btn ui-corner-all" id="main_btn_introduction">معرفی</a></div>
+                    <div class="ui-block-a"><a type="button" href="#" class="ui-shadow ui-btn ui-corner-all" id="main_btn_news">اخبار</a></div>
+                    <div class="ui-block-b"><a type="button" href="#" class="ui-shadow ui-btn ui-corner-all" id="main_btn_articles">مقالات</a></div>
+                    <div class="ui-block-c"><a type="button" href="#" class="ui-shadow ui-btn ui-corner-all" id="main_btn_introduction">معرفی</a></div>
                 </div>
                 <img src="images/bot-2.png" class="B p0" alt="">
 
@@ -420,23 +433,23 @@
                 </div>
                 <ul  data-role="listview" data-inset="true" id="mainpage_list" class="news_page_main_ul">
                     <li>
-                    <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-leftdouble ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a><p>                        باشگاه ورزشی ستارگان فردا تعطیل است
+                    <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-leftdouble ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a><p>                        باشگاه ورزشی ستارگان فردا تعطیل است
                         </p>
                     </li>
                     <li>
-                    <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-leftdouble ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a><p><p>                        باشگاه ورزشی ستارگان فردا تعطیل است
+                    <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-leftdouble ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a><p><p>                        باشگاه ورزشی ستارگان فردا تعطیل است
                     </p>
                     </li>
                     <li>
-                    <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-leftdouble ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a><p><p>                        باشگاه ورزشی ستارگان فردا تعطیل است
+                    <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-leftdouble ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a><p><p>                        باشگاه ورزشی ستارگان فردا تعطیل است
                     </p>
                     </li>
                     <li>
-                    <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-leftdouble ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a><p><p>                        باشگاه ورزشی ستارگان فردا تعطیل است
+                    <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-leftdouble ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a><p><p>                        باشگاه ورزشی ستارگان فردا تعطیل است
                     </p>
                     </li>
                     <li>
-                    <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-leftdouble ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a><p><p>                        باشگاه ورزشی ستارگان فردا تعطیل است
+                    <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-leftdouble ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a><p><p>                        باشگاه ورزشی ستارگان فردا تعطیل است
                     </p>
                     </li>
                 </ul>
@@ -454,15 +467,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -472,11 +485,11 @@
     <!-- Page_Sans -->
     <div data-role="page" id="sanspage">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
 
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#sanspage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#sanspage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="c_bg_main ui-content B p0">
 
@@ -496,13 +509,13 @@
                     <div class="main_btn_inner ui-grid-a">
                         <div class="ui-block-a">
 
-                            <a class="ui-shadow ui-btn ui-mini ui-corner-all " id="sans_btn_B1">شعبه ۱</a></div>
+                            <a type="button" class="ui-shadow ui-btn ui-mini ui-corner-all " id="sans_btn_B1">شعبه ۱</a></div>
 
 
                         <div class="ui-block-b">
                             <div class="btn_loc"></div>
 
-                            <a class="ui-shadow ui-btn ui-corner-all " id="sans_btn_B2">شعبه ۲</a></div>
+                            <a type="button" class="ui-shadow ui-btn ui-corner-all " id="sans_btn_B2">شعبه ۲</a></div>
                     </div>
 
                 </div>
@@ -531,15 +544,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -549,11 +562,11 @@
     <!-- Page_ChooseSans -->
     <div data-role="page" id="choosesanspage">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#choosesanspage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#choosesanspage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="c_bg_main ui-content B p0">
 
@@ -676,15 +689,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -694,11 +707,11 @@
     <!-- Page_ChooseClass -->
     <div data-role="page" id="chooseclasspage">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#chooseclasspage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#chooseclasspage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="c_bg_main ui-content B p0">
 
@@ -793,15 +806,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -811,11 +824,11 @@
     <!-- Page_WorkOut -->
     <div data-role="page" id="workoutpage">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn" id="logout_btn_V">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn" id="logout_btn_V">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#workoutpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#workoutpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="c_bg_main Page_workout_main ui-content B place_main p0">
 
@@ -895,7 +908,30 @@
                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
                         </p>
                     </div>
-                    <a href="#" id="workout_btn" class="c_btn workout_btn contact_us_main_info_a ui-btn ui-corner-all">ثبت نـــام در این دوره</a>
+                    <div class="program_request_p2 signuppage_main_info r3 txt_sm">
+                        <form class="programpart1page_fild ">
+                          <div class="rating labels">     
+                <div class="cb_tittle_2 cb_tittle B" > امتیاز دهی به این کلاس :</div>
+                    <fieldset data-role="controlgroup" data-iconpos="left" id="fl_sineh">
+                        <input type="checkbox" name="radio_rate_1" id="radio_rate_1">
+                        <label for="radio_rate_1">خوب  :</label>
+                        <input type="checkbox" name="radio_rate_2" id="radio_rate_2">
+                        <label class="f_b" for="radio_rate_2">خیلی خوب :</label>
+                        <input type="checkbox" name="radio_rate_3" id="radio_rate_3">
+                        <label for="radio_rate_3">عالی :</label>
+                        <input type="checkbox" name="radio_rate_4" id="radio_rate_4">
+                        <label class="f_b" for="radio_rate_4">خیلی عالی :</label>
+                        <input type="checkbox" name="radio_rate_5" id="radio_rate_5">
+                        <label for="radio_rate_5">بهتر از این نمیشه :</label>
+                    </fieldset>
+                        <button class="c_btn btn_rating ui-btn ui-corner-all" id="workout_rate_btn" type="button">امتیاز دهید</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    
+                    
+                    <a type="button" href="#" id="workout_btn" class="c_btn workout_btn contact_us_main_info_a ui-btn ui-corner-all">ثبت نـــام در این دوره</a>
                 </div>
                 <div class="style_buttom">
                     <img src="images/bottom.png" class="img-responsive" alt="logo">
@@ -912,15 +948,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -931,11 +967,11 @@
     <!-- Page_Contact -->
     <div data-role="page" id="contactpage">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#contactpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#contactpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="c_bg_main ui-content B p0">
 
@@ -960,7 +996,7 @@
                             <label for="cotactpage_textarea"></label>
                             <textarea cols="40" rows="10" name="textarea" id="cotactpage_textarea" placeholder="متن ارسالــی"></textarea>
                         </div>
-                        <button class="c_btn contact_us_main_info_a ui-btn ui-corner-all contact_us_submit" id="cotactpage_btn">ارسال</button>
+                        <button type="button" class="c_btn contact_us_main_info_a ui-btn ui-corner-all contact_us_submit" id="cotactpage_btn">ارسال</button>
                     </form>
 
                 </div>
@@ -983,15 +1019,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -1002,11 +1038,11 @@
     <!-- Page_News -->
     <div data-role="page" id="newspage">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#newspage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#newspage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="ui-content B p0">
 
@@ -1020,7 +1056,7 @@
                         </div>
                     <div class="news_text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
                     </div>
-                        <a href="#" data-rel="back" class="ui-btn ui-corner-all">بازگشت</a>
+                        <a type="button" href="#" data-rel="back" class="ui-btn ui-corner-all">بازگشت</a>
 
                 </div>
 
@@ -1041,15 +1077,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -1060,11 +1096,11 @@
     <!-- Page_All_News -->
     <div data-role="page" id="allnewspage">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#allnewspage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#allnewspage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="c_bg_main ui-content B p0">
 
@@ -1150,15 +1186,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -1169,11 +1205,11 @@
     <!-- Page_Articles -->
     <div data-role="page" id="articlespage">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#articlespage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#articlespage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="c_bg_main ui-content B p0">
 
@@ -1261,15 +1297,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -1280,11 +1316,11 @@
     <!-- Page_Introduction -->
     <div data-role="page" id="introductionpage">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#introductionpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#introductionpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="c_bg_main ui-content B p0">
 
@@ -1359,15 +1395,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -1378,11 +1414,11 @@
     <!-- Page_SignUp -->
     <div data-role="page"  id="signuppage">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#signuppage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#signuppage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="c_bg_main ui-content B p0">
 
@@ -1407,7 +1443,7 @@
                             <textarea id="singup_txtarea_address" cols="40" rows="8" name="signup_textarea" placeholder="آدرس"></textarea>
                         </div>
                         <div class="signuppage_input_submit">
-                            <button class="c_btn ui-btn ui-corner-all " id="signuppage_btn">ثبت نام و دریافت کد کاربری</button>
+                            <button type="button" class="c_btn ui-btn ui-corner-all " id="signuppage_btn">ثبت نام و دریافت کد کاربری</button>
 
                         </div>
                     </form>
@@ -1432,15 +1468,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -1451,11 +1487,11 @@
     <!-- Page_Suggestion -->
     <div data-role="page" id="suggestionpage">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#suggestionpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#suggestionpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="c_bg_main ui-content B p0">
 
@@ -1480,7 +1516,7 @@
                             <label for="cotactpage_textarea"></label>
                             <textarea cols="40" rows="10" name="textarea" id="cotactpage_textarea" placeholder="متن ارسالــی"></textarea>
                         </div>
-                        <button href="#" class="c_btn contact_us_main_info_a ui-btn ui-corner-all contact_us_submit" id="cotactpage_btn">ارسال</button>
+                        <button type="button" href="#" class="c_btn contact_us_main_info_a ui-btn ui-corner-all contact_us_submit" id="cotactpage_btn">ارسال</button>
                     </form>
 
                 </div>
@@ -1503,15 +1539,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -1522,11 +1558,11 @@
     <!-- Page_Program_Request -->
     <div data-role="page" id="programrequestpage">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#programrequestpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#programrequestpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="ui-content B p0">
             <div class="program_request c_bg_2">
@@ -1544,7 +1580,7 @@
                             <textarea id="programrequestpage_input_regime" cols="40" rows="4" name="signup_textarea"></textarea>
                             <label class="program_request_page_yellow_label" for="programrequestpage_input_desceription" >توضیحات بیشتر</label>
                             <textarea class="textarea_h" id="programrequestpage_input_desceription" cols="40" rows="4" name="signup_textarea"></textarea>
-                        <button type="submit" class="c_btn programrequestpage_btn" id="programrequestpage_btn">ادامــه درخواست برنـــامه</button>
+                        <button type="button" class="c_btn programrequestpage_btn" id="programrequestpage_btn">ادامــه درخواست برنـــامه</button>
                     </form>
 
 
@@ -1568,15 +1604,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -1587,11 +1623,11 @@
     <!-- Page_Program_Request_P1 -->
     <div data-role="page" id="programpart1page">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#programpart1page_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#programpart1page_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="ui-content B p0">
 
@@ -1670,15 +1706,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -1689,11 +1725,11 @@
     <!-- Page_Program_Request_P2 -->
     <div data-role="page" id="programpart2page">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#programpart2page_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#programpart2page_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="ui-content B p0">
 
@@ -1798,14 +1834,14 @@
                     <div class="body_panel">
                         <ul class="panel_ul">
                             <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -1985,15 +2021,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -2004,11 +2040,11 @@
     <!-- Page_Program_Request_success -->
     <div data-role="page" id="programsuccesspage">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#programsuccesspage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#programsuccesspage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="ui-content B p0">
 
@@ -2024,7 +2060,7 @@
                 <div class="success_dec">برنامه درخواستی شما پس از بررسی کارشناسان به شما اعلام خواهد شد </div>
                 <div class="success_dec2"> با تشکر از حسن انتخاب شما</div>
                 <div class="success_dec3"> باشگاه ورزشی ستارگان</div>
-                <a class="c_btn success_btn  ui-btn ui-corner-all">بازگشت به برنامه</a>
+                <a type="button" class="c_btn success_btn  ui-btn ui-corner-all">بازگشت به برنامه</a>
 
                 <div class="style_buttom_y">
                     <img src="images/yellow_bot.png" class="img-responsive" alt="logo">
@@ -2048,15 +2084,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -2067,11 +2103,11 @@
     <!-- Page_Program_Request_error -->
     <div data-role="page" id="programerrorpage">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#programerrorpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#programerrorpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="ui-content B p0">
 
@@ -2085,7 +2121,7 @@
                 </div>
                 <div class="success_title_err">پرداخت شما با مشکل مواجه شد</div>
                 <div class="success_dec3"> دوباره تلاش کنید</div>
-                <a data-rel="back" class="c_btn success_btn  ui-btn ui-corner-all">بازگشت به برنامه</a>
+                <a type="button" data-rel="back" class="c_btn success_btn  ui-btn ui-corner-all">بازگشت به برنامه</a>
 
                 <div class="style_buttom_y">
                     <img src="images/yellow_bot.png" class="img-responsive" alt="logo">
@@ -2106,15 +2142,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -2125,11 +2161,11 @@
     <!-- Page_GoodToKnow -->
     <div data-role="page" id="goodtoknowpage">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#goodtoknowpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#goodtoknowpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="ui-content B p0">
 
@@ -2218,14 +2254,14 @@
                     <div class="body_panel">
                         <ul class="panel_ul">
                             <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -2236,11 +2272,11 @@
     <!-- Page_Profile -->
     <div data-role="page" id="profilepage">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#profilepage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#profilepage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="c_bg_main ui-content B p0">
 
@@ -2263,10 +2299,10 @@
                             <label for="profilepage_input_social_code">کد ملی</label>
                             <input id="profilepage_input_social_code" class="signuppage_input_num" maxlength="11" type="tel"  />
                             <label for="profilepage_input_number">شماره تماس</label>
-                            <input id="profilepage_input_number" class="signuppage_input_num" maxlength="20" type="tel" />
+                            <input id="profilepage_input_number" class="signuppage_input" maxlength="11" type="tel" disabled="true" value="0"/>
                         </div>
                         <div class="signuppage_input_submit">
-                            <button class="c_btn ui-btn ui-corner-all " id="signuppage_btn">تایید اطلاعات  کاربری</button>
+                            <button type="button" class="c_btn ui-btn ui-corner-all " id="signuppage_btn">تایید اطلاعات  کاربری</button>
 
                         </div>
                     </form>
@@ -2293,15 +2329,15 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
@@ -2312,11 +2348,11 @@
     <!-- Page_Rules -->
     <div data-role="page" id="rulespage">
         <div data-role="header"  class="header">
-            <a href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
+            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
+            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
         
             <h6>باشگاه ورزشی ستارگان</h6>
-            <a href="#rulespage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
+            <a type="button" href="#rulespage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
         <div data-role="main" class="ui-content B p0">
 
@@ -2359,23 +2395,21 @@
                 </div>
                     <div class="body_panel">
                         <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button data-icon="power" >خروچ</button></li>
+                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
+                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
+                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
+                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
+                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
+                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
+                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
+                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
+                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
                         </ul>
                     </div>
                 </div>
             </div><!-- /panel -->
     </div>
 
-    
-    
     
     
 
@@ -2387,7 +2421,6 @@
     <script src="js/snackbar.min.js"></script>
     <script src="js/swiper.min.js"></script>
     
-
 
 </body>
 </html>

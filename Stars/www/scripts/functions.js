@@ -156,6 +156,35 @@ function snack_error(text) {
 
 
 
+
+// Page_Splash
+$('#splashpage').on( "pageinit", function( event ) {
+    
+    setTimeout(function() {
+	   if ((window.localStorage.getItem("cookies")) == 1){
+            $.mobile.changePage('#mainpage');
+        }else {
+            $.mobile.changePage('#loginpage');
+        }
+    }, 1500);
+    
+});
+
+
+
+
+
+
+
+
+
+
+
+// Page_login 
+var random_number = 0;
+var phone_number = 0;
+
+
 function Timer_show(){
     interval = setInterval(function() {
         var timer = $('#sms_timer').html();
@@ -178,13 +207,25 @@ function Timer_show(){
         }
     }, 1000);
 }
-// Page_login 
+function randomnumber() {
+	random_number =  Math.floor(1000 + Math.random() * 9000);
+}
 $('#login_btn_submit').on("tap", function (Event){
-    var etx_txt = $("#login_etx_submit").val().trim();
-    if (( etx_txt.length == 11 ) && ( etx_txt.startsWith("09"))) {
+    phone_number = $("#login_etx_submit").val().trim();
+    if (( phone_number.length == 11 ) && ( phone_number.startsWith("09"))) {
+        
+        window.localStorage.removeItem("phone_num");
+        window.localStorage.setItem("phone_num", phone_number);
+    randomnumber();
+        
+    $.get("http://api.kavenegar.com/v1/536B754F7573614C6D6D52355367756B312B5A56534F734366544F6E74616B4B5A704A3968786E4D654D593D/sms/send.json?receptor="+phone_number+"&sender=10004346&message="+random_number);
+        document.getElementById("sms_etx_submit").value = "";
+        alert(random_number);
         $.mobile.changePage('#smspage');
         $('#sms_timer').html("00:05");
         Timer_show();
+        $("#profilepage_input_number").value=(phone_number);
+
     }else {
         snack_error('شماره تماس اشتباه است');
     }
@@ -197,14 +238,14 @@ $('#login_btn_submit').on("tap", function (Event){
 
 
 
-
-
 // Page_Sms
 $('#sms_btn_submit').on("tap", function (Event){
-    var etx_txt_1 = $("#sms_etx_submit").val().trim();
-
-    if (etx_txt_1.length == 4 ) {
+   var sms_etx = $("#sms_etx_submit").val().trim();
+    
+    if (sms_etx == random_number ) {
         $.mobile.changePage('#mainpage');
+        window.localStorage.removeItem("cookies");
+        window.localStorage.setItem("cookies", 1);
     }else {
         snack_error('کد اشتباه است'); 
     }
@@ -212,15 +253,17 @@ $('#sms_btn_submit').on("tap", function (Event){
 
 
 $('#sms_b_again').on("tap", function (Event){
+    
     $.mobile.changePage('#loginpage'); 
     $('#sms_btn_again').prop('disabled', true);
+   
 });
 
 
 $('#sms_btn_again').on("tap", function (Event){
    snack_success('کد مجددا ارسال شد');
     $('#sms_btn_again').prop('disabled', true);
-    $('#sms_timer').html("00:05");
+    $('#sms_timer').html("00:05"); $.get("http://api.kavenegar.com/v1/536B754F7573614C6D6D52355367756B312B5A56534F734366544F6E74616B4B5A704A3968786E4D654D593D/sms/send.json?receptor="+phone_number+"&sender=10004346&message="+random_number);
     Timer_show();
 });
 
@@ -270,26 +313,28 @@ $('#locationB2_btn').on("tap", function (Event){
 
 
 // Page_Main
-$('#main_btn_sans').on("tap", function (Event){
+$('#main_btn_sans').on("click", function (Event){
     $.mobile.changePage('#sanspage');
 });
-$('#main_btn_signup').on("tap", function (Event){
+$('#main_btn_signup').on("click", function (Event){
     $.mobile.changePage('#signuppage');
 });
-$('#main_btn_sugestion').on("tap", function (Event){
+$('#main_btn_sugestion').on("click", function (Event){
     $.mobile.changePage('#suggestionpage');
 });
-$('#main_btn_news').on("tap", function (Event){
+$('#main_btn_news').on("click", function (Event){
     $.mobile.changePage('#allnewspage');
 });
-$('#main_btn_articles').on("tap", function (Event){
+$('#main_btn_articles').on("click", function (Event){
     $.mobile.changePage('#articlespage');
 });
-$('#main_btn_introduction').on("tap", function (Event){
+$('#main_btn_introduction').on("click", function (Event){
     $.mobile.changePage('#introductionpage');
 });
-$('#main_logout_btn').on("tap", function (Event){
+$('#main_logout_btn').on("click", function (Event){
     navigator.app.exitApp();
+        window.localStorage.removeItem("cookies");
+        window.localStorage.setItem("cookies", 0);
 });
 
 
@@ -322,7 +367,7 @@ $( document ).on( "pageinit", "#mainpage", function($) {
 });
 
 function mainpage_list(){
-    $( "#mainpage_list li" ).on( "tap", function( event ) {
+    $( "#mainpage_list li" ).on( "click", function( event ) {
         var selected = $(this);
         selected.attr("data-id");
         $.mobile.changePage('#newspage');
@@ -417,10 +462,77 @@ $( document ).on( "pageinit", "#workoutpage", function($) {
     }, 300);
 });
 
+$('#workout_rate_btn').on("tap", function (Event){
+    $('video').trigger('pause');
+    
+    var rate_1 = $("#radio_rate_1").is(":checked");
+    var rate_2 = $("#radio_rate_2").is(":checked");
+    var rate_3 = $("#radio_rate_3").is(":checked");
+    var rate_4 = $("#radio_rate_4").is(":checked");
+    var rate_5 = $("#radio_rate_5").is(":checked");
+    if (rate_1 + rate_2 + rate_3 + rate_4 + rate_5 == 1 ) {
+        snack_success('امتیاز شما برای این بخش ارسال شد'); 
+        
+    }else {
+        snack_error('ابتدا امتیاز دهید'); 
+    }
+});
+
 $('#workout_btn').on("tap", function (Event){
     $('video').trigger('pause');
     $.mobile.changePage('#signuppage');
 });
+
+
+function rate_form () {
+    var rate_1 = $("#radio_rate_1").is(":checked");
+    var rate_2 = $("#radio_rate_2").is(":checked");
+    var rate_3 = $("#radio_rate_3").is(":checked");
+    var rate_4 = $("#radio_rate_4").is(":checked");
+    var rate_5 = $("#radio_rate_5").is(":checked");
+    
+    
+    
+    if (rate_1 + rate_2 + rate_3 + rate_4 + rate_5 == 1 ) {
+        if (rate_1 == 0 ) {
+            $('#radio_rate_1').prop('disabled', true);
+        }
+        if (rate_2 == 0 ) {
+            $('#radio_rate_2').prop('disabled', true);
+        }
+        if (rate_3 == 0 ) {
+            $('#radio_rate_3').prop('disabled', true);
+        }
+        if (rate_4 == 0 ) {
+            $('#radio_rate_4').prop('disabled', true);
+        }
+        if (rate_5 == 0 ) {
+            $('#radio_rate_5').prop('disabled', true);
+        }
+    }else {
+            $('#radio_rate_1').prop('disabled', false);
+            $('#radio_rate_2').prop('disabled', false);
+            $('#radio_rate_3').prop('disabled', false);
+            $('#radio_rate_4').prop('disabled', false);
+            $('#radio_rate_5').prop('disabled', false);
+    }
+
+}
+$('#radio_rate_1').bind('change', function () {
+    rate_form();
+}); 
+$('#radio_rate_2').bind('change', function () {
+    rate_form();
+}); 
+$('#radio_rate_3').bind('change', function () {
+    rate_form();
+}); 
+$('#radio_rate_4').bind('change', function () {
+    rate_form();
+}); 
+$('#radio_rate_5').bind('change', function () {
+    rate_form();
+});  
 
 
 
@@ -432,7 +544,7 @@ $('#workout_btn').on("tap", function (Event){
 
 
 // Page_Contact
-$('#cotactpage_btn').on("tap", function (Event){
+$('#cotactpage_btn').on("click", function (Event){
     var contact_etx = $("#cotactpage_textarea").val().trim();
 
     if (contact_etx.length != 0 ) {
@@ -539,7 +651,7 @@ $( document ).on( "pageinit", "#introductionpage", function($) {
 
 
 // Page_SignUp
-$('#signuppage_btn').on("tap", function (Event){
+$('#signuppage_btn').on("click", function (Event){
     var fullname = $("#singup_input_fullname").val().trim();
     var socialcode = $("#singup_input_social_code").val().trim();
     var phonenumber = $("#singup_input_number").val().trim();
@@ -625,7 +737,7 @@ $('#programrequestpage_btn').on("tap", function (Event){
 
 
 // Page_Program_Request_P1
-$('#programpart1page_btn').on("tap", function (Event){
+$('#programpart1page_btn').on("click", function (Event){
     var fullname = $("#programpart1page_input_fullname").val().trim();
     var coach = $("#programpart1page_input_coach").val().trim();
     var meetings = $("#programpart1page_input_meetings").val().trim();
@@ -1340,7 +1452,7 @@ $('.success_btn').on("tap", function (Event){
     
     
     
-    
+
     
 
 
@@ -1351,6 +1463,23 @@ $('.success_btn').on("tap", function (Event){
 
 
 // Page_Error
+    
+    
+    
+    
+    
+    
+
+    
+
+
+
+
+
+
+
+
+// Page_Profile
     
     
     
@@ -1391,7 +1520,7 @@ $('.panel_li_home').on("tap", function (Event){
 });
 $('.panel_li_profile').on("tap", function (Event){
     $('video').trigger('pause');
-    $.mobile.changePage('#profilepage');
+    $.mobile.changePage('#profilepage'); document.getElementById("profilepage_input_number").value = window.localStorage.getItem("phone_num");
 });
 $('.panel_li_good').on("tap", function (Event){
     $('video').trigger('pause');
@@ -1413,11 +1542,11 @@ $('.panel_li_sharess').on("tap", function (Event){
     $('video').trigger('pause');
     // this is the complete list of currently supported params you can pass to the plugin (all optional)
     var options = {
-    message: 'share this', // not supported on some apps (Facebook, Instagram)
-    subject: 'the subject', // fi. for email
+    message: 'Download Stars App', // not supported on some apps (Facebook, Instagram)
+    subject: 'Download Here', // fi. for email
     files: ['', ''], // an array of filenames either locally or remotely
     url: 'https://dw.uptodown.com/dwn/4g8cngy0x9rLHHq16KZY9-mdXX098kYpkJV7Ag7C-DUKCTkKDTYwB6phXhmrMbCYhanP36dr6FXWxI98pQS4t9kEV_eycsegFHjgyo4CGv85B-zAFFUwFyl7g1EKF4xt/L_ySn9ptVUT0zgvbl5fphzRFTKPUKF3bdsgXpPAyomhSHNoLTvRNtDinvczHneKSC-DMu0WRf168J_3eEn7edLH6j64voyGrJB7C_drOvQapOKEF82n4ktncuse10SUp/cj7BBy6Ux7Fo8GJNRVs83w==/',
-    chooserTitle: 'Pick an app' // Android only, you can override the default share sheet title,
+    chooserTitle: 'https://dw.uptodown.com/dwn/4g8cngy0x9rLHHq16KZY9-mdXX098kYpkJV7Ag7C-DUKCTkKDTYwB6phXhmrMbCYhanP36dr6FXWxI98pQS4t9kEV_eycsegFHjgyo4CGv85B-zAFFUwFyl7g1EKF4xt/L_ySn9ptVUT0zgvbl5fphzRFTKPUKF3bdsgXpPAyomhSHNoLTvRNtDinvczHneKSC-DMu0WRf168J_3eEn7edLH6j64voyGrJB7C_drOvQapOKEF82n4ktncuse10SUp/cj7BBy6Ux7Fo8GJNRVs83w==/' // Android only, you can override the default share sheet title,
         //  appPackageName: 'com.apple.social.facebook' // Android only, you can provide id of the App you want to share with
 };
  
