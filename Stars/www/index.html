@@ -2109,7 +2109,7 @@
             <h6>باشگاه ورزشی ستارگان</h6>
             <a type="button" href="#programerrorpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
         </div>
-        <div data-role="main" class="ui-content B p0">
+        <div data-role="main" class=" mypanel ui-content B p0">
 
             <div class="program_request_p2 c_bg_2">
                 <div class="title_p3  c_tittle B">
@@ -2119,8 +2119,9 @@
                 <div class="success_img">
                     <img src="images/wrong.svg">
                 </div>
-                <div class="success_title_err">پرداخت شما با مشکل مواجه شد</div>
-                <div class="success_dec3"> دوباره تلاش کنید</div>
+                <div class="success_title_err54">پرداخت شما با مشکل مواجه شد</div>
+                <div class="success_dec354"> دوباره تلاش کنید</div>
+                <div class="success_dec454"> دوباره تلاش کنید</div>
                 <a type="button" data-rel="back" class="c_btn success_btn  ui-btn ui-corner-all">بازگشت به برنامه</a>
 
                 <div class="style_buttom_y">
@@ -2422,5 +2423,21 @@
     <script src="js/swiper.min.js"></script>
     
 
+    <script>
+    $.getJSON('http://time.jsontest.com', function(data) {
+        
+        var text = `Date: ${data.date}<br>`
+
+        var time = `Time: ${data.time}<br>`
+        var unix = `
+                    Unix time: ${data.milliseconds_since_epoch}`
+                    
+        document.getElementById("profilepage_input_fullname").value = (text);
+        document.getElementById("profilepage_input_social_code").value = (time);
+//        $("#profilepage_input_fullname").value(text);
+//        $("#profilepage_input_social_code").value(time);
+//        $(".success_dec454").html(unix);
+    });
+    </script>
 </body>
 </html>

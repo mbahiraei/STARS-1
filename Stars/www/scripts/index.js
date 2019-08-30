@@ -22,7 +22,9 @@ var jquery_mobile_demo;
             document.addEventListener("backbutton", onBackKeyPress, false);
             document.addEventListener('online', ononline, false);
             document.addEventListener('offline', onoffline, false);
-            document.addEventListener('splash', SplashTimeOut, false);
+            document.addEventListener('deviceready',    function() {
+                navigator.splashscreen.hide();                      
+            });
             // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
         }
 
@@ -49,8 +51,8 @@ var jquery_mobile_demo;
         function onBackKeyPress() {
             
             $('video').trigger('pause');
-            /* If the current page is the login page, disable the button completely (aka do nothing) */
-            if( ($.mobile.activePage.is('#mainpage')) || ($.mobile.activePage.is('#loginpage')) || ($.mobile.activePage.is('#smspage')) ){
+            /* If the current page is the login page, disable the button completely (aka do nothing) */;
+            if( ($.mobile.activePage.attr('id')) == ("mainpage")  ) {
                 
                 e.preventDefault();
                 return false;
@@ -64,11 +66,6 @@ var jquery_mobile_demo;
             // TODO: This application has been suspended. Save application state here.
         }
 
-        function SplashTimeOut() {
-            setTimeout(function() {
-                navigator.splashscreen.hide();
-            }, 2000);
-        }
         
         
         
