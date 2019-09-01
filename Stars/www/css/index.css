@@ -87,7 +87,7 @@ img{
 }
 .ui-title {
     display: block;
-    margin: 0px 45px!important;
+    margin: 0 45px!important;
     text-align: right!important;
 }
 button {
@@ -131,7 +131,6 @@ button:focus {
    left : 0;
    right : 0;
    bottom : 0;
-   width:100%;
    height:100%;
    margin:0;
    padding:0;
@@ -323,7 +322,7 @@ button:focus {
 }
 .goto_login {
     width: 100%!important;
-    padding: 0 0px 50px 0!important;
+    padding: 0 0 50px 0!important;
 }
 .number_again {
     width: 100%!important;
@@ -575,7 +574,6 @@ button:focus {
     width: 40%!important;
     margin: 0!important;
     float: left;
-    padding: 10px 0!important;
     display: block!important;
     background-color: #ffff00!important;
     border:none!important;
@@ -584,12 +582,6 @@ button:focus {
     padding: 3% 7% !important;
     box-shadow: none!important;
 }
-
-
-
-
-
-
 
 
 
@@ -622,7 +614,6 @@ button:focus {
 }
 .newspage_li_name {
     display: block;
-    font-size: 13px;
     float: right;
     width: 100%!important;
     border-bottom: 1px solid #e3bc9b!important;
@@ -727,7 +718,7 @@ button:focus {
     background: #430d58 !important;
 }
 .moarefi_main_info{
-    padding: 0% 5%;
+    padding: 0 5%;
     text-shadow: none!important;
 }
 .moarefi_tilte {
@@ -1203,7 +1194,6 @@ button:focus {
     background: #461858!important;
     display: inline-block!important;
     padding: 0!important;
-    background: #461858!important;
     border: none!important;
 }
 .good_img {
