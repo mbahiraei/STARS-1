@@ -294,6 +294,24 @@ $('#locationB1_btn').on("tap", function (Event){
     $.mobile.changePage('#locationB2');
 });
 
+$( document ).delegate("#locationB1", "pagebeforeshow", function() { 
+    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_shobe_single', {
+        type: 'POST',  // http method 
+        data: { 'shobe_id': '1', },  // data to submit
+        success: function (data, status, xhr) {
+
+            $.each(data, function(index) {
+            document.getElementById("locationB1_txt_img").src = data[index].shobe_location_img; 
+                document.getElementById("locationB1_txt_dec").innerHTML = data[index].shobe_des; 
+//                document.getElementById("locationB1_txt_tel").innerHTML = data[index].shobe_des;
+            });
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        }
+    });
+});
+
 
 
 
@@ -301,6 +319,25 @@ $('#locationB1_btn').on("tap", function (Event){
 // Page_LocationB2
 $('#locationB2_btn').on("tap", function (Event){
     $.mobile.changePage('#locationB1');
+});
+
+$( document ).delegate("#locationB2", "pagebeforeshow", function() {
+    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_shobe_single', {
+        type: 'POST',  // http method 
+        data: { 'shobe_id': '2', },  // data to submit
+        success: function (data, status, xhr) {
+
+            $.each(data, function(index) {
+            document.getElementById("locationB2_txt_img").src = data[index].shobe_location_img; 
+                document.getElementById("locationB2_txt_dec").innerHTML = data[index].shobe_des; 
+//                document.getElementById("locationB2_txt_tel").innerHTML = data[index].shobe_des;
+                
+            });
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        }
+    });
 });
 
 
@@ -544,14 +581,34 @@ $('#radio_rate_5').bind('change', function () {
 
 
 // Page_Contact
-$('#cotactpage_btn').on("click", function (Event){
+$('#contactpage_btn').on("click", function (Event){
+    var contact_etx_title = $("#cotactpage_textarea").val().trim();
     var contact_etx = $("#cotactpage_textarea").val().trim();
 
     if (contact_etx.length != 0 ) {
+        if (contact_etx.length != 0 ) {
         
+        }else {
+        snack_error('متن ارسالــی نمی تواند خالی باشد'); 
+        }
     }else {
         snack_error('متن ارسالــی نمی تواند خالی باشد'); 
     }
+    
+    $.ajax('http://localhost:8888/Stars/api/ApiGet/insert_contact', {
+    type: 'POST',  // http method
+    data: { 'people_id': '888',
+           'conatct_text': contact_etx,
+           'contact_date': 'date', },  // data to submit
+    success: function (data, status, xhr) {
+//        $('p').append('status: ' + status + ', data: ' + data);
+        
+        alert("2");
+    },
+    error: function (jqXhr, textStatus, errorMessage) {
+            $('p').append('Error' + errorMessage);
+    }
+});
 });
 
 
@@ -575,6 +632,58 @@ $('#cotactpage_btn').on("click", function (Event){
 
 
 // Page_AllNews
+$( document ).delegate("#allnewspage", "pagebeforeshow", function() { 
+        $.ajax('http://localhost:8888/Stars/api/ApiGet/get_news_list', {
+        type: 'GET',  // http method  // data to submit
+    success: function (data, status, xhr) {
+//        $('p').append('status: ' + status + ', data: ' + data);
+
+
+        var output = '<ul data-role="listview" data-inset="true" id="allnewspage_list" class="chooseclasspage_main_info">';
+        $.each (data , function(key, value) {
+
+                output += '<li data-id="'+value.news_id+'">';
+                
+                output += '<div class="allnewspageـgride ">';
+                output += '<div class="allnewspage_li_name ">';
+                output += '<a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn"></a>';
+                
+                output += '<p> '+ value.news_title +' </p>';
+                
+                
+                output += '</div>';
+                
+                output += '<span class="allnewspage_li_date ">';
+                
+                output += value.news_date;
+            
+                output += '</span>';
+                
+                output += '</div>';
+                
+                output += '</li>';
+          
+        });
+        
+        output += '</ul>';
+    $('#allnewspage_ul').html(output);
+
+    },
+    error: function (jqXhr, textStatus, errorMessage) {
+            $('p').append('Error' + errorMessage);
+    }
+});
+    
+    
+    
+    
+    
+    
+    
+});
+
+
+
 $('#allnewspage_list').delegate("li","tap", function (event) {
     var selected = $(this);
     selected.attr("data-id");
@@ -635,10 +744,25 @@ function galleryThumb () {
 }
 
 
-$( document ).on( "pageinit", "#introductionpage", function($) {
+$( document ).on( "pagebeforeshow", "#introductionpage", function($) {
     setTimeout(function() {
 	galleryThumb("updateSliderSize", true);
     }, 300);
+});
+
+$( document ).delegate("#introductionpage", "pagebeforeshow", function() { 
+    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_introduction_list', {
+        type: 'GET',  // http method  // data to submit
+        success: function (data, status, xhr) {
+
+            $.each(data, function(index) {
+            document.getElementById("moarefi_p_txt").innerHTML = data[index].introduction_text;
+            });
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        }
+    });
 });
 
   
@@ -1403,7 +1527,100 @@ $('#programpart3page_btn').on("tap", function (Event){
                     if (ransagh_ck_1 + ransagh_ck_2 + ransagh_ck_3 + ransagh_ck_4 + ransagh_ck_5 + ransagh_ck_6 + ransagh_ck_7 + ransagh_ck_8 + ransagh_ck_9 + ransagh_ck_10 > 0 ) {
                         if (pahloran_ck_1 + pahloran_ck_2 + pahloran_ck_3 + pahloran_ck_4 > 0 ) {
                             if (ketfi_ck_1 + ketfi_ck_2 + ketfi_ck_3 + ketfi_ck_4 + ketfi_ck_5 > 0 ) {
+                                
+                                
+                                
+$.ajax('http://localhost:8888/Stars/api/ApiGet/insert_contact', {
+    type: 'POST',  // http method
+    data: { 'morabi_id': '888',
+           'state_id': contact_etx,
+           'jalasat_number': 'date',
+           'shobe': contact_etx,
+           'request_date': 'date',
+           'inbody_score': contact_etx,
+           'level': 'date',
+           'history_sport': contact_etx,
+           'ghad': 'date',
+           'vazn': contact_etx,
+           'age': 'date',
+           'sar_shane': contact_etx,
+           'sine': 'date',
+           'kamar': contact_etx,
+           'bimary': 'date',
+           'mafasel': contact_etx,
+           'other_gym': 'date',
+           'regim': contact_etx,
+           'other_des': 'date',
+           'shekam': contact_etx,
+           'basan': 'date',
+           'ran': contact_etx,
+           'sagh_pa': 'date',
+           'bazo': contact_etx,
+           'pahloran': 'date',
+           'lor_dozegi_gardan': contact_etx,
+           'lor_dozegi_kamari': 'date',
+           'charkh_zano': contact_etx,
+           'ketf_baldar': 'date',
+           'kifoz_poshti': 'date',
+           'pa_parantezi': contact_etx,
+           'oftadegi_shane': 'date',
+           'skoliuz': contact_etx,
+           'sine_bala_keshidan': 'date',
+           'sine_hajm': 'date',
+           'sine_seft_shodan': contact_etx,
+           'sine_form_giry': 'date',
+           'sine_kahesh_size': contact_etx,
+           'sine_gerd_shodan': 'date',
+           'sine_por_shodan_bala_sine': 'date',
+           'bazo_form_giry': contact_etx,
+           'bazo_por_shodan': 'date',
+           'bazo_kahesh_size': contact_etx,
+           'bazo_seft_shodan': 'date',
+           'shekam_pahlo_charbi_sozi': 'date',
+           'shekam_pahlo_taghviat_azolat': contact_etx,
+           'shekam_pahlo_kat_shodan': 'date',
+           'basan_gerd_shodan': contact_etx,
+           'basan_bala_keshidan': 'date',
+           'basan_seft_shodan': 'date',
+           'basan_hajm_por_shodan': contact_etx,
+           'basan_por_shodan_baghal_basan': 'date',
+           'basan_kahesh_size': contact_etx,
+           'basan_form_giry': 'date',
+           'ran_o_sagh_por_shodan': 'date',
+           'ran_o_sagh_seft_shodan': contact_etx,
+           'ran_o_sagh_form_giry': 'date',
+           'ran_o_sagh_taghviat_azolat': contact_etx,
+           'ran_o_sagh_rafe_seloliat': 'date',
+           'ran_o_sagh_kahesh_size': 'date',
+           'ran_o_sagh_kahesh_size_sagh': contact_etx,
+           'ran_o_sagh_seft_shodan_sagh': 'date',
+           'ran_o_sagh_taghviat_sagh': 'date',
+           'ran_o_sagh_charbi_sozi': contact_etx,
+           'pahlo_ran_charbi_sozi': 'date',
+           'pahlo_ran_form_giri': contact_etx,
+           'pahlo_ran_taghviat': 'date',
+           'pahlo_ran_por_shodan': 'date',
+           'azolat_ketfi_taghviat': contact_etx,
+           'azolat_ketfi_form_giri': 'date',
+           'azolat_ketfi_kahesh_size': contact_etx,
+           'azolat_ketfi_aghab_raftan_shaneh': 'date',
+           'azolat_ketfi_kat_shodan': 'date',
+           'price_barname': contact_etx,
+           'request_des': 'date', },  // data to submit
+    success: function (data, status, xhr) {
+
+        
+        alert("2");
+    },
+    error: function (jqXhr, textStatus, errorMessage) {
+            $('p').append('Error' + errorMessage);
+    }
+});
+                                
+                                
                                 var ref = cordova.InAppBrowser.open('http://apache.org', '_system', 'location=yes');
+                                
+                                
                         }else {
             snack_error(' بخش عضلات کتفی نمی تواند خالی باشد');
                         }
@@ -1426,49 +1643,6 @@ $('#programpart3page_btn').on("tap", function (Event){
             snack_error(' بخش سینه نمی تواند خالی باشد');
     }
 });  
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-// Page_Success
-$('.success_btn').on("tap", function (Event){
-    $('video').trigger('pause');
-    $.mobile.changePage('#mainpage');
-});
-    
-    
-    
-    
-    
-    
-
-    
-
-
-
-
-
-
-
-
-// Page_Error
-    
-    
-    
-    
-    
-    
 
     
 
@@ -1480,6 +1654,56 @@ $('.success_btn').on("tap", function (Event){
 
 
 // Page_Profile
+$( document ).delegate("#profilepage", "pagebeforeshow", function() { 
+    var phone_number = $("#profilepage_input_number").val().trim();
+    
+    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_People_single', {
+        type: 'POST',  // http method 
+        data: { 'phone_number': phone_number, },  // data to submit
+        success: function (data, status, xhr) {
+
+            $.each(data, function(index) {
+           
+                document.getElementById("profilepage_input_fullname").value = data[index].name_family;
+                 document.getElementById("profilepage_input_social_code").value = data[index].code_meli; 
+
+            });
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        }
+    });
+});
+
+$('#profilepage_btn').on("tap", function (){
+    
+});
+    
+
+
+
+
+
+
+
+
+// Page_Rules
+$( document ).delegate("#rulespage", "pagebeforeshow", function() { 
+        $.ajax('http://localhost:8888/Stars/api/ApiGet/get_rules_list', {
+        type: 'GET',  // http method  // data to submit
+    success: function (data, status, xhr) {
+//        $('p').append('status: ' + status + ', data: ' + data);
+        $.each(data, function(index) {
+        document.getElementById("rulespage_txt").innerHTML = data[index].rules_text;
+        });
+    },
+    error: function (jqXhr, textStatus, errorMessage) {
+            $('p').append('Error' + errorMessage);
+    }
+});
+});
+
+
     
     
     

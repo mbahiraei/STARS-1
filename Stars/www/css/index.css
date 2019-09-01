@@ -122,6 +122,7 @@ button:focus {
 
 
 
+
 /*--------------- Page_splash ----------------------------*/
 .splash_logo {
     width: 100%;
@@ -651,16 +652,23 @@ button:focus {
 
 
 /*--------------- Page_AllNews ---------------------------*/
+.allnewspage_ul_li {
+    padding: .7em 1em;
+}
 .allnewspage_li_name {
     display: block;
     font-size: 11px;
     float: right;
     width: 100%;
-
 }
 .allnewspage_li_name p {
     margin: 0 30px!important;
     width: 85%;
+    font-weight: normal;
+    display: inline-block!important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .allnewspage_li_date {
     display: block;
@@ -674,7 +682,9 @@ button:focus {
     border: none!important;
     background: #461857!important;
     color: #fff!important;
-    margin: 8px 30px!important;
+    margin: 8px 5px!important;
+    position: relative!important;
+    display: inline!important;
 }
 .allnewspageـgride{
     line-height: 2;
@@ -1240,75 +1250,6 @@ button:focus {
     margin: 15% 0!important;
 }
 
-
-
-
-
-
-
-/*--------------- success ----------------*/ 
-.success_img {
-    width: 30%;
-    display: block;
-    margin: 35px auto!important;
-}
-.success_title {
-    float: right;
-    width: 100%;
-    text-align: center!important;
-    font-size: 16px!important;
-    color: #14fc13!important;
-}
-.success_dec {
-    float: right;
-    text-align: center!important;
-    font-size: 14px!important;
-    color: #fff!important;
-    margin: 45px 0 10px 0!important;
-    padding: 0 40px;
-}
-.success_dec2 {
-    float: right;
-    display: block;
-    width: 100%;
-    text-align: center!important;
-    font-size: 14px!important;
-    color: #fff!important;
-    margin: 25px 0 10px 0!important;
-}
-.success_dec3 {
-    float: right;
-    display: block;
-    width: 100%;
-    text-align: center!important;
-    font-size: 14px!important;
-    color: #fff!important;
-    margin: 0 0 65px 0!important;
-}
-.success_btn {
-    width: 80%!important;
-    font-size: 12px!important;
-    margin: 0 auto 100px auto!important;
-}
-
-
-
-
-
-
-
-
-
-
-/*--------------- error ----------------*/
-.success_title_err {
-    float: right;
-    width: 100%;
-    text-align: center!important;
-    font-size: 16px!important;
-    color: #fd0205!important;
-    margin: 25px 0 65px 0!important;
-}
 
 
 

@@ -15,43 +15,8 @@
 
 </head>
 <body>
-<!--
-
-    
-    <div data-role="page" id="page1">
-        <div data-role="main" class="page_up ui-content a p0 B">
-           
-            <a class=" c_btn" href="#splashpage" data-inline="true" data-role="button">splashpage</a>
-            <a class=" c_btn" href="#splashpage" data-inline="true" data-role="button">splashpage</a>
-            <a class=" c_btn" href="#loginpage" data-inline="true" data-role="button">loginpage</a>
-            <a class=" c_btn" href="#smspage" data-inline="true" data-role="button">smspage</a>
-            <a class=" c_btn" href="#mainpage" data-inline="true" data-role="button">mainpage</a>
-            <a class=" c_btn" href="#chooselocatinpage" data-inline="true" data-role="button" >chooselocatinpage</a>
-            <a class=" c_btn" href="#contactpage" data-inline="true" data-role="button">contactpage</a>
-            <a class=" c_btn" href="#newspage" data-inline="true" data-role="button">newspage</a>
-            <a class=" c_btn" href="#allnewspage" data-inline="true" data-role="button">allnewspage</a>
-            <a class=" c_btn" href="#articlespage" data-inline="true" data-role="button">articlespage</a>
-            <a class=" c_btn" href="#introductionpage" data-inline="true" data-role="button">introductionpage</a>
-            <a class=" c_btn" href="#signuppage" data-inline="true" data-role="button">signuppage</a>
-            <a class=" c_btn" href="#sanspage" data-inline="true" data-role="button">sanspage</a>
-            <a class=" c_btn" href="#suggestionpage" data-inline="true" data-role="button">suggestionpage</a>
-            <a class=" c_btn" href="#choosesanspage" data-inline="true" data-role="button">choosesanspage</a>
-            <a class=" c_btn" href="#workoutpage" data-inline="true" data-role="button">workoutpage</a>
-            <a class=" c_btn" href="#chooseclasspage" data-inline="true" data-role="button">chooseclasspage</a>
-            <a class=" c_btn" href="#programrequestpage" data-inline="true" data-role="button">programrequestpage</a>
-            <a class=" c_btn" href="#programpart1page" data-inline="true" data-role="button">programpart1page</a>
-            <a class=" c_btn" href="#programpart2page" data-inline="true" data-role="button">programpart2page</a>
-            <a class=" c_btn" href="#programpart3page" data-inline="true" data-role="button">programpart3page</a>
-            <a class=" c_btn" href="#goodtoknowpage" data-inline="true" data-role="button">goodtoknowpage</a> 
-            <a class=" c_btn" href="#rulespage" data-inline="true" data-role="button">rulespage</a>
-            <a class=" c_btn" href="#profilepage" data-inline="true" data-role="button">profilepage</a>
-            <a class=" c_btn" href="#programsuccesspage" data-inline="true" data-role="button">programsuccesspage</a>
-            <a class=" c_btn" href="#programerrorpage" data-inline="true" data-role="button">programerrorpage</a>
-        </div>
-    </div>
     
     
--->
     <!-- Page_Splash -->
     <div data-role="page" class="a" id="splashpage" data-theme="a">
         <div class="splash_logo">
@@ -59,7 +24,6 @@
         </div>
     </div>
     
-
 
     <!-- Page_login -->
     <div data-role="page" id="loginpage">
@@ -101,7 +65,7 @@
 
     
     <!-- Page_Sms -->
-    <div data-role="page" class="a" id="smspage" data-theme="a">
+    <div data-role="page" class="a" id="smspage" data-theme="a" disabled="true">
         <div data-role="main" class="c_bg_main ui-content B p0">
             <div class="c_tittle">
                 باشگاه ورزشی ستارگان
@@ -242,15 +206,15 @@
         <div class="main_info_3">
             
                 <div class="locationB1">
-          		    <img src="images/Screen%20Shot%202019-06-12%20at%2011.35.25.png" class="img-responsive" alt="logo">
+          		    <img id="locationB1_txt_img" src="images/Screen%20Shot%202019-06-12%20at%2011.35.25.png" class="img-responsive" alt="logo">
                 </div>
                 <div class="locationB1 ">
           		    <div class="locationB1_txt_tittle">آدرس :</div>
-          		    <div class="locationB1_txt">همدان - جهان نما /نرسیده به میدان بیمه</div>
+          		    <div id="locationB1_txt_dec" class="locationB1_txt">همدان - جهان نما /نرسیده به میدان بیمه</div>
                 </div>
                 <div class="locationB1 ">
           		    <div class="locationB1_txt_tittle">شماره های تماس :</div>
-          		    <div class="locationB1_txt">08138220868</div>
+          		    <div id="locationB1_txt_tel" class="locationB1_txt">08138220868</div>
                 </div>
             <div class="locationB_btn">
                 <a type="button" href="#" class="ui-btn ui-corner-all " id="locationB1_btn">شعبه ۲</a>
@@ -323,15 +287,15 @@
         <div class="main_info_3">
             
                 <div class="locationB1">
-          		    <img src="images/Screen%20Shot%202019-06-12%20at%2011.35.25.png" class="img-responsive" alt="logo">
+          		    <img id="locationB2_txt_img" src="images/Screen%20Shot%202019-06-12%20at%2011.35.25.png" class="img-responsive" alt="logo">
                 </div>
                 <div class="locationB1 ">
           		    <div class="locationB1_txt_tittle">آدرس :</div>
-          		    <div class="locationB1_txt">بلوار بعثت/جنب مجتمع آوینی/کوچه زرگران مجموعه ورزشی آبشار </div>
+          		    <div id="locationB2_txt_dec" class="locationB1_txt">بلوار بعثت/جنب مجتمع آوینی/کوچه زرگران مجموعه ورزشی آبشار </div>
                 </div>
                 <div class="locationB1 ">
           		    <div class="locationB1_txt_tittle">شماره های تماس :</div>
-          		    <div class="locationB1_txt">08138386866</div>
+          		    <div id="locationB2_txt_tel" class="locationB1_txt">08138386866</div>
                 </div>
             <div class="locationB_btn">
                 <a type="button" href="#" class="ui-btn ui-corner-all " id="locationB2_btn">شعبه ۱</a>
@@ -996,7 +960,7 @@
                             <label for="cotactpage_textarea"></label>
                             <textarea cols="40" rows="10" name="textarea" id="cotactpage_textarea" placeholder="متن ارسالــی"></textarea>
                         </div>
-                        <button type="button" class="c_btn contact_us_main_info_a ui-btn ui-corner-all contact_us_submit" id="cotactpage_btn">ارسال</button>
+                        <button type="button" class="c_btn contact_us_main_info_a ui-btn ui-corner-all contact_us_submit" id="contactpage_btn">ارسال</button>
                     </form>
 
                 </div>
@@ -1114,15 +1078,16 @@
                     <img src="images/top-2.png" class="img-responsive" alt="logo">
                 </div>
 
-
+<div class="allnewspage_ul" id="allnewspage_ul">
                 
 
                 <ul data-role="listview" data-inset="true" id="allnewspage_list" class="chooseclasspage_main_info">
-                    <li data-id="">
+                    <li data-id="" class="allnewspage_ul_li">
                         <div class="allnewspageـgride ">
                             <div class="allnewspage_li_name ">
-                                <a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn">Menu</a>
-                                <p>  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p></div>
+                                <a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn"></a>
+                                <p>  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                            </div>
                             <span class="allnewspage_li_date ">1398/02/02</span>
                         </div>
                     </li>
@@ -1168,7 +1133,7 @@
                     </li>
                 </ul>
 
-
+</div>
                 <div class="style_buttom">
                     <img src="images/bot-2.png" class="img-responsive" alt="logo">
                 </div>
@@ -1371,7 +1336,7 @@
                     
                     
                     
-                <div class="moarefi_p">
+                <div id="moarefi_p_txt" class="moarefi_p">
                      <p>
                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
                      </p>
@@ -2035,130 +2000,8 @@
                 </div>
             </div><!-- /panel -->
     </div>
-
     
-    <!-- Page_Program_Request_success -->
-    <div data-role="page" id="programsuccesspage">
-        <div data-role="header"  class="header">
-            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
-        
-            <h6>باشگاه ورزشی ستارگان</h6>
-            <a type="button" href="#programsuccesspage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
-        </div>
-        <div data-role="main" class="ui-content B p0">
 
-            <div class="program_request_p2 c_bg_2">
-                <div class="title_p3 c_tittle B">
-                    درخواست برنامه
-                </div>
-
-                <div class="success_img">
-                    <img src="images/correct%20(1).svg">
-                </div>
-                <div class="success_title">پرداخت شما با موفقیت انجام شد</div>
-                <div class="success_dec">برنامه درخواستی شما پس از بررسی کارشناسان به شما اعلام خواهد شد </div>
-                <div class="success_dec2"> با تشکر از حسن انتخاب شما</div>
-                <div class="success_dec3"> باشگاه ورزشی ستارگان</div>
-                <a type="button" class="c_btn success_btn  ui-btn ui-corner-all">بازگشت به برنامه</a>
-
-                <div class="style_buttom_y">
-                    <img src="images/yellow_bot.png" class="img-responsive" alt="logo">
-                </div>
-            </div>
-
-
-                            
-
-        </div>
-        
-        
-            <div data-role="panel" id="programsuccesspage_panel" data-display="overlay"data-position="right" data-position-fixed="true" class="panel_back_g">
-                <div class="main_panel">
-                    <div class="head_panel">
-                        <img src="images/Arm 01.svg">
-                        <span >باشگاه ورزشی ستارگان</span>
-                    </div>
-                <div class="panel_buttom">
-                    <img src="images/panel_bot.png" class="img-responsive" alt="logo">
-                </div>
-                    <div class="body_panel">
-                        <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
-                        </ul>
-                    </div>
-                </div>
-            </div><!-- /panel -->
-    </div>
-
-
-    <!-- Page_Program_Request_error -->
-    <div data-role="page" id="programerrorpage">
-        <div data-role="header"  class="header">
-            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
-        
-            <h6>باشگاه ورزشی ستارگان</h6>
-            <a type="button" href="#programerrorpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
-        </div>
-        <div data-role="main" class=" mypanel ui-content B p0">
-
-            <div class="program_request_p2 c_bg_2">
-                <div class="title_p3  c_tittle B">
-                    درخواست برنامه
-                </div>
-
-                <div class="success_img">
-                    <img src="images/wrong.svg">
-                </div>
-                <div class="success_title_err54">پرداخت شما با مشکل مواجه شد</div>
-                <div class="success_dec354"> دوباره تلاش کنید</div>
-                <div class="success_dec454"> دوباره تلاش کنید</div>
-                <a type="button" data-rel="back" class="c_btn success_btn  ui-btn ui-corner-all">بازگشت به برنامه</a>
-
-                <div class="style_buttom_y">
-                    <img src="images/yellow_bot.png" class="img-responsive" alt="logo">
-                </div>
-
-            </div>
-
-        </div>
-        
-            <div data-role="panel" id="programerrorpage_panel" data-display="overlay"data-position="right" data-position-fixed="true" class="panel_back_g">
-                <div class="main_panel">
-                    <div class="head_panel">
-                        <img src="images/Arm 01.svg">
-                        <span >باشگاه ورزشی ستارگان</span>
-                    </div>
-                <div class="panel_buttom">
-                    <img src="images/panel_bot.png" class="img-responsive" alt="logo">
-                </div>
-                    <div class="body_panel">
-                        <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
-                        </ul>
-                    </div>
-                </div>
-            </div><!-- /panel -->
-    </div>
-
-    
     <!-- Page_GoodToKnow -->
     <div data-role="page" id="goodtoknowpage">
         <div data-role="header"  class="header">
@@ -2298,12 +2141,12 @@
                             <label for="profilepage_input_fullname">نام و نام خانوادگی</label>
                             <input id="profilepage_input_fullname" class="signuppage_input" type="text"  />
                             <label for="profilepage_input_social_code">کد ملی</label>
-                            <input id="profilepage_input_social_code" class="signuppage_input_num" maxlength="11" type="tel"  />
+                            <input id="profilepage_input_social_code" class="signuppage_input" maxlength="11" type="tel"  />
                             <label for="profilepage_input_number">شماره تماس</label>
                             <input id="profilepage_input_number" class="signuppage_input" maxlength="11" type="tel" disabled="true" value="0"/>
                         </div>
                         <div class="signuppage_input_submit">
-                            <button type="button" class="c_btn ui-btn ui-corner-all " id="signuppage_btn">تایید اطلاعات  کاربری</button>
+                            <button type="button" class="c_btn ui-btn ui-corner-all " id="profilepage_btn" >تایید اطلاعات  کاربری</button>
 
                         </div>
                     </form>
@@ -2364,7 +2207,7 @@
 
 
 
-                <div class="signuppage_main_info txt_sm">
+                <div id="rulespage_txt" class="signuppage_main_info txt_sm">
 
                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. </p>
                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. </p>
@@ -2421,23 +2264,53 @@
     <script src="scripts/functions.js"></script>
     <script src="js/snackbar.min.js"></script>
     <script src="js/swiper.min.js"></script>
+<!--
     
-
     <script>
-    $.getJSON('http://time.jsontest.com', function(data) {
+        function aaaa() {
+       var phone_number = $("#login_etx_submit").val().trim();
+        $.ajax('http://localhost:8888/Stars/api/ApiGet/get_People_single', {
+    type: 'POST',  // http method
+    data: { 'phone_number': '09192183440', },  // data to submit
+    success: function (data, status, xhr) {
+//        $('p').append('status: ' + status + ', data: ' + data);
+        $.each(data, function(index) {
+            alert(data[index].name_family);
+        });
+//        alert('status: ' + status + ', data: ' + items);
+    },
+    error: function (jqXhr, textStatus, errorMessage) {
+            $('p').append('Error' + errorMessage);
+    }
+});
         
-        var text = `Date: ${data.date}<br>`
-
-        var time = `Time: ${data.time}<br>`
-        var unix = `
-                    Unix time: ${data.milliseconds_since_epoch}`
-                    
-        document.getElementById("profilepage_input_fullname").value = (text);
-        document.getElementById("profilepage_input_social_code").value = (time);
+        
+        }
+        
+        
+        
+        
+//   $.post('http://90cc231f.ngrok.io/Stars/api/ApiGet/get_People_single',   // url
+//       { myData: phone_number }, // data to be submit
+//       function(data, status, jqXHR) {// success callback
+//                $('p').append('status: ' + status + ', data: ' + data);
+//        }) $.getJSON('http://90cc231f.ngrok.io/Stars/api/ApiGet/get_People_single', function(data) {
+//        
+//        var text = `Date: ${data.date}<br>`
+//
+//        var time = `Time: ${data.time}<br>`
+//        var unix = `
+//                    Unix time: ${data.milliseconds_since_epoch}`
+//                    
+//        document.getElementById("profilepage_input_fullname").value = (text);
+//        document.getElementById("profilepage_input_social_code").value = (time);
 //        $("#profilepage_input_fullname").value(text);
 //        $("#profilepage_input_social_code").value(time);
 //        $(".success_dec454").html(unix);
-    });
+//    });
     </script>
+    
+    
+-->
 </body>
 </html>
