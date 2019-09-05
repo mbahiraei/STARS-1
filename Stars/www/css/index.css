@@ -38,6 +38,9 @@ img{
     display: block;
     margin: 0 auto!important;
 }
+.min_h {
+    min-height: 290px;
+}
 .c_bg{
     background: #461858 !important;
 }
@@ -528,6 +531,11 @@ button:focus {
     position: relative!important;
     float: right;
 }
+#main_swiper-wrapper div p {
+    text-overflow: ellipsis!important;
+    overflow: hidden!important;
+    white-space: normal!important;
+}
 
 
 
@@ -619,7 +627,7 @@ button:focus {
     border-bottom: 1px solid #e3bc9b!important;
     margin: 5% auto 10%;
     text-align: right;
-    font-size: 18px!important;
+    font-size: 14px!important;
 
 }
 .newspageـgride{
@@ -654,12 +662,12 @@ button:focus {
 }
 .allnewspage_li_name p {
     margin: 0 30px!important;
-    width: 85%;
+    width: 90%;
     font-weight: normal;
     display: inline-block!important;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+    text-overflow: ellipsis!important;
+    overflow: hidden!important;
+    white-space: normal!important;
 }
 .allnewspage_li_date {
     display: block;
@@ -673,8 +681,8 @@ button:focus {
     border: none!important;
     background: #461857!important;
     color: #fff!important;
-    margin: 8px 5px!important;
-    position: relative!important;
+    margin: 0px 20px!important;
+    position: absolute;
     display: inline!important;
 }
 .allnewspageـgride{
@@ -686,7 +694,7 @@ button:focus {
 }
 .allnewspageـgride div{
     text-shadow: none!important;
-    padding: 0 5% !important;
+    padding: 5px 5% !important;
 }
 
 
@@ -818,7 +826,7 @@ button:focus {
     line-height: 2;
     margin: 0!important;
     padding: 0!important;
-    width: 95%!important;
+    width: 100%!important;
 }
 .chooseclasspageـgride div{
     text-shadow: none!important;
@@ -915,7 +923,6 @@ button:focus {
 .circle_choose_1, .circle_choose_2 {
     width: 5%;
     float: right;
-    margin: 3px auto;
 }
 .circle_choose_2 {
     float: left;
@@ -932,7 +939,7 @@ button:focus {
 }
 .chooseclasspage_1 {
     text-align: center;
-    width: 60%;
+    width: 75%;
     display: inline-block;
 }
 
@@ -967,6 +974,7 @@ button:focus {
     background: #502461;
     font-size: 100%;
     text-shadow: none;
+    direction: ltr!important;
 }
 .workout_grid_tittle{
     border-radius: 20px 20px 0 0!important;
@@ -1211,7 +1219,7 @@ button:focus {
     background-size: 100% 100%;
     position: relative;
     height: 100px;
-    margin: -85px 0 0 0!important;
+    margin: -35px 0 0 0!important;
     border-radius: 0 0 15px 15px;
 }
 .good_txt p {

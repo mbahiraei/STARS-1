@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <title>باشگاه ورزشی ستارگان</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://yourdomain1.com  data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline';  media-src *;  script-src 'self' 'unsafe-eval' 'unsafe-inline';">
     <!-- jquery_mobile_demo references -->
     <link href="css/index.css" rel="stylesheet" />
     <link href="css/themes/default/rtl.jquery.mobile-1.4.0.css" rel="stylesheet" />
@@ -204,18 +206,8 @@
             
             
         <div class="main_info_3">
-            
-                <div class="locationB1">
-          		    <img id="locationB1_txt_img" src="images/Screen%20Shot%202019-06-12%20at%2011.35.25.png" class="img-responsive" alt="logo">
-                </div>
-                <div class="locationB1 ">
-          		    <div class="locationB1_txt_tittle">آدرس :</div>
-          		    <div id="locationB1_txt_dec" class="locationB1_txt">همدان - جهان نما /نرسیده به میدان بیمه</div>
-                </div>
-                <div class="locationB1 ">
-          		    <div class="locationB1_txt_tittle">شماره های تماس :</div>
-          		    <div id="locationB1_txt_tel" class="locationB1_txt">08138220868</div>
-                </div>
+            <div id="locationB1_place" >
+            </div>
             <div class="locationB_btn">
                 <a type="button" href="#" class="ui-btn ui-corner-all " id="locationB1_btn">شعبه ۲</a>
             </div>
@@ -286,17 +278,8 @@
             
         <div class="main_info_3">
             
-                <div class="locationB1">
-          		    <img id="locationB2_txt_img" src="images/Screen%20Shot%202019-06-12%20at%2011.35.25.png" class="img-responsive" alt="logo">
-                </div>
-                <div class="locationB1 ">
-          		    <div class="locationB1_txt_tittle">آدرس :</div>
-          		    <div id="locationB2_txt_dec" class="locationB1_txt">بلوار بعثت/جنب مجتمع آوینی/کوچه زرگران مجموعه ورزشی آبشار </div>
-                </div>
-                <div class="locationB1 ">
-          		    <div class="locationB1_txt_tittle">شماره های تماس :</div>
-          		    <div id="locationB2_txt_tel" class="locationB1_txt">08138386866</div>
-                </div>
+            <div id="locationB2_place" >
+        </div>
             <div class="locationB_btn">
                 <a type="button" href="#" class="ui-btn ui-corner-all " id="locationB2_btn">شعبه ۱</a>
             </div>
@@ -357,17 +340,7 @@
                         <div class="swiper-scrollbar"></div>
                         <div class="swiper-main-button-prev swiper-button-prev"></div>
                         <div class="swiper-main-button-next swiper-button-next"></div>
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="images/carousel.png" >
-                            <p>کلاس های خصوصی</p></div>
-                            <div class="swiper-slide"><img src="images/slider.png">
-                            <p>کلاس های خصوصی</p></div>
-                            <div class="swiper-slide"><img src="images/slider0.png">
-                            <p>کلاس های خصوصی</p></div>
-                            <div class="swiper-slide"><img src="images/slider2.png">
-                            <p>کلاس های خصوصی</p></div>
-                            <div class="swiper-slide"><img src="images/image.png">
-                            <p>کلاس های خصوصی</p></div>
+                        <div id="main_swiper-wrapper" class="swiper-wrapper">
                         </div>
                         <div class="swiper-main-pagination"></div>
                     </div>
@@ -396,26 +369,6 @@
                     
                 </div>
                 <ul  data-role="listview" data-inset="true" id="mainpage_list" class="news_page_main_ul">
-                    <li>
-                    <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-leftdouble ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a><p>                        باشگاه ورزشی ستارگان فردا تعطیل است
-                        </p>
-                    </li>
-                    <li>
-                    <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-leftdouble ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a><p><p>                        باشگاه ورزشی ستارگان فردا تعطیل است
-                    </p>
-                    </li>
-                    <li>
-                    <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-leftdouble ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a><p><p>                        باشگاه ورزشی ستارگان فردا تعطیل است
-                    </p>
-                    </li>
-                    <li>
-                    <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-leftdouble ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a><p><p>                        باشگاه ورزشی ستارگان فردا تعطیل است
-                    </p>
-                    </li>
-                    <li>
-                    <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-leftdouble ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a><p><p>                        باشگاه ورزشی ستارگان فردا تعطیل است
-                    </p>
-                    </li>
                 </ul>
             </div>
 
@@ -545,95 +498,7 @@
                 </div>
 
 
-                <ul data-role="listview" data-inset="true" id="choosesanspage_list" class="chooseclasspage_main_info">
-                    <li data-id="1">
-                        <div class="chooseclasspageـgride ">
-                            <div class="circle_choose_1">
-                                <div class="circle_choose_inner_1"></div>
-                            </div>
-                            <div class="chooseclasspage_1 " ><span>هـــوازی</span></div>
-                            <div class="circle_choose_2">
-                                <div class="circle_choose_inner_2"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li data-id="2">
-                        <div class="chooseclasspageـgride ">
-                            <div class="circle_choose_1">
-                                <div class="circle_choose_inner_1"></div>
-                            </div>
-                            <div class="chooseclasspage_1 " ><span>هـــوازی</span></div>
-                            <div class="circle_choose_2">
-                                <div class="circle_choose_inner_2"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="chooseclasspageـgride ">
-                            <div class="circle_choose_1">
-                                <div class="circle_choose_inner_1"></div>
-                            </div>
-                            <div class="chooseclasspage_1 " ><span>هـــوازی</span></div>
-                            <div class="circle_choose_2">
-                                <div class="circle_choose_inner_2"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="chooseclasspageـgride ">
-                            <div class="circle_choose_1">
-                                <div class="circle_choose_inner_1"></div>
-                            </div>
-                            <div class="chooseclasspage_1 " ><span>هـــوازی</span></div>
-                            <div class="circle_choose_2">
-                                <div class="circle_choose_inner_2"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="chooseclasspageـgride ">
-                            <div class="circle_choose_1">
-                                <div class="circle_choose_inner_1"></div>
-                            </div>
-                            <div class="chooseclasspage_1 " ><span>هـــوازی</span></div>
-                            <div class="circle_choose_2">
-                                <div class="circle_choose_inner_2"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="chooseclasspageـgride ">
-                            <div class="circle_choose_1">
-                                <div class="circle_choose_inner_1"></div>
-                            </div>
-                            <div class="chooseclasspage_1 " ><span>هـــوازی</span></div>
-                            <div class="circle_choose_2">
-                                <div class="circle_choose_inner_2"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="chooseclasspageـgride ">
-                            <div class="circle_choose_1">
-                                <div class="circle_choose_inner_1"></div>
-                            </div>
-                            <div class="chooseclasspage_1 " ><span>هـــوازی</span></div>
-                            <div class="circle_choose_2">
-                                <div class="circle_choose_inner_2"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="chooseclasspageـgride ">
-                            <div class="circle_choose_1">
-                                <div class="circle_choose_inner_1"></div>
-                            </div>
-                            <div class="chooseclasspage_1 " ><span>هـــوازی</span></div>
-                            <div class="circle_choose_2">
-                                <div class="circle_choose_inner_2"></div>
-                            </div>
-                        </div>
-                    </li>
+                <ul data-role="listview" data-inset="true" id="choosesanspage_list" class="chooseclasspage_main_info min_h">
                 </ul>
 
                 <div class="style_buttom">
@@ -681,7 +546,7 @@
 
 
             <div class="place_main">
-                <div class="c_tittle main_tilte">
+                <div id="morabi_name_class" class="c_tittle main_tilte">
                     هوازی
                 </div>
 
@@ -690,67 +555,7 @@
                 </div>
 
 
-                <ul data-role="listview" data-inset="true" id="chooseclasspage_list" class="chooseclasspage_main_info">
-                    <li data-id="">
-                        <div class="chooseclasspageـgride ui-grid-a">
-                            <div class="chooseclasspage_3 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
-                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
-                        </div>
-                        <div class="chooseclasspageـgride ui-grid-a">
-                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
-                            <div class="chooseclasspage_4 ui-block-b"><span>پریسا جوانمردی</span></div>
-                        </div>
-                    </li>
-                    <li data-id="">
-                        <div class="chooseclasspageـgride ui-grid-a">
-                            <div class="chooseclasspage_3 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
-                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
-                        </div>
-                        <div class="chooseclasspageـgride ui-grid-a">
-                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
-                            <div class="chooseclasspage_4 ui-block-b"><span>پریسا جوانمردی</span></div>
-                        </div>
-                    </li>
-                    <li data-id="">
-                        <div class="chooseclasspageـgride ui-grid-a">
-                            <div class="chooseclasspage_3 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
-                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
-                        </div>
-                        <div class="chooseclasspageـgride ui-grid-a">
-                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
-                            <div class="chooseclasspage_4 ui-block-b"><span>پریسا جوانمردی</span></div>
-                        </div>
-                    </li>
-                    <li data-id="">
-                        <div class="chooseclasspageـgride ui-grid-a">
-                            <div class="chooseclasspage_3 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
-                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
-                        </div>
-                        <div class="chooseclasspageـgride ui-grid-a">
-                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
-                            <div class="chooseclasspage_4 ui-block-b"><span>پریسا جوانمردی</span></div>
-                        </div>
-                    </li>
-                    <li data-id="">
-                        <div class="chooseclasspageـgride ui-grid-a">
-                            <div class="chooseclasspage_3 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
-                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
-                        </div>
-                        <div class="chooseclasspageـgride ui-grid-a">
-                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
-                            <div class="chooseclasspage_4 ui-block-b"><span>پریسا جوانمردی</span></div>
-                        </div>
-                    </li>
-                    <li data-id="">
-                        <div class="chooseclasspageـgride ui-grid-a">
-                            <div class="chooseclasspage_3 ui-block-a" style="font-size: 120%;"><span>هـــوازی</span></div>
-                            <div class="chooseclasspage_2 ui-block-b"><span>ساعت 17:00 تا 20:00</span></div>
-                        </div>
-                        <div class="chooseclasspageـgride ui-grid-a">
-                            <div class="chooseclasspage_3 ui-block-a"><span>روزهای یکشنبه تا سه شنبه</span></div>
-                            <div class="chooseclasspage_4 ui-block-b"><span>پریسا جوانمردی</span></div>
-                        </div>
-                    </li>
+                <ul data-role="listview" data-inset="true" id="chooseclasspage_list" class="chooseclasspage_main_info min_h">
                 </ul>
 
                 <div class="style_buttom">
@@ -805,27 +610,23 @@
                         <div class="circle_p1_child_left B">
                         </div>
                     </div>
-                    <div class="c_tittle workout_main_tittle main_tilte B">
+                    <div id="workout_morabi_name" class="c_tittle workout_main_tittle main_tilte B">
                         مربی : سارا احمدی
                     </div>
                     <div class="workout_grid_block B">
                         <div class="workout_grid workout_grid_tittle ui-grid-a c_text_align">
-                            <div class="ui-block-a"><div class=" ui-bar ui-bar-a workout_tittle p0" >روزهای هفته</div></div>
-                            <div class="ui-block-b"><div class=" ui-bar ui-bar-a workout_tittle p0" >ساعت</div></div>
+                    
+                            <div class="ui-block-a">
+                                <div class=" ui-bar ui-bar-a workout_tittle p0" >روزهای هفته</div>
+                            </div>
+                            <div class="ui-block-b">
+                                <div class=" ui-bar ui-bar-a workout_tittle p0" >ساعت</div>
+                            </div>
+                        </div>  
+                        <div id="day_time_workout">
+                            
                         </div>
-                        <div class="workout_grid ui-grid-a c_text_align">
-                            <div class="ui-block-a"><div class=" ui-bar ui-bar-a p0" >شنبه</div></div>
-                            <div class="ui-block-b"><div class=" ui-bar ui-bar-a p0" >۱۷ تا ۲۰</div></div>
                         </div>
-                        <div class="workout_grid ui-grid-a  c_text_align">
-                            <div class="ui-block-a"><div class=" ui-bar ui-bar-a p0" >دوشنبه</div></div>
-                            <div class="ui-block-b"><div class=" ui-bar ui-bar-a p0" >۱۷ تا ۲۰</div></div>
-                        </div>
-                        <div class="workout_grid ui-grid-a c_text_align workout_grid_bottom">
-                            <div class="ui-block-a"><div class=" ui-bar ui-bar-a p0" >چهاشنبه</div></div>
-                            <div class="ui-block-b"><div class=" ui-bar ui-bar-a p0" >۱۷ تا ۲۰</div></div>
-                        </div>
-                    </div>
                     
                     
                     <!--SLIDER-->
@@ -833,22 +634,7 @@
                         <div class="swiper-scrollbar"></div>
                         <div class="swiper-workout-button-prev swiper-button-prev"></div>
                         <div class="swiper-workout-button-next swiper-button-next"></div>
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                            <video id="videos" width="100%" height="250" controls>
-                                <source src="images/%20a.mp4" type="video/mp4">
-                                <source src="movie.ogg" type="video/ogg">
-                                Your browser does not support the video tag.
-                            </video></div>
-                            <div class="swiper-slide">
-                            <video id="videos" width="100%" height="250" controls>
-                                <source src="images/%20a.mp4" type="video/mp4">
-                                <source src="movie.ogg" type="video/ogg">
-                                Your browser does not support the video tag.
-                            </video></div>
-                            <div class="swiper-slide"><img src="images/slider0.png"></div>
-                            <div class="swiper-slide"><img src="images/slider2.png"></div>
-                            <div class="swiper-slide"><img src="images/image.png"></div>
+                        <div id="swiper-wrapper_id" class="swiper-wrapper">
                         </div>
                         <div class="swiper-workout-pagination"></div>
                     </div>
@@ -858,6 +644,7 @@
                         <div class="workout_tittle">
                             توضیحات :
                         </div>
+                        <div id="workout_explain_dec">
                         <p>
                             باشگاه بدنسازی ستارگان
                         </p>
@@ -871,6 +658,7 @@
                         <p>
                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
                         </p>
+                        </div>
                     </div>
                     <div class="program_request_p2 signuppage_main_info r3 txt_sm">
                         <form class="programpart1page_fild ">
@@ -1015,10 +803,11 @@
 
                 <div class="news_main_info">
                         <div class="newspageـgride ">
-                            <div class="main_tilte newspage_li_name ">
-                                <p>  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p></div>
+                            <div id="main_tilte_news" class="main_tilte newspage_li_name ">
+                                <p> </p>
+                            </div>
                         </div>
-                    <div class="news_text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                    <div id="news_text" class="news_text  min_h">
                     </div>
                         <a type="button" href="#" data-rel="back" class="ui-btn ui-corner-all">بازگشت</a>
 
@@ -1081,56 +870,7 @@
 <div class="allnewspage_ul" id="allnewspage_ul">
                 
 
-                <ul data-role="listview" data-inset="true" id="allnewspage_list" class="chooseclasspage_main_info">
-                    <li data-id="" class="allnewspage_ul_li">
-                        <div class="allnewspageـgride ">
-                            <div class="allnewspage_li_name ">
-                                <a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn"></a>
-                                <p>  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
-                            </div>
-                            <span class="allnewspage_li_date ">1398/02/02</span>
-                        </div>
-                    </li>
-                    <li data-id="">
-                        <div class="allnewspageـgride ">
-                            <div class="allnewspage_li_name ">
-                                <a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn">Menu</a>
-                                <p>  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p></div>
-                            <span class="allnewspage_li_date ">1398/02/02</span>
-                        </div>
-                    </li>
-                    <li data-id="">
-                        <div class="allnewspageـgride ">
-                            <div class="allnewspage_li_name ">
-                                <a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn">Menu</a>
-                                <p>  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p></div>
-                            <span class="allnewspage_li_date ">1398/02/02</span>
-                        </div>
-                    </li>
-                    <li data-id="">
-                        <div class="allnewspageـgride ">
-                            <div class="allnewspage_li_name ">
-                                <a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn">Menu</a>
-                                <p>  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p></div>
-                            <span class="allnewspage_li_date ">1398/02/02</span>
-                        </div>
-                    </li>
-                    <li data-id="">
-                        <div class="allnewspageـgride ">
-                            <div class="allnewspage_li_name ">
-                                <a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn">Menu</a>
-                                <p>  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p></div>
-                            <span class="allnewspage_li_date ">1398/02/02</span>
-                        </div>
-                    </li>
-                    <li data-id="">
-                        <div class="allnewspageـgride ">
-                            <div class="allnewspage_li_name ">
-                                <a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn">Menu</a>
-                                <p>  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p></div>
-                            <span class="allnewspage_li_date ">1398/02/02</span>
-                        </div>
-                    </li>
+                <ul data-role="listview" data-inset="true" id="allnewspage_list" class="chooseclasspage_main_info min_h">
                 </ul>
 
 </div>
@@ -1192,55 +932,7 @@
                 
                 
 
-                <ul data-role="listview" data-inset="true" id="articlespage_list" class="chooseclasspage_main_info">
-                    <li data-id="">
-                        <div class="allnewspageـgride ">
-                            <div class="allnewspage_li_name ">
-                                <a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn">Menu</a>
-                                <p>  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p></div>
-                            <span class="allnewspage_li_date ">1398/02/02</span>
-                        </div>
-                    </li>
-                    <li data-id="">
-                        <div class="allnewspageـgride ">
-                            <div class="allnewspage_li_name ">
-                                <a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn">Menu</a>
-                                <p>  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p></div>
-                            <span class="allnewspage_li_date ">1398/02/02</span>
-                        </div>
-                    </li>
-                    <li data-id="">
-                        <div class="allnewspageـgride ">
-                            <div class="allnewspage_li_name ">
-                                <a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn">Menu</a>
-                                <p>  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p></div>
-                            <span class="allnewspage_li_date ">1398/02/02</span>
-                        </div>
-                    </li>
-                    <li data-id="">
-                        <div class="allnewspageـgride ">
-                            <div class="allnewspage_li_name ">
-                                <a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn">Menu</a>
-                                <p>  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p></div>
-                            <span class="allnewspage_li_date ">1398/02/02</span>
-                        </div>
-                    </li>
-                    <li data-id="">
-                        <div class="allnewspageـgride ">
-                            <div class="allnewspage_li_name ">
-                                <a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn">Menu</a>
-                                <p>  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p></div>
-                            <span class="allnewspage_li_date ">1398/02/02</span>
-                        </div>
-                    </li>
-                    <li data-id="">
-                        <div class="allnewspageـgride ">
-                            <div class="allnewspage_li_name ">
-                                <a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn">Menu</a>
-                                <p>  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p></div>
-                            <span class="allnewspage_li_date ">1398/02/02</span>
-                        </div>
-                    </li>
+                <ul data-role="listview" data-inset="true" id="articlespage_list" class="chooseclasspage_main_info min_h">
                 </ul>
 
 
@@ -1298,35 +990,20 @@
                     <img src="images/top-2.png" class="img-responsive" alt="logo">
                 </div>
             <div class="place_main contact_us_main_info">
-                <div class="moarefi_main_info">
+                <div class="moarefi_main_info min_h">
                     
                     
                     
                     <!-- Swiper -->
                   <div class="swiper-container gallery-top">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide image_big"><img src="images/slider0.png"></div>
-                      <div class="swiper-slide image_big"><img src="images/slider2.png"></div>
-                      <div class="swiper-slide image_big"><img src="images/slider.png"></div>
-                      <div class="swiper-slide image_big"><img src="images/slider0.png"></div>
-                      <div class="swiper-slide image_big"><img src="images/slider2.png"></div>
-                      <div class="swiper-slide image_big"><img src="images/slider0.png"></div>
-                      <div class="swiper-slide image_big"><img src="images/slider2.png"></div>
-                      <div class="swiper-slide image_big"><img src="images/slider.png"></div>
-                      <div class="swiper-slide image_big"><img src="images/slider0.png"></div>
-                      <div class="swiper-slide image_big"><img src="images/slider2.png"></div>
+                    <div id="intro_top_gallery" class="swiper-wrapper">
                     </div>
                     <!-- Add Arrows -->
                     <div class="swiper-button-next swiper-introduction-button-next "></div>
                     <div class="swiper-button-prev swiper-introduction-button-prev "></div>
                   </div>
                   <div class="swiper-container gallery-thumbs">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide image_small"><img src="images/slider0.png"></div>
-                      <div class="swiper-slide image_small"><img src="images/slider2.png"></div>
-                      <div class="swiper-slide image_small"><img src="images/slider.png"></div>
-                      <div class="swiper-slide image_small"><img src="images/slider0.png"></div>
-                      <div class="swiper-slide image_small"><img src="images/slider2.png"></div>
+                    <div id="intro_down_gallery" class="swiper-wrapper">
                     </div>
                   </div>
                     
@@ -1337,9 +1014,7 @@
                     
                     
                 <div id="moarefi_p_txt" class="moarefi_p">
-                     <p>
-                         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-                     </p>
+                     <p> </p>
                 </div>
             
 </div>
@@ -1448,77 +1123,6 @@
             </div><!-- /panel -->
     </div>
     
-
-    <!-- Page_Suggestion -->
-    <div data-role="page" id="suggestionpage">
-        <div data-role="header"  class="header">
-            <a type="button" href="#" data-rel="back" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-back ui-btn-icon-notext ui-corner-all btn_toolbar logout_btn">Back</a>
-            <a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-location ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>
-        
-            <h6>باشگاه ورزشی ستارگان</h6>
-            <a type="button" href="#suggestionpage_panel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext ui-corner-all btn_toolbar menu_btn">Menu</a>
-        </div>
-        <div data-role="main" class="c_bg_main ui-content B p0">
-
-
-            <div class="place_main">
-                <div class="c_tittle main_tilte">
-                   ارتباط با ما
-                </div>
-
-                <div class="style_top p0">
-                    <img src="images/top-2.png" class="img-responsive" alt="logo">
-                </div>
-
-
-                <div class="contact_us_main_info">
-                    <form>
-                        <div class="field-contain">
-                            <label for="cotactpage_input"></label>
-                            <input id="cotactpage_input" class="signuppage_input" type="text" placeholder="عنوان متن" />
-                        </div>
-                        <div class="contact_us_textarea">
-                            <label for="cotactpage_textarea"></label>
-                            <textarea cols="40" rows="10" name="textarea" id="cotactpage_textarea" placeholder="متن ارسالــی"></textarea>
-                        </div>
-                        <button type="button" class="c_btn contact_us_main_info_a ui-btn ui-corner-all contact_us_submit" id="cotactpage_btn">ارسال</button>
-                    </form>
-
-                </div>
-
-                <div class="style_buttom">
-                    <img src="images/bot-2.png" class="img-responsive" alt="logo">
-                </div>
-
-            </div>
-
-        </div>
-        <div data-role="panel" id="suggestionpage_panel" data-display="overlay"data-position="right" data-position-fixed="true" class="panel_back_g">
-                <div class="main_panel">
-                    <div class="head_panel">
-                        <img src="images/Arm 01.svg">
-                        <span >باشگاه ورزشی ستارگان</span>
-                    </div>
-                <div class="panel_buttom">
-                    <img src="images/panel_bot.png" class="img-responsive" alt="logo">
-                </div>
-                    <div class="body_panel">
-                        <ul class="panel_ul">
-                            <li class="panel_li panel_li_home"><button type="button" data-icon="home" >خانه</button></li>
-                            <li class="panel_li panel_li_profile"><button type="button" data-icon="user" >پروفایل</button></li>
-                            <li class="panel_li panel_li_good"><button type="button" data-icon="check" >خوب است بدانید . . .</button></li>
-                            <li class="panel_li panel_li_singup"><button type="button" data-icon="plus" >ثبت نام</button></li>
-                            <li class="panel_li panel_li_request"><button type="button" data-icon="plus" >درخواست برنامه ورزشی</button></li>
-                            <li class="panel_li panel_li_contact"><button type="button" data-icon="mail" >ارتباط با ما</button></li>
-                            <li class="panel_li panel_li_sharess"><button type="button" data-icon="navigation" >دعوت از دوستان</button></li>
-                            <li class="panel_li panel_li_rules"><button type="button" data-icon="info" >قوانین و مقررات</button></li>
-                            <li class="panel_li panel_li_logout"><button type="button" data-icon="power" >خروچ</button></li>
-                        </ul>
-                    </div>
-                </div>
-            </div><!-- /panel -->
-    </div>
-
 
     <!-- Page_Program_Request -->
     <div data-role="page" id="programrequestpage">
@@ -1948,7 +1552,7 @@
                     </div>
                         
                     <div class="p3_price">
-                        <div class="p3_price_title">هزینه درخواست برنامه</div>
+                        <div id="d3" class="p3_price_title">هزینه درخواست برنامه</div>
                         <div class="p3_number">۶۰۰۰۰</div>
                         <div class="p3_toman">تومان</div>
                     </div>
@@ -2022,57 +1626,7 @@
 
                 <div class="goodtoknowpage_main_info txt_sm">
 
-                    <ul data-role="listview" data-inset="true" id="goodtoknowpage_list" >
-                        <li>
-                            <div class="good_img">
-                                <img src="images/slider.png">
-                            </div>
-                            <div class="good_txt">
-                                <p>خوب است بدانیدخوب است بدانیدخوب است بدانید</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="good_img">
-                                <img src="images/slider0.png">
-                            </div>
-                            <div class="good_txt">
-                                <p>خوب است بدانیدخوب است بدانیدخوب است بدانید</p>
-                            </div></li>
-                        <li>
-                            <div class="good_img">
-                                <img src="images/slider0.png">
-                            </div>
-                            <div class="good_txt">
-                                <p>خوب است بدانیدخوب است بدانیدخوب است بدانید</p>
-                            </div></li>
-                        <li>
-                            <div class="good_img">
-                                <img src="images/slider2.png">
-                            </div>
-                            <div class="good_txt">
-                                <p>خوب است بدانیدخوب است بدانیدخوب است بدانید</p>
-                            </div></li>
-                        <li>
-                            <div class="good_img">
-                                <img src="images/slider2.png">
-                            </div>
-                            <div class="good_txt">
-                                <p>خوب است بدانیدخوب است بدانیدخوب است بدانید</p>
-                            </div></li>
-                        <li>
-                            <div class="good_img">
-                                <img src="images/slider2.png">
-                            </div>
-                            <div class="good_txt">
-                                <p>خوب است بدانیدخوب است بدانیدخوب است بدانید</p>
-                            </div></li>
-                        <li>
-                            <div class="good_img">
-                                <img src="images/slider.png">
-                            </div>
-                            <div class="good_txt">
-                                <p>خوب است بدانیدخوب است بدانیدخوب است بدانید</p>
-                            </div></li>
+                    <ul data-role="listview" data-inset="true" id="goodtoknowpage_list" class=" min_h">
                     </ul>
 
                 </div>
@@ -2207,14 +1761,7 @@
 
 
 
-                <div id="rulespage_txt" class="signuppage_main_info txt_sm">
-
-                   <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. </p>
-                   <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. </p>
-                   <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. </p>
-                   <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. </p>
-                   <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. </p>
-                   <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. </p>
+                <div id="rulespage_txt" class="signuppage_main_info txt_sm min_h">
                 </div>
 
                 <div class="style_buttom_y">
@@ -2264,53 +1811,6 @@
     <script src="scripts/functions.js"></script>
     <script src="js/snackbar.min.js"></script>
     <script src="js/swiper.min.js"></script>
-<!--
-    
-    <script>
-        function aaaa() {
-       var phone_number = $("#login_etx_submit").val().trim();
-        $.ajax('http://localhost:8888/Stars/api/ApiGet/get_People_single', {
-    type: 'POST',  // http method
-    data: { 'phone_number': '09192183440', },  // data to submit
-    success: function (data, status, xhr) {
-//        $('p').append('status: ' + status + ', data: ' + data);
-        $.each(data, function(index) {
-            alert(data[index].name_family);
-        });
-//        alert('status: ' + status + ', data: ' + items);
-    },
-    error: function (jqXhr, textStatus, errorMessage) {
-            $('p').append('Error' + errorMessage);
-    }
-});
-        
-        
-        }
-        
-        
-        
-        
-//   $.post('http://90cc231f.ngrok.io/Stars/api/ApiGet/get_People_single',   // url
-//       { myData: phone_number }, // data to be submit
-//       function(data, status, jqXHR) {// success callback
-//                $('p').append('status: ' + status + ', data: ' + data);
-//        }) $.getJSON('http://90cc231f.ngrok.io/Stars/api/ApiGet/get_People_single', function(data) {
-//        
-//        var text = `Date: ${data.date}<br>`
-//
-//        var time = `Time: ${data.time}<br>`
-//        var unix = `
-//                    Unix time: ${data.milliseconds_since_epoch}`
-//                    
-//        document.getElementById("profilepage_input_fullname").value = (text);
-//        document.getElementById("profilepage_input_social_code").value = (time);
-//        $("#profilepage_input_fullname").value(text);
-//        $("#profilepage_input_social_code").value(time);
-//        $(".success_dec454").html(unix);
-//    });
-    </script>
-    
-    
--->
+
 </body>
 </html>

@@ -23,7 +23,14 @@ var jquery_mobile_demo;
             document.addEventListener('online', ononline, false);
             document.addEventListener('offline', onoffline, false);
             document.addEventListener('deviceready',    function() {
-                navigator.splashscreen.hide();                      
+                setTimeout(function() {
+                    navigator.splashscreen.hide(); 
+	               if ((window.localStorage.getItem("cookies")) == 1){
+                        $.mobile.changePage('#mainpage');
+                    }else {
+                        $.mobile.changePage('#loginpage');
+                }
+                }, 1500);                     
             });
             // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
         }

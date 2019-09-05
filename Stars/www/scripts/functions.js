@@ -1,4 +1,19 @@
-// Jquery EVENTS
+// Global Var
+var HTTP = "";
+
+var random_number = 0;
+var phone_number = 0;
+
+var news_id = "";
+var output_arr2 = []; 
+
+
+var shobe_id = 0;
+var sans_id = 0;
+var jalase_id = 0;
+
+var dict_morabi_name = {}; // create an empty array
+
 
 
 
@@ -73,8 +88,8 @@ $( document ).on( "pageinit", "#signuppage", function() {
     swip_panel("#signuppage");
 });
 // Page_Suggestion Panel 
-$( document ).on( "pageinit", "#suggestionpage", function() {
-    swip_panel("#suggestionpage");
+$( document ).on( "pageinit", "#contactpage", function() {
+    swip_panel("#contactpage");
 });
 // Page_Program_Request Panel 
 $( document ).on( "pageinit", "#programrequestpage", function() {
@@ -117,21 +132,11 @@ $( document ).on( "pageinit", "#rulespage", function() {
 
 
 
-
-
-
-
-
 // Location BTN
 $('.location_btn').on("tap", function (Event){
     $('video').trigger('pause');
     $.mobile.changePage('#chooselocatinpage');
 });
-
-
-
-
-
 
 
 
@@ -146,12 +151,6 @@ function snack_error(text) {
   var snack = new Snackbar();
   snack.error(text);
 }
-
-
-
-
-
-
 
 
 
@@ -174,17 +173,7 @@ $('#splashpage').on( "pageinit", function( event ) {
 
 
 
-
-
-
-
-
-
 // Page_login 
-var random_number = 0;
-var phone_number = 0;
-
-
 function Timer_show(){
     interval = setInterval(function() {
         var timer = $('#sms_timer').html();
@@ -207,9 +196,13 @@ function Timer_show(){
         }
     }, 1000);
 }
+
+
 function randomnumber() {
 	random_number =  Math.floor(1000 + Math.random() * 9000);
 }
+
+
 $('#login_btn_submit').on("tap", function (Event){
     phone_number = $("#login_etx_submit").val().trim();
     if (( phone_number.length == 11 ) && ( phone_number.startsWith("09"))) {
@@ -218,6 +211,7 @@ $('#login_btn_submit').on("tap", function (Event){
         window.localStorage.setItem("phone_num", phone_number);
     randomnumber();
         
+        get_p();
     $.get("http://api.kavenegar.com/v1/536B754F7573614C6D6D52355367756B312B5A56534F734366544F6E74616B4B5A704A3968786E4D654D593D/sms/send.json?receptor="+phone_number+"&sender=10004346&message="+random_number);
         document.getElementById("sms_etx_submit").value = "";
         alert(random_number);
@@ -237,15 +231,61 @@ $('#login_btn_submit').on("tap", function (Event){
 
 
 
+function get_p(){
+    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_People_single', {
+        type: 'POST',  // http method 
+        data: { 'phone_number': phone_number, },  // data to submit
+        success: function (data, status, xhr) {
+          
+        $.each (data , function(key, value) {
+            
+            
+        window.localStorage.removeItem("user_id");
+        window.localStorage.setItem("user_id", value.people_id);
+        });
 
-// Page_Sms
-$('#sms_btn_submit').on("tap", function (Event){
-   var sms_etx = $("#sms_etx_submit").val().trim();
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        window.localStorage.removeItem("user_id");
+        window.localStorage.setItem("user_id", 0);
+        }        
+    });
+                 
+}
+function ins_p() {
+    var user_local = 
+        window.localStorage.getItem("user_id");
     
+    
+    
+    
+    if (user_local == 0){
+        $.ajax('http://localhost:8888/Stars/api/ApiGet/insert_people', {
+                type: 'POST',  // http method 
+                data: { 'name_family': '','code_meli': '','phone_number': phone_number,'address': '','user_date': '','state_id': '0', },  // data to submit
+                success: function (data, status, xhr) {
+
+
+                },
+                error: function (jqXhr, textStatus, errorMessage) {
+                        $('p').append('Error' + errorMessage);
+                }
+            });
+        } 
+}
+// Page_Sms
+$('#sms_btn_submit').on("click", function (Event){
+    var sms_etx = $("#sms_etx_submit").val().trim();
     if (sms_etx == random_number ) {
+          
+        
+            ins_p(); 
         $.mobile.changePage('#mainpage');
         window.localStorage.removeItem("cookies");
         window.localStorage.setItem("cookies", 1);
+        
+        
     }else {
         snack_error('کد اشتباه است'); 
     }
@@ -300,11 +340,49 @@ $( document ).delegate("#locationB1", "pagebeforeshow", function() {
         data: { 'shobe_id': '1', },  // data to submit
         success: function (data, status, xhr) {
 
-            $.each(data, function(index) {
-            document.getElementById("locationB1_txt_img").src = data[index].shobe_location_img; 
-                document.getElementById("locationB1_txt_dec").innerHTML = data[index].shobe_des; 
-//                document.getElementById("locationB1_txt_tel").innerHTML = data[index].shobe_des;
-            });
+        var output = "";
+        
+        $.each (data , function(key, value) {
+            
+                output += '<div id="image_locationB1" class="locationB1">';
+            
+                output += '<img id="locationB1_txt_img" src="http://localhost:8888/Stars/assets/uploads/files/'+value.shobe_location_img+'" class="img-responsive"  alt="Image Cant Be Loaded" >';
+            
+                output += '</div>';
+            
+            
+            
+                output += '<div class="locationB1 ">';
+            
+                output += '<div class="locationB1_txt_tittle">آدرس :</div>';
+            
+                output += '<div id="locationB1_txt_dec" class="locationB1_txt">';
+            
+            
+                output += value.shobe_des;
+                output += '</div>';
+            
+                output += '</div>';
+            
+            
+            
+            
+                output += '<div class="locationB1 ">';
+            
+                output += '<div class="locationB1_txt_tittle">شماره های تماس :</div>';
+            
+                output += '<div id="locationB1_txt_tel" class="locationB1_txt">';
+            
+                output += value.shobe_des;
+            
+            
+                output += '</div>';
+            
+                output += '</div>';
+            
+        });
+        
+        $('#locationB1_place').html(output);
         },
         error: function (jqXhr, textStatus, errorMessage) {
                 $('p').append('Error' + errorMessage);
@@ -327,12 +405,48 @@ $( document ).delegate("#locationB2", "pagebeforeshow", function() {
         data: { 'shobe_id': '2', },  // data to submit
         success: function (data, status, xhr) {
 
-            $.each(data, function(index) {
-            document.getElementById("locationB2_txt_img").src = data[index].shobe_location_img; 
-                document.getElementById("locationB2_txt_dec").innerHTML = data[index].shobe_des; 
-//                document.getElementById("locationB2_txt_tel").innerHTML = data[index].shobe_des;
-                
-            });
+        var output = "";
+        
+        $.each (data , function(key, value) {
+            
+                output += '<div id="image_locationB1" class="locationB1">';
+            
+                output += '<img id="locationB1_txt_img" src="http://localhost:8888/Stars/assets/uploads/files/'+value.shobe_location_img+'" class="img-responsive"  alt="Image Cant Be Loaded" >';
+            
+                output += '</div>';
+            
+            
+            
+                output += '<div class="locationB1 ">';
+            
+                output += '<div class="locationB1_txt_tittle">آدرس :</div>';
+            
+                output += '<div id="locationB1_txt_dec" class="locationB1_txt">';
+            
+            
+                output += value.shobe_des;
+                output += '</div>';
+            
+                output += '</div>';
+            
+            
+            
+            
+                output += '<div class="locationB1 ">';
+            
+                output += '<div class="locationB1_txt_tittle">شماره های تماس :</div>';
+            
+                output += '<div id="locationB1_txt_tel" class="locationB1_txt">';
+            
+                output += value.shobe_des;
+            
+            
+                output += '</div>';
+            
+                output += '</div>';
+        });
+        
+        $('#locationB2_place').html(output);
         },
         error: function (jqXhr, textStatus, errorMessage) {
                 $('p').append('Error' + errorMessage);
@@ -350,33 +464,6 @@ $( document ).delegate("#locationB2", "pagebeforeshow", function() {
 
 
 // Page_Main
-$('#main_btn_sans').on("click", function (Event){
-    $.mobile.changePage('#sanspage');
-});
-$('#main_btn_signup').on("click", function (Event){
-    $.mobile.changePage('#signuppage');
-});
-$('#main_btn_sugestion').on("click", function (Event){
-    $.mobile.changePage('#suggestionpage');
-});
-$('#main_btn_news').on("click", function (Event){
-    $.mobile.changePage('#allnewspage');
-});
-$('#main_btn_articles').on("click", function (Event){
-    $.mobile.changePage('#articlespage');
-});
-$('#main_btn_introduction').on("click", function (Event){
-    $.mobile.changePage('#introductionpage');
-});
-$('#main_logout_btn').on("click", function (Event){
-    navigator.app.exitApp();
-        window.localStorage.removeItem("cookies");
-        window.localStorage.setItem("cookies", 0);
-});
-
-
-
-
 function swiper_main () {
     var swiper = new Swiper('.swiper_main', {
       slidesPerView: 1,
@@ -397,21 +484,151 @@ function swiper_main () {
     });
     }
 
-$( document ).on( "pageinit", "#mainpage", function($) {
+function getLast(array,x){return array.slice(array.length-x)}
+
+
+
+
+
+$('#main_btn_sans').on("click", function (Event){
+    $.mobile.changePage('#sanspage');
+});
+$('#main_btn_signup').on("click", function (Event){
+    $.mobile.changePage('#signuppage');
+});
+$('#main_btn_sugestion').on("click", function (Event){
+    $.mobile.changePage('#contactpage');
+});
+$('#main_btn_news').on("click", function (Event){
+    $.mobile.changePage('#allnewspage');
+});
+$('#main_btn_articles').on("click", function (Event){
+    $.mobile.changePage('#articlespage');
+});
+$('#main_btn_introduction').on("click", function (Event){
+    $.mobile.changePage('#introductionpage');
+});
+$('#main_logout_btn').on("click", function (Event){
+    navigator.app.exitApp();
+        window.localStorage.removeItem("cookies");
+        window.localStorage.setItem("cookies", 0);
+});
+
+
+$( document ).delegate("#mainpage", "pageinit", function() { 
+   
+     $.ajax('http://localhost:8888/Stars/api/ApiGet/get_main_slider_list', {
+        type: 'GET',  // http method   // data to submit
+    success: function (data, status, xhr) {
+
+        var output = "";
+        
+        $.each (data , function(key, value) {
+            
+                output += '<div class="swiper-slide">';
+                
+            
+                output += '<img src="http://localhost:8888/Stars/assets/uploads/files/'+value.image_url+'" alt="Image Cant Be Loaded" >';
+            
+                output += '<p>'+ value.img_title +'</p>';
+            
+            
+                output += '</div>';
+        });
+        
+        $('#main_swiper-wrapper').html(output);
+
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        }
+       
+    }); 
+});
+
+
+
+
+
+
+$( document ).delegate("#mainpage", "pagebeforeshow", function() {
+   
+        var output_arr = []; $.ajax('http://localhost:8888/Stars/api/ApiGet/get_news_list', {
+        type: 'GET',  // http method   // data to submit
+    success: function (data, status, xhr) {
+                    
+        $.each (data , function(key, value) {
+            output_arr.push(value.news_id);
+            output_arr.push(value.news_title);
+            output_arr.push(value.news_text);
+            output_arr.push(value.news_date);
+            
+        });
+        
+        
+        
+        var output = "";
+            
+    for(i=output_arr.length-1;i>output_arr.length-18;i-=4){
+        
+        
+        
+            
+                output += ' <li data-id="'+output_arr[i-3]+'">';
+                
+            
+                output += '<a type="button" class="ui-btn ui-btn-left ui-btn-icon-center ui-icon-leftdouble ui-btn-icon-notext ui-corner-all btn_toolbar2 location_btn">Location</a>';
+            
+                output += '<p>'+ output_arr[i-1] +'</p>';
+            
+            
+                output += '</li>';
+        
+        
+        
+    }
+        
+        
+        
+        
+        $('#mainpage_list').html(output);
+        
+        
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        }
+       
+    }); 
+    
+    
+    
+
+    
+    
+    
+    
+});
+
+
+
+
+
+
+
+
+
+
+$( document ).on( "pagebeforeshow", "#mainpage", function($) {
     setTimeout(function() {
 	swiper_main("updateSliderSize", true);
     }, 300);
 });
 
-function mainpage_list(){
-    $( "#mainpage_list li" ).on( "click", function( event ) {
-        var selected = $(this);
-        selected.attr("data-id");
-        $.mobile.changePage('#newspage');
-    });
-}
-$( document ).on( "pageinit", "#mainpage", function($) {
-    mainpage_list();
+$('#mainpage_list').delegate("li","click", function (event) {
+    var selected = $(this);
+    news_id = selected.attr("data-id");
+    $.mobile.changePage('#newspage');
 });
 
 
@@ -427,9 +644,11 @@ $( document ).on( "pageinit", "#mainpage", function($) {
 
 // Page_Sans
 $('#sans_btn_B1').on("tap", function (){
+    shobe_id = 1;
     $.mobile.changePage('#choosesanspage');
 });
 $('#sans_btn_B2').on("tap", function (){
+    shobe_id = 2;
     $.mobile.changePage('#choosesanspage');
 });
 
@@ -443,10 +662,69 @@ $('#sans_btn_B2').on("tap", function (){
 
 
 // Page_ChooseSans
+$( document ).delegate("#choosesanspage", "pagebeforeshow", function() { 
+    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_sans_single', {
+        type: 'POST',  // http method 
+        data: { 'shobe_id': shobe_id, },  // data to submit
+    success: function (data, status, xhr) {
+
+        var output = "";
+        
+        $.each (data , function(key, value) {
+            
+                output += '<li data-id="'+value.sans_id+'">';
+                
+                output += '<div class="chooseclasspageـgride ">';
+                
+                output += '<div class="circle_choose_1">';
+                output += '<div class="circle_choose_inner_1">';
+                output += '</div>';
+            
+                output += '</div>';
+            
+                output += '<div class="chooseclasspage_1 " >';
+                
+                
+                output += '<span>';
+                
+                output += value.sans_text;
+            
+                output += '</span>';
+                
+                output += '</div>';
+            
+            
+                
+                output += '<div class="circle_choose_2">';
+                output += '<div class="circle_choose_inner_2">';
+                output += '</div>';
+            
+                output += '</div>';
+            
+                output += '</div>';
+                
+                output += '</li>';
+        });
+        
+        $('#choosesanspage_list').html(output);
+
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        }
+    }); 
+ 
+});
+
+
+
+
+
+
 $( document ).delegate("#choosesanspage", "pageinit", function() {
   setTimeout(function(){ $("#choosesanspage_list").on("click", "li", function() {
         var selected = $(this);
-        var id= selected.attr("data-id");
+        sans_id = selected.attr("data-id");
         $.mobile.changePage('#chooseclasspage');
     }); }, 1000);
 });
@@ -461,10 +739,165 @@ $( document ).delegate("#choosesanspage", "pageinit", function() {
 
 
 // Page_ChooseClass
+var morabi_name = "" ;
+
+
+
+function video_fun(jalase_id){
+     $.ajax('http://localhost:8888/Stars/api/ApiGet/get_jalase_video_list', {
+        type: 'POST',  // http method 
+        data: { 'jalase_id': jalase_id, },  // data to submit
+    success: function (data, status, xhr) {
+
+        var output = "";
+        $.each (data , function(key, value) {
+            
+                output += '<div class="swiper-slide">';
+                
+                
+                output += '<video width="100%" height="250" controls>';
+                
+                output += '<source src="http://localhost:8888/Stars/assets/uploads/files/'+  value.video_url +'" type="video/mp4">';
+            
+            
+            
+                output += "Your browser does not support the video tag.";
+                
+                output += '</video>';
+                
+                
+                output += '</div>';
+        
+           
+        });
+        
+
+        $('#swiper-wrapper_id').html(output);
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        }
+    }); 
+}
+function days_name_fun(jalase_id){
+     $.ajax('http://localhost:8888/Stars/api/ApiGet/get_jalase_day_single', {
+        type: 'POST',  // http method 
+        data: { 'jalase_id': jalase_id, },  // data to submit
+    success: function (data, status, xhr) {
+
+        var output = "";
+        $.each (data , function(key, value) {
+            
+                output += '<div class="workout_grid ui-grid-a c_text_align">';
+                
+                
+                output += '<div class="ui-block-a">';
+                
+                output += '<div class=" ui-bar ui-bar-a p0" >';
+                output += value.jalase_day_title;
+                output += '</div>';
+                
+                output += '</div>';
+                
+                
+                output += '<div class="ui-block-b">';
+                output += value.jalase_day_time;
+                output += '</div>';
+                
+                output += '</div>';
+                
+                
+                output += '</div>';
+        
+           
+        });
+        
+
+        $('#day_time_workout').html(output);
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        }
+    }); 
+}
+
+
+$( document ).delegate("#chooseclasspage", "pagebeforeshow", function() { 
+
+    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_jalase_single', {
+        type: 'POST',  // http method 
+        data: { 'sans_id': sans_id, },  // data to submit
+    success: function (data, status, xhr) {
+
+        var output = "";
+        
+        $.each (data , function(key, value) {
+            
+            
+                output += '<li data-id="'+value.jalase_id+'">';
+                
+                output += '<div class="chooseclasspageـgride ui-grid-a">';
+                
+            
+            
+                output += '<div class="chooseclasspage_3 ui-block-a" style="font-size: 120%;">';
+                output += '<span>';
+                output += value.jalase_title;
+                output += '</span>';
+                output += '</div>';
+            
+            
+                output += '<div class="chooseclasspage_2 ui-block-b">';
+                output += '<span>';
+                output += value.jalase_time;
+                output += '</span>';
+                output += '</div>';
+            
+            
+            
+                output += '</div>';
+            
+            
+                
+                output += '<div class="chooseclasspageـgride ui-grid-a">';
+                
+            
+            
+                output += '<div class="chooseclasspage_3 ui-block-a">';
+                output += '<span>';
+                output += value.jalase_day;
+                output += '</span>';
+                output += '</div>';
+            
+            
+                output += '<div class="chooseclasspage_4 ui-block-b">';
+                output += '<span>';
+                output += value.morabi_name;
+                output += '</span>';
+                output += '</div>';
+            
+            
+            
+                output += '</div>';
+                
+                output += '</li>';
+        });
+        
+        $('#chooseclasspage_list').html(output);
+
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        }
+       
+    }); 
+});
+
+
 $( document ).delegate("#chooseclasspage", "pageinit", function() {
     $("#chooseclasspage_list").on("click", "li", function() {
         var selected = $(this);
-        var id= selected.attr("data-id");
+         jalase_id= selected.attr("data-id");
         $.mobile.changePage('#workoutpage');
     });
 });
@@ -477,6 +910,7 @@ $( document ).delegate("#chooseclasspage", "pageinit", function() {
 
 
 
+// Page_WorkOut
 function swiper () {
     var swiper = new Swiper('.swiper_workout', {
       slidesPerView: 1,
@@ -492,12 +926,39 @@ function swiper () {
       },
     });
     }
-// Page_WorkOut   
+
+
+$( document ).delegate("#workoutpage", "pagebeforeshow", function() { 
+    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_jalase_single', {
+        type: 'POST',  // http method 
+        data: { 'sans_id': jalase_id, },  // data to submit
+    success: function (data, status, xhr) {
+
+        
+        $.each (data , function(key, value) {
+            document.getElementById("workout_morabi_name").innerHTML = "مربی : " + value.morabi_name;
+            
+            days_name_fun(value.jalase_id);
+            video_fun(value.jalase_id);
+           document.getElementById("workout_explain_dec").innerHTML = value.jalase_id ;
+        });
+        
+
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        }
+    }); 
+ 
+});
+
+
 $( document ).on( "pageinit", "#workoutpage", function($) {
     setTimeout(function() {
 	swiper("updateSliderSize", true);
     }, 300);
 });
+
 
 $('#workout_rate_btn').on("tap", function (Event){
     $('video').trigger('pause');
@@ -507,13 +968,55 @@ $('#workout_rate_btn').on("tap", function (Event){
     var rate_3 = $("#radio_rate_3").is(":checked");
     var rate_4 = $("#radio_rate_4").is(":checked");
     var rate_5 = $("#radio_rate_5").is(":checked");
+    
+    var rate_send = 0;
+    
+    if (rate_1 == 1 ) {
+        rate_send= 1;
+    }
+    if (rate_2 == 1 ) {
+        rate_send= 2;
+    }
+    if (rate_3 == 1 ) {
+        rate_send= 3;
+    }
+    if (rate_4 == 1 ) {
+        rate_send= 4;
+    }
+    if (rate_5 == 1 ) {
+        rate_send= 5;
+    }
+        
     if (rate_1 + rate_2 + rate_3 + rate_4 + rate_5 == 1 ) {
         snack_success('امتیاز شما برای این بخش ارسال شد'); 
+       
+        
+    var people_id = 
+        window.localStorage.getItem("user_id");
+    var jalase_id = 
+        window.localStorage.getItem("user_id");
+                                
+$.ajax('http://localhost:8888/Stars/api/ApiGet/insert_rate', {
+    type: 'POST',  // http method
+    data: { 'people_id': people_id,
+           'jalase_id': jalase_id,
+           'rate': rate_send, },  // data to submit
+    success: function (data, status, xhr) {
+
+    },
+    error: function (jqXhr, textStatus, errorMessage) {
+            $('p').append('Error' + errorMessage);
+    }
+});
+                                
+                   
+        
         
     }else {
         snack_error('ابتدا امتیاز دهید'); 
     }
 });
+
 
 $('#workout_btn').on("tap", function (Event){
     $('video').trigger('pause');
@@ -582,45 +1085,37 @@ $('#radio_rate_5').bind('change', function () {
 
 // Page_Contact
 $('#contactpage_btn').on("click", function (Event){
-    var contact_etx_title = $("#cotactpage_textarea").val().trim();
+    var user_local = 
+        window.localStorage.getItem("user_id");
+    var contact_etx_title = $("#cotactpage_input").val().trim();
     var contact_etx = $("#cotactpage_textarea").val().trim();
 
-    if (contact_etx.length != 0 ) {
+    if (contact_etx_title.length != 0 ) {
         if (contact_etx.length != 0 ) {
+            $.ajax('http://localhost:8888/Stars/api/ApiGet/insert_contact', {
+                type: 'POST',  // http method
+                data: { 'people_id': user_local,
+                       'contact_title': contact_etx_title,
+                       'conatct_text': contact_etx,
+                       'contact_date': 'date', },  // data to submit
+                success: function (data, status, xhr) {
+
+                },
+                error: function (jqXhr, textStatus, errorMessage) {
+                        $('p').append('Error' + errorMessage);
+                }
+            });
         
+        snack_success('ارسال انجام شد با تشکر از توجه شما');
         }else {
         snack_error('متن ارسالــی نمی تواند خالی باشد'); 
         }
     }else {
-        snack_error('متن ارسالــی نمی تواند خالی باشد'); 
+        snack_error('عنوان متن ارسالــی نمی تواند خالی باشد'); 
     }
     
-    $.ajax('http://localhost:8888/Stars/api/ApiGet/insert_contact', {
-    type: 'POST',  // http method
-    data: { 'people_id': '888',
-           'conatct_text': contact_etx,
-           'contact_date': 'date', },  // data to submit
-    success: function (data, status, xhr) {
-//        $('p').append('status: ' + status + ', data: ' + data);
-        
-        alert("2");
-    },
-    error: function (jqXhr, textStatus, errorMessage) {
-            $('p').append('Error' + errorMessage);
-    }
+   
 });
-});
-
-
-
-
-
-
-
-
-
-
-// Page_News
 
 
 
@@ -632,16 +1127,16 @@ $('#contactpage_btn').on("click", function (Event){
 
 
 // Page_AllNews
+var news_article = 0;
 $( document ).delegate("#allnewspage", "pagebeforeshow", function() { 
-        $.ajax('http://localhost:8888/Stars/api/ApiGet/get_news_list', {
+    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_news_list', {
         type: 'GET',  // http method  // data to submit
     success: function (data, status, xhr) {
-//        $('p').append('status: ' + status + ', data: ' + data);
 
-
-        var output = '<ul data-role="listview" data-inset="true" id="allnewspage_list" class="chooseclasspage_main_info">';
+        var output = "";
+        
         $.each (data , function(key, value) {
-
+                news_article = 0;
                 output += '<li data-id="'+value.news_id+'">';
                 
                 output += '<div class="allnewspageـgride ">';
@@ -649,7 +1144,6 @@ $( document ).delegate("#allnewspage", "pagebeforeshow", function() {
                 output += '<a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn"></a>';
                 
                 output += '<p> '+ value.news_title +' </p>';
-                
                 
                 output += '</div>';
                 
@@ -662,31 +1156,23 @@ $( document ).delegate("#allnewspage", "pagebeforeshow", function() {
                 output += '</div>';
                 
                 output += '</li>';
-          
         });
         
-        output += '</ul>';
-    $('#allnewspage_ul').html(output);
+        $('#allnewspage_list').html(output);
 
-    },
-    error: function (jqXhr, textStatus, errorMessage) {
-            $('p').append('Error' + errorMessage);
-    }
-});
-    
-    
-    
-    
-    
-    
-    
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        }
+    }); 
+ 
 });
 
 
 
-$('#allnewspage_list').delegate("li","tap", function (event) {
+$('#allnewspage_list').delegate("li","click", function (event) {
     var selected = $(this);
-    selected.attr("data-id");
+    news_id = selected.attr("data-id");
     $.mobile.changePage('#newspage');
 });
 
@@ -700,10 +1186,174 @@ $('#allnewspage_list').delegate("li","tap", function (event) {
 
 
 // Page_Article
+$( document ).delegate("#articlespage", "pagebeforeshow", function() { 
+    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_article_list', {
+        type: 'GET',  // http method  // data to submit
+    success: function (data, status, xhr) {
+
+        var output = "";
+        $.each (data , function(key, value) {
+                news_article = 1;
+                output += '<li data-id="'+value.article_id+'">';
+                
+                output += '<div class="allnewspageـgride ">';
+                output += '<div class="allnewspage_li_name ">';
+                output += '<a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn"></a>';
+                
+                output += '<p> '+ value.article_name +' </p>';
+                
+                output += '</div>';
+                
+                output += '<span class="allnewspage_li_date ">';
+                
+                output += value.article_date;
+            
+                output += '</span>';
+                
+                output += '</div>';
+                
+                output += '</li>';
+        });
+        
+        $('#articlespage_list').html(output);
+
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        }
+    }); 
+ 
+});
 $('#articlespage_list').delegate("li","tap", function (event) {
     var selected = $(this);
-    selected.attr("data-id");
+    news_id = selected.attr("data-id");
     $.mobile.changePage('#newspage');
+});
+
+
+
+
+
+
+
+
+
+// Page_GoodToKnow
+$( document ).delegate("#goodtoknowpage", "pagebeforeshow", function() { 
+    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_good_to_know_list', {
+        type: 'GET',  // http method  // data to submit
+    success: function (data, status, xhr) {
+
+        var output = "";
+        $.each (data , function(key, value) {
+                news_article = 2;
+                output += '<li data-id="'+value.good_id+'">';
+                
+                output += '<div class="good_img">';
+            
+                output += '<img src="http://localhost:8888/Stars/assets/uploads/files/'+value.gtk_image+'" alt="Image Cant Be Loaded" >';
+                
+                output += '</div>';
+                
+                output += '<div class="good_txt">';
+            
+                output += '<p>'+value.gtk_title+'</p>';
+                
+                output += '</div>';
+                
+                output += '</li>';
+        });
+        
+        $('#goodtoknowpage_list').html(output);
+
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        }
+    }); 
+ 
+});
+$( document ).delegate("#goodtoknowpage", "pageinit", function() {
+  setTimeout(function(){ $("#goodtoknowpage_list").on("click", "li", function() {
+        var selected = $(this);
+        news_id = selected.attr("data-id");
+        $.mobile.changePage('#newspage');
+    }); }, 1000);
+});
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+// Page_News
+$( document ).delegate("#newspage", "pagebeforeshow", function() {
+    
+    if (news_article == 0 ){
+        $.ajax('http://localhost:8888/Stars/api/ApiGet/get_news_single', {
+        type: 'POST',  // http method
+        data: { 'news_id': news_id, },   // data to submit
+    success: function (data, status, xhr) {
+
+        $.each(data, function(index) {
+        document.getElementById("main_tilte_news").innerHTML = data[index].news_title;
+        document.getElementById("news_text").innerHTML = data[index].news_text;
+        });
+    },
+    error: function (jqXhr, textStatus, errorMessage) {
+            $('p').append('Error' + errorMessage);
+    }
+});
+        
+    }
+    
+    
+    
+    
+    if (news_article == 1 ){
+        
+        $.ajax('http://localhost:8888/Stars/api/ApiGet/get_article_single', {
+        type: 'POST',  // http method
+        data: { 'article_id': news_id, },   // data to submit
+    success: function (data, status, xhr) {
+//        $('p').append('status: ' + status + ', data: ' + data);
+        $.each(data, function(index) {
+        document.getElementById("main_tilte_news").innerHTML = data[index].article_name;
+        document.getElementById("news_text").innerHTML = data[index].article_text;
+        });
+    },
+    error: function (jqXhr, textStatus, errorMessage) {
+            $('p').append('Error' + errorMessage);
+    }
+});
+    }
+    
+    
+    
+    
+    
+    if (news_article == 2 ){
+        
+        $.ajax('http://localhost:8888/Stars/api/ApiGet/get_good_to_know_single', {
+        type: 'POST',  // http method
+        data: { 'good_id': news_id, },   // data to submit
+    success: function (data, status, xhr) {
+//        $('p').append('status: ' + status + ', data: ' + data);
+        $.each(data, function(index) {
+        document.getElementById("main_tilte_news").innerHTML = data[index].gtk_title;
+        document.getElementById("news_text").innerHTML = data[index].gtk_text;
+        });
+    },
+    error: function (jqXhr, textStatus, errorMessage) {
+            $('p').append('Error' + errorMessage);
+    }
+});
+    }
 });
 
 
@@ -716,6 +1366,54 @@ $('#articlespage_list').delegate("li","tap", function (event) {
 
 
 // Page_Introduction 
+function image_top_intro(introduction_id){
+    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_introduction_images_list', {
+        type: 'POST',  // http method 
+        data: { 'introduction_id': introduction_id, },  // data to submit
+    success: function (data, status, xhr) {
+
+        var output_big = "";
+        $.each (data , function(key, value) {
+            
+                output_big += '<div class="swiper-slide image_big">';
+                
+                output_big += '<img src="http://localhost:8888/Stars/assets/uploads/files/'+value.img_url+'" alt="Image Cant Be Loaded" >';
+                
+                output_big += '</div>';
+            
+            
+        });
+
+        $('#intro_top_gallery').html(output_big);
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        }
+    }); 
+}
+function image_down_intro(introduction_id){
+    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_introduction_images_list', {
+        type: 'POST',  // http method 
+        data: { 'introduction_id': introduction_id, },  // data to submit
+    success: function (data, status, xhr) {
+
+        var output_small = "";
+        $.each (data , function(key, value) {
+            
+                output_small += '<div class="swiper-slide image_small">';
+                
+                output_small += '<img src="http://localhost:8888/Stars/assets/uploads/files/'+value.img_url+'" alt="Image Cant Be Loaded" >';
+                
+                output_small += '</div>';
+        });
+
+        $('#intro_down_gallery').html(output_small);
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        }
+    }); 
+}
 function galleryThumb () {
     var galleryThumbs = new Swiper('.gallery-thumbs', {
       spaceBetween: 10,
@@ -750,13 +1448,16 @@ $( document ).on( "pagebeforeshow", "#introductionpage", function($) {
     }, 300);
 });
 
-$( document ).delegate("#introductionpage", "pagebeforeshow", function() { 
+$( document ).delegate("#introductionpage", "pagebeforeshow", function() {
     $.ajax('http://localhost:8888/Stars/api/ApiGet/get_introduction_list', {
         type: 'GET',  // http method  // data to submit
         success: function (data, status, xhr) {
 
-            $.each(data, function(index) {
-            document.getElementById("moarefi_p_txt").innerHTML = data[index].introduction_text;
+        $.each (data , function(key, value) {
+            document.getElementById("moarefi_p_txt").innerHTML = value.introduction_text;
+                
+           image_top_intro(value.introduction_id);
+           image_down_intro(value.introduction_id);
             });
         },
         error: function (jqXhr, textStatus, errorMessage) {
@@ -764,11 +1465,6 @@ $( document ).delegate("#introductionpage", "pagebeforeshow", function() {
         }
     });
 });
-
-  
-
-
-
 
 
 
@@ -785,6 +1481,26 @@ $('#signuppage_btn').on("click", function (Event){
         if (socialcode.length != 0 ) {
             if (phonenumber.length != 0 ) {
                 if (address.length != 0 ) {
+
+                    
+                    
+                     $.ajax('http://localhost:8888/Stars/api/ApiGet/insert_people', {
+        type: 'POST',  // http method
+        data: { 'name_family': singup_name,
+               'code_meli': singup_code_meli,
+               'phone_number': phone_number,
+               'Address': singup_address, },   // data to submit
+        success: function (data, status, xhr) {
+
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        }
+    });
+                    
+                    
+                    
+                    
                     snack_success('درخواست شما ارسال شد');
                 }else {
                     snack_error('آدرس نمی تواند خالی باشد');
@@ -804,17 +1520,91 @@ $('#signuppage_btn').on("click", function (Event){
 
 
 
+// Request VAR
+var bimary = "";
+var asib = "";
+var sabeghe = "";
+var regime = "";
+var desceription = "";
 
+var fullname = "";
+var coach = "";
+var meetings = "";
+var Branch = "";
+var date = "";
+var Score = "";
+var level = "";
+var history_s = "";
+var height = "";
+var weight = "";
+var age = "";
 
+var shaneh = "";
+var sineh = "";
+var kamar = "";
+var shekam = "";
+var basan = "";
+var ran = "";
+var sagh = "";
+var bazoo = "";
+var pahlooran = "";
 
+var sharayet_ck_11 = "";
+var sharayet_ck_22 = "";
+var sharayet_ck_33 = "";
+var sharayet_ck_44 = "";
+var sharayet_ck_55 = "";
+var sharayet_ck_66 = "";
+var sharayet_ck_77 = "";
+var sharayet_ck_88 = "";
+var sharayet_ck_99 = "";
 
+var shaneh_ck_11 = "";
+var shaneh_ck_22 = "";
+var shaneh_ck_33 = "";
+var shaneh_ck_44 = "";
+var shaneh_ck_55 = "";
+var shaneh_ck_66 = "";
+var shaneh_ck_77 = "";
 
-// Page_Suggestion
+var bazoo_ck_11 = "";
+var bazoo_ck_22 = "";
+var bazoo_ck_33 = "";
+var bazoo_ck_44 = "";
 
+var shekampahloock_11 = "";
+var shekampahloock_22 = "";
+var shekampahloock_33 = "";
 
+var basan_ck_11 = "";
+var basan_ck_22 = "";
+var basan_ck_33 = "";
+var basan_ck_44 = "";
+var basan_ck_55 = "";
+var basan_ck_66 = "";
+var basan_ck_77 = "";
 
+var ransagh_ck_11 = "";
+var ransagh_ck_22 = "";
+var ransagh_ck_33 = "";
+var ransagh_ck_44 = "";
+var ransagh_ck_55 = "";
+var ransagh_ck_66 = "";
+var ransagh_ck_77 = "";
+var ransagh_ck_88 = "";
+var ransagh_ck_99 = "";
+var ransagh_ck_1010 = "";
 
+var pahloran_ck_11 = "";
+var pahloran_ck_22 = "";
+var pahloran_ck_33 = "";
+var pahloran_ck_44 = "";
 
+var ketfi_ck_11 = "";
+var ketfi_ck_22 = "";
+var ketfi_ck_33 = "";
+var ketfi_ck_44 = "";
+var ketfi_ck_55 = "";
 
 
 
@@ -822,11 +1612,11 @@ $('#signuppage_btn').on("click", function (Event){
 
 // Page_Program_Request
 $('#programrequestpage_btn').on("tap", function (Event){
-    var bimary = $("#programrequestpageinput_bimary").val().trim();
-    var asib = $("#programrequestpage_input_asib").val().trim();
-    var sabeghe = $("#programrequestpage_input_sabeghe").val().trim();
-    var regime = $("#programrequestpage_input_regime").val().trim();
-    var desceription = $("#programrequestpage_input_desceription").val().trim();
+    bimary = $("#programrequestpageinput_bimary").val().trim();
+    asib = $("#programrequestpage_input_asib").val().trim();
+    sabeghe = $("#programrequestpage_input_sabeghe").val().trim();
+    regime = $("#programrequestpage_input_regime").val().trim();
+    desceription = $("#programrequestpage_input_desceription").val().trim();
 
     if (bimary.length != 0 ) {
         if (asib.length != 0 ) {
@@ -854,25 +1644,19 @@ $('#programrequestpage_btn').on("tap", function (Event){
 
 
 
-
-
-
-
-
-
 // Page_Program_Request_P1
 $('#programpart1page_btn').on("click", function (Event){
-    var fullname = $("#programpart1page_input_fullname").val().trim();
-    var coach = $("#programpart1page_input_coach").val().trim();
-    var meetings = $("#programpart1page_input_meetings").val().trim();
-    var Branch = $("#programpart1page_input_Branch").val().trim();
-    var date = $("#programpart1page_input_date_request").val().trim();
-    var Score = $("#programpart1page_input_Score").val().trim();
-    var level = $("#programpart1page_input_level").val().trim();
-    var history = $("#programpart1page_input_history").val().trim();
-    var height = $("#programpart1page_input_height").val().trim();
-    var weight = $("#programpart1page_input_weight").val().trim();
-    var age = $("#programpart1page_input_age").val().trim();
+    fullname = $("#programpart1page_input_fullname").val().trim();
+    coach = $("#programpart1page_input_coach").val().trim();
+    meetings = $("#programpart1page_input_meetings").val().trim();
+    Branch = $("#programpart1page_input_Branch").val().trim();
+    date = $("#programpart1page_input_date_request").val().trim();
+    Score = $("#programpart1page_input_Score").val().trim();
+    level = $("#programpart1page_input_level").val().trim();
+    history_s = $("#programpart1page_input_history").val().trim();
+    height = $("#programpart1page_input_height").val().trim();
+    weight = $("#programpart1page_input_weight").val().trim();
+    age = $("#programpart1page_input_age").val().trim();
 
     if (fullname.length != 0 ) {
         if (coach.length != 0 ) {
@@ -924,23 +1708,17 @@ $('#programpart1page_btn').on("click", function (Event){
 
 
 
-
-
-
-
-
-
 // Page_Program_Request_P2
 $('#programpart2page_btn').on("tap", function (Event){
-    var shaneh = $("#programpart1page_input_shaneh").val().trim();
-    var sineh = $("#programpart1page_input_sineh").val().trim();
-    var kamar = $("#programpart1page_input_kamar").val().trim();
-    var shekam = $("#programpart1page_input_shekam").val().trim();
-    var basan = $("#programpart1page_input_basan").val().trim();
-    var ran = $("#programpart1page_input_ran").val().trim();
-    var sagh = $("#programpart1page_input_sagh").val().trim();
-    var bazoo = $("#programpart1page_input_bazoo").val().trim();
-    var pahlooran = $("#programpart1page_input_pahlooran").val().trim();
+    shaneh = $("#programpart1page_input_shaneh").val().trim();
+    sineh = $("#programpart1page_input_sineh").val().trim();
+    kamar = $("#programpart1page_input_kamar").val().trim();
+    shekam = $("#programpart1page_input_shekam").val().trim();
+    basan = $("#programpart1page_input_basan").val().trim();
+    ran = $("#programpart1page_input_ran").val().trim();
+    sagh = $("#programpart1page_input_sagh").val().trim();
+    bazoo = $("#programpart1page_input_bazoo").val().trim();
+    pahlooran = $("#programpart1page_input_pahlooran").val().trim();
 
     if (shaneh.length != 0 ) {
         if (sineh.length != 0 ) {
@@ -951,6 +1729,62 @@ $('#programpart2page_btn').on("tap", function (Event){
                             if (sagh.length != 0 ) {
                                 if (bazoo.length != 0 ) { 
                                 if (pahlooran.length != 0 ) { 
+                                    
+                                    
+    
+    var sharayet_ck_1 = $("#checkbox_sharayet_1").is(":checked");
+    var sharayet_ck_2 = $("#checkbox_sharayet_2").is(":checked");
+    var sharayet_ck_3 = $("#checkbox_sharayet_3").is(":checked");
+    var sharayet_ck_4 = $("#checkbox_sharayet_4").is(":checked");
+    var sharayet_ck_5 = $("#checkbox_sharayet_5").is(":checked");
+    var sharayet_ck_6 = $("#checkbox_sharayet_6").is(":checked");
+    var sharayet_ck_7 = $("#checkbox_sharayet_7").is(":checked");
+    var sharayet_ck_8 = $("#checkbox_sharayet_8").is(":checked");
+    var sharayet_ck_9 = $("#checkbox_sharayet_9").is(":checked");
+                                    
+    if(sharayet_ck_1 == 1){
+        sharayet_ck_11="بله";
+    }else{
+        sharayet_ck_11="خیر";
+    }                              
+    if(sharayet_ck_2 == 1){
+        sharayet_ck_22="بله";
+    }else{
+        sharayet_ck_22="خیر";}                               
+    if(sharayet_ck_3 == 1){
+        sharayet_ck_33="بله";
+    }else{
+        sharayet_ck_33="خیر";}                               
+    if(sharayet_ck_4 == 1){
+        sharayet_ck_44="بله";
+    }else{
+        sharayet_ck_44="خیر";}                           
+    if(sharayet_ck_5 == 1){
+        sharayet_ck_55="بله";
+    }else{
+        sharayet_ck_55="خیر";}                                 
+    if(sharayet_ck_6 == 1){
+        sharayet_ck_66="بله";
+    }else{
+        sharayet_ck_66="خیر";}                                 
+    if(sharayet_ck_7 == 1){
+        sharayet_ck_77="بله";
+    }else{
+        sharayet_ck_77="خیر";}                                
+    if(sharayet_ck_8 == 1){
+        sharayet_ck_88="بله";
+    }else{
+        sharayet_ck_88="خیر";}                            
+    if(sharayet_ck_9 == 1){
+        sharayet_ck_99="بله";
+    }else{
+        sharayet_ck_99="خیر";}  
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     $.mobile.changePage ('#programpart3page');
                                 }else {
                                     snack_error('سایز پهلوران نمی تواند خالی باشد');
@@ -980,31 +1814,6 @@ $('#programpart2page_btn').on("tap", function (Event){
             snack_error('سایز سرشانه نمی تواند خالی باشد');
         }
 });
-
-
-
-
-
-
-
-$(document).on('pageinit', '#programpart2page', function(){ 
-
-    var sharayet_ck_1 = $("#checkbox_sharayet_1").is(":checked");
-    var sharayet_ck_2 = $("#checkbox_sharayet_2").is(":checked");
-    var sharayet_ck_3 = $("#checkbox_sharayet_3").is(":checked");
-    var sharayet_ck_4 = $("#checkbox_sharayet_4").is(":checked");
-    var sharayet_ck_5 = $("#checkbox_sharayet_5").is(":checked");
-    var sharayet_ck_6 = $("#checkbox_sharayet_6").is(":checked");
-    var sharayet_ck_7 = $("#checkbox_sharayet_7").is(":checked");
-    var sharayet_ck_8 = $("#checkbox_sharayet_8").is(":checked");
-    var sharayet_ck_9 = $("#checkbox_sharayet_9").is(":checked");
-    
-    var fl_sharayet = document.getElementById('fl_sharayet');
-});
-
-
-
-
 
 
 
@@ -1040,29 +1849,64 @@ function sineh_form () {
     var shaneh_ck_7 = $("#checkbox_sineh_7").is(":checked");
     
     
+        if (shaneh_ck_1 == 0 ) {
+            shaneh_ck_11="خیر";
+        }else{
+            shaneh_ck_11="بله";
+    }    
+        if (shaneh_ck_2 == 0 ) {
+            shaneh_ck_22="خیر";
+        }else{
+            shaneh_ck_22="بله";
+    }    
+        if (shaneh_ck_3 == 0 ) {
+            shaneh_ck_33="خیر";
+        }else{
+            shaneh_ck_33="بله";
+    }    
+        if (shaneh_ck_4 == 0 ) {
+            shaneh_ck_44="خیر";
+        }else{
+            shaneh_ck_44="بله";
+    }    
+        if (shaneh_ck_5 == 0 ) {
+            shaneh_ck_55="خیر";
+        }else{
+            shaneh_ck_55="بله";
+    }    
+        if (shaneh_ck_6 == 0 ) {
+            shaneh_ck_66="خیر";
+        }else{
+            shaneh_ck_66="بله";
+    }    
+        if (shaneh_ck_7 == 0 ) {
+            shaneh_ck_77="خیر";
+        }else{
+            shaneh_ck_77="بله";
+    } 
     
     if (shaneh_ck_1 + shaneh_ck_2 + shaneh_ck_3 + shaneh_ck_4 + shaneh_ck_5 + shaneh_ck_6 + shaneh_ck_7 == 3 ) {
         if (shaneh_ck_1 == 0 ) {
             $('#checkbox_sineh_1').prop('disabled', true);
-        }
+    }    
         if (shaneh_ck_2 == 0 ) {
             $('#checkbox_sineh_2').prop('disabled', true);
-        }
+    }    
         if (shaneh_ck_3 == 0 ) {
             $('#checkbox_sineh_3').prop('disabled', true);
-        }
+    }    
         if (shaneh_ck_4 == 0 ) {
             $('#checkbox_sineh_4').prop('disabled', true);
-        }
+    }    
         if (shaneh_ck_5 == 0 ) {
             $('#checkbox_sineh_5').prop('disabled', true);
-        }
+    }    
         if (shaneh_ck_6 == 0 ) {
             $('#checkbox_sineh_6').prop('disabled', true);
-        }
+    }    
         if (shaneh_ck_7 == 0 ) {
             $('#checkbox_sineh_7').prop('disabled', true);
-        }
+    }    
     }else {
             $('#checkbox_sineh_1').prop('disabled', false);
             $('#checkbox_sineh_2').prop('disabled', false);
@@ -1078,11 +1922,6 @@ function sineh_form () {
 
 
 
-
-    
-
-
-
 $("#checkbox_bazoo_1").bind('change', function () { 
     bazoo_form();
 });  
@@ -1095,32 +1934,52 @@ $("#checkbox_bazoo_3").bind('change', function () {
 $("#checkbox_bazoo_4").bind('change', function () { 
     bazoo_form();
 });
-    
+  
 
 
 
 
-function bazoo_form () {    
+function bazoo_form () {   
     var bazoo_ck_1 = $("#checkbox_bazoo_1").is(":checked");
     var bazoo_ck_2 = $("#checkbox_bazoo_2").is(":checked");
     var bazoo_ck_3 = $("#checkbox_bazoo_3").is(":checked");
     var bazoo_ck_4 = $("#checkbox_bazoo_4").is(":checked");
     
     
+        if (bazoo_ck_1 == 0 ) {
+            bazoo_ck_11="خیر";
+        }else{
+            bazoo_ck_11="بله";
+    }  
+        if (bazoo_ck_2 == 0 ) {
+            bazoo_ck_22="خیر";
+        }else{
+            bazoo_ck_22="بله";
+    }  
+        if (bazoo_ck_3 == 0 ) {
+            bazoo_ck_33="خیر";
+        }else{
+            bazoo_ck_33="بله";
+    }  
+        if (bazoo_ck_4 == 0 ) {
+            bazoo_ck_44="خیر";
+        }else{
+            bazoo_ck_44="بله";
+    } 
     
     if (bazoo_ck_1 + bazoo_ck_2 + bazoo_ck_3 + bazoo_ck_4 == 2 ) {
         if (bazoo_ck_1 == 0 ) {
             $('#checkbox_bazoo_1').prop('disabled', true);
-        }
+    }  
         if (bazoo_ck_2 == 0 ) {
             $('#checkbox_bazoo_2').prop('disabled', true);
-        }
+    }  
         if (bazoo_ck_3 == 0 ) {
             $('#checkbox_bazoo_3').prop('disabled', true);
-        }
+    }  
         if (bazoo_ck_4 == 0 ) {
             $('#checkbox_bazoo_4').prop('disabled', true);
-        }
+    }  
     }else {
             $('#checkbox_bazoo_1').prop('disabled', false);
             $('#checkbox_bazoo_2').prop('disabled', false);
@@ -1135,11 +1994,6 @@ function bazoo_form () {
 
 
 
-
-
-
-
-     
 $("#checkbox_shekampahloo_1").bind('change', function () { 
     shekampahloo_form();
 }); 
@@ -1149,7 +2003,7 @@ $("#checkbox_shekampahloo_2").bind('change', function () {
 $("#checkbox_shekampahloo_3").bind('change', function () { 
     shekampahloo_form();
 });
-    
+   
 
 
 
@@ -1160,29 +2014,38 @@ function shekampahloo_form () {
     var shekampahloock_3 = $("#checkbox_shekampahloo_3").is(":checked");
     
     
+        if (shekampahloock_1 == 0 ) {
+            shekampahloock_11="خیر";
+        }else{
+            shekampahloock_11="بله";
+    }  
+        if (shekampahloock_2 == 0 ) {
+            shekampahloock_22="خیر";
+        }else{
+            shekampahloock_22="بله";
+    }  
+        if (shekampahloock_3 == 0 ) {
+            shekampahloock_33="خیر";
+        }else{
+            shekampahloock_33="بله";
+    }  
     
     
     if (shekampahloock_1 + shekampahloock_2 + shekampahloock_3 == 2 ) {
         if (shekampahloock_1 == 0 ) {
             $('#checkbox_shekampahloo_1').prop('disabled', true);
-        }
+    }  
         if (shekampahloock_2 == 0 ) {
             $('#checkbox_shekampahloo_2').prop('disabled', true);
-        }
+    }  
         if (shekampahloock_3 == 0 ) {
             $('#checkbox_shekampahloo_3').prop('disabled', true);
-        }
+    }  
     }else 
             $('#checkbox_shekampahloo_1').prop('disabled', false);
             $('#checkbox_shekampahloo_2').prop('disabled', false);
             $('#checkbox_shekampahloo_3').prop('disabled', false);
     }
-
-
-
-
-
-
 
 
 
@@ -1224,29 +2087,64 @@ function basan_form () {
     var basan_ck_7 = $("#checkbox_basan_7").is(":checked");
     
     
+        if (basan_ck_1 == 0 ) {
+            basan_ck_11="خیر";
+        }else{
+            basan_ck_11="بله";
+    }  
+        if (basan_ck_2 == 0 ) {
+            basan_ck_22="خیر";
+        }else{
+            basan_ck_22="بله";
+    }  
+        if (basan_ck_3 == 0 ) {
+            basan_ck_33="خیر";
+        }else{
+            basan_ck_33="بله";
+    }  
+        if (basan_ck_4 == 0 ) {
+            basan_ck_44="خیر";
+        }else{
+            basan_ck_44="بله";
+    }  
+        if (basan_ck_5 == 0 ) {
+            basan_ck_55="خیر";
+        }else{
+            basan_ck_55="بله";
+    }  
+        if (basan_ck_6 == 0 ) {
+            basan_ck_66="خیر";
+        }else{
+            basan_ck_66="بله";
+    }  
+        if (basan_ck_7 == 0 ) {
+            basan_ck_77="خیر";
+        }else{
+            basan_ck_77="بله";
+    } 
     
     if (basan_ck_1 + basan_ck_2 + basan_ck_3 + basan_ck_4 + basan_ck_5 + basan_ck_6 + basan_ck_7 == 3 ) {
         if (basan_ck_1 == 0 ) {
             $('#checkbox_basan_1').prop('disabled', true);
-        }
+    }  
         if (basan_ck_2 == 0 ) {
             $('#checkbox_basan_2').prop('disabled', true);
-        }
+    }  
         if (basan_ck_3 == 0 ) {
             $('#checkbox_basan_3').prop('disabled', true);
-        }
+    }  
         if (basan_ck_4 == 0 ) {
             $('#checkbox_basan_4').prop('disabled', true);
-        }
+    }  
         if (basan_ck_5 == 0 ) {
             $('#checkbox_basan_5').prop('disabled', true);
-        }
+    }  
         if (basan_ck_6 == 0 ) {
             $('#checkbox_basan_6').prop('disabled', true);
-        }
+    }  
         if (basan_ck_7 == 0 ) {
             $('#checkbox_basan_7').prop('disabled', true);
-        }
+    }  
     }else {
             $('#checkbox_basan_1').prop('disabled', false);
             $('#checkbox_basan_2').prop('disabled', false);
@@ -1257,11 +2155,6 @@ function basan_form () {
             $('#checkbox_basan_7').prop('disabled', false);
     }
 }
-
-
-
-
-
 
 
 
@@ -1305,38 +2198,88 @@ function ransagh_form () {
     var ransagh_ck_10 = $("#checkbox_ransagh_10").is(":checked");
     
     
+        if (ransagh_ck_1 == 0 ) {
+            ransagh_ck_11="خیر";
+        }else{
+            ransagh_ck_11="بله";
+    }  
+        if (ransagh_ck_2 == 0 ) {
+            ransagh_ck_22="خیر";
+        }else{
+            ransagh_ck_22="بله";
+    }  
+        if (ransagh_ck_3 == 0 ) {
+            ransagh_ck_33="خیر";
+        }else{
+            ransagh_ck_33="بله";
+    }  
+        if (ransagh_ck_4 == 0 ) {
+            ransagh_ck_44="خیر";
+        }else{
+            ransagh_ck_44="بله";
+    }  
+        if (ransagh_ck_5 == 0 ) {
+            ransagh_ck_55="خیر";
+        }else{
+            ransagh_ck_55="بله";
+    }  
+        if (ransagh_ck_6 == 0 ) {
+            ransagh_ck_66="خیر";
+        }else{
+            ransagh_ck_66="بله";
+    }  
+        if (ransagh_ck_7 == 0 ) {
+            ransagh_ck_77="خیر";
+        }else{
+            ransagh_ck_77="بله";
+    }  
+        if (ransagh_ck_8 == 0 ) {
+            ransagh_ck_88="خیر";
+        }else{
+            ransagh_ck_88="بله";
+    }  
+        if (ransagh_ck_9 == 0 ) {
+            ransagh_ck_99="خیر";
+        }else{
+            ransagh_ck_99="بله";
+    }  
+        if (ransagh_ck_10 == 0 ) {
+            ransagh_ck_1010="خیر";
+        }else{
+            ransagh_ck_1010="بله";
+    }  
     
     if (ransagh_ck_1 + ransagh_ck_2 + ransagh_ck_3 + ransagh_ck_4 + ransagh_ck_5 + ransagh_ck_6 + ransagh_ck_7 + ransagh_ck_8 + ransagh_ck_9 + ransagh_ck_10 == 4 ) {
         if (ransagh_ck_1 == 0 ) {
             $('#checkbox_ransagh_1').prop('disabled', true);
-        }
+    }  
         if (ransagh_ck_2 == 0 ) {
             $('#checkbox_ransagh_2').prop('disabled', true);
-        }
+    }  
         if (ransagh_ck_3 == 0 ) {
             $('#checkbox_ransagh_3').prop('disabled', true);
-        }
+    }  
         if (ransagh_ck_4 == 0 ) {
             $('#checkbox_ransagh_4').prop('disabled', true);
-        }
+    }  
         if (ransagh_ck_5 == 0 ) {
             $('#checkbox_ransagh_5').prop('disabled', true);
-        }
+    }  
         if (ransagh_ck_6 == 0 ) {
             $('#checkbox_ransagh_6').prop('disabled', true);
-        }
+    }  
         if (ransagh_ck_7 == 0 ) {
             $('#checkbox_ransagh_7').prop('disabled', true);
-        }
+    }  
         if (ransagh_ck_8 == 0 ) {
             $('#checkbox_ransagh_8').prop('disabled', true);
-        }
+    }  
         if (ransagh_ck_9 == 0 ) {
             $('#checkbox_ransagh_9').prop('disabled', true);
-        }
+    }  
         if (ransagh_ck_10 == 0 ) {
             $('#checkbox_ransagh_10').prop('disabled', true);
-        }
+    }  
     }else {
             $('#checkbox_ransagh_1').prop('disabled', false);
             $('#checkbox_ransagh_2').prop('disabled', false);
@@ -1350,11 +2293,6 @@ function ransagh_form () {
             $('#checkbox_ransagh_10').prop('disabled', false);
     }
 }
-
-
-
-
-
 
 
 
@@ -1380,20 +2318,40 @@ function pahloran_form () {
     var pahloran_ck_4 = $("#checkbox_pahloran_4").is(":checked");
     
    
+        if (pahloran_ck_1 == 0 ) {
+            pahloran_ck_11="خیر";
+        }else{
+            pahloran_ck_11="بله";
+    }  
+        if (pahloran_ck_2 == 0 ) {
+            pahloran_ck_22="خیر";
+        }else{
+            pahloran_ck_22="بله";
+    }  
+        if (pahloran_ck_3 == 0 ) {
+            pahloran_ck_33="خیر";
+        }else{
+            pahloran_ck_33="بله";
+    }  
+        if (pahloran_ck_4 == 0 ) {
+            pahloran_ck_44="خیر";
+        }else{
+            pahloran_ck_44="بله";
+    }
     
     if (pahloran_ck_1 + pahloran_ck_2 + pahloran_ck_3 + pahloran_ck_4 == 2 ) {
         if (pahloran_ck_1 == 0 ) {
             $('#checkbox_pahloran_1').prop('disabled', true);
-        }
+    }  
         if (pahloran_ck_2 == 0 ) {
             $('#checkbox_pahloran_2').prop('disabled', true);
-        }
+    }  
         if (pahloran_ck_3 == 0 ) {
             $('#checkbox_pahloran_3').prop('disabled', true);
-        }
+    }  
         if (pahloran_ck_4 == 0 ) {
             $('#checkbox_pahloran_4').prop('disabled', true);
-        }
+    }  
     }else {
             $('#checkbox_pahloran_1').prop('disabled', false);
             $('#checkbox_pahloran_2').prop('disabled', false);
@@ -1435,22 +2393,51 @@ function ketfi_form () {
     
     
     
+    
+        if (ketfi_ck_1 == 0 ) {
+            ketfi_ck_11="خیر";
+        }else{
+            ketfi_ck_11="بله";
+    }  
+        if (ketfi_ck_2 == 0 ) {
+            ketfi_ck_22="خیر";
+        }else{
+            ketfi_ck_22="بله";
+    }  
+        if (ketfi_ck_3 == 0 ) {
+            ketfi_ck_33="خیر";
+        }else{
+            ketfi_ck_33="بله";
+    }  
+        if (ketfi_ck_4 == 0 ) {
+            ketfi_ck_44="خیر";
+        }else{
+            ketfi_ck_44="بله";
+    }  
+        if (ketfi_ck_5 == 0 ) {
+            ketfi_ck_55="خیر";
+        }else{
+            ketfi_ck_55="بله";
+    } 
+    
+    
+    
     if (ketfi_ck_1 + ketfi_ck_2 + ketfi_ck_3 + ketfi_ck_4 + ketfi_ck_5 == 3 ) {
         if (ketfi_ck_1 == 0 ) {
             $('#checkbox_ketfi_1').prop('disabled', true);
-        }
+    }  
         if (ketfi_ck_2 == 0 ) {
             $('#checkbox_ketfi_2').prop('disabled', true);
-        }
+    }  
         if (ketfi_ck_3 == 0 ) {
             $('#checkbox_ketfi_3').prop('disabled', true);
-        }
+    }  
         if (ketfi_ck_4 == 0 ) {
             $('#checkbox_ketfi_4').prop('disabled', true);
-        }
+    }  
         if (ketfi_ck_5 == 0 ) {
             $('#checkbox_ketfi_5').prop('disabled', true);
-        }
+    }  
     }else {
             $('#checkbox_ketfi_1').prop('disabled', false);
             $('#checkbox_ketfi_2').prop('disabled', false);
@@ -1528,89 +2515,91 @@ $('#programpart3page_btn').on("tap", function (Event){
                         if (pahloran_ck_1 + pahloran_ck_2 + pahloran_ck_3 + pahloran_ck_4 > 0 ) {
                             if (ketfi_ck_1 + ketfi_ck_2 + ketfi_ck_3 + ketfi_ck_4 + ketfi_ck_5 > 0 ) {
                                 
+
+    var user_local = 
+        window.localStorage.getItem("user_id");
                                 
-                                
-$.ajax('http://localhost:8888/Stars/api/ApiGet/insert_contact', {
+$.ajax('http://localhost:8888/Stars/api/ApiGet/insert_request', {
     type: 'POST',  // http method
-    data: { 'morabi_id': '888',
-           'state_id': contact_etx,
-           'jalasat_number': 'date',
-           'shobe': contact_etx,
-           'request_date': 'date',
-           'inbody_score': contact_etx,
-           'level': 'date',
-           'history_sport': contact_etx,
-           'ghad': 'date',
-           'vazn': contact_etx,
-           'age': 'date',
-           'sar_shane': contact_etx,
-           'sine': 'date',
-           'kamar': contact_etx,
-           'bimary': 'date',
-           'mafasel': contact_etx,
-           'other_gym': 'date',
-           'regim': contact_etx,
-           'other_des': 'date',
-           'shekam': contact_etx,
-           'basan': 'date',
-           'ran': contact_etx,
-           'sagh_pa': 'date',
-           'bazo': contact_etx,
-           'pahloran': 'date',
-           'lor_dozegi_gardan': contact_etx,
-           'lor_dozegi_kamari': 'date',
-           'charkh_zano': contact_etx,
-           'ketf_baldar': 'date',
-           'kifoz_poshti': 'date',
-           'pa_parantezi': contact_etx,
-           'oftadegi_shane': 'date',
-           'skoliuz': contact_etx,
-           'sine_bala_keshidan': 'date',
-           'sine_hajm': 'date',
-           'sine_seft_shodan': contact_etx,
-           'sine_form_giry': 'date',
-           'sine_kahesh_size': contact_etx,
-           'sine_gerd_shodan': 'date',
-           'sine_por_shodan_bala_sine': 'date',
-           'bazo_form_giry': contact_etx,
-           'bazo_por_shodan': 'date',
-           'bazo_kahesh_size': contact_etx,
-           'bazo_seft_shodan': 'date',
-           'shekam_pahlo_charbi_sozi': 'date',
-           'shekam_pahlo_taghviat_azolat': contact_etx,
-           'shekam_pahlo_kat_shodan': 'date',
-           'basan_gerd_shodan': contact_etx,
-           'basan_bala_keshidan': 'date',
-           'basan_seft_shodan': 'date',
-           'basan_hajm_por_shodan': contact_etx,
-           'basan_por_shodan_baghal_basan': 'date',
-           'basan_kahesh_size': contact_etx,
-           'basan_form_giry': 'date',
-           'ran_o_sagh_por_shodan': 'date',
-           'ran_o_sagh_seft_shodan': contact_etx,
-           'ran_o_sagh_form_giry': 'date',
-           'ran_o_sagh_taghviat_azolat': contact_etx,
-           'ran_o_sagh_rafe_seloliat': 'date',
-           'ran_o_sagh_kahesh_size': 'date',
-           'ran_o_sagh_kahesh_size_sagh': contact_etx,
-           'ran_o_sagh_seft_shodan_sagh': 'date',
-           'ran_o_sagh_taghviat_sagh': 'date',
-           'ran_o_sagh_charbi_sozi': contact_etx,
-           'pahlo_ran_charbi_sozi': 'date',
-           'pahlo_ran_form_giri': contact_etx,
-           'pahlo_ran_taghviat': 'date',
-           'pahlo_ran_por_shodan': 'date',
-           'azolat_ketfi_taghviat': contact_etx,
-           'azolat_ketfi_form_giri': 'date',
-           'azolat_ketfi_kahesh_size': contact_etx,
-           'azolat_ketfi_aghab_raftan_shaneh': 'date',
-           'azolat_ketfi_kat_shodan': 'date',
-           'price_barname': contact_etx,
-           'request_des': 'date', },  // data to submit
+    data: { 'people_id': user_local,
+           'morabi_id': coach,
+           'state_id': 0,
+           'jalasat_number': meetings,
+           'shobe': Branch,
+           'request_date': date,
+           'inbody_score': Score,
+           'level': level,
+           'history_sport': history_s,
+           'ghad': height,
+           'vazn': weight,
+           'age': age,
+           'sar_shane': shaneh,
+           'sine': sineh,
+           'kamar': kamar,
+           'bimary': bimary,
+           'mafasel': asib,
+           'other_gym': sabeghe,
+           'regim': regime,
+           'other_des': desceription,
+           'shekam': shekam,
+           'basan': basan,
+           'ran': ran,
+           'sagh_pa': sagh,
+           'bazo': bazoo,
+           'pahlooran': pahlooran,
+           'lor_dozegi_gardan': sharayet_ck_11,
+           'lor_dozegi_kamari': sharayet_ck_33,
+           'charkh_zano':sharayet_ck_77 ,
+           'ketf_baldar': sharayet_ck_99,
+           'kifoz_poshti': sharayet_ck_22,
+           'pa_parantezi': sharayet_ck_44,
+           'pa_zabdari': sharayet_ck_55,
+           'oftadegi_shane': sharayet_ck_66,
+           'skoliuz': sharayet_ck_88,
+           'sine_bala_keshidan': shaneh_ck_11,
+           'sine_hajm': shaneh_ck_22,
+           'sine_seft_shodan': shaneh_ck_33,
+           'sine_form_giry': shaneh_ck_44,
+           'sine_kahesh_size': shaneh_ck_55,
+           'sine_gerd_shodan': shaneh_ck_66,
+           'sine_por_shodan_bala_sine': shaneh_ck_77,
+           'bazo_form_giry': bazoo_ck_11,
+           'bazo_por_shodan': bazoo_ck_22,
+           'bazo_kahesh_size': bazoo_ck_33,
+           'bazo_seft_shodan': bazoo_ck_44,
+           'shekam_pahlo_charbi_sozi': shekampahloock_11,
+           'shekam_pahlo_taghviat_azolat': shekampahloock_22,
+           'shekam_pahlo_kat_shodan': shekampahloock_33,
+           'basan_gerd_shodan': basan_ck_11,
+           'basan_bala_keshidan': basan_ck_22,
+           'basan_seft_shodan': basan_ck_33,
+           'basan_hajm_por_shodan': basan_ck_44,
+           'basan_por_shodan_baghal_basan': basan_ck_55,
+           'basan_kahesh_size': basan_ck_66,
+           'basan_form_giry': basan_ck_77,
+           'ran_o_sagh_por_shodan': ransagh_ck_11,
+           'ran_o_sagh_seft_shodan': ransagh_ck_22,
+           'ran_o_sagh_form_giry': ransagh_ck_33,
+           'ran_o_sagh_taghviat_azolat': ransagh_ck_44,
+           'ran_o_sagh_rafe_seloliat': ransagh_ck_55,
+           'ran_o_sagh_kahesh_size': ransagh_ck_66,
+           'ran_o_sagh_kahesh_size_sagh': ransagh_ck_77,
+           'ran_o_sagh_seft_shodan_sagh': ransagh_ck_88,
+           'ran_o_sagh_taghviat_sagh': ransagh_ck_99,
+           'ran_o_sagh_charbi_sozi': ransagh_ck_1010,
+           'pahlo_ran_charbi_sozi': pahloran_ck_11,
+           'pahlo_ran_form_giri': pahloran_ck_22,
+           'pahlo_ran_taghviat': pahloran_ck_33,
+           'pahlo_ran_por_shodan': pahloran_ck_44,
+           'azolat_ketfi_taghviat': ketfi_ck_11,
+           'azolat_ketfi_form_giri': ketfi_ck_22,
+           'azolat_ketfi_kahesh_size': ketfi_ck_33,
+           'azolat_ketfi_aghab_raftan_shaneh': ketfi_ck_44,
+           'azolat_ketfi_kat_shodan': ketfi_ck_55,
+           'price_barname': "60000",
+           'request_des': desceription },  // data to submit
     success: function (data, status, xhr) {
 
-        
-        alert("2");
     },
     error: function (jqXhr, textStatus, errorMessage) {
             $('p').append('Error' + errorMessage);
@@ -1653,19 +2642,16 @@ $.ajax('http://localhost:8888/Stars/api/ApiGet/insert_contact', {
 
 
 
+var phone_number_single = (window.localStorage.getItem("phone_num"));
 // Page_Profile
-$( document ).delegate("#profilepage", "pagebeforeshow", function() { 
-    var phone_number = $("#profilepage_input_number").val().trim();
-    
+$( document ).delegate("#profilepage", "pagebeforeshow", function() {
     $.ajax('http://localhost:8888/Stars/api/ApiGet/get_People_single', {
         type: 'POST',  // http method 
-        data: { 'phone_number': phone_number, },  // data to submit
+        data: { 'phone_number': phone_number_single, },  // data to submit
         success: function (data, status, xhr) {
 
-            $.each(data, function(index) {
-           
-                document.getElementById("profilepage_input_fullname").value = data[index].name_family;
-                 document.getElementById("profilepage_input_social_code").value = data[index].code_meli; 
+        $.each (data , function(key, value) {                document.getElementById("profilepage_input_fullname").value = value.name_family;
+                 document.getElementById("profilepage_input_social_code").value = value.code_meli; 
 
             });
         },
@@ -1675,8 +2661,20 @@ $( document ).delegate("#profilepage", "pagebeforeshow", function() {
     });
 });
 
-$('#profilepage_btn').on("tap", function (){
+$('#profilepage_btn').on("click", function (){
+    var name_family = $("#login_etx_submit").val().trim();
+    var code_meli = $("#login_etx_submit").val().trim();
     
+    $.ajax('http://localhost:8888/Stars/api/ApiGet/update_people', {
+        type: 'POST',  // http method 
+        data: { 'name_family': name_family,'code_meli': code_meli,'phone_number': phone_number_single,'address': '','user_date': '','state_id': '0', },  // data to submit
+        success: function (data, status, xhr) {
+
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        }
+    });
 });
     
 
@@ -1714,25 +2712,6 @@ $( document ).delegate("#rulespage", "pagebeforeshow", function() {
 
 
 
-
-
-
-
-// Page_GoodToKnow
-$( document ).delegate("#goodtoknowpage", "pageinit", function() {
-  setTimeout(function(){ $("#goodtoknowpage_list").on("click", "li", function() {
-        var selected = $(this);
-        var id= selected.attr("data-id");
-        $.mobile.changePage('#newspage');
-    }); }, 1000);
-});
-    
-    
-    
-    
-    
-    
-    
 
 
 
