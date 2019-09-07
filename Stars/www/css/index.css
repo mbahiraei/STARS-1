@@ -196,48 +196,34 @@ button:focus {
     width: 100%;
 }
 .circle_p1 div{
-    border: 5px solid yellow;
-    border-radius: 50%;
-    height: fit-content;
-    background-size: cover;
-    background: unset!important;
-    position: unset;
-    border:unset;
-    border-radius: unset;
-    height: unset;
-    background-size: unset;
     width: auto;
-    padding-top: unset;
 }
-.workout_circle .circle_p1_child_left img{
+.circle_p1 div img{
     position: relative;
     border: 5px solid yellow;
     border-radius: 50%;
-    height: 131%;
-    width: 28%;
     padding: 0 0 0 0 !important;
 }
-
-
-
-
-.circle_p1_child_right{
-    width: 17%;
-    padding-top: 17%;
-    background: url("../images/image.png") no-repeat;
+.circle_p1 .circle_p1_child_right{
     margin: 5% 0;
 }
-.circle_p1_child_center{
-    width: 20%;
-    padding-top: 20%;
-    background: url("../images/image.png") no-repeat;
-    margin: 5% 0;
+.circle_p1 .circle_p1_child_center{
+    margin: 0% 0% 7% 0%;
 }
-.circle_p1_child_left{
-    width: 25%;
-    padding-top: 25%;
-    background: url("../images/image.png") no-repeat;
-    margin: -5% -5% 0 5%;
+.circle_p1 .circle_p1_child_left{
+    margin: -7% 0% 3% 6%;
+}
+.circle_p1 .circle_p1_child_right  img{
+    height: 124%;
+    width: 55%;
+}
+.circle_p1 .circle_p1_child_center img{
+    height: 118%;
+    width: 65%;
+}
+.circle_p1 .circle_p1_child_left img{
+    height: 94%;
+    width: 85%;
 }
 .info{
     background: #5a1973;
@@ -986,18 +972,12 @@ button:focus {
     position: unset;
     border:unset;
     border-radius: unset;
-    height: unset;
     background-size: unset;
-    width: auto;
     padding-top: unset;
 }
 .workout_circle .circle_p1_child_left img{
-    position: relative;
-    border: 5px solid yellow;
-    border-radius: 50%;
     height: 131%;
     width: 28%;
-    padding: 0 0 0 0 !important;
 }
 .workout_main_tittle{
     margin-bottom: 5% !important;
@@ -1026,8 +1006,9 @@ button:focus {
     width: 85%;
     padding: 5% 0;
 }
-.workout_explain p{
-    line-height: 2;
+#workout_explain_des{
+    margin: 15px 0 0 0!important;
+    line-height: 2!important;
 }
 .workout_btn{
     width: 70%;
