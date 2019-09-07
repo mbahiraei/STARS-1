@@ -169,8 +169,8 @@ function snack_error(text) {
 //    }, 1500);
 //    
 //});
-
-
+//
+//
 
 
 
@@ -347,15 +347,13 @@ $( document ).delegate("#locationB1", "pagebeforeshow", function() {
             
                 output += '<div id="image_locationB1" class="locationB1">';
             
-                output += '<img id="locationB1_txt_img" src="'+Http_img +value.shobe_location_img+'" class="img-responsive"  alt="Image Cant Be Loaded" >';
+                output += '<img id="locationB1_txt_img" src="'+HTTP_img +value.shobe_location_img+'" class="img-responsive"  alt="Image Cant Be Loaded" >';
             
                 output += '</div>';
             
             
             
                 output += '<div class="locationB1 ">';
-            
-                output += '<div class="locationB1_txt_tittle">آدرس :</div>';
             
                 output += '<div id="locationB1_txt_dec" class="locationB1_txt">';
             
@@ -409,7 +407,6 @@ $( document ).delegate("#locationB2", "pagebeforeshow", function() {
             
                 output += '<div class="locationB1 ">';
             
-                output += '<div class="locationB1_txt_tittle">آدرس :</div>';
             
                 output += '<div id="locationB1_txt_dec" class="locationB1_txt">';
             
@@ -506,7 +503,7 @@ $( document ).delegate("#mainpage", "pageinit", function() {
                 output += '<div class="swiper-slide">';
                 
             
-                output += '<img src="' +Http_img+value.image_url+'" alt="Image Cant Be Loaded" >';
+                output += '<img src="' +HTTP_img+value.image_url+'" alt="Image Cant Be Loaded" >';
             
                 output += '<p>'+ value.img_title +'</p>';
             
@@ -736,7 +733,7 @@ function video_fun(jalase_id){
                 
                 output += '<video width="100%" height="250" controls>';
                 
-                output += '<source src="'+ Http_img +  value.video_url +'" type="video/mp4">';
+                output += '<source src="'+ HTTP_img + value.video_url +'" type="video/mp4">';
             
             
             
@@ -759,7 +756,7 @@ function video_fun(jalase_id){
     }); 
 }
 function days_name_fun(jalase_id){
-    $.ajax( HTTP+'get_jalase_day_single', {
+     $.ajax(HTTP+'get_jalase_day_single', {
         type: 'POST',  // http method 
         data: { 'jalase_id': jalase_id, },  // data to submit
     success: function (data, status, xhr) {
@@ -801,9 +798,9 @@ function days_name_fun(jalase_id){
 }
 
 
-$( document ).delegate("#chooseclasspage", "pagebeforeshow", function() {
+$( document ).delegate("#chooseclasspage", "pagebeforeshow", function() { 
 
-    $.ajax(HTTP+'get_jalase_single', {
+    $.ajax(HTTP+'get_jalase_list', {
         type: 'POST',  // http method 
         data: { 'sans_id': sans_id, },  // data to submit
     success: function (data, status, xhr) {
@@ -910,7 +907,7 @@ function swiper () {
 $( document ).delegate("#workoutpage", "pagebeforeshow", function() { 
     $.ajax(HTTP+'get_jalase_single', {
         type: 'POST',  // http method 
-        data: { 'sans_id': jalase_id, },  // data to submit
+        data: { 'jalase_id': jalase_id, },  // data to submit
     success: function (data, status, xhr) {
 
         
@@ -919,7 +916,7 @@ $( document ).delegate("#workoutpage", "pagebeforeshow", function() {
             
             days_name_fun(value.jalase_id);
             video_fun(value.jalase_id);
-           document.getElementById("workout_explain_dec").innerHTML = value.jalase_id ;
+           document.getElementById("workout_explain_dec").innerHTML = value.jalase_des ;
         });
         
 
@@ -975,7 +972,7 @@ $('#workout_rate_btn').on("tap", function (Event){
     var jalase_id = 
         window.localStorage.getItem("user_id");
                                 
-$.ajax('http://localhost:8888/Stars/api/ApiGet/insert_rate', {
+$.ajax(HTTP+'insert_rate', {
     type: 'POST',  // http method
     data: { 'people_id': people_id,
            'jalase_id': jalase_id,
@@ -1108,9 +1105,6 @@ $('#contactpage_btn').on("click", function (Event){
 // Page_AllNews
 var news_article = 0;
 
-
-$( document ).delegate("#allnewspage", "pagebeforeshow", function() { 
-
 $( document ).delegate("#allnewspage", "pagebeforeshow", function() { 
     $.ajax(HTTP+'get_news_list', {
         type: 'GET',  // http method  // data to submit
@@ -1234,7 +1228,7 @@ $( document ).delegate("#goodtoknowpage", "pagebeforeshow", function() {
                 
                 output += '<div class="good_img">';
             
-                output += '<img src="'+ HTTP_img + value.gtk_image+'" alt="Image Cant Be Loaded" >';
+                output += '<img src="' + HTTP_img + value.gtk_image+'" alt="Image Cant Be Loaded" >';
                 
                 output += '</div>';
                 
@@ -1361,7 +1355,7 @@ function image_top_intro(introduction_id){
             
                 output_big += '<div class="swiper-slide image_big">';
                 
-                output_big += '<img src="/'+HTTP_img+value.img_url+'" alt="Image Cant Be Loaded" >';
+                output_big += '<img src="' + HTTP_img + value.img_url+'" alt="Image Cant Be Loaded" >';
                 
                 output_big += '</div>';
             
@@ -1386,7 +1380,7 @@ function image_down_intro(introduction_id){
             
                 output_small += '<div class="swiper-slide image_small">';
                 
-                output_small += '<img src="'+ HTTP_img + value.img_url+'" alt="Image Cant Be Loaded" >';
+                output_small += '<img src="' + HTTP_img + value.img_url+'" alt="Image Cant Be Loaded" >';
                 
                 output_small += '</div>';
         });
@@ -1805,24 +1799,18 @@ $('#programpart2page_btn').on("tap", function (Event){
 // Page_Program_Request_P3    
 $('#checkbox_sineh_1').bind('change', function () {
     sineh_form();
-});
-$('#checkbox_sineh_2').bind('change', function () {
-    sineh_form();
 });    
-$('#checkbox_sineh_3').bind('change', function () {
-    sineh_form();
+$('#checkbox_sineh_2').bind('change', function () {    sineh_form();
 });    
-$('#checkbox_sineh_4').bind('change', function () {
-    sineh_form();
+$('#checkbox_sineh_3').bind('change', function () {    sineh_form();
 });    
-$('#checkbox_sineh_5').bind('change', function () {
-    sineh_form();
+$('#checkbox_sineh_4').bind('change', function () {    sineh_form();
 });    
-$('#checkbox_sineh_6').bind('change', function () {
-    sineh_form();
+$('#checkbox_sineh_5').bind('change', function () {    sineh_form();
 });    
-$('#checkbox_sineh_7').bind('change', function () {
-    sineh_form();
+$('#checkbox_sineh_6').bind('change', function () {    sineh_form();
+});    
+$('#checkbox_sineh_7').bind('change', function () {    sineh_form();
 });
 
 
@@ -2512,7 +2500,7 @@ $('#programpart3page_btn').on("tap", function (Event){
 $.ajax(HTTP+'insert_request', {
     type: 'POST',  // http method
     data: { 'people_id': user_local,
-           'morabi_id': coach,
+           'morabi_id': "",
            'state_id': 0,
            'jalasat_number': meetings,
            'shobe': Branch,
