@@ -14,7 +14,7 @@
     <Preference name = "ShowSplashScreenSpinner" value = "true" />
     <Preference name = "FadeSplashScreen" value = "false" />
     <Preference name = "FadeSplashScreenDuration" value = "1.0" />
-    <Preference name = "SplashScreenDelay" value = "100" />
+    <Preference name = "SplashScreenDelay" value = "40" />
     <Preference name = "SplashScreenBackgroundColor" value = "# FE5D01" />
     <Preference name = "SplashMaintainAspectRatio" value = "true" />
     

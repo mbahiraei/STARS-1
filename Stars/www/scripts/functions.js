@@ -498,7 +498,7 @@ $('#main_logout_btn').on("click", function (Event){
 });
 
 
-$( document ).delegate("#mainpage", "pageinit", function() { 
+$( document ).delegate("#mainpage", "pagebeforeshow", function() { 
    
      $.ajax(HTTP+'get_main_slider_list', {
         type: 'GET',  // http method   // data to submit
@@ -2623,28 +2623,7 @@ $.ajax(HTTP+'insert_request', {
 
 
 
-var phone_number_single =  window.localStorage.getItem("phone_num");
 // Page_Profile
-$( document ).delegate("#profilepage", "pagebeforeshow", function() {
-     
-    alert(phone_number_single);
-    
-    $.ajax(HTTP+'get_People_single', {
-        type: 'POST',  // http method 
-        data: { 'phone_number': phone_number_single, },  // data to submit
-        success: function (data, status, xhr) {
-
-        $.each (data , function(key, value) {                document.getElementById("profilepage_input_fullname").value = value.name_family;
-           
-        document.getElementById("profilepage_input_social_code").value = value.code_meli; 
-
-            });
-        },
-        error: function (jqXhr, textStatus, errorMessage) {
-                $('p').append('Error' + errorMessage);
-        }
-    });
-});
 
 $('#profilepage_btn').on("click", function (){
     var name_family = $("#profilepage_input_fullname").val().trim();
@@ -2712,7 +2691,27 @@ $('.panel_li_home').on("tap", function (Event){
 });
 $('.panel_li_profile').on("tap", function (Event){
     $('video').trigger('pause');
-    $.mobile.changePage('#profilepage'); document.getElementById("profilepage_input_number").value = window.localStorage.getItem("phone_num");
+    $.mobile.changePage('#profilepage'); 
+    var phone = window.localStorage.getItem("phone_num");
+    document.getElementById("profilepage_input_number").value = window.localStorage.getItem("phone_num");
+    
+    $.ajax(HTTP+'get_People_single', {
+        type: 'POST',  // http method 
+        data: { 'phone_number': phone, },  // data to submit
+        success: function (data, status, xhr) {
+
+        $.each (data , function(key, value) {                document.getElementById("profilepage_input_fullname").value = value.name_family;
+           
+        document.getElementById("profilepage_input_social_code").value = value.code_meli; 
+
+            });
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        }
+    });
+    
+    
 });
 $('.panel_li_good').on("tap", function (Event){
     $('video').trigger('pause');
