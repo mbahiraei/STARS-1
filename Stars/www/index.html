@@ -5,7 +5,6 @@
     <title>باشگاه ورزشی ستارگان</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://yourdomain1.com  data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline';  media-src *;  script-src 'self' 'unsafe-eval' 'unsafe-inline';">
     <!-- jquery_mobile_demo references -->
     <link href="css/index.css" rel="stylesheet" />
     <link href="css/themes/default/rtl.jquery.mobile-1.4.0.css" rel="stylesheet" />
@@ -18,14 +17,16 @@
 </head>
 <body>
     
+<!--
     
-    <!-- Page_Splash -->
+     Page_Splash 
     <div data-role="page" class="a" id="splashpage" data-theme="a">
         <div class="splash_logo">
             <img src="images/Arm%2002.svg">
         </div>
     </div>
     
+-->
 
     <!-- Page_login -->
     <div data-role="page" id="loginpage">
@@ -875,6 +876,30 @@
                 
 
                 <ul data-role="listview" data-inset="true" id="allnewspage_list" class="chooseclasspage_main_info min_h">
+                    
+                    
+                    <li data-id="'+value.date+'">
+                
+               <div class="allnewspageـgride ">
+            <div id="allnewspage_li_name" class="allnewspage_li_name ">
+            <a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn"></a>
+                
+            <p> '+ value.milliseconds_since_epoch +' </p>
+                
+            </div>';
+                
+            <span id="allnewspage_li_date" class="allnewspage_li_date ">
+                
+                output += value.time;
+            
+            </span>
+                
+            </div>
+                
+            </li>
+                    
+                    
+                    
                 </ul>
 
 </div>

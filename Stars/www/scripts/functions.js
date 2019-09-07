@@ -157,19 +157,19 @@ function snack_error(text) {
 
 
 // Page_Splash
-$('#splashpage').on( "pageinit", function( event ) {
-    
-    setTimeout(function() {
-	   if ((window.localStorage.getItem("cookies")) == 1){
-            $.mobile.changePage('#mainpage');
-        }else {
-            $.mobile.changePage('#loginpage');
-        }
-    }, 1500);
-    
-});
-
-
+//$('#splashpage').on( "pageinit", function( event ) {
+//    
+//    setTimeout(function() {
+//	   if ((window.localStorage.getItem("cookies")) == 1){
+//            $.mobile.changePage('#mainpage');
+//        }else {
+//            $.mobile.changePage('#loginpage');
+//        }
+//    }, 1500);
+//    
+//});
+//
+//
 
 
 
@@ -1128,45 +1128,74 @@ $('#contactpage_btn').on("click", function (Event){
 
 // Page_AllNews
 var news_article = 0;
+
+
 $( document ).delegate("#allnewspage", "pagebeforeshow", function() { 
-    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_news_list', {
-        type: 'GET',  // http method  // data to submit
-    success: function (data, status, xhr) {
-
-        var output = "";
-        
-        $.each (data , function(key, value) {
-                news_article = 0;
-                output += '<li data-id="'+value.news_id+'">';
-                
-                output += '<div class="allnewspageـgride ">';
-                output += '<div class="allnewspage_li_name ">';
-                output += '<a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn"></a>';
-                
-                output += '<p> '+ value.news_title +' </p>';
-                
-                output += '</div>';
-                
-                output += '<span class="allnewspage_li_date ">';
-                
-                output += value.news_date;
-            
-                output += '</span>';
-                
-                output += '</div>';
-                
-                output += '</li>';
-        });
-        
-        $('#allnewspage_list').html(output);
-
-        },
-        error: function (jqXhr, textStatus, errorMessage) {
-                $('p').append('Error' + errorMessage);
-        }
-    }); 
+//    $.ajax('http://time.jsontest.com/', {
+//        type: 'GET',  // http method  // data to submit
+//    success: function (data, status, xhr) {
+//
+//        $.each(data, function(index) {
+//        document.getElementById("allnewspage_li_name").innerHTML = data[index].time;
+//        document.getElementById("allnewspage_li_date").innerHTML = data[index].date;
+//        });
+//        
+//
+//        },
+//        error: function (jqXhr, textStatus, errorMessage) {
+//                $('p').append('Error' + errorMessage);
+//        }
+//    }); 
+    $.get('http://time.jsontest.com/', {category:'client', type:'premium'})
+     .done(function(response) {
+        document.getElementById("allnewspage_li_name").innerHTML = response.time;
+        document.getElementById("allnewspage_li_date").innerHTML = response.date;
+     });
  
 });
+
+
+
+
+//$( document ).delegate("#allnewspage", "pagebeforeshow", function() { 
+//    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_news_list', {
+//        type: 'GET',  // http method  // data to submit
+//    success: function (data, status, xhr) {
+//
+//        var output = "";
+//        
+//        $.each (data , function(key, value) {
+//                news_article = 0;
+//                output += '<li data-id="'+value.news_id+'">';
+//                
+//                output += '<div class="allnewspageـgride ">';
+//                output += '<div class="allnewspage_li_name ">';
+//                output += '<a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn"></a>';
+//                
+//                output += '<p> '+ value.news_title +' </p>';
+//                
+//                output += '</div>';
+//                
+//                output += '<span class="allnewspage_li_date ">';
+//                
+//                output += value.news_date;
+//            
+//                output += '</span>';
+//                
+//                output += '</div>';
+//                
+//                output += '</li>';
+//        });
+//        
+//        $('#allnewspage_list').html(output);
+//
+//        },
+//        error: function (jqXhr, textStatus, errorMessage) {
+//                $('p').append('Error' + errorMessage);
+//        }
+//    }); 
+// 
+//});
 
 
 
@@ -1187,8 +1216,8 @@ $('#allnewspage_list').delegate("li","click", function (event) {
 
 // Page_Article
 $( document ).delegate("#articlespage", "pagebeforeshow", function() { 
-    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_article_list', {
-        type: 'GET',  // http method  // data to submit
+    $.ajax('http://192.168.1.101:8888/Stars/api/ApiGet/get_article_list', {
+        type: 'GET', // http method  // data to submit
     success: function (data, status, xhr) {
 
         var output = "";
@@ -1245,7 +1274,7 @@ $( document ).delegate("#goodtoknowpage", "pagebeforeshow", function() {
     success: function (data, status, xhr) {
 
         var output = "";
-        $.each (data , function(key, value) {
+        $.each (data ,function(key, value) {
                 news_article = 2;
                 output += '<li data-id="'+value.good_id+'">';
                 
@@ -1262,7 +1291,8 @@ $( document ).delegate("#goodtoknowpage", "pagebeforeshow", function() {
                 output += '</div>';
                 
                 output += '</li>';
-        });
+        }
+        );
         
         $('#goodtoknowpage_list').html(output);
 
