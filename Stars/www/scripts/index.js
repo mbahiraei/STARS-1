@@ -19,18 +19,12 @@ var jquery_mobile_demo;
             document.addEventListener('pause', onPause, false);
             document.addEventListener('resume', onResume, false);
             document.addEventListener('orientation', orientation, false);
-            document.addEventListener("backbutton", onBackKeyPress, false);
             document.addEventListener('online', ononline, false);
             document.addEventListener('offline', onoffline, false);
             document.addEventListener('deviceready',    function() {
                 setTimeout(function() {
-                    navigator.splashscreen.hide(); 
-	               if ((window.localStorage.getItem("cookies")) == 1){
-                        $.mobile.changePage('#mainpage');
-                    }else {
-                        $.mobile.changePage('#loginpage');
-                }
-                }, 1500);                     
+                    navigator.splashscreen.hide();
+                }, 40);                     
             });
             // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
         }
@@ -55,17 +49,6 @@ var jquery_mobile_demo;
             // TODO: This application has been reactivated. Restore application state here.
         }
               
-//        function onBackKeyPress() {
-//            
-//            $('video').trigger('pause');
-//            /* If the current page is the login page, disable the button completely (aka do nothing) */;
-////            if( ($.mobile.activePage.attr('id')) == ("mainpage")  ) {
-////                
-////                e.preventDefault();
-////                return false;
-////            }
-//
-//            }
         
         
         function orientation() {

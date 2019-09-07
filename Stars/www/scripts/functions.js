@@ -12,10 +12,10 @@ var shobe_id = 0;
 var sans_id = 0;
 var jalase_id = 0;
 
-var dict_morabi_name = {}; // create an empty array
+var phone_number_G = 0;
 
-var HTTP = 'http://localhost:8888/Stars/api/ApiGet/';
-var HTTP_img = "http://localhost:8888/Stars/assets/uploads/files/";
+var HTTP = 'http://192.168.1.100:8888/Stars/api/ApiGet/';
+var HTTP_img = "http://192.168.1.100:8888/Stars/assets/uploads/files/";
 
 
 
@@ -158,19 +158,19 @@ function snack_error(text) {
 
 
 // Page_Splash
-//$('#splashpage').on( "pageinit", function( event ) {
-//    
-//    setTimeout(function() {
-//	   if ((window.localStorage.getItem("cookies")) == 1){
-//            $.mobile.changePage('#mainpage');
-//        }else {
-//            $.mobile.changePage('#loginpage');
-//        }
-//    }, 1500);
-//    
-//});
-//
-//
+$('#splashpage').on( "pageinit", function( event ) {
+    
+    setTimeout(function() {
+	   if ((window.localStorage.getItem("cookies")) == 1){
+            $.mobile.changePage('#mainpage');
+        }else {
+            $.mobile.changePage('#loginpage');
+        }
+    }, 1500);
+    
+});
+
+
 
 
 
@@ -210,6 +210,7 @@ $('#login_btn_submit').on("tap", function (Event){
         
         window.localStorage.removeItem("phone_num");
         window.localStorage.setItem("phone_num", phone_number);
+        phone_number_G = phone_number;
     randomnumber();
         
         get_p();
@@ -259,12 +260,15 @@ function ins_p() {
         window.localStorage.getItem("user_id");
     
     
-    
-    
     if (user_local == 0){
         $.ajax('http://localhost:8888/Stars/api/ApiGet/insert_people', {
                 type: 'POST',  // http method 
-                data: { 'name_family': '','code_meli': '','phone_number': phone_number,'address': '','user_date': '','state_id': '0', },  // data to submit
+                data: { 'name_family': '',
+                       'code_meli': '',
+                       'phone_number': phone_number,
+                       'address': '',
+                       'user_date': '',
+                       'state_id': '0', },  // data to submit
                 success: function (data, status, xhr) {
 
 
@@ -282,6 +286,10 @@ $('#sms_btn_submit').on("click", function (Event){
           
         
             ins_p(); 
+        $("#smspage").prop('disabled', true);
+        
+        
+        
         $.mobile.changePage('#mainpage');
         window.localStorage.removeItem("cookies");
         window.localStorage.setItem("cookies", 1);
@@ -547,8 +555,6 @@ $( document ).delegate("#mainpage", "pagebeforeshow", function() {
             
     for(i=output_arr.length-1;i>output_arr.length-18;i-=4){
         
-        
-        
             
                 output += ' <li data-id="'+output_arr[i-3]+'">';
                 
@@ -560,13 +566,8 @@ $( document ).delegate("#mainpage", "pagebeforeshow", function() {
             
                 output += '</li>';
         
-        
-        
     }
-        
-        
-        
-        
+    
         $('#mainpage_list').html(output);
         
         
@@ -904,14 +905,22 @@ function swiper () {
     }
 
 
+$( document ).delegate("#workoutpage", "pagebeforehide", function() {
+            $('video').trigger('pause');
+});
+
+
 $( document ).delegate("#workoutpage", "pagebeforeshow", function() { 
     $.ajax(HTTP+'get_jalase_single', {
         type: 'POST',  // http method 
         data: { 'jalase_id': jalase_id, },  // data to submit
     success: function (data, status, xhr) {
-
+        
+        var img_src = "";
         
         $.each (data , function(key, value) {
+            
+            document.getElementById("img_workout_page").src = HTTP_img +value.jalase_img_avatar;
             document.getElementById("workout_morabi_name").innerHTML = "مربی : " + value.morabi_name;
             
             days_name_fun(value.jalase_id);
@@ -1113,7 +1122,6 @@ $( document ).delegate("#allnewspage", "pagebeforeshow", function() {
         var output = "";
         
         $.each (data , function(key, value) {
-                news_article = 0;
                 output += '<li data-id="'+value.news_id+'">';
                 
                 output += '<div class="allnewspageـgride ">';
@@ -1461,15 +1469,16 @@ $('#signuppage_btn').on("click", function (Event){
                 if (address.length != 0 ) {
 
                     
-                    
-                     $.ajax(HTTP+'insert_people', {
-        type: 'POST',  // http method
-        data: { 'name_family': singup_name,
-               'code_meli': singup_code_meli,
-               'phone_number': phone_number,
-               'Address': singup_address, },   // data to submit
+                    snack_success('درخواست شما ارسال شد');
+                     
+    $.ajax(HTTP+'update_people', {
+        type: 'POST',  // http method 
+        data: { 'name_family': fullname,
+               'code_meli': socialcode,
+               'address': address,
+               'phone_number': phonenumber, },  // data to submit
         success: function (data, status, xhr) {
-
+           
         },
         error: function (jqXhr, textStatus, errorMessage) {
                 $('p').append('Error' + errorMessage);
@@ -1479,7 +1488,6 @@ $('#signuppage_btn').on("click", function (Event){
                     
                     
                     
-                    snack_success('درخواست شما ارسال شد');
                 }else {
                     snack_error('آدرس نمی تواند خالی باشد');
                 }
@@ -1625,7 +1633,6 @@ $('#programrequestpage_btn').on("tap", function (Event){
 // Page_Program_Request_P1
 $('#programpart1page_btn').on("click", function (Event){
     fullname = $("#programpart1page_input_fullname").val().trim();
-    coach = $("#programpart1page_input_coach").val().trim();
     meetings = $("#programpart1page_input_meetings").val().trim();
     Branch = $("#programpart1page_input_Branch").val().trim();
     date = $("#programpart1page_input_date_request").val().trim();
@@ -1637,7 +1644,6 @@ $('#programpart1page_btn').on("click", function (Event){
     age = $("#programpart1page_input_age").val().trim();
 
     if (fullname.length != 0 ) {
-        if (coach.length != 0 ) {
             if (meetings.length != 0 ) {
                 if (Branch.length != 0 ) {
                     if (date.length != 0 ) {
@@ -1675,9 +1681,6 @@ $('#programpart1page_btn').on("click", function (Event){
             }else {
                 snack_error('تعداد جلسات نمی تواند خالی باشد');
             }
-        }else {
-            snack_error('نام مربی نمی تواند خالی باشد');
-        }
     }else {
         snack_error('نام و نام خانوادگی نمی تواند خالی باشد'); 
     }
@@ -2620,16 +2623,20 @@ $.ajax(HTTP+'insert_request', {
 
 
 
-var phone_number_single = (window.localStorage.getItem("phone_num"));
+var phone_number_single =  window.localStorage.getItem("phone_num");
 // Page_Profile
 $( document ).delegate("#profilepage", "pagebeforeshow", function() {
+     
+    alert(phone_number_single);
+    
     $.ajax(HTTP+'get_People_single', {
         type: 'POST',  // http method 
         data: { 'phone_number': phone_number_single, },  // data to submit
         success: function (data, status, xhr) {
 
         $.each (data , function(key, value) {                document.getElementById("profilepage_input_fullname").value = value.name_family;
-                 document.getElementById("profilepage_input_social_code").value = value.code_meli; 
+           
+        document.getElementById("profilepage_input_social_code").value = value.code_meli; 
 
             });
         },
@@ -2640,19 +2647,23 @@ $( document ).delegate("#profilepage", "pagebeforeshow", function() {
 });
 
 $('#profilepage_btn').on("click", function (){
-    var name_family = $("#login_etx_submit").val().trim();
-    var code_meli = $("#login_etx_submit").val().trim();
+    var name_family = $("#profilepage_input_fullname").val().trim();
+    var code_meli = $("#profilepage_input_social_code").val().trim();
     
     $.ajax(HTTP+'update_people', {
         type: 'POST',  // http method 
-        data: { 'name_family': name_family,'code_meli': code_meli,'phone_number': phone_number_single,'address': '','user_date': '','state_id': '0', },  // data to submit
+        data: { 'name_family': name_family,
+               'code_meli': code_meli,
+               'address': '',
+               'phone_number': phone_number_single, },  // data to submit
         success: function (data, status, xhr) {
-
+           
         },
         error: function (jqXhr, textStatus, errorMessage) {
                 $('p').append('Error' + errorMessage);
         }
-    });
+    }); 
+    snack_success("اطلاعات کاربری به روز رسانی شد");
 });
     
 
@@ -2748,4 +2759,7 @@ $('.panel_li_rules').on("tap", function (Event){
 });
 $('.panel_li_logout').on("tap", function (Event){
     navigator.app.exitApp();
+        window.localStorage.removeItem("cookies");
+        window.localStorage.removeItem("phone_num");
+        window.localStorage.removeItem("user_id");
 });
