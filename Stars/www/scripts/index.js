@@ -55,17 +55,17 @@ var jquery_mobile_demo;
             // TODO: This application has been reactivated. Restore application state here.
         }
               
-        function onBackKeyPress() {
-            
-            $('video').trigger('pause');
-            /* If the current page is the login page, disable the button completely (aka do nothing) */;
-            if( ($.mobile.activePage.attr('id')) == ("mainpage")  ) {
-                
-                e.preventDefault();
-                return false;
-            }
-
-            }
+//        function onBackKeyPress() {
+//            
+//            $('video').trigger('pause');
+//            /* If the current page is the login page, disable the button completely (aka do nothing) */;
+////            if( ($.mobile.activePage.attr('id')) == ("mainpage")  ) {
+////                
+////                e.preventDefault();
+////                return false;
+////            }
+//
+//            }
         
         
         function orientation() {
