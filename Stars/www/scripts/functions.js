@@ -14,7 +14,8 @@ var jalase_id = 0;
 
 var dict_morabi_name = {}; // create an empty array
 
-
+var HTTP = 'http://localhost:8888/Stars/api/ApiGet/';
+var HTTP_img = "http://localhost:8888/Stars/assets/uploads/files/";
 
 
 
@@ -168,8 +169,8 @@ function snack_error(text) {
 //    }, 1500);
 //    
 //});
-//
-//
+
+
 
 
 
@@ -335,7 +336,7 @@ $('#locationB1_btn').on("tap", function (Event){
 });
 
 $( document ).delegate("#locationB1", "pagebeforeshow", function() { 
-    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_shobe_single', {
+    $.ajax(HTTP+'get_shobe_single', {
         type: 'POST',  // http method 
         data: { 'shobe_id': '1', },  // data to submit
         success: function (data, status, xhr) {
@@ -346,7 +347,7 @@ $( document ).delegate("#locationB1", "pagebeforeshow", function() {
             
                 output += '<div id="image_locationB1" class="locationB1">';
             
-                output += '<img id="locationB1_txt_img" src="http://localhost:8888/Stars/assets/uploads/files/'+value.shobe_location_img+'" class="img-responsive"  alt="Image Cant Be Loaded" >';
+                output += '<img id="locationB1_txt_img" src="'+Http_img +value.shobe_location_img+'" class="img-responsive"  alt="Image Cant Be Loaded" >';
             
                 output += '</div>';
             
@@ -366,17 +367,6 @@ $( document ).delegate("#locationB1", "pagebeforeshow", function() {
             
             
             
-            
-                output += '<div class="locationB1 ">';
-            
-                output += '<div class="locationB1_txt_tittle">شماره های تماس :</div>';
-            
-                output += '<div id="locationB1_txt_tel" class="locationB1_txt">';
-            
-                output += value.shobe_des;
-            
-            
-                output += '</div>';
             
                 output += '</div>';
             
@@ -400,7 +390,7 @@ $('#locationB2_btn').on("tap", function (Event){
 });
 
 $( document ).delegate("#locationB2", "pagebeforeshow", function() {
-    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_shobe_single', {
+    $.ajax(HTTP+'get_shobe_single', {
         type: 'POST',  // http method 
         data: { 'shobe_id': '2', },  // data to submit
         success: function (data, status, xhr) {
@@ -411,7 +401,7 @@ $( document ).delegate("#locationB2", "pagebeforeshow", function() {
             
                 output += '<div id="image_locationB1" class="locationB1">';
             
-                output += '<img id="locationB1_txt_img" src="http://localhost:8888/Stars/assets/uploads/files/'+value.shobe_location_img+'" class="img-responsive"  alt="Image Cant Be Loaded" >';
+                output += '<img id="locationB1_txt_img" src="'+HTTP_img + value.shobe_location_img+'" class="img-responsive"  alt="Image Cant Be Loaded" >';
             
                 output += '</div>';
             
@@ -430,18 +420,6 @@ $( document ).delegate("#locationB2", "pagebeforeshow", function() {
                 output += '</div>';
             
             
-            
-            
-                output += '<div class="locationB1 ">';
-            
-                output += '<div class="locationB1_txt_tittle">شماره های تماس :</div>';
-            
-                output += '<div id="locationB1_txt_tel" class="locationB1_txt">';
-            
-                output += value.shobe_des;
-            
-            
-                output += '</div>';
             
                 output += '</div>';
         });
@@ -517,7 +495,7 @@ $('#main_logout_btn').on("click", function (Event){
 
 $( document ).delegate("#mainpage", "pageinit", function() { 
    
-     $.ajax('http://localhost:8888/Stars/api/ApiGet/get_main_slider_list', {
+     $.ajax(HTTP+'get_main_slider_list', {
         type: 'GET',  // http method   // data to submit
     success: function (data, status, xhr) {
 
@@ -528,7 +506,7 @@ $( document ).delegate("#mainpage", "pageinit", function() {
                 output += '<div class="swiper-slide">';
                 
             
-                output += '<img src="http://localhost:8888/Stars/assets/uploads/files/'+value.image_url+'" alt="Image Cant Be Loaded" >';
+                output += '<img src="' +Http_img+value.image_url+'" alt="Image Cant Be Loaded" >';
             
                 output += '<p>'+ value.img_title +'</p>';
             
@@ -553,7 +531,8 @@ $( document ).delegate("#mainpage", "pageinit", function() {
 
 $( document ).delegate("#mainpage", "pagebeforeshow", function() {
    
-        var output_arr = []; $.ajax('http://localhost:8888/Stars/api/ApiGet/get_news_list', {
+        var output_arr = []; 
+    $.ajax(HTTP+'get_news_list', {
         type: 'GET',  // http method   // data to submit
     success: function (data, status, xhr) {
                     
@@ -663,7 +642,7 @@ $('#sans_btn_B2').on("tap", function (){
 
 // Page_ChooseSans
 $( document ).delegate("#choosesanspage", "pagebeforeshow", function() { 
-    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_sans_single', {
+    $.ajax(HTTP+'get_sans_single', {
         type: 'POST',  // http method 
         data: { 'shobe_id': shobe_id, },  // data to submit
     success: function (data, status, xhr) {
@@ -744,7 +723,7 @@ var morabi_name = "" ;
 
 
 function video_fun(jalase_id){
-     $.ajax('http://localhost:8888/Stars/api/ApiGet/get_jalase_video_list', {
+     $.ajax(HTTP+'get_jalase_video_list', {
         type: 'POST',  // http method 
         data: { 'jalase_id': jalase_id, },  // data to submit
     success: function (data, status, xhr) {
@@ -757,7 +736,7 @@ function video_fun(jalase_id){
                 
                 output += '<video width="100%" height="250" controls>';
                 
-                output += '<source src="http://localhost:8888/Stars/assets/uploads/files/'+  value.video_url +'" type="video/mp4">';
+                output += '<source src="'+ Http_img +  value.video_url +'" type="video/mp4">';
             
             
             
@@ -780,7 +759,7 @@ function video_fun(jalase_id){
     }); 
 }
 function days_name_fun(jalase_id){
-     $.ajax('http://localhost:8888/Stars/api/ApiGet/get_jalase_day_single', {
+    $.ajax( HTTP+'get_jalase_day_single', {
         type: 'POST',  // http method 
         data: { 'jalase_id': jalase_id, },  // data to submit
     success: function (data, status, xhr) {
@@ -822,9 +801,9 @@ function days_name_fun(jalase_id){
 }
 
 
-$( document ).delegate("#chooseclasspage", "pagebeforeshow", function() { 
+$( document ).delegate("#chooseclasspage", "pagebeforeshow", function() {
 
-    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_jalase_single', {
+    $.ajax(HTTP+'get_jalase_single', {
         type: 'POST',  // http method 
         data: { 'sans_id': sans_id, },  // data to submit
     success: function (data, status, xhr) {
@@ -929,7 +908,7 @@ function swiper () {
 
 
 $( document ).delegate("#workoutpage", "pagebeforeshow", function() { 
-    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_jalase_single', {
+    $.ajax(HTTP+'get_jalase_single', {
         type: 'POST',  // http method 
         data: { 'sans_id': jalase_id, },  // data to submit
     success: function (data, status, xhr) {
@@ -1092,7 +1071,7 @@ $('#contactpage_btn').on("click", function (Event){
 
     if (contact_etx_title.length != 0 ) {
         if (contact_etx.length != 0 ) {
-            $.ajax('http://localhost:8888/Stars/api/ApiGet/insert_contact', {
+            $.ajax(HTTP+'insert_contact', {
                 type: 'POST',  // http method
                 data: { 'people_id': user_local,
                        'contact_title': contact_etx_title,
@@ -1131,71 +1110,46 @@ var news_article = 0;
 
 
 $( document ).delegate("#allnewspage", "pagebeforeshow", function() { 
-//    $.ajax('http://time.jsontest.com/', {
-//        type: 'GET',  // http method  // data to submit
-//    success: function (data, status, xhr) {
-//
-//        $.each(data, function(index) {
-//        document.getElementById("allnewspage_li_name").innerHTML = data[index].time;
-//        document.getElementById("allnewspage_li_date").innerHTML = data[index].date;
-//        });
-//        
-//
-//        },
-//        error: function (jqXhr, textStatus, errorMessage) {
-//                $('p').append('Error' + errorMessage);
-//        }
-//    }); 
-    $.get('http://time.jsontest.com/', {category:'client', type:'premium'})
-     .done(function(response) {
-        document.getElementById("allnewspage_li_name").innerHTML = response.time;
-        document.getElementById("allnewspage_li_date").innerHTML = response.date;
-     });
+
+$( document ).delegate("#allnewspage", "pagebeforeshow", function() { 
+    $.ajax(HTTP+'get_news_list', {
+        type: 'GET',  // http method  // data to submit
+    success: function (data, status, xhr) {
+
+        var output = "";
+        
+        $.each (data , function(key, value) {
+                news_article = 0;
+                output += '<li data-id="'+value.news_id+'">';
+                
+                output += '<div class="allnewspageـgride ">';
+                output += '<div class="allnewspage_li_name ">';
+                output += '<a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn"></a>';
+                
+                output += '<p> '+ value.news_title +' </p>';
+                
+                output += '</div>';
+                
+                output += '<span class="allnewspage_li_date ">';
+                
+                output += value.news_date;
+            
+                output += '</span>';
+                
+                output += '</div>';
+                
+                output += '</li>';
+        });
+        
+        $('#allnewspage_list').html(output);
+
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+                $('p').append('Error' + errorMessage);
+        }
+    }); 
  
 });
-
-
-
-
-//$( document ).delegate("#allnewspage", "pagebeforeshow", function() { 
-//    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_news_list', {
-//        type: 'GET',  // http method  // data to submit
-//    success: function (data, status, xhr) {
-//
-//        var output = "";
-//        
-//        $.each (data , function(key, value) {
-//                news_article = 0;
-//                output += '<li data-id="'+value.news_id+'">';
-//                
-//                output += '<div class="allnewspageـgride ">';
-//                output += '<div class="allnewspage_li_name ">';
-//                output += '<a href="#" class="ui-btn ui-btn-right ui-icon-leftdouble_Purple ui-btn-icon-notext ui-corner-all btn_toolbar leftdouble_btn"></a>';
-//                
-//                output += '<p> '+ value.news_title +' </p>';
-//                
-//                output += '</div>';
-//                
-//                output += '<span class="allnewspage_li_date ">';
-//                
-//                output += value.news_date;
-//            
-//                output += '</span>';
-//                
-//                output += '</div>';
-//                
-//                output += '</li>';
-//        });
-//        
-//        $('#allnewspage_list').html(output);
-//
-//        },
-//        error: function (jqXhr, textStatus, errorMessage) {
-//                $('p').append('Error' + errorMessage);
-//        }
-//    }); 
-// 
-//});
 
 
 
@@ -1216,7 +1170,7 @@ $('#allnewspage_list').delegate("li","click", function (event) {
 
 // Page_Article
 $( document ).delegate("#articlespage", "pagebeforeshow", function() { 
-    $.ajax('http://192.168.1.101:8888/Stars/api/ApiGet/get_article_list', {
+    $.ajax(HTTP+'get_article_list', {
         type: 'GET', // http method  // data to submit
     success: function (data, status, xhr) {
 
@@ -1269,7 +1223,7 @@ $('#articlespage_list').delegate("li","tap", function (event) {
 
 // Page_GoodToKnow
 $( document ).delegate("#goodtoknowpage", "pagebeforeshow", function() { 
-    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_good_to_know_list', {
+    $.ajax(HTTP+'get_good_to_know_list', {
         type: 'GET',  // http method  // data to submit
     success: function (data, status, xhr) {
 
@@ -1280,7 +1234,7 @@ $( document ).delegate("#goodtoknowpage", "pagebeforeshow", function() {
                 
                 output += '<div class="good_img">';
             
-                output += '<img src="http://localhost:8888/Stars/assets/uploads/files/'+value.gtk_image+'" alt="Image Cant Be Loaded" >';
+                output += '<img src="'+ HTTP_img + value.gtk_image+'" alt="Image Cant Be Loaded" >';
                 
                 output += '</div>';
                 
@@ -1325,7 +1279,7 @@ $( document ).delegate("#goodtoknowpage", "pageinit", function() {
 $( document ).delegate("#newspage", "pagebeforeshow", function() {
     
     if (news_article == 0 ){
-        $.ajax('http://localhost:8888/Stars/api/ApiGet/get_news_single', {
+        $.ajax(HTTP+'get_news_single', {
         type: 'POST',  // http method
         data: { 'news_id': news_id, },   // data to submit
     success: function (data, status, xhr) {
@@ -1347,7 +1301,7 @@ $( document ).delegate("#newspage", "pagebeforeshow", function() {
     
     if (news_article == 1 ){
         
-        $.ajax('http://localhost:8888/Stars/api/ApiGet/get_article_single', {
+        $.ajax(HTTP+'get_article_single', {
         type: 'POST',  // http method
         data: { 'article_id': news_id, },   // data to submit
     success: function (data, status, xhr) {
@@ -1369,7 +1323,7 @@ $( document ).delegate("#newspage", "pagebeforeshow", function() {
     
     if (news_article == 2 ){
         
-        $.ajax('http://localhost:8888/Stars/api/ApiGet/get_good_to_know_single', {
+        $.ajax(HTTP+'get_good_to_know_single', {
         type: 'POST',  // http method
         data: { 'good_id': news_id, },   // data to submit
     success: function (data, status, xhr) {
@@ -1397,7 +1351,7 @@ $( document ).delegate("#newspage", "pagebeforeshow", function() {
 
 // Page_Introduction 
 function image_top_intro(introduction_id){
-    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_introduction_images_list', {
+    $.ajax(HTTP+'get_introduction_images_list', {
         type: 'POST',  // http method 
         data: { 'introduction_id': introduction_id, },  // data to submit
     success: function (data, status, xhr) {
@@ -1407,7 +1361,7 @@ function image_top_intro(introduction_id){
             
                 output_big += '<div class="swiper-slide image_big">';
                 
-                output_big += '<img src="http://localhost:8888/Stars/assets/uploads/files/'+value.img_url+'" alt="Image Cant Be Loaded" >';
+                output_big += '<img src="/'+HTTP_img+value.img_url+'" alt="Image Cant Be Loaded" >';
                 
                 output_big += '</div>';
             
@@ -1422,7 +1376,7 @@ function image_top_intro(introduction_id){
     }); 
 }
 function image_down_intro(introduction_id){
-    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_introduction_images_list', {
+    $.ajax(HTTP+'get_introduction_images_list', {
         type: 'POST',  // http method 
         data: { 'introduction_id': introduction_id, },  // data to submit
     success: function (data, status, xhr) {
@@ -1432,7 +1386,7 @@ function image_down_intro(introduction_id){
             
                 output_small += '<div class="swiper-slide image_small">';
                 
-                output_small += '<img src="http://localhost:8888/Stars/assets/uploads/files/'+value.img_url+'" alt="Image Cant Be Loaded" >';
+                output_small += '<img src="'+ HTTP_img + value.img_url+'" alt="Image Cant Be Loaded" >';
                 
                 output_small += '</div>';
         });
@@ -1479,7 +1433,7 @@ $( document ).on( "pagebeforeshow", "#introductionpage", function($) {
 });
 
 $( document ).delegate("#introductionpage", "pagebeforeshow", function() {
-    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_introduction_list', {
+    $.ajax(HTTP+'get_introduction_list', {
         type: 'GET',  // http method  // data to submit
         success: function (data, status, xhr) {
 
@@ -1514,7 +1468,7 @@ $('#signuppage_btn').on("click", function (Event){
 
                     
                     
-                     $.ajax('http://localhost:8888/Stars/api/ApiGet/insert_people', {
+                     $.ajax(HTTP+'insert_people', {
         type: 'POST',  // http method
         data: { 'name_family': singup_name,
                'code_meli': singup_code_meli,
@@ -1851,18 +1805,24 @@ $('#programpart2page_btn').on("tap", function (Event){
 // Page_Program_Request_P3    
 $('#checkbox_sineh_1').bind('change', function () {
     sineh_form();
+});
+$('#checkbox_sineh_2').bind('change', function () {
+    sineh_form();
 });    
-$('#checkbox_sineh_2').bind('change', function () {    sineh_form();
+$('#checkbox_sineh_3').bind('change', function () {
+    sineh_form();
 });    
-$('#checkbox_sineh_3').bind('change', function () {    sineh_form();
+$('#checkbox_sineh_4').bind('change', function () {
+    sineh_form();
 });    
-$('#checkbox_sineh_4').bind('change', function () {    sineh_form();
+$('#checkbox_sineh_5').bind('change', function () {
+    sineh_form();
 });    
-$('#checkbox_sineh_5').bind('change', function () {    sineh_form();
+$('#checkbox_sineh_6').bind('change', function () {
+    sineh_form();
 });    
-$('#checkbox_sineh_6').bind('change', function () {    sineh_form();
-});    
-$('#checkbox_sineh_7').bind('change', function () {    sineh_form();
+$('#checkbox_sineh_7').bind('change', function () {
+    sineh_form();
 });
 
 
@@ -2549,7 +2509,7 @@ $('#programpart3page_btn').on("tap", function (Event){
     var user_local = 
         window.localStorage.getItem("user_id");
                                 
-$.ajax('http://localhost:8888/Stars/api/ApiGet/insert_request', {
+$.ajax(HTTP+'insert_request', {
     type: 'POST',  // http method
     data: { 'people_id': user_local,
            'morabi_id': coach,
@@ -2675,7 +2635,7 @@ $.ajax('http://localhost:8888/Stars/api/ApiGet/insert_request', {
 var phone_number_single = (window.localStorage.getItem("phone_num"));
 // Page_Profile
 $( document ).delegate("#profilepage", "pagebeforeshow", function() {
-    $.ajax('http://localhost:8888/Stars/api/ApiGet/get_People_single', {
+    $.ajax(HTTP+'get_People_single', {
         type: 'POST',  // http method 
         data: { 'phone_number': phone_number_single, },  // data to submit
         success: function (data, status, xhr) {
@@ -2695,7 +2655,7 @@ $('#profilepage_btn').on("click", function (){
     var name_family = $("#login_etx_submit").val().trim();
     var code_meli = $("#login_etx_submit").val().trim();
     
-    $.ajax('http://localhost:8888/Stars/api/ApiGet/update_people', {
+    $.ajax(HTTP+'update_people', {
         type: 'POST',  // http method 
         data: { 'name_family': name_family,'code_meli': code_meli,'phone_number': phone_number_single,'address': '','user_date': '','state_id': '0', },  // data to submit
         success: function (data, status, xhr) {
@@ -2717,7 +2677,7 @@ $('#profilepage_btn').on("click", function (){
 
 // Page_Rules
 $( document ).delegate("#rulespage", "pagebeforeshow", function() { 
-        $.ajax('http://localhost:8888/Stars/api/ApiGet/get_rules_list', {
+        $.ajax(HTTP+'get_rules_list', {
         type: 'GET',  // http method  // data to submit
     success: function (data, status, xhr) {
 //        $('p').append('status: ' + status + ', data: ' + data);
