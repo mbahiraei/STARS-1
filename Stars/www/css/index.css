@@ -196,12 +196,31 @@ button:focus {
     width: 100%;
 }
 .circle_p1 div{
-    position: relative;
     border: 5px solid yellow;
     border-radius: 50%;
     height: fit-content;
     background-size: cover;
+    background: unset!important;
+    position: unset;
+    border:unset;
+    border-radius: unset;
+    height: unset;
+    background-size: unset;
+    width: auto;
+    padding-top: unset;
 }
+.workout_circle .circle_p1_child_left img{
+    position: relative;
+    border: 5px solid yellow;
+    border-radius: 50%;
+    height: 131%;
+    width: 28%;
+    padding: 0 0 0 0 !important;
+}
+
+
+
+
 .circle_p1_child_right{
     width: 17%;
     padding-top: 17%;
@@ -961,6 +980,24 @@ button:focus {
 }
 .workout_circle{
     margin-top: -30%;
+}
+.workout_circle .circle_p1_child_left{
+    background: unset!important;
+    position: unset;
+    border:unset;
+    border-radius: unset;
+    height: unset;
+    background-size: unset;
+    width: auto;
+    padding-top: unset;
+}
+.workout_circle .circle_p1_child_left img{
+    position: relative;
+    border: 5px solid yellow;
+    border-radius: 50%;
+    height: 131%;
+    width: 28%;
+    padding: 0 0 0 0 !important;
 }
 .workout_main_tittle{
     margin-bottom: 5% !important;
