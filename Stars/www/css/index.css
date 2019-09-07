@@ -976,8 +976,10 @@ button:focus {
     padding-top: unset;
 }
 .workout_circle .circle_p1_child_left img{
-    height: 131%;
+    height: 152%;
     width: 28%;
+    max-height: 126%;
+    min-height: 82%;
 }
 .workout_main_tittle{
     margin-bottom: 5% !important;
