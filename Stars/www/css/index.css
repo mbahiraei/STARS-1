@@ -1456,3 +1456,53 @@ button:focus {
 .snackbar-text {
     width: 100%!important;
 }
+
+
+
+
+/*------------ media_screen ---------------*/
+@media only screen and (max-width: 250px){
+    .workout_circle .circle_p1_child_left img{
+        height: 59px;
+    }
+}
+@media only screen and (max-width: 300px) and (min-width: 250px){
+    .workout_circle .circle_p1_child_left img{
+        height: 90px;
+    }
+}
+@media only screen and (max-width: 350px) and (min-width: 300px){
+    .workout_circle .circle_p1_child_left img{
+        height: 90px;
+    }
+}
+@media only screen and (max-width: 400px) and (min-width: 350px){
+    .workout_circle .circle_p1_child_left img{
+        height: 93px;
+    }
+}
+@media only screen and (max-width: 450px) and (min-width: 400px){
+    .workout_circle .circle_p1_child_left img{
+        height: 100px;
+    }
+}
+@media only screen and (max-width: 500px) and (min-width: 450px){
+    .workout_circle .circle_p1_child_left img{
+        height: 110px;
+    }
+}
+@media only screen and (max-width: 550px) and (min-width: 500px){
+    .workout_circle .circle_p1_child_left img{
+        height: 115px;
+    }
+}
+@media only screen and (max-width: 600px) and (min-width: 550px){
+    .workout_circle .circle_p1_child_left img{
+        height: 115px;
+    }
+}
+@media only screen and (max-width: 650px) and (min-width: 600px){
+    .workout_circle .circle_p1_child_left img{
+        height: 115px;
+    }
+}
