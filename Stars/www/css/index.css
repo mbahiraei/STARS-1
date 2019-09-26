@@ -140,9 +140,8 @@ button:focus {
     background-color: #dcd9cd;
 }
 .splash_logo img {
-    width: 70%;
-    height: 60%;
-    margin: 35% 15%!important;
+    width: 85%;
+    height: 100%!important;
 }
 
 
@@ -1008,7 +1007,7 @@ button:focus {
     width: 85%;
     padding: 5% 0;
 }
-#workout_explain_des{
+#workout_explain_dec {
     margin: 15px 0 0 0!important;
     line-height: 2!important;
 }
